@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // this script manages the player input and movement
 
     public bool movementEnabled = true;
+    private bool playerMoving = false;
 
     private Rigidbody rb;
 
@@ -33,14 +34,28 @@ public class PlayerMovement : MonoBehaviour
             if (movement > 0.0f || movement < 0.0f)
             {
                 Accelerate();
+                playerMoving = true;
             }
             else if (movement == 0.0f)
             {
                 Decelerate();
             }
+
+            if (playerMoving)
+            {
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    maxSpeed = 8;
+                    Debug.Log("running");
+                }
+                else
+                {
+                    maxSpeed = 5;
+                }
+            }
         }
 
-        Debug.Log(movement);
+        //Debug.Log(playerMoving);
     }
 
     private void Accelerate()
@@ -67,10 +82,13 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(lastMovement * speed, 0, 0);
 
+        playerMoving = false;
+
         if (speed <= 0.0f)
         {
             speed = 0.0f;
             lastMovement = 0;
+            playerMoving = false;
         }
     }
 }
