@@ -6,58 +6,60 @@ using UnityEngine.Windows.Speech;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // this script manages the player input and movement
+    // this script manages the player movement
 
     public bool movementEnabled = true;
-    private bool playerMoving = false;
+    // private bool playerIsRunning = false;
 
     private Rigidbody rb;
 
     private float movement;
     private float lastMovement;
     private float speed = 0;
-    private float maxSpeed = 5;
-    private float acceleration = 6;
-    private float stoppingForce = 6;
+    private float maxSpeed;
+    private float acceleration = 3;
+    private float stoppingForce = 4;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    // update checks the input 
+    private void Update()
     {
         if (movementEnabled)
         {
+            // this checks if the player is running
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                maxSpeed = 12;
+                // playerIsRunning = true;
+            }
+            else
+            {
+                maxSpeed = 4;
+                // playerIsRunning = false;
+            }
+
             movement = Input.GetAxis("Horizontal");
-
-            if (movement > 0.0f || movement < 0.0f)
-            {
-                Accelerate();
-                playerMoving = true;
-            }
-            else if (movement == 0.0f)
-            {
-                Decelerate();
-            }
-
-            if (playerMoving)
-            {
-                if (Input.GetKeyDown(KeyCode.LeftShift))
-                {
-                    maxSpeed = 8;
-                    Debug.Log("running");
-                }
-                else
-                {
-                    maxSpeed = 5;
-                }
-            }
         }
-
-        //Debug.Log(playerMoving);
     }
 
+    // fixedUpdate moves the player
+    private void FixedUpdate()
+    {
+        if (movement > 0.0f || movement < 0.0f)
+        {
+            Accelerate();
+        }
+        else if (movement == 0.0f)
+        {
+            Decelerate();
+        }
+    }
+
+    // this gives the movement a fade in
     private void Accelerate()
     {
         if (speed < maxSpeed)
@@ -76,19 +78,17 @@ public class PlayerMovement : MonoBehaviour
         lastMovement = movement;
     }
 
+    // this gives the movement a fade out
     private void Decelerate()
     {
         speed -= stoppingForce * Time.deltaTime;
 
         rb.velocity = new Vector3(lastMovement * speed, 0, 0);
 
-        playerMoving = false;
-
         if (speed <= 0.0f)
         {
             speed = 0.0f;
             lastMovement = 0;
-            playerMoving = false;
         }
     }
 }

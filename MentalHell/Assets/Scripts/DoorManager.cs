@@ -11,7 +11,7 @@ public class DoorManager : MonoBehaviour
 
     public void EnterRoom()
     {
-        Debug.Log("entered room");
+        //Debug.Log("entered room");
         player.transform.position = new Vector3(positionX, 0.0f, positionZ);
     }
 }

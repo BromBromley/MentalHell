@@ -13,7 +13,7 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collided");
+        //Debug.Log("collided");
         if (other.tag == "Door")
         {
             Debug.Log("entering room");
@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             Debug.Log("there is an item in front of you");
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKey(KeyCode.F))
             {
                 Debug.Log("you picked it up");
                 other.gameObject.SetActive(false);
