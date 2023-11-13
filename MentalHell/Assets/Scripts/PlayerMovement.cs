@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 0;
     private float maxSpeed;
     private float acceleration;
-    private float stoppingForce = 5;
+    private float stoppingForce = 6;
 
     void Start()
     {

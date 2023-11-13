@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    // this scripts manages the player's ability to interact with items and doors
+
     private DoorManager _doorManager;
     private bool pickedUpHeart = false;
 
