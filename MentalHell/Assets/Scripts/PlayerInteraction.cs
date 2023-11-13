@@ -15,12 +15,14 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     // this function checks if the player is standing in front of a door or item
+    // it also manages the heart drop off
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Door")
         {
             if (Input.GetKey(KeyCode.W))
             {
+                Debug.Log("entering door");
                 other.GetComponent<DoorManager>().EnterRoom();
             }
         }
@@ -32,6 +34,7 @@ public class PlayerInteraction : MonoBehaviour
                 Debug.Log("you picked it up");
                 pickedUpHeart = true;
                 other.gameObject.SetActive(false);
+                // show heart in UI
             }
         }
 
@@ -41,6 +44,16 @@ public class PlayerInteraction : MonoBehaviour
             {
                 other.gameObject.SetActive(false);
                 // show document
+            }
+        }
+
+        if (other.tag == "Ghost")
+        {
+            if (Input.GetKey(KeyCode.F) && pickedUpHeart)
+            {
+                Debug.Log("you dropped the heart off");
+                pickedUpHeart = false;
+                // heartCounter++;
             }
         }
     }
