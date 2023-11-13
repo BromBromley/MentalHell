@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private float lastMovement;
     private float speed = 0;
     private float maxSpeed;
-    private float acceleration = 3;
-    private float stoppingForce = 4;
+    private float acceleration;
+    private float stoppingForce = 5;
 
     void Start()
     {
@@ -33,12 +33,14 @@ public class PlayerMovement : MonoBehaviour
             // this checks if the player is running
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                maxSpeed = 12;
+                maxSpeed = 10;
+                acceleration = 5;
                 // playerIsRunning = true;
             }
             else
             {
                 maxSpeed = 4;
+                acceleration = 3;
                 // playerIsRunning = false;
             }
 
