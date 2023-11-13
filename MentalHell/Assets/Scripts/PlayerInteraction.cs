@@ -6,28 +6,40 @@ public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     private DoorManager _doorManager;
+    private bool pickedUpHeart = false;
 
     void Start()
     {
         _doorManager = FindObjectOfType<DoorManager>();
     }
-    private void OnTriggerEnter(Collider other)
+
+    // this function checks if the player is standing in front of a door or item
+    private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("collided");
         if (other.tag == "Door")
         {
-            Debug.Log("entering room");
-            other.GetComponent<DoorManager>().EnterRoom();
+            if (Input.GetKey(KeyCode.W))
+            {
+                other.GetComponent<DoorManager>().EnterRoom();
+            }
         }
 
-        if (other.tag == "Item")
+        if (other.tag == "Heart")
         {
-            Debug.Log("there is an item in front of you");
-
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.F) && pickedUpHeart == false)
             {
                 Debug.Log("you picked it up");
+                pickedUpHeart = true;
                 other.gameObject.SetActive(false);
+            }
+        }
+
+        if (other.tag == "Document")
+        {
+            if (Input.GetKey(KeyCode.F))
+            {
+                other.gameObject.SetActive(false);
+                // show document
             }
         }
     }
