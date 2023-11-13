@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mentalhellcharactersdoor1
+  m_Name: mentalhelldoor2
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -44,11 +44,11 @@ Material:
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 0.8, y: 0.8}
-        m_Offset: {x: 0.1, y: 0}
+        m_Offset: {x: 0.14, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c60d569e8391d4d469105df42f0a37bd, type: 3}
+        m_Texture: {fileID: 2800000, guid: f0f3aee9535575e4abf49f79b64e2e37, type: 3}
         m_Scale: {x: 0.8, y: 0.8}
-        m_Offset: {x: 0.1, y: 0}
+        m_Offset: {x: 0.14, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
