@@ -9,6 +9,8 @@ public class PlayerInteraction : MonoBehaviour
     private DoorManager _doorManager;
     private bool pickedUpHeart = false;
 
+    private bool canEnterDoor = true;
+
     void Start()
     {
         _doorManager = FindObjectOfType<DoorManager>();
@@ -20,9 +22,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.tag == "Door")
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) && canEnterDoor)
             {
                 Debug.Log("entering door");
+                StartCoroutine(DoorCooldown());
                 other.GetComponent<DoorManager>().EnterRoom();
             }
         }
@@ -56,5 +59,14 @@ public class PlayerInteraction : MonoBehaviour
                 // heartCounter++;
             }
         }
+    }
+
+    private IEnumerator DoorCooldown()
+    {
+        canEnterDoor = false;
+
+        yield return new WaitForSeconds(1);
+
+        canEnterDoor = true;
     }
 }
