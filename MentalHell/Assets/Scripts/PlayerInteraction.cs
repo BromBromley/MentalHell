@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("entering door");
                 StartCoroutine(DoorCooldown());
-                other.GetComponent<DoorManager>().EnterRoom();
+                other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
             }
         }
 

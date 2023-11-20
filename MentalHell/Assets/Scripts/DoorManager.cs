@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
     [SerializeField] float positionX;
     [SerializeField] float positionZ;
 
-    public void EnterRoom()
+    public void EnterRoom(GameObject character)
     {
         //Debug.Log("entered room");
-        player.transform.position = new Vector3(positionX, 0.0f, positionZ);
+        character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, positionZ);
     }
 }
