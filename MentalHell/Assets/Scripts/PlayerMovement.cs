@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // this script manages the player movement
 
     public bool movementEnabled = true;
-    // private bool playerIsRunning = false;
+    public bool playerIsRunning = false;
 
     private Rigidbody rb;
 
@@ -35,13 +35,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 maxSpeed = 10;
                 acceleration = 5;
-                // playerIsRunning = true;
+                playerIsRunning = true;
             }
             else
             {
                 maxSpeed = 4;
                 acceleration = 3;
-                // playerIsRunning = false;
+                playerIsRunning = false;
             }
 
             movement = Input.GetAxis("Horizontal");

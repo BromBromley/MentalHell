@@ -7,6 +7,9 @@ TagManager:
   - Door
   - Heart
   - Document
+  - Ghost
+  - Stairs
+  - Wall
   layers:
   - Default
   - TransparentFX

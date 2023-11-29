@@ -30,6 +30,21 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
+        if (other.tag == "Stairs")
+        {
+            if (Input.GetKey(KeyCode.W) && canEnterDoor)
+            {
+                Debug.Log("entering door");
+                StartCoroutine(DoorCooldown());
+                other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
+            }
+        }
+
+        if (other.tag == "Wall")
+        {
+            transform.position = transform.position + new Vector3(0.0f, transform.position.y, transform.position.z);
+        }
+
         if (other.tag == "Heart")
         {
             if (Input.GetKey(KeyCode.F) && pickedUpHeart == false)
