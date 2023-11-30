@@ -11,6 +11,7 @@ public class MonsterAI : MonoBehaviour
     // TODO distance player (done, tested)
     // TODO terrorRadius (done, no reactions)
     // TODO monster chases player through stairs
+    // TODO adjust radius if player is running
     // TODO spawnPoints
 
     public bool monsterIsChasing;
@@ -80,8 +81,8 @@ public class MonsterAI : MonoBehaviour
     // this randomly decides if the monster walks left or right
     private void ChooseDirection()
     {
-        //movementDirection = Random.Range(1, 3);
-        movementDirection = 1;
+        movementDirection = Random.Range(1, 3);
+        //movementDirection = 1;
         if (movementDirection == 1)
         {
             movement = -1f;
