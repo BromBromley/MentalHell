@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private DoorManager _doorManager;
     private bool pickedUpHeart = false;
+    public int heartCounter;
 
     private bool canEnterDoor = true;
 
@@ -65,7 +66,11 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("you dropped the heart off");
                 pickedUpHeart = false;
-                // heartCounter++;
+                heartCounter++;
+                if (heartCounter == 3)
+                {
+                    Debug.Log("You did it! The ghosts are happy and you can finally leave");
+                }
             }
         }
     }
