@@ -45,11 +45,11 @@ public class MonsterAI : MonoBehaviour
         // puts it into three different ranges 
         distance = Vector3.Distance(this.transform.position, player.transform.position);
 
-        if (distance < 5)
+        if (distance < 5 && !_playerMovement.playerIsRunning)
         {
             // stage three
-            monsterIsChasing = true;
             //Debug.Log("the monster is chasing you");
+            monsterIsChasing = true;
         }
         else if (distance < 8)
         {
@@ -60,6 +60,10 @@ public class MonsterAI : MonoBehaviour
         {
             // stage one
             //Debug.Log("you see the monster in the distance");
+            if (_playerMovement.playerIsRunning)
+            {
+                monsterIsChasing = true;
+            }
         }
         else
         {
