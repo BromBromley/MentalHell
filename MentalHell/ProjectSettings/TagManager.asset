@@ -10,6 +10,7 @@ TagManager:
   - Ghost
   - Stairs
   - Wall
+  - Spawn
   layers:
   - Default
   - TransparentFX

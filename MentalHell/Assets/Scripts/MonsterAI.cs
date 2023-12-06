@@ -19,8 +19,8 @@ public class MonsterAI : MonoBehaviour
     private float walkingSpeed = 5f;
     private float runningSpeed = 8f;
 
-    [SerializeField] private GameObject player;
-    private float distance; // maybe public?
+    [SerializeField] public GameObject player;
+    public float distance; // maybe public?
 
     private PlayerMovement _playerMovement;
     [SerializeField] private GameObject monsterSprite;
@@ -39,6 +39,7 @@ public class MonsterAI : MonoBehaviour
     private void FixedUpdate()
     {
         //Debug.Log(monsterIsChasing);
+        Debug.Log(distance);
 
         // checks the distance between monster and player
         // puts it into three different ranges 
@@ -47,15 +48,15 @@ public class MonsterAI : MonoBehaviour
         if (distance < 5)
         {
             // stage three
-            //monsterIsChasing = true;
+            monsterIsChasing = true;
             //Debug.Log("the monster is chasing you");
         }
-        else if (distance < 10)
+        else if (distance < 8)
         {
             // stage two
             //Debug.Log("you're getting closer to the monster");
         }
-        else if (distance < 15)
+        else if (distance < 10)
         {
             // stage one
             //Debug.Log("you see the monster in the distance");
@@ -86,8 +87,9 @@ public class MonsterAI : MonoBehaviour
     }
 
     // this randomly decides if the monster walks left or right
-    private void ChooseDirection()
+    public void ChooseDirection()
     {
+        //Debug.Log("monster starts walking");
         movementDirection = Random.Range(1, 3);
         if (movementDirection == 1)
         {
@@ -115,11 +117,8 @@ public class MonsterAI : MonoBehaviour
         {
             movement = -movement;
         }
-    }
 
-    // this checks if the monster passes by a staircases and randomly chooses if it uses them
-    private void OnTriggerExit(Collider other)
-    {
+        // this checks if the monster passes by a staircases and randomly chooses if it uses them
         if (other.tag == "Stairs")
         {
             randomStairs = Random.Range(1, 3);
