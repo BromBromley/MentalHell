@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
@@ -7,6 +8,9 @@ using UnityEngine.Windows.Speech;
 public class PlayerMovement : MonoBehaviour
 {
     // this script manages the player movement
+
+    [SerializeField] private GameObject playerSprite;
+    private bool facingLeft = true;
 
     public bool movementEnabled = true;
     public bool playerIsRunning = false;
@@ -59,6 +63,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Decelerate();
         }
+
+        if (movement < 0 && !facingLeft)
+        {
+            FlipSprite();
+        }
+        else if (movement > 0 && facingLeft)
+        {
+            FlipSprite();
+        }
     }
 
     // this gives the movement a fade in
@@ -92,5 +105,15 @@ public class PlayerMovement : MonoBehaviour
             speed = 0.0f;
             lastMovement = 0;
         }
+    }
+
+    // flips the player sprite depending on the movement direction
+    private void FlipSprite()
+    {
+        Vector3 currentScale = playerSprite.transform.localScale;
+        currentScale.x *= -1;
+        playerSprite.transform.localScale = currentScale;
+
+        facingLeft = !facingLeft;
     }
 }

@@ -34,7 +34,6 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W) && canEnterDoor)
             {
-                Debug.Log("entering door");
                 StartCoroutine(DoorCooldown());
                 other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
             }
