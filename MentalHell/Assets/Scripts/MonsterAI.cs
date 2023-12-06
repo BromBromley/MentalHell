@@ -38,9 +38,6 @@ public class MonsterAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Debug.Log(monsterIsChasing);
-        Debug.Log(distance);
-
         // checks the distance between monster and player
         // puts it into three different ranges 
         distance = Vector3.Distance(this.transform.position, player.transform.position);

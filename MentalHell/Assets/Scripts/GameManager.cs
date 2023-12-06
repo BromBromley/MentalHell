@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private PlayerMovement _playerMovement;
-    private SwitchManager _switchManager;
-    [SerializeField] private GameObject item;
-    void Start()
+    private UIManager _uiManager;
+    private MonsterAI _monsterAI;
+
+    void Awake()
     {
-        _playerMovement = FindObjectOfType<PlayerMovement>();
-        _switchManager = FindObjectOfType<SwitchManager>();
+        _uiManager = FindObjectOfType<UIManager>();
+        _monsterAI = FindObjectOfType<MonsterAI>();
+    }
+
+    void Update()
+    {
+        if (_monsterAI.distance < 0.5)
+        {
+            _uiManager.ShowGameOverScreen();
+        }
+
+        _uiManager.UpdateSwitchBar();
     }
 }
