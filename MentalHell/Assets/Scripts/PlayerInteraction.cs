@@ -42,7 +42,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (other.tag == "Heart")
         {
-            if (Input.GetKey(KeyCode.F) && pickedUpHeart == false)
+            if (Input.GetKey(KeyCode.E) && pickedUpHeart == false)
             {
                 Debug.Log("you picked it up");
                 pickedUpHeart = true;
@@ -53,7 +53,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (other.tag == "Document")
         {
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.E))
             {
                 other.gameObject.SetActive(false);
                 // show document
@@ -62,7 +62,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (other.tag == "Ghost")
         {
-            if (Input.GetKey(KeyCode.F) && pickedUpHeart)
+            if (Input.GetKey(KeyCode.E) && pickedUpHeart)
             {
                 Debug.Log("you dropped the heart off");
                 pickedUpHeart = false;
