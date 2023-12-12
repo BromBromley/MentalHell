@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    // this script manages most HUD elements and screens 
+
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private Slider switchSlider;
@@ -27,6 +29,7 @@ public class UIManager : MonoBehaviour
         gameOverScreen.SetActive(true);
     }
 
+    // activates/deactivates the pause screen, called by GameManager
     public void ActivatePauseScreen()
     {
         if (hidePauseScreen)
@@ -40,11 +43,7 @@ public class UIManager : MonoBehaviour
         hidePauseScreen = !hidePauseScreen;
     }
 
-    public void HidePauseScreen()
-    {
-        pauseScreen.SetActive(false);
-    }
-
+    // updates the switch bar to the match the player's sanity level
     public void UpdateSwitchBar()
     {
         switchSlider.value = _switchManager.sanityLevel / 5;

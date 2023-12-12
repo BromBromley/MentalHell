@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
-    [SerializeField] float positionX;
+    // this script manages the usage of doors and teleports the player accordingly
+    // attached to every door, needs the 'Door' tag
 
+    [SerializeField] private float positionX;
+
+    // called by PlayerInteraction script
     public void EnterRoom(GameObject character)
     {
         if (character.transform.position.z <= 0)

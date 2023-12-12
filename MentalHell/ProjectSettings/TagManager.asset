@@ -6,11 +6,11 @@ TagManager:
   tags:
   - Door
   - Heart
-  - Document
   - Ghost
   - Stairs
   - Wall
   - Spawn
+  - Cabinet
   layers:
   - Default
   - TransparentFX

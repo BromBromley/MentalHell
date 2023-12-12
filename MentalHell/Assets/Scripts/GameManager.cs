@@ -23,30 +23,31 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // checks if the monster is too close to the player
         if (_monsterAI.distance < 0.75)
         {
             _uiManager.ShowGameOverScreen();
         }
 
+        // checks if the player pressed escape and reacts accordingly
         if (Input.GetKeyDown(KeyCode.Escape) && _playerInteraction.showingDocument)
         {
             // close document 
             // ResumeGame();
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && isRunning)
+        else if (Input.GetKeyDown(KeyCode.Escape) && isRunning)
         {
             PauseGame();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && !isRunning)
         {
             ResumeGame();
-
         }
     }
 
+    // freezes the game and all update functions
     public void PauseGame()
     {
-        Debug.Log("paused");
         isRunning = false;
         _uiManager.ActivatePauseScreen();
         _playerMovement.movementEnabled = false;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    // unfreezes the game and all update functions
     public void ResumeGame()
     {
         isRunning = true;

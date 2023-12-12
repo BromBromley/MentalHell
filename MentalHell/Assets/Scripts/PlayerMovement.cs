@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementEnabled)
         {
-            // this checks if the player is running
+            // this checks if the player is running and adjusts the speed
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 maxSpeed = 10;
@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             Decelerate();
         }
 
+        // this checks the player's direction and flips the sprite accordingly
         if (movement < 0 && !facingLeft)
         {
             FlipSprite();

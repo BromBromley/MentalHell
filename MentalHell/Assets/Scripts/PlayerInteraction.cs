@@ -8,9 +8,9 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameManager _gameManager;
     private DoorManager _doorManager;
+
     private bool pickedUpHeart = false;
     public int heartCounter;
-
     [SerializeField] private GameObject heartSprite;
 
     private bool canEnterDoor = true;
@@ -24,15 +24,13 @@ public class PlayerInteraction : MonoBehaviour
         heartSprite.SetActive(false);
     }
 
-    // this function checks if the player is standing in front of a door or item
-    // it also manages the heart drop off
+    // this function checks what the player is interacting with
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Door")
         {
             if (Input.GetKey(KeyCode.W) && canEnterDoor)
             {
-                //Debug.Log("entering door");
                 StartCoroutine(DoorCooldown());
                 other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
             }
@@ -64,9 +62,11 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (other.transform.childCount > 0)
                 {
-                    /*showingDocument = true;
+                    /*
+                    showingDocument = true;
                     other.GetComponentInChildren<DocumentManager>().ShowDocument();
-                    _gameManager.PauseGame();*/
+                    _gameManager.PauseGame();
+                    */
                     // press key to close document and resume game
                     // show document in menu
                 }
@@ -93,6 +93,7 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // this prevents accidentally going through doors
     private IEnumerator DoorCooldown()
     {
         canEnterDoor = false;

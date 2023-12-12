@@ -33,8 +33,6 @@ public class SpawnManager : MonoBehaviour
     // this goes through the list of spawn points to find the one closest to the player
     private void FindClosestSpawnPoint()
     {
-        //Debug.Log("checking for closest spawn point");
-
         foreach (GameObject point in spawnPoints)
         {
             distancePlayerPoint = Vector3.Distance(this.gameObject.GetComponent<MonsterAI>().player.transform.position, point.transform.position);
