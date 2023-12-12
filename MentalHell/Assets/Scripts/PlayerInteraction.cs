@@ -64,9 +64,9 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (other.transform.childCount > 0)
                 {
-                    showingDocument = true;
+                    /*showingDocument = true;
                     other.GetComponentInChildren<DocumentManager>().ShowDocument();
-                    _gameManager.PauseGame();
+                    _gameManager.PauseGame();*/
                     // press key to close document and resume game
                     // show document in menu
                 }
