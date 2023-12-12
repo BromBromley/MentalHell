@@ -6,11 +6,19 @@ public class GameManager : MonoBehaviour
 {
     private UIManager _uiManager;
     private MonsterAI _monsterAI;
+    private PlayerMovement _playerMovement;
+    private SpawnManager _spawnManager;
+    private PlayerInteraction _playerInteraction;
+
+    private bool isRunning;
 
     void Awake()
     {
         _uiManager = FindObjectOfType<UIManager>();
         _monsterAI = FindObjectOfType<MonsterAI>();
+        _playerInteraction = FindObjectOfType<PlayerInteraction>();
+        _playerMovement = FindObjectOfType<PlayerMovement>();
+        _spawnManager = FindObjectOfType<SpawnManager>();
     }
 
     void Update()
@@ -19,5 +27,44 @@ public class GameManager : MonoBehaviour
         {
             _uiManager.ShowGameOverScreen();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && _playerInteraction.showingDocument)
+        {
+            // close document 
+            // ResumeGame();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && isRunning)
+        {
+            PauseGame();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && !isRunning)
+        {
+            ResumeGame();
+
+        }
+    }
+
+    public void PauseGame()
+    {
+        Debug.Log("paused");
+        isRunning = false;
+        _uiManager.ActivatePauseScreen();
+        _playerMovement.movementEnabled = false;
+        _spawnManager.checkingForSpawns = false;
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        isRunning = true;
+        _uiManager.ActivatePauseScreen();
+        _playerMovement.movementEnabled = true;
+        _spawnManager.checkingForSpawns = true;
+        Time.timeScale = 1;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

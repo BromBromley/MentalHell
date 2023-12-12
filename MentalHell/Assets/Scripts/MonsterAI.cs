@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class MonsterAI : MonoBehaviour
 {
-    // TODO terrorRadius (done, no reactions)
-    // TODO adjust radius if player is running
-
     public bool monsterIsChasing;
     private int randomStairs;
     private bool canUseStairs = true;

@@ -14,6 +14,8 @@ public class SpawnManager : MonoBehaviour
     private float distancePlayerPoint;
     private float distancePlayerClosest;
 
+    public bool checkingForSpawns = true;
+
     void Awake()
     {
         spawnPoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Spawn"));
@@ -22,7 +24,7 @@ public class SpawnManager : MonoBehaviour
     // this checks for the distance between player and monster getting too big
     void Update()
     {
-        if (this.gameObject.GetComponent<MonsterAI>().distance > 50)
+        if (this.gameObject.GetComponent<MonsterAI>().distance > 50 && checkingForSpawns)
         {
             FindClosestSpawnPoint();
         }
