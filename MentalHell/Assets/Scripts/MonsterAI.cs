@@ -6,9 +6,7 @@ using UnityEngine;
 public class MonsterAI : MonoBehaviour
 {
     // TODO terrorRadius (done, no reactions)
-    // TODO monster chases player through stairs
     // TODO adjust radius if player is running
-    // TODO spawnPoints
 
     public bool monsterIsChasing;
     private int randomStairs;
@@ -126,7 +124,7 @@ public class MonsterAI : MonoBehaviour
             if (randomStairs == 1 && canUseStairs && !monsterIsChasing)
             {
                 StartCoroutine(StairsCoolDown());
-                other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
+                other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
             }
         }
     }

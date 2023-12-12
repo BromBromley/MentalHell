@@ -6,6 +6,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     // this scripts manages the player's ability to interact with items and doors
 
+    private GameManager _gameManager;
     private DoorManager _doorManager;
     private bool pickedUpHeart = false;
     public int heartCounter;
@@ -13,9 +14,11 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private GameObject heartSprite;
 
     private bool canEnterDoor = true;
+    public bool showingDocument;
 
     void Start()
     {
+        _gameManager = FindObjectOfType<GameManager>();
         _doorManager = FindObjectOfType<DoorManager>();
 
         heartSprite.SetActive(false);
@@ -29,7 +32,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W) && canEnterDoor)
             {
-                Debug.Log("entering door");
+                //Debug.Log("entering door");
                 StartCoroutine(DoorCooldown());
                 other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
             }
@@ -40,7 +43,7 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetKey(KeyCode.W) && canEnterDoor)
             {
                 StartCoroutine(DoorCooldown());
-                other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
+                other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
             }
         }
 
@@ -48,20 +51,29 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && pickedUpHeart == false)
             {
-                Debug.Log("you picked it up");
+                Debug.Log("you picked up the heart");
                 pickedUpHeart = true;
                 heartSprite.SetActive(true);
                 other.gameObject.SetActive(false);
-                // show heart in UI
             }
         }
 
-        if (other.tag == "Document")
+        if (other.tag == "Cabinet")
         {
             if (Input.GetKey(KeyCode.E))
             {
-                other.gameObject.SetActive(false);
-                // show document
+                if (other.transform.childCount > 0)
+                {
+                    showingDocument = true;
+                    other.GetComponentInChildren<DocumentManager>().ShowDocument();
+                    _gameManager.PauseGame();
+                    // press key to close document and resume game
+                    // show document in menu
+                }
+                else
+                {
+                    // rattle sound
+                }
             }
         }
 
