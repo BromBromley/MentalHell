@@ -20,7 +20,7 @@ public class MonsterAI : MonoBehaviour
     private float runningSpeed = 4f;
 
     [SerializeField] public GameObject player;
-    public float distance; // maybe public?
+    public float distance;
 
     private PlayerMovement _playerMovement;
     [SerializeField] private GameObject monsterSprite;

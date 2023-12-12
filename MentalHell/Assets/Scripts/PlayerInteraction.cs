@@ -10,11 +10,15 @@ public class PlayerInteraction : MonoBehaviour
     private bool pickedUpHeart = false;
     public int heartCounter;
 
+    [SerializeField] private GameObject heartSprite;
+
     private bool canEnterDoor = true;
 
     void Start()
     {
         _doorManager = FindObjectOfType<DoorManager>();
+
+        heartSprite.SetActive(false);
     }
 
     // this function checks if the player is standing in front of a door or item
@@ -46,6 +50,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("you picked it up");
                 pickedUpHeart = true;
+                heartSprite.SetActive(true);
                 other.gameObject.SetActive(false);
                 // show heart in UI
             }
@@ -66,6 +71,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("you dropped the heart off");
                 pickedUpHeart = false;
+                heartSprite.SetActive(false);
                 heartCounter++;
                 if (heartCounter == 3)
                 {

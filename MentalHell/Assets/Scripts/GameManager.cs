@@ -15,11 +15,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (_monsterAI.distance < 0.5)
+        if (_monsterAI.distance < 0.75)
         {
             _uiManager.ShowGameOverScreen();
         }
-
-        _uiManager.UpdateSwitchBar();
     }
 }

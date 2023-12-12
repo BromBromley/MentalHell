@@ -16,6 +16,11 @@ public class UIManager : MonoBehaviour
         gameOverScreen.SetActive(false);
     }
 
+    void Update()
+    {
+        UpdateSwitchBar();
+    }
+
     public void ShowGameOverScreen()
     {
         gameOverScreen.SetActive(true);
