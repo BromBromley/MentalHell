@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // checks if the monster is too close to the player
-        if (_monsterAI.distance < 0.75)
+        if (_monsterAI.distance < 2.50)
         {
             _uiManager.ShowGameOverScreen();
         }
