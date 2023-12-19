@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private GameObject winScreen;
     [SerializeField] private Slider switchSlider;
     private SwitchManager _switchManager;
 
@@ -23,6 +24,7 @@ public class UIManager : MonoBehaviour
     {
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
+        winScreen.SetActive(false);
         hidePauseScreen = true;
     }
 
@@ -34,6 +36,11 @@ public class UIManager : MonoBehaviour
     public void ShowGameOverScreen()
     {
         gameOverScreen.SetActive(true);
+    }
+
+    public void ShowWinScreen()
+    {
+        winScreen.SetActive(true);
     }
 
     // activates/deactivates the pause screen, called by GameManager

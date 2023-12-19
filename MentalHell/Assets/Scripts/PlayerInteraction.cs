@@ -79,6 +79,7 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
+        // tracks how many hearts the player has given to the ghosts and changes the ghosts' material accordingly
         if (other.tag == "Ghost")
         {
             if (Input.GetKey(KeyCode.E) && pickedUpHeart)
@@ -88,18 +89,16 @@ public class PlayerInteraction : MonoBehaviour
                 heartCounter++;
                 if (heartCounter == 1)
                 {
-                    // second material
                     ghosts.GetComponent<Renderer>().material = twoGhosts;
                 }
                 if (heartCounter == 2)
                 {
-                    // third material
                     ghosts.GetComponent<Renderer>().material = oneGhost;
                 }
                 if (heartCounter == 3)
                 {
                     ghosts.SetActive(false);
-                    // activate win screen
+                    _gameManager.GameWon();
                 }
             }
         }

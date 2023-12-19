@@ -78,6 +78,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void GameWon()
+    {
+        _uiManager.ShowWinScreen();
+        PauseGame();
+    }
+
     public void ExitGame()
     {
         Application.Quit();
