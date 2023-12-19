@@ -12,11 +12,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider switchSlider;
     private SwitchManager _switchManager;
 
-    private bool hidePauseScreen = true;
+    private bool hidePauseScreen;
 
     void Awake()
     {
         _switchManager = FindObjectOfType<SwitchManager>();
+    }
+
+    void Start()
+    {
+        gameOverScreen.SetActive(false);
+        pauseScreen.SetActive(false);
+        hidePauseScreen = true;
     }
 
     void Update()
