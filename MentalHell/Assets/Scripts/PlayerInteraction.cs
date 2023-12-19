@@ -32,7 +32,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.tag == "Door")
         {
-            if (Input.GetKey(KeyCode.W) && canEnterDoor)
+            if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
                 StartCoroutine(DoorCooldown());
                 other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
@@ -41,7 +41,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (other.tag == "Stairs")
         {
-            if (Input.GetKey(KeyCode.W) && canEnterDoor)
+            if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
                 StartCoroutine(DoorCooldown());
                 other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
