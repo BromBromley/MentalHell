@@ -21,14 +21,13 @@ public class GameManager : MonoBehaviour
         _spawnManager = FindObjectOfType<SpawnManager>();
     }
 
+    void Start()
+    {
+        ResumeGame();
+    }
+
     void Update()
     {
-        // checks if the monster is too close to the player
-        if (_monsterAI.distance < 2.50)
-        {
-            _uiManager.ShowGameOverScreen();
-        }
-
         // checks if the player pressed escape and reacts accordingly
         if (Input.GetKeyDown(KeyCode.Escape) && _playerInteraction.showingDocument)
         {
@@ -37,11 +36,27 @@ public class GameManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isRunning)
         {
+            _uiManager.ActivatePauseScreen();
             PauseGame();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && !isRunning)
         {
+            _uiManager.ActivatePauseScreen();
             ResumeGame();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // checks if the monster is too close to the player
+        if (_monsterAI.distance < 2.50)
+        {
+            Debug.Log(_monsterAI.distance);
+            if (isRunning)
+            {
+                _uiManager.ShowGameOverScreen();
+                PauseGame();
+            }
         }
     }
 
@@ -49,7 +64,6 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         isRunning = false;
-        _uiManager.ActivatePauseScreen();
         _playerMovement.movementEnabled = false;
         _spawnManager.checkingForSpawns = false;
         Time.timeScale = 0;
@@ -59,7 +73,6 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         isRunning = true;
-        _uiManager.ActivatePauseScreen();
         _playerMovement.movementEnabled = true;
         _spawnManager.checkingForSpawns = true;
         Time.timeScale = 1;
