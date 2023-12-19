@@ -12,6 +12,9 @@ public class PlayerInteraction : MonoBehaviour
     private bool pickedUpHeart = false;
     public int heartCounter;
     [SerializeField] private GameObject heartSprite;
+    [SerializeField] private GameObject ghosts;
+    [SerializeField] private Material twoGhosts;
+    [SerializeField] private Material oneGhost;
 
     private bool canEnterDoor = true;
     public bool showingDocument;
@@ -49,7 +52,6 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && pickedUpHeart == false)
             {
-                Debug.Log("you picked up the heart");
                 pickedUpHeart = true;
                 heartSprite.SetActive(true);
                 other.gameObject.SetActive(false);
@@ -81,13 +83,23 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && pickedUpHeart)
             {
-                Debug.Log("you dropped the heart off");
                 pickedUpHeart = false;
                 heartSprite.SetActive(false);
                 heartCounter++;
+                if (heartCounter == 1)
+                {
+                    // second material
+                    ghosts.GetComponent<Renderer>().material = twoGhosts;
+                }
+                if (heartCounter == 2)
+                {
+                    // third material
+                    ghosts.GetComponent<Renderer>().material = oneGhost;
+                }
                 if (heartCounter == 3)
                 {
-                    Debug.Log("You did it! The ghosts are happy and you can finally leave");
+                    ghosts.SetActive(false);
+                    // activate win screen
                 }
             }
         }
