@@ -38606,7 +38606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1022356627
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41289,6 +41289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 1096148771}
   pauseScreen: {fileID: 4525648}
+  winScreen: {fileID: 1022356626}
   switchSlider: {fileID: 1994909156}
 --- !u!114 &1073271384
 MonoBehaviour:
