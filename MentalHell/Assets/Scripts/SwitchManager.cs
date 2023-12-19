@@ -55,13 +55,18 @@ public class SwitchManager : MonoBehaviour
         }
 
         // this function checks if the sanity level reaches 0 and puts the player back in the present
-        if (sanityLevel <= 0 && isSwitching)
+        if (sanityLevel <= 0)
         {
-            isSwitching = false;
-            this.gameObject.transform.position = transform.position + new Vector3(0.0f, -33.195f, 0.0f);
+            if (isSwitching)
+            {
+                isSwitching = false;
+                this.gameObject.transform.position = transform.position + new Vector3(0.0f, -33.195f, 0.0f);
+            }
             Debug.Log("you're back in the present");
             StartCoroutine(RefillSanity());
         }
+
+        Debug.Log(sanityLevel);
     }
 
     // this stops the player from switching back and forth too fast
@@ -78,12 +83,15 @@ public class SwitchManager : MonoBehaviour
     private IEnumerator RefillSanity()
     {
         canSwitch = false;
+        _playerMovement.playerCanRun = false;
+        Debug.Log(_playerMovement.playerCanRun);
         Debug.Log("refilling sanity");
 
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(5);
 
         sanityLevel = 5f;
         canSwitch = true;
+        _playerMovement.playerCanRun = true;
         Debug.Log("sanity reset");
     }
 }

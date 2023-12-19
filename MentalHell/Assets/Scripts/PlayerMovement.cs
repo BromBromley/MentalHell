@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool facingLeft = true;
 
     public bool movementEnabled = true;
+    public bool playerCanRun = true;
     public bool playerIsRunning = false;
 
     private Rigidbody rb;
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         if (movementEnabled)
         {
             // this checks if the player is running and adjusts the speed
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && playerCanRun)
             {
                 maxSpeed = 10;
                 acceleration = 5;
