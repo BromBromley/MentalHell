@@ -7,9 +7,15 @@ public class SwitchManager : MonoBehaviour
 {
     // this script manages the ability to switch between past and present
 
+    private PlayerMovement _playerMovement;
     public float sanityLevel = 5f;
     public bool isSwitching = false;
     private bool canSwitch = true;
+
+    void Start()
+    {
+        _playerMovement = FindObjectOfType<PlayerMovement>();
+    }
 
     private void Update()
     {
@@ -36,20 +42,20 @@ public class SwitchManager : MonoBehaviour
     private void FixedUpdate()
     {
         // this function updates the sanity level 
-        if (isSwitching)
+        if (isSwitching || _playerMovement.playerIsRunning)
         {
             sanityLevel -= Time.deltaTime;
         }
         else
         {
-            if (sanityLevel <= 5)
+            if (sanityLevel <= 5 && !isSwitching && !_playerMovement.playerIsRunning)
             {
                 sanityLevel += Time.deltaTime;
             }
         }
 
         // this function checks if the sanity level reaches 0 and puts the player back in the present
-        if (sanityLevel <= 0)
+        if (sanityLevel <= 0 && isSwitching)
         {
             isSwitching = false;
             this.gameObject.transform.position = transform.position + new Vector3(0.0f, -33.195f, 0.0f);
