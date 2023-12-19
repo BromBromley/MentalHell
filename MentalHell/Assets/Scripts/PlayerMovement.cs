@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                maxSpeed = 4;
+                maxSpeed = 6;
                 acceleration = 3;
                 playerIsRunning = false;
             }
@@ -57,7 +57,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movement > 0.0f || movement < 0.0f)
         {
-            Accelerate();
+            //Accelerate();
+            MovePlayer();
         }
         else if (movement == 0.0f)
         {
@@ -73,6 +74,12 @@ public class PlayerMovement : MonoBehaviour
         {
             FlipSprite();
         }
+    }
+
+    // moves player without acceleration
+    private void MovePlayer()
+    {
+        rb.velocity = new Vector3(movement * maxSpeed, 0, 0);
     }
 
     // this gives the movement a fade in
