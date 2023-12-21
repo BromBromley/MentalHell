@@ -19,6 +19,8 @@ public class PlayerInteraction : MonoBehaviour
     private bool canEnterDoor = true;
     public bool showingDocument;
 
+    private Sound[] Soundarray;
+
     void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
@@ -55,6 +57,10 @@ public class PlayerInteraction : MonoBehaviour
                 pickedUpHeart = true;
                 heartSprite.SetActive(true);
                 other.gameObject.SetActive(false);
+               
+                // Play Herz Pickup Sound
+                Soundarray = FindObjectOfType<AudioManager>().sfxHerzNehmen;
+                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
             }
         }
 
@@ -100,6 +106,16 @@ public class PlayerInteraction : MonoBehaviour
                     ghosts.SetActive(false);
                     _gameManager.GameWon();
                 }
+
+                // Play Herz Drop Sound
+                Soundarray = FindObjectOfType<AudioManager>().sfxHerzAbgeben;
+                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+
+                // Play Geister Befreit Sound
+                Soundarray = FindObjectOfType<AudioManager>().sfxNPCGeisterBefreit;
+                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+
+
             }
         }
     }

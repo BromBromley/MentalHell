@@ -16,10 +16,19 @@ public class DoorManager : MonoBehaviour
         if (character.transform.position.z <= 0)
         {
             character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, 59.37f);
+
+            // play Door sound effect of opening the door when entering the room
+            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxOpenDoor;
+            FindObjectOfType<AudioManager>().PlayRandomConstantly(Soundarray);
         }
         else
         {
             character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, -59.37f);
+
+            // play Door sound effect of closing the door when leaving the room
+            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxCloseDoor;
+            FindObjectOfType<AudioManager>().PlayRandomConstantly(Soundarray);
         }
+
     }
 }

@@ -36,6 +36,10 @@ public class SwitchManager : MonoBehaviour
                 //Debug.Log("you're back in the present");
                 StartCoroutine(SwitchingCooldown());
             }
+
+            // Play Switching Sound
+            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMisc;
+            FindObjectOfType<AudioManager>().PlayOnce("Swap_Sound_01", Soundarray);
         }
     }
 
