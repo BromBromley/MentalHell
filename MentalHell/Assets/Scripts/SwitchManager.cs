@@ -25,14 +25,14 @@ public class SwitchManager : MonoBehaviour
             if (isSwitching == false)
             {
                 isSwitching = true;
-                this.gameObject.transform.position = transform.position + new Vector3(0.0f, 33.195f, 0.0f);
+                this.gameObject.transform.position = transform.position + new Vector3(0.0f, 34.0f, 0.0f);
                 //Debug.Log("you're now in the past");
                 StartCoroutine(SwitchingCooldown());
             }
             else
             {
                 isSwitching = false;
-                this.gameObject.transform.position = transform.position + new Vector3(0.0f, -33.195f, 0.0f);
+                this.gameObject.transform.position = transform.position + new Vector3(0.0f, -34.0f, 0.0f);
                 //Debug.Log("you're back in the present");
                 StartCoroutine(SwitchingCooldown());
             }
@@ -64,7 +64,7 @@ public class SwitchManager : MonoBehaviour
             if (isSwitching)
             {
                 isSwitching = false;
-                this.gameObject.transform.position = transform.position + new Vector3(0.0f, -33.195f, 0.0f);
+                this.gameObject.transform.position = transform.position + new Vector3(0.0f, -34.0f, 0.0f);
             }
             Debug.Log("you're back in the present");
             StartCoroutine(RefillSanity());
