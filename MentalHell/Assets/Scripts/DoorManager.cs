@@ -15,7 +15,7 @@ public class DoorManager : MonoBehaviour
     {
         if (character.transform.position.z <= 0)
         {
-            character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, 59.37f);
+            StartCoroutine(TeleportDelayForward(character));
 
             // play Door sound effect of opening the door when entering the room
             Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxOpenDoor;
@@ -23,12 +23,26 @@ public class DoorManager : MonoBehaviour
         }
         else
         {
-            character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, -59.37f);
+            StartCoroutine(TeleportDelayBackward(character));
 
             // play Door sound effect of closing the door when leaving the room
             Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxCloseDoor;
             FindObjectOfType<AudioManager>().PlayRandomConstantly(Soundarray);
         }
+    }
 
+    // delays the transport of the character in order to match with the fade to black
+    private IEnumerator TeleportDelayForward(GameObject character)
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, 59.37f);
+    }
+
+    private IEnumerator TeleportDelayBackward(GameObject character)
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, -59.37f);
     }
 }

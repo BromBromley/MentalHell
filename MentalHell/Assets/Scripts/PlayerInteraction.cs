@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private GameObject ghosts;
     [SerializeField] private Material twoGhosts;
     [SerializeField] private Material oneGhost;
+    [SerializeField] private GameObject fadeEffect;
 
     private bool canEnterDoor = true;
     public bool showingDocument;
@@ -36,6 +38,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
+                fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
             }
@@ -45,6 +48,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
+                fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
             }
@@ -57,7 +61,7 @@ public class PlayerInteraction : MonoBehaviour
                 pickedUpHeart = true;
                 heartSprite.SetActive(true);
                 other.gameObject.SetActive(false);
-               
+
                 // Play Herz Pickup Sound
                 Soundarray = FindObjectOfType<AudioManager>().sfxHerzNehmen;
                 FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);

@@ -13,6 +13,14 @@ public class StairsManager : MonoBehaviour
     // called by PlayerInteraction script
     public void EnterRoom(GameObject character)
     {
+        StartCoroutine(TeleportDelay(character));
+    }
+
+    // delays the transport of the character in order to match with the fade to black
+    private IEnumerator TeleportDelay(GameObject character)
+    {
+        yield return new WaitForSeconds(0.3f);
+
         character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, 0.0f);
     }
 }

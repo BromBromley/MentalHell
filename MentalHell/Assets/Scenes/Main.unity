@@ -71810,6 +71810,7 @@ MonoBehaviour:
   ghosts: {fileID: 445045863}
   twoGhosts: {fileID: 2100000, guid: 164ab4feb13c94ffe809b5c6ce4ecf29, type: 2}
   oneGhost: {fileID: 2100000, guid: be72a70e37010406687048aa92e5af0c, type: 2}
+  fadeEffect: {fileID: 1598608013}
   showingDocument: 0
 --- !u!54 &1861142222
 Rigidbody:
@@ -82262,7 +82263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2099000120
 RectTransform:
   m_ObjectHideFlags: 0
