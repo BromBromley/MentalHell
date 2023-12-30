@@ -15,6 +15,12 @@ public class AudioManager : MonoBehaviour
     // make Audiomanager Accessable from everywhere
     public static AudioManager AudioManagerInstance;
 
+    // get the different audio mixers
+    // idk how to get them directly through code so they have to get linkes sadly
+    [SerializeField] AudioMixer soundtrackMixer;
+    [SerializeField] AudioMixer soundMixer;
+    
+
     // creating Arrays for the two Sound types to be accessable for other scripts
     // this is the class created ub the "Sound.cs" file 
     public Sound[]  musicSoundtrack,
@@ -39,6 +45,7 @@ public class AudioManager : MonoBehaviour
         // create Audio sources for the various sound arrays
         foreach(Sound s in musicSoundtrack){
             s.source = gameObject.AddComponent<AudioSource>();
+            //s.source.audiomixer = AudioMixer.Find(Mixer).Master;
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;

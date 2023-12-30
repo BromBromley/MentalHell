@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - Spawn
   - Cabinet
+  - MasterScriptEmpty
   layers:
   - Default
   - TransparentFX
