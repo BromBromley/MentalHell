@@ -32,7 +32,7 @@ public class SwitchManager : MonoBehaviour
             {
                 fadeEffect.SetActive(true);
                 isSwitching = true;
-                StartCoroutine(TeleportDelayUp());
+                StartCoroutine(TeleportDelay(34.0f));
                 //Debug.Log("you're now in the past");
                 StartCoroutine(SwitchingCooldown());
             }
@@ -40,7 +40,7 @@ public class SwitchManager : MonoBehaviour
             {
                 fadeEffect.SetActive(true);
                 isSwitching = false;
-                StartCoroutine(TeleportDelayDown());
+                StartCoroutine(TeleportDelay(-34.0f));
                 //Debug.Log("you're back in the present");
                 StartCoroutine(SwitchingCooldown());
             }
@@ -57,6 +57,7 @@ public class SwitchManager : MonoBehaviour
         if (isSwitching)
         {
             sanityLevel -= Time.deltaTime;
+            switchBarImage.color = Color.Lerp(Color.red, Color.green, switchSlider.value);
         }
         else
         {
@@ -72,7 +73,7 @@ public class SwitchManager : MonoBehaviour
             if (isSwitching)
             {
                 isSwitching = false;
-                StartCoroutine(TeleportDelayDown());
+                StartCoroutine(TeleportDelay(-34.0f));
             }
             //Debug.Log("you're back in the present");
             StartCoroutine(RefillSanity());
@@ -82,18 +83,11 @@ public class SwitchManager : MonoBehaviour
     }
 
     // this gives the switching a bit of a delay to match with the fade effect
-    private IEnumerator TeleportDelayUp()
+    private IEnumerator TeleportDelay(float yValue)
     {
         fadeEffect.SetActive(true);
         yield return new WaitForSeconds(0.2f);
-        this.gameObject.transform.position = transform.position + new Vector3(0.0f, 34.0f, 0.0f);
-    }
-
-    private IEnumerator TeleportDelayDown()
-    {
-        fadeEffect.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
-        this.gameObject.transform.position = transform.position + new Vector3(0.0f, -34.0f, 0.0f);
+        this.gameObject.transform.position = transform.position + new Vector3(0.0f, yValue, 0.0f);
     }
 
     // this stops the player from switching back and forth too fast
