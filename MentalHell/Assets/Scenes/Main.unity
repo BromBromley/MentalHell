@@ -9018,6 +9018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanityLevel: 5
   isSwitching: 0
+  switchSlider: {fileID: 1994909156}
 --- !u!1 &273098364
 GameObject:
   m_ObjectHideFlags: 0
@@ -43009,7 +43010,6 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1096148771}
   pauseScreen: {fileID: 4525648}
   winScreen: {fileID: 1022356626}
-  switchSlider: {fileID: 1994909156}
 --- !u!114 &1073271384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59035,7 +59035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9433962, g: 0.82949984, b: 0.4227483, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

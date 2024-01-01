@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwitchManager : MonoBehaviour
 {
@@ -12,9 +14,13 @@ public class SwitchManager : MonoBehaviour
     public bool isSwitching = false;
     private bool canSwitch = true;
 
+    [SerializeField] private Slider switchSlider;
+    private Image switchBarImage;
+
     void Start()
     {
         _playerMovement = FindObjectOfType<PlayerMovement>();
+        switchBarImage = switchSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>();
     }
 
     private void Update()
@@ -70,7 +76,7 @@ public class SwitchManager : MonoBehaviour
             StartCoroutine(RefillSanity());
         }
 
-        Debug.Log(sanityLevel);
+        UpdateSwitchBar();
     }
 
     // this stops the player from switching back and forth too fast
@@ -87,15 +93,21 @@ public class SwitchManager : MonoBehaviour
     private IEnumerator RefillSanity()
     {
         canSwitch = false;
+        switchBarImage.color = Color.red;
         _playerMovement.playerCanRun = false;
-        Debug.Log(_playerMovement.playerCanRun);
-        Debug.Log("refilling sanity");
 
         yield return new WaitForSeconds(5);
 
+        // changes the color of the switch bar when the cooldown is over
         sanityLevel = 5f;
         canSwitch = true;
+        switchBarImage.color = Color.green;
         _playerMovement.playerCanRun = true;
-        Debug.Log("sanity reset");
+    }
+
+    // updates the switch bar to the match the player's sanity level
+    private void UpdateSwitchBar()
+    {
+        switchSlider.value = sanityLevel / 5;
     }
 }

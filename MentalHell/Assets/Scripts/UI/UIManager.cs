@@ -10,15 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject winScreen;
-    [SerializeField] private Slider switchSlider;
-    private SwitchManager _switchManager;
 
     private bool hidePauseScreen;
-
-    void Awake()
-    {
-        _switchManager = FindObjectOfType<SwitchManager>();
-    }
 
     void Start()
     {
@@ -26,11 +19,6 @@ public class UIManager : MonoBehaviour
         pauseScreen.SetActive(false);
         winScreen.SetActive(false);
         hidePauseScreen = true;
-    }
-
-    void Update()
-    {
-        UpdateSwitchBar();
     }
 
     public void ShowGameOverScreen()
@@ -55,11 +43,5 @@ public class UIManager : MonoBehaviour
             pauseScreen.SetActive(true);
         }
         hidePauseScreen = !hidePauseScreen;
-    }
-
-    // updates the switch bar to the match the player's sanity level
-    public void UpdateSwitchBar()
-    {
-        switchSlider.value = _switchManager.sanityLevel / 5;
     }
 }
