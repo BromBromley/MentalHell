@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+
 //using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Windows.Speech;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     private float maxSpeed;
     private float acceleration;
     private float stoppingForce = 7;
+
+    private float staminaLevel = 5f;
+    [SerializeField] private Slider staminaSlider;
 
     void Start()
     {
@@ -65,6 +70,22 @@ public class PlayerMovement : MonoBehaviour
         {
             Decelerate();
         }
+
+        // checks if the player is running and updates the stamina accordingly
+        // no cooldown when it runs out
+        if (playerIsRunning)
+        {
+            staminaLevel -= Time.deltaTime;
+        }
+        else
+        {
+            if (staminaLevel <= 5 && !playerIsRunning)
+            {
+                staminaLevel += Time.deltaTime;
+            }
+        }
+
+        UpdateStaminaBar();
 
         // this checks the player's direction and flips the sprite accordingly
         if (movement < 0 && !facingLeft)
@@ -114,6 +135,12 @@ public class PlayerMovement : MonoBehaviour
             speed = 0.0f;
             lastMovement = 0;
         }
+    }
+
+    // updates the stamina bar to match the player's stamina level
+    private void UpdateStaminaBar()
+    {
+        staminaSlider.value = staminaLevel / 5;
     }
 
     // flips the player sprite depending on the movement direction

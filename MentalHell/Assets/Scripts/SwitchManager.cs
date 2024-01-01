@@ -19,7 +19,6 @@ public class SwitchManager : MonoBehaviour
 
     void Start()
     {
-        _playerMovement = FindObjectOfType<PlayerMovement>();
         switchBarImage = switchSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>();
     }
 
@@ -52,13 +51,13 @@ public class SwitchManager : MonoBehaviour
     private void FixedUpdate()
     {
         // this function updates the sanity level 
-        if (isSwitching || _playerMovement.playerIsRunning)
+        if (isSwitching)
         {
             sanityLevel -= Time.deltaTime;
         }
         else
         {
-            if (sanityLevel <= 5 && !isSwitching && !_playerMovement.playerIsRunning)
+            if (sanityLevel <= 5 && !isSwitching)
             {
                 sanityLevel += Time.deltaTime;
             }
@@ -72,7 +71,7 @@ public class SwitchManager : MonoBehaviour
                 isSwitching = false;
                 this.gameObject.transform.position = transform.position + new Vector3(0.0f, -34.0f, 0.0f);
             }
-            Debug.Log("you're back in the present");
+            //Debug.Log("you're back in the present");
             StartCoroutine(RefillSanity());
         }
 
@@ -94,7 +93,6 @@ public class SwitchManager : MonoBehaviour
     {
         canSwitch = false;
         switchBarImage.color = Color.red;
-        _playerMovement.playerCanRun = false;
 
         yield return new WaitForSeconds(5);
 
@@ -102,7 +100,6 @@ public class SwitchManager : MonoBehaviour
         sanityLevel = 5f;
         canSwitch = true;
         switchBarImage.color = Color.green;
-        _playerMovement.playerCanRun = true;
     }
 
     // updates the switch bar to the match the player's sanity level
