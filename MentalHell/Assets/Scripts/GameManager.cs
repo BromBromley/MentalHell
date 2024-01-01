@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private PlayerMovement _playerMovement;
     private SpawnManager _spawnManager;
     private PlayerInteraction _playerInteraction;
+    private SwitchManager _switchManager;
 
     private bool isRunning;
 
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
         _playerInteraction = FindObjectOfType<PlayerInteraction>();
         _playerMovement = FindObjectOfType<PlayerMovement>();
         _spawnManager = FindObjectOfType<SpawnManager>();
+        _switchManager = FindObjectOfType<SwitchManager>();
     }
 
     void Start()
@@ -51,9 +53,9 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         // checks if the monster is too close to the player
-        if (_monsterAI.distance < 2.50)
+        if (_monsterAI.distance < 2.50 && !_switchManager.isSwitching)
         {
-            Debug.Log(_monsterAI.distance);
+            //Debug.Log(_monsterAI.distance);
             if (isRunning)
             {
                 _uiManager.ShowGameOverScreen();

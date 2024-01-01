@@ -14,6 +14,7 @@ public class SwitchManager : MonoBehaviour
     public bool isSwitching = false;
     private bool canSwitch = true;
 
+    [SerializeField] private GameObject fadeEffect;
     [SerializeField] private Slider switchSlider;
     private Image switchBarImage;
 
@@ -29,15 +30,17 @@ public class SwitchManager : MonoBehaviour
         {
             if (isSwitching == false)
             {
+                fadeEffect.SetActive(true);
                 isSwitching = true;
-                this.gameObject.transform.position = transform.position + new Vector3(0.0f, 34.0f, 0.0f);
+                StartCoroutine(TeleportDelayUp());
                 //Debug.Log("you're now in the past");
                 StartCoroutine(SwitchingCooldown());
             }
             else
             {
+                fadeEffect.SetActive(true);
                 isSwitching = false;
-                this.gameObject.transform.position = transform.position + new Vector3(0.0f, -34.0f, 0.0f);
+                StartCoroutine(TeleportDelayDown());
                 //Debug.Log("you're back in the present");
                 StartCoroutine(SwitchingCooldown());
             }
@@ -69,13 +72,28 @@ public class SwitchManager : MonoBehaviour
             if (isSwitching)
             {
                 isSwitching = false;
-                this.gameObject.transform.position = transform.position + new Vector3(0.0f, -34.0f, 0.0f);
+                StartCoroutine(TeleportDelayDown());
             }
             //Debug.Log("you're back in the present");
             StartCoroutine(RefillSanity());
         }
 
         UpdateSwitchBar();
+    }
+
+    // this gives the switching a bit of a delay to match with the fade effect
+    private IEnumerator TeleportDelayUp()
+    {
+        fadeEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        this.gameObject.transform.position = transform.position + new Vector3(0.0f, 34.0f, 0.0f);
+    }
+
+    private IEnumerator TeleportDelayDown()
+    {
+        fadeEffect.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        this.gameObject.transform.position = transform.position + new Vector3(0.0f, -34.0f, 0.0f);
     }
 
     // this stops the player from switching back and forth too fast
