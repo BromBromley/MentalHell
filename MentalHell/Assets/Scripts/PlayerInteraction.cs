@@ -10,7 +10,7 @@ public class PlayerInteraction : MonoBehaviour
     private GameManager _gameManager;
     private DoorManager _doorManager;
 
-    private bool pickedUpHeart = false;
+    [SerializeField] private bool pickedUpHeart = false;
     public int heartCounter;
     [SerializeField] private GameObject heartSprite;
     [SerializeField] private GameObject ghosts;
@@ -94,16 +94,17 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && pickedUpHeart)
             {
+                //ghosts.GetComponent<Renderer>().material.color = Color.Lerp(Color.white, Color.black, 0.5f );
                 pickedUpHeart = false;
                 heartSprite.SetActive(false);
                 heartCounter++;
                 if (heartCounter == 1)
                 {
-                    ghosts.GetComponent<Renderer>().material = twoGhosts;
+                    StartCoroutine(FadeGhostMaterial(twoGhosts));
                 }
                 if (heartCounter == 2)
                 {
-                    ghosts.GetComponent<Renderer>().material = oneGhost;
+                    StartCoroutine(FadeGhostMaterial(oneGhost));
                 }
                 if (heartCounter == 3)
                 {
@@ -132,5 +133,30 @@ public class PlayerInteraction : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         canEnterDoor = true;
+    }
+
+    // gives the ghosts a fade when swapping their material
+    private IEnumerator FadeGhostMaterial(Material ghostMaterial)
+    {
+        float fadeTime = 0f;
+        float speed = 2f;
+
+        while (ghosts.GetComponent<Renderer>().material.color != Color.black)
+        {
+            fadeTime += Time.deltaTime * speed;
+            ghosts.GetComponent<Renderer>().material.color = Color.Lerp(Color.white, Color.black, fadeTime);
+            yield return null;
+        }
+
+        ghosts.GetComponent<Renderer>().material = ghostMaterial;
+        ghosts.GetComponent<Renderer>().material.color = Color.black;
+        fadeTime = 0f;
+
+        while (ghosts.GetComponent<Renderer>().material.color != Color.white)
+        {
+            fadeTime += Time.deltaTime * speed;
+            ghosts.GetComponent<Renderer>().material.color = Color.Lerp(Color.black, Color.white, fadeTime);
+            yield return null;
+        }
     }
 }
