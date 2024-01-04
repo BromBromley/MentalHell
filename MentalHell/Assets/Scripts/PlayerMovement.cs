@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private float maxSpeed;
     private float acceleration;
     private float stoppingForce = 7;
+    public Animator animator;
 
     private float staminaLevel = 5f;
     [SerializeField] private Slider staminaSlider;
@@ -56,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
 
             movement = Input.GetAxis("Horizontal");
         }
+        animator.SetFloat("speed", Mathf.Abs(movement));
+        animator.SetBool("running", playerIsRunning);
     }
 
     // fixedUpdate moves the player
