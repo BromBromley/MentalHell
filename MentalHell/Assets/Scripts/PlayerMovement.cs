@@ -22,10 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     private float movement;
     private float lastMovement;
-    private float speed = 0;
+    public float speed = 0;
     private float maxSpeed;
     private float acceleration;
     private float stoppingForce = 7;
+    public Animator animator;
 
     private float staminaLevel = 5f;
     [SerializeField] private Slider staminaSlider;
@@ -56,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
 
             movement = Input.GetAxis("Horizontal");
         }
+        animator.SetFloat("speed", Mathf.Abs(movement));
+        animator.SetBool("running", playerIsRunning);
     }
 
     // fixedUpdate moves the player
@@ -70,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Decelerate();
         }
-
         // checks if the player is running and updates the stamina accordingly
         // no cooldown when it runs out
         if (playerIsRunning)

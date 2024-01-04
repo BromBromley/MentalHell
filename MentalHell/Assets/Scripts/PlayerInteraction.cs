@@ -9,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameManager _gameManager;
     private DoorManager _doorManager;
+    public Animator doorAnimator;
 
     [SerializeField] private bool pickedUpHeart = false;
     public int heartCounter;
@@ -18,6 +19,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Material oneGhost;
     [SerializeField] private GameObject fadeEffect;
 
+    private bool gameWon = false;
     private bool canEnterDoor = true;
     public bool showingDocument;
 
@@ -110,6 +112,8 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     ghosts.SetActive(false);
                     _gameManager.GameWon();
+                    gameWon = true;
+                    doorAnimator.SetBool("open", gameWon);
                 }
 
                 // Play Herz Drop Sound
