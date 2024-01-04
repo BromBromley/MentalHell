@@ -12,7 +12,6 @@ TagManager:
   - Spawn
   - Cabinet
   - MasterScriptEmpty
-  - Storage
   layers:
   - Default
   - TransparentFX
