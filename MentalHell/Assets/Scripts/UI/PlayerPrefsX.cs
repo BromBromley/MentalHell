@@ -12,6 +12,8 @@ using UnityEngine.UI;
 public class PlayerPrefsX : MonoBehaviour
 {
 
+    public int test = 0;
+
     // int values
 
     // Save the players user settings

@@ -10,8 +10,7 @@ public class Sound
 {
     public string name = "restr";
     public AudioClip clip;
-
-    public AudioMixer audiomixer;
+    public UnityEngine.Audio.AudioMixerGroup output; 
     
     [Range(0f, 1f)]
     public float volume = 1f;
@@ -23,3 +22,10 @@ public class Sound
     [HideInInspector]
     public AudioSource source;
 }
+
+/*
+
+TODO:
+- Remove Source from class once the new system is in place
+
+*/

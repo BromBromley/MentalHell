@@ -28,6 +28,13 @@ public class Ui_MainMenu : MonoBehaviour
     private PlayerPrefsX playerPrefsScript;
 
 
+    // get Sliders
+    // private GameObject MasterVolume;
+    // private Slider SliderMasterVolume;
+
+    // private GameObject MusicVolume;
+    // private GameObject SFXVolume;
+
     // get the Audio Mixer to adjust the Volume
     public AudioMixer audioMixer;
 
@@ -35,10 +42,21 @@ public class Ui_MainMenu : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
 
+    public void Start()
+    {
 
-    void Awake() {
+        // get the playerprefs script
         playerPrefs = GameObject.FindWithTag("MasterScriptEmpty");
         playerPrefsScript = playerPrefs.GetComponent<PlayerPrefsX>();  
+
+        // get the slider objects
+        // MasterVolume = GameObject.FindWithTag("MasterVolumeSlider");
+        // SliderMasterVolume = MasterVolume.GetComponent<Slider>();
+        // Debug.Log(SliderMasterVolume.ToString());
+    
+        // Get possible Resolutions
+        GetResolutions();
+
     }
 
 
@@ -79,7 +97,7 @@ public class Ui_MainMenu : MonoBehaviour
     // Graphics
 
     // Get possible Resolutions
-    public void Start()
+    public void GetResolutions()
     {
 
         resolutions = Screen.resolutions;
@@ -113,6 +131,7 @@ public class Ui_MainMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
 
     }
+
     // Actually Change the Screens Resolution now getting called by the dropdown itself
     public void SetResolution (int resolutionIndex)
     {
@@ -121,7 +140,10 @@ public class Ui_MainMenu : MonoBehaviour
 
         // save newly set resolution
         // prob not directly save it but rather have a prompt to save it when confirmed again but meh
-        playerPrefsScript.SetSavePrefsInt(RESOLUTION_KEY, resolutionIndex);
+        //playerPrefsScript.SetSavePrefsInt(RESOLUTION_KEY, resolutionIndex);
+        PlayerPrefs.SetFloat(RESOLUTION_KEY, resolutionIndex);
+        PlayerPrefs.Save();
+        
     }
 
     // adjust the Quality of the game
@@ -132,7 +154,10 @@ public class Ui_MainMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
 
         // save quality settings
-        playerPrefsScript.SetSavePrefsInt(QUALITY_KEY, qualityIndex);
+        //playerPrefsScript.SetSavePrefsInt(QUALITY_KEY, qualityIndex);
+        PlayerPrefs.SetInt(QUALITY_KEY, qualityIndex);
+        PlayerPrefs.Save();
+
 
     }
 
@@ -155,7 +180,10 @@ public class Ui_MainMenu : MonoBehaviour
         }
 
         // save fullscreen setting
-        playerPrefsScript.SetSavePrefsInt(FULLSCREEN_KEY, fullscreenNumber);
+        //playerPrefsScript.SetSavePrefsInt(FULLSCREEN_KEY, fullscreenNumber);
+        
+        PlayerPrefs.SetInt(FULLSCREEN_KEY, fullscreenNumber);
+        PlayerPrefs.Save();
 
     }
 
@@ -170,7 +198,12 @@ public class Ui_MainMenu : MonoBehaviour
         audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
         
         // save master volume
-        playerPrefsScript.SetSavePrefsFloat(MASTER_KEY, volume);
+        //playerPrefsScript.SetSavePrefsFloat(MASTER_KEY, volume);
+
+        PlayerPrefs.SetFloat(MASTER_KEY, volume);
+        PlayerPrefs.Save();
+
+        //SliderMasterVolume.value = 1;
 
     }
     // Adjust the Music Volume with a Slider
@@ -181,7 +214,10 @@ public class Ui_MainMenu : MonoBehaviour
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
         
         // save music volume
-        playerPrefsScript.SetSavePrefsFloat(MUSIC_KEY, volume);
+        //playerPrefsScript.SetSavePrefsFloat(MUSIC_KEY, volume);
+
+        PlayerPrefs.SetFloat(MUSIC_KEY, volume);
+        PlayerPrefs.Save();
 
     }
     // Adjust the SFX Volume with a Slider
@@ -192,7 +228,10 @@ public class Ui_MainMenu : MonoBehaviour
         audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
 
         // save sfx volume
-        playerPrefsScript.SetSavePrefsFloat(SFX_KEY, volume);
+        //playerPrefsScript.SetSavePrefsFloat(SFX_KEY, volume);
+
+        PlayerPrefs.SetFloat(SFX_KEY, volume);
+        PlayerPrefs.Save();        
 
     }
     

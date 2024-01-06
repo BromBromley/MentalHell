@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoadSettings : MonoBehaviour
 {   
     // create instance for singleton check and not destroying instance on load
-    public static LoadSettings instance;
+    //public static LoadSettings instance;
 
     // write player pref keys as constants (yes this is a cheap copy paste idc)
     public const string MASTER_KEY = "masterVolume";
@@ -16,29 +16,26 @@ public class LoadSettings : MonoBehaviour
     public const string RESOLUTION_KEY = "resolutionIndex";
 
     // get UiMainMenu from ScriptMasterEmpty (put onto the empty because I dont want to come up with a good logic for everything)
+    private GameObject mainMenuObject;
     private Ui_MainMenu mainMenu;
 
     // get playerprefs script to access load funcs
     private PlayerPrefsX playerPrefsScript;
 
-    // prevent object from getting destroyed on scene loading
-    void Awake() {
-        
-        if (instance == null){
-            instance = this; // set the Instance to this object
-            DontDestroyOnLoad(gameObject); // maintain Empty through new scene loading              
-        }
-        else {
-            Destroy(gameObject);
-        }
-    }
-
+   
     //Some problem with instancs in combination with the UiMainMenu script no clue why, stuff gets reset when back in main menu for now
-
     void Start() {
-        mainMenu = this.GetComponent<Ui_MainMenu>();
+
+        // get the Script UiMainMenu which includes all the settings
+        mainMenuObject = GameObject.FindWithTag("MainMenu");
+        mainMenu = mainMenuObject.GetComponent<Ui_MainMenu>();
+
+        // get the playerpref script to get the settings
         playerPrefsScript = this.GetComponent<PlayerPrefsX>();
-        loadPlayerPrfs();
+
+        // load the settings saved in the playerprefs to the actual game
+        loadPlayerPrefs();
+
     }
 
 
@@ -46,11 +43,11 @@ public class LoadSettings : MonoBehaviour
     // get all player prefs and write them or defaults if there are none
 
     // the comma number thing is the default if there is no entry for the setting
-    void loadPlayerPrfs(){
+    void loadPlayerPrefs(){
         
         // Resolution
         int resolution = playerPrefsScript.GetPlayerPrefsInt(RESOLUTION_KEY);
-        mainMenu.Start();
+        mainMenu.GetResolutions();
         mainMenu.SetResolution(resolution);
         
         // Quality
@@ -78,6 +75,7 @@ public class LoadSettings : MonoBehaviour
 
         
     }
+
 
 
 }

@@ -15,10 +15,8 @@ public class AudioManager : MonoBehaviour
     // make Audiomanager Accessable from everywhere
     public static AudioManager AudioManagerInstance;
 
-    // get the different audio mixers
-    // idk how to get them directly through code so they have to get linkes sadly
-    [SerializeField] AudioMixer soundtrackMixer;
-    [SerializeField] AudioMixer soundMixer;
+
+    public UnityEngine.Audio.AudioMixerGroup output; 
     
 
     // creating Arrays for the two Sound types to be accessable for other scripts
@@ -32,11 +30,22 @@ public class AudioManager : MonoBehaviour
                     sfxNPCGeisterBefreit,
                     sfxMisc;
 
+
+    public AudioSource musicSource, sfxSource;
+
+    // additional transfer Audio Source Variable
+    private AudioSource source;
+
+    // get the two gameobjects for sound and music
+    private GameObject soundtrackEmpty;
+    private GameObject SFXEmpty;
+    private GameObject emptySoundGameObject;
+
     // create singleton of object
     private void Awake (){
         if (AudioManagerInstance == null){
             AudioManagerInstance = this; // set the Audiomanager Instance to this object
-            DontDestroyOnLoad(gameObject); // maintain AudioManager Empty through new scene loading              
+            DontDestroyOnLoad(gameObject); // maintain AudioManager Empty through new scene loading
         }
         else {
             Destroy(gameObject);
@@ -45,7 +54,6 @@ public class AudioManager : MonoBehaviour
         // create Audio sources for the various sound arrays
         foreach(Sound s in musicSoundtrack){
             s.source = gameObject.AddComponent<AudioSource>();
-            //s.source.audiomixer = AudioMixer.Find(Mixer).Master;
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
@@ -103,68 +111,65 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Start(){
+
+        // get the GameObjects for the two Sound Empties
+        soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
+        SFXEmpty = GameObject.FindWithTag("SFXEmpty");
+
         // Start playing Music / Ambience on game start
         PlayRandomConstantly(musicSoundtrack);
         PlayRandomConstantly(sfxAmbience);
+
     }
 
-    // pause/ stop doesnt work yet (dunno)
+    // Stop the sound from the audio sources getting fed to the two mixer's
     public void StopAllSound(){
-        foreach(Sound s in musicSoundtrack){
-            s.source.Stop();
-        }
-        foreach(Sound s in sfxAmbience){
-            s.source.Stop();
-        }
-        foreach(Sound s in sfxOpenDoor){
-            s.source.Stop();   
-        }
-        foreach(Sound s in sfxCloseDoor){
-            s.source.Stop();
-        }
-        return;
+
+        sfxSource.Stop();
+        musicSource.Stop();
+
     }
 
+    // Pause the sound from the audio sources getting fed to the two mixer's
     public void PauseAllSound(){
-        foreach(Sound s in musicSoundtrack){
-            s.source.Pause();
-        }
-        foreach(Sound s in sfxAmbience){
-            s.source.Pause();
-        }
-        foreach(Sound s in sfxOpenDoor){
-            s.source.Pause();   
-        }
-        foreach(Sound s in sfxCloseDoor){
-            s.source.Pause();
-        }
-        return;
+
+        sfxSource.Pause();
+        musicSource.Pause();
+
     }
 
+    // UnPause the sound from the audio sources getting fed to the two mixer's
     public void UnpauseAllSound(){
-        foreach(Sound s in musicSoundtrack){
-            s.source.UnPause();
-        }
-        foreach(Sound s in sfxAmbience){
-            s.source.UnPause();
-        }
-        foreach(Sound s in sfxOpenDoor){
-            s.source.UnPause();   
-        }
-        foreach(Sound s in sfxCloseDoor){
-            s.source.UnPause();
-        }
-        return;
+
+        sfxSource.UnPause();
+        musicSource.UnPause();
+
     }
 
     public void PlayConstantly (string name, Sound[] soundArray){
-        Sound sound = Array.Find(soundArray, x => x.name == name); // ?
 
+        // find the audio file in the array by looking for its name
+        Sound sound = Array.Find(soundArray, x => x.name == name);
+
+        // if no audio file with the name can be found return here
         if (sound == null) return;
 
-        sound.source.clip = sound.clip;
-        sound.source.Play();
-        
+        //  find out how the sound has to get routed (music or sfx)
+        string outputName = sound.output.ToString();
+        if (outputName == "Sfx") 
+        {
+            source = sfxSource;
+            emptySoundGameObject = SFXEmpty;
+        }
+        else if (outputName == "Soundtrack")
+        {
+            source = musicSource;
+            emptySoundGameObject = soundtrackEmpty;
+        }
+
+        // Create a new audio component on the dedicated empty, Copy the Data over and play the sound
+        CopyAudioDataToEmptyPlayConstantly(source, sound, emptySoundGameObject);
+
     }
 
     public void PlayOnce (string name, Sound[] soundArray){
@@ -172,7 +177,22 @@ public class AudioManager : MonoBehaviour
 
         if (sound == null) return;
 
-        sound.source.PlayOneShot(sound.clip);
+        //  find out how the sound has to get routed (music or sfx)
+        string outputName = sound.output.ToString();
+        if (outputName == "Sfx") 
+        {
+            source = sfxSource;
+            emptySoundGameObject = SFXEmpty;
+        }
+        else if (outputName == "Soundtrack")
+        {
+            source = musicSource;
+            emptySoundGameObject = soundtrackEmpty;
+        }
+
+        // Create a new audio component on the dedicated empty, Copy the Data over and play the sound
+        CopyAudioDataToEmptyPlayOnce(source, sound, emptySoundGameObject);
+
     }
 
     public void PlayRandomOnce (Sound[] soundArray){
@@ -196,5 +216,59 @@ public class AudioManager : MonoBehaviour
 
         PlayConstantly(soundName, soundArray);
     }
+
+
+    public void CopyAudioDataToEmptyPlayConstantly (AudioSource source, Sound sound, GameObject emptySoundGameObject)
+    {
+
+        // copy all the information previously set, over to the AudioSource that will play it
+        //Debug.Log("copy");
+        source = emptySoundGameObject.AddComponent<AudioSource>();
+        source.clip = sound.clip;
+        source.volume = sound.volume;
+        source.pitch = sound.pitch;
+        source.loop = sound.loop;
+        source.outputAudioMixerGroup = sound.output;
+
+        // play the sound constantly
+        source.Play();
     
+    }
+
+    public void CopyAudioDataToEmptyPlayOnce (AudioSource source, Sound sound, GameObject emptySoundGameObject)
+    {
+
+        // copy all the information previously set, over to the AudioSource that will play it
+        Debug.Log("copy");
+        source = emptySoundGameObject.AddComponent<AudioSource>();
+        source.clip = sound.clip;
+        source.volume = sound.volume;
+        source.pitch = sound.pitch;
+        source.loop = sound.loop;
+        source.outputAudioMixerGroup = sound.output;
+
+        // play the sound once
+        source.PlayOneShot(sound.clip);
+
+        // get length of audio clip
+        float clipLength = source.clip.length;
+        Debug.Log(clipLength);
+
+        // Destroy the Audio Source Element after it has been played
+        Destroy(source, clipLength);
+    
+    }
+
+
+
 }
+
+
+/*
+    TODO:
+    + Let Each Sound Call create an audio source on the specific empty game object
+    + Destroy the game object once the sound is done playing
+    + leave it active when it is supposed to be looping
+    - 
+    
+*/

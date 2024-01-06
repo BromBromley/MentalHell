@@ -12,6 +12,10 @@ TagManager:
   - Spawn
   - Cabinet
   - MasterScriptEmpty
+  - MainMenu
+  - MasterVolumeSlider
+  - SoundtrackEmpty
+  - SFXEmpty
   layers:
   - Default
   - TransparentFX
