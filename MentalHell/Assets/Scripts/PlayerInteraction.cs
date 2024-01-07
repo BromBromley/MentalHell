@@ -17,6 +17,10 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Material twoGhosts;
     [SerializeField] private Material oneGhost;
     [SerializeField] private GameObject fadeEffect;
+    [SerializeField] private GameObject Counter1;
+    [SerializeField] private GameObject Counter2;
+    [SerializeField] private GameObject Counter3;
+    [SerializeField] private GameObject Counter4;
 
     private bool canEnterDoor = true;
     public bool showingDocument;
@@ -112,14 +116,21 @@ public class PlayerInteraction : MonoBehaviour
                 if (heartCounter == 1)
                 {
                     StartCoroutine(FadeGhostMaterial(twoGhosts));
+                    Counter1.SetActive(false);
+                    Counter2.SetActive(true);
+                    
                 }
                 if (heartCounter == 2)
                 {
                     StartCoroutine(FadeGhostMaterial(oneGhost));
+                    Counter2.SetActive(false);
+                    Counter3.SetActive(true);
                 }
                 if (heartCounter == 3)
                 {
                     ghosts.SetActive(false);
+                    Counter3.SetActive(false);
+                    Counter4.SetActive(true);
                     _gameManager.GameWon();
                 }
 
