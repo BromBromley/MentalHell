@@ -20,6 +20,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private bool canEnterDoor = true;
     public bool showingDocument;
+    public bool openStorage = false;
+    public bool playOpenDoor;
 
     private Sound[] Soundarray;
 
@@ -34,10 +36,19 @@ public class PlayerInteraction : MonoBehaviour
     // this function checks what the player is interacting with
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "Storage")
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                openStorage = true;
+            }
+        }
+
         if (other.tag == "Door")
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
+                playOpenDoor = true;
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 other.GetComponent<DoorManager>().EnterRoom(this.gameObject);

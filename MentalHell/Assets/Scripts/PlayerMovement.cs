@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (movementEnabled)
         {
             // this checks if the player is running and adjusts the speed
-            if (Input.GetKey(KeyCode.LeftShift) && playerCanRun)
+            if (Input.GetKey(KeyCode.LeftShift) && playerCanRun && Input.GetKey(KeyCode.A) |    Input.GetKey(KeyCode.D))
             {
                 maxSpeed = 10;
                 acceleration = 5;

@@ -16,6 +16,7 @@ TagManager:
   - MasterVolumeSlider
   - SoundtrackEmpty
   - SFXEmpty
+  - Storage
   layers:
   - Default
   - TransparentFX
