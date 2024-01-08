@@ -57,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
 
             movement = Input.GetAxis("Horizontal");
         }
+        else
+        {
+            playerIsRunning = false;
+        }
         animator.SetFloat("speed", Mathf.Abs(movement));
         animator.SetBool("running", playerIsRunning);
     }
@@ -75,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // checks if the player is running and updates the stamina accordingly
-        // no cooldown when it runs out
         if (playerIsRunning)
         {
             staminaLevel -= Time.deltaTime;
@@ -142,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // short cooldown when stamina runs out
     private IEnumerator RunningCooldown()
     {
         playerCanRun = false;
