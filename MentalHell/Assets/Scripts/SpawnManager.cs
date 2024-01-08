@@ -47,7 +47,6 @@ public class SpawnManager : MonoBehaviour
         // and transports the monster to said point if the player is far enough away
         if (distancePlayerClosest > 15)
         {
-            Debug.Log(distancePlayerClosest);
             transform.position = new Vector3(closestPoint.x, transform.position.y, transform.position.z);
             this.gameObject.GetComponent<MonsterAI>().ChooseDirection();
         }

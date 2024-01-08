@@ -9,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameManager _gameManager;
     private PlayerMovement _playerMovement;
+    private DocumentManager _documentManager;
 
     [SerializeField] private bool pickedUpHeart = false;
     public int heartCounter;
@@ -25,6 +26,7 @@ public class PlayerInteraction : MonoBehaviour
     private bool canEnterDoor = true;
     public bool playerIsBusy = false;
     public bool showingDocument;
+    private GameObject storage;
     public bool openStorage = false;
     public bool playOpenDoor;
 
@@ -34,6 +36,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         _gameManager = FindObjectOfType<GameManager>();
         _playerMovement = FindObjectOfType<PlayerMovement>();
+        _documentManager = FindObjectOfType<DocumentManager>();
 
         heartSprite.SetActive(false);
     }
@@ -47,6 +50,14 @@ public class PlayerInteraction : MonoBehaviour
             {
                 openStorage = true;
                 StartCoroutine(PlayerIsInvincible());
+                if (other.GetComponentInChildren<DocumentInteraction>() != null)
+                {
+                    showingDocument = true;
+                    storage = other.gameObject;
+                    _documentManager.ShowRandomDocument();
+                    _gameManager.PauseGame();
+                }
+                // show document in menu
             }
         }
 
@@ -86,27 +97,6 @@ public class PlayerInteraction : MonoBehaviour
                 // Play Herz Pickup Sound
                 Soundarray = FindObjectOfType<AudioManager>().sfxHerzNehmen;
                 FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
-            }
-        }
-
-        if (other.tag == "Cabinet")
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                if (other.transform.childCount > 0)
-                {
-                    /*
-                    showingDocument = true;
-                    other.GetComponentInChildren<DocumentManager>().ShowDocument();
-                    _gameManager.PauseGame();
-                    */
-                    // press key to close document and resume game
-                    // show document in menu
-                }
-                else
-                {
-                    // rattle sound
-                }
             }
         }
 
@@ -191,5 +181,13 @@ public class PlayerInteraction : MonoBehaviour
             ghosts.GetComponent<Renderer>().material.color = Color.Lerp(Color.black, Color.white, fadeTime);
             yield return null;
         }
+    }
+
+    public void ClosingDocument()
+    {
+        StartCoroutine(PlayerIsInvincible());
+        showingDocument = false;
+        storage.GetComponentInChildren<DocumentInteraction>().DestroyDocument();
+        _documentManager.CloseDocument();
     }
 }

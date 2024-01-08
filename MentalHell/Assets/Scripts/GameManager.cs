@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // checks if the player pressed 'escape' and reacts accordingly
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !_playerInteraction.showingDocument)
         {
             if (isRunning)
             {
@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour
                 _uiManager.ActivatePauseScreen();
                 ResumeGame();
             }
+        }
+        if (Input.GetKey(KeyCode.Escape) && _playerInteraction.showingDocument)
+        {
+            ResumeGame();
+            _playerInteraction.ClosingDocument();
         }
     }
 

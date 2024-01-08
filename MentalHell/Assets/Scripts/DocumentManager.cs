@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class DocumentManager : MonoBehaviour
 {
-    // this script activates picked up documents
-    // attached to every document
+    // this script manages the documents shown in the UI
 
     // TODO connection to documents menu
 
-    [SerializeField] GameObject documentUI;
+    private List<GameObject> documents;
+    private int index;
 
     void Start()
     {
-        documentUI.SetActive(false);
+        documents = new List<GameObject>(GameObject.FindGameObjectsWithTag("Document"));
+        foreach (GameObject document in documents)
+        {
+            document.SetActive(false);
+        }
     }
 
-    // called by PlayerInteraction script
-    public void ShowDocument()
+    public void ShowRandomDocument()
     {
-        documentUI.SetActive(true);
+        index = Random.Range(0, documents.Count);
+        documents[index].SetActive(true);
+    }
+
+    public void CloseDocument()
+    {
+        documents[index].SetActive(false);
+        documents.RemoveAt(index);
     }
 }
