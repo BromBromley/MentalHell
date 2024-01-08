@@ -10,6 +10,7 @@ public class SwitchManager : MonoBehaviour
     // this script manages the ability to switch between past and present
 
     private PlayerMovement _playerMovement;
+    private GameManager _gameManager;
     public float sanityLevel = 5f;
     public bool isSwitching = false;
     private bool canSwitch = true;
@@ -21,6 +22,7 @@ public class SwitchManager : MonoBehaviour
     void Start()
     {
         switchBarImage = switchSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -32,6 +34,7 @@ public class SwitchManager : MonoBehaviour
             {
                 fadeEffect.SetActive(true);
                 isSwitching = true;
+                _gameManager.ControlMonsterSpawns();
                 StartCoroutine(TeleportDelay(34.0f));
                 //Debug.Log("you're now in the past");
                 StartCoroutine(SwitchingCooldown());
@@ -40,6 +43,7 @@ public class SwitchManager : MonoBehaviour
             {
                 fadeEffect.SetActive(true);
                 isSwitching = false;
+                _gameManager.ControlMonsterSpawns();
                 StartCoroutine(TeleportDelay(-34.0f));
                 //Debug.Log("you're back in the present");
                 StartCoroutine(SwitchingCooldown());
@@ -74,6 +78,7 @@ public class SwitchManager : MonoBehaviour
             if (isSwitching)
             {
                 isSwitching = false;
+                _gameManager.ControlMonsterSpawns();
                 StartCoroutine(TeleportDelay(-34.0f));
             }
             //Debug.Log("you're back in the present");
@@ -89,6 +94,7 @@ public class SwitchManager : MonoBehaviour
         fadeEffect.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         this.gameObject.transform.position = transform.position + new Vector3(0.0f, yValue, 0.0f);
+        //_gameManager.SpawnMonster();
     }
 
     // this stops the player from switching back and forth too fast

@@ -31,8 +31,9 @@ public class SpawnManager : MonoBehaviour
     }
 
     // this goes through the list of spawn points to find the one closest to the player
-    private void FindClosestSpawnPoint()
+    public void FindClosestSpawnPoint()
     {
+        //Debug.Log("searching for spawn point");
         foreach (GameObject point in spawnPoints)
         {
             distancePlayerPoint = Vector3.Distance(this.gameObject.GetComponent<MonsterAI>().player.transform.position, point.transform.position);
@@ -43,8 +44,12 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-        // and transports the monster to said point
-        transform.position = new Vector3(closestPoint.x, transform.position.y, transform.position.z);
-        this.gameObject.GetComponent<MonsterAI>().ChooseDirection();
+        // and transports the monster to said point if the player is far enough away
+        if (distancePlayerClosest > 15)
+        {
+            Debug.Log(distancePlayerClosest);
+            transform.position = new Vector3(closestPoint.x, transform.position.y, transform.position.z);
+            this.gameObject.GetComponent<MonsterAI>().ChooseDirection();
+        }
     }
 }

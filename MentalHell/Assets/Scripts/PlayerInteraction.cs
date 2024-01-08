@@ -54,6 +54,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor && !_playerMovement.playerIsRunning)
             {
+                _gameManager.ControlMonsterSpawns();
                 playOpenDoor = true;
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
@@ -66,6 +67,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor && !_playerMovement.playerIsRunning)
             {
+                _gameManager.SpawnMonster();
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());

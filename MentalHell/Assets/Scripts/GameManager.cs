@@ -31,11 +31,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // checks if the player pressed 'escape' and reacts accordingly
-        if (Input.GetKeyDown(KeyCode.Escape) && _playerInteraction.showingDocument)
-        {
-            // close document 
-            ResumeGame();
-        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isRunning)
@@ -84,6 +79,20 @@ public class GameManager : MonoBehaviour
     {
         _uiManager.ShowWinScreen();
         PauseGame();
+    }
+
+    public void SpawnMonster()
+    {
+        _spawnManager.FindClosestSpawnPoint();
+    }
+
+    public void ControlMonsterSpawns()
+    {
+        _spawnManager.checkingForSpawns = !_spawnManager.checkingForSpawns;
+        if (_spawnManager.checkingForSpawns)
+        {
+            _spawnManager.FindClosestSpawnPoint();
+        }
     }
 
     public void ExitGame()
