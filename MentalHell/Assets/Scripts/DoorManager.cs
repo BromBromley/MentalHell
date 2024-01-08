@@ -19,7 +19,7 @@ public class DoorManager : MonoBehaviour
 
             // play Door sound effect of opening the door when entering the room
             Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxOpenDoor;
-            FindObjectOfType<AudioManager>().PlayRandomConstantly(Soundarray);
+            FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
         }
         else
         {
@@ -27,7 +27,7 @@ public class DoorManager : MonoBehaviour
 
             // play Door sound effect of closing the door when leaving the room
             Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxCloseDoor;
-            FindObjectOfType<AudioManager>().PlayRandomConstantly(Soundarray);
+            FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
         }
     }
 

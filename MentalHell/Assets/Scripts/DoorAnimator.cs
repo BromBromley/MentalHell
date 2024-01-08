@@ -21,7 +21,7 @@ public class DoorAnimator : MonoBehaviour
         playOpenDoor = player.GetComponent<PlayerInteraction>().playOpenDoor;
         if (playOpenDoor == true)
         {
-            animator.SetBool("Open", true);
+            //animator.SetBool("Open", true);
             rend = Mesh.GetComponent<MeshRenderer>();
             rend.enabled = false;
         }

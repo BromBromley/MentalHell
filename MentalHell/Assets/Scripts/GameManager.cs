@@ -39,13 +39,11 @@ public class GameManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape) && isRunning)
         {
             _uiManager.ActivatePauseScreen();
-            //FindObjectOfType<AudioManager>().PauseAllSound();
             //PauseGame();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && !isRunning)
         {
             _uiManager.ActivatePauseScreen();
-            //FindObjectOfType<AudioManager>().UnpauseAllSound();
             //ResumeGame();
         }
     }

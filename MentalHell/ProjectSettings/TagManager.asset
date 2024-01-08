@@ -17,6 +17,8 @@ TagManager:
   - SoundtrackEmpty
   - SFXEmpty
   - Storage
+  - GhostEmpty
+  - MonsterEmpty
   layers:
   - Default
   - TransparentFX
