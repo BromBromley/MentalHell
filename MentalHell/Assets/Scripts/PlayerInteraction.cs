@@ -8,7 +8,7 @@ public class PlayerInteraction : MonoBehaviour
     // this scripts manages the player's ability to interact with items and doors
 
     private GameManager _gameManager;
-    private DoorManager _doorManager;
+    private PlayerMovement _playerMovement;
 
     [SerializeField] private bool pickedUpHeart = false;
     public int heartCounter;
@@ -23,6 +23,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private GameObject Counter4;
 
     private bool canEnterDoor = true;
+    public bool playerIsBusy = false;
     public bool showingDocument;
     public bool openStorage = false;
     public bool playOpenDoor;
@@ -32,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
     void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
-        _doorManager = FindObjectOfType<DoorManager>();
+        _playerMovement = FindObjectOfType<PlayerMovement>();
 
         heartSprite.SetActive(false);
     }
@@ -45,26 +46,29 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 openStorage = true;
+                StartCoroutine(PlayerIsInvincible());
             }
         }
 
         if (other.tag == "Door")
         {
-            if (Input.GetKey(KeyCode.E) && canEnterDoor)
+            if (Input.GetKey(KeyCode.E) && canEnterDoor && !_playerMovement.playerIsRunning)
             {
                 playOpenDoor = true;
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
+                StartCoroutine(PlayerIsInvincible());
                 other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
             }
         }
 
         if (other.tag == "Stairs")
         {
-            if (Input.GetKey(KeyCode.E) && canEnterDoor)
+            if (Input.GetKey(KeyCode.E) && canEnterDoor && !_playerMovement.playerIsRunning)
             {
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
+                StartCoroutine(PlayerIsInvincible());
                 other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
             }
         }
@@ -110,6 +114,7 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && pickedUpHeart)
             {
                 //ghosts.GetComponent<Renderer>().material.color = Color.Lerp(Color.white, Color.black, 0.5f );
+                StartCoroutine(PlayerIsInvincible());
                 pickedUpHeart = false;
                 heartSprite.SetActive(false);
                 heartCounter++;
@@ -118,7 +123,7 @@ public class PlayerInteraction : MonoBehaviour
                     StartCoroutine(FadeGhostMaterial(twoGhosts));
                     Counter1.SetActive(false);
                     Counter2.SetActive(true);
-                    
+
                 }
                 if (heartCounter == 2)
                 {
@@ -141,8 +146,6 @@ public class PlayerInteraction : MonoBehaviour
                 // Play Geister Befreit Sound
                 Soundarray = FindObjectOfType<AudioManager>().sfxNPCGeisterBefreit;
                 FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
-
-
             }
         }
     }
@@ -151,10 +154,16 @@ public class PlayerInteraction : MonoBehaviour
     private IEnumerator DoorCooldown()
     {
         canEnterDoor = false;
-
         yield return new WaitForSeconds(1);
-
         canEnterDoor = true;
+    }
+
+    // gives the player a second where they can't get attacked by the monster
+    private IEnumerator PlayerIsInvincible()
+    {
+        playerIsBusy = true;
+        yield return new WaitForSeconds(1);
+        playerIsBusy = false;
     }
 
     // gives the ghosts a fade when swapping their material

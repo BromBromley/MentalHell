@@ -30,35 +30,35 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // checks if the player pressed escape and reacts accordingly
+        // checks if the player pressed 'escape' and reacts accordingly
         if (Input.GetKeyDown(KeyCode.Escape) && _playerInteraction.showingDocument)
         {
             // close document 
-            // ResumeGame();
+            ResumeGame();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isRunning)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            _uiManager.ActivatePauseScreen();
-            //PauseGame();
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape) && !isRunning)
-        {
-            _uiManager.ActivatePauseScreen();
-            //ResumeGame();
+            if (isRunning)
+            {
+                _uiManager.ActivatePauseScreen();
+                PauseGame();
+            }
+            else
+            {
+                _uiManager.ActivatePauseScreen();
+                ResumeGame();
+            }
         }
     }
 
     void FixedUpdate()
     {
         // checks if the monster is too close to the player
-        if (_monsterAI.distance < 2.50 && !_switchManager.isSwitching)
+        if (_monsterAI.distance < 2 && !_switchManager.isSwitching && isRunning && !_playerInteraction.playerIsBusy)
         {
             //Debug.Log(_monsterAI.distance);
-            if (isRunning)
-            {
-                _uiManager.ShowGameOverScreen();
-                PauseGame();
-            }
+            _uiManager.ShowGameOverScreen();
+            PauseGame();
         }
     }
 

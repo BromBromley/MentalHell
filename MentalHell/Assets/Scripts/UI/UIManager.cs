@@ -36,11 +36,11 @@ public class UIManager : MonoBehaviour
     {
         if (hidePauseScreen)
         {
-            pauseScreen.SetActive(false);
+            pauseScreen.SetActive(true);
         }
         else
         {
-            pauseScreen.SetActive(true);
+            pauseScreen.SetActive(false);
         }
         hidePauseScreen = !hidePauseScreen;
     }
