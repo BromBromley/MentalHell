@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (movementEnabled)
         {
             // this checks if the player is running and adjusts the speed
-            if (Input.GetKey(KeyCode.LeftShift) && playerCanRun && Input.GetKey(KeyCode.A) |    Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.LeftShift) && playerCanRun && Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.D))
             {
                 maxSpeed = 10;
                 acceleration = 5;
@@ -80,12 +80,14 @@ public class PlayerMovement : MonoBehaviour
         {
             staminaLevel -= Time.deltaTime;
         }
-        else
+        if (staminaLevel <= 5 && !playerIsRunning)
         {
-            if (staminaLevel <= 5 && !playerIsRunning)
-            {
-                staminaLevel += Time.deltaTime;
-            }
+            staminaLevel += Time.deltaTime;
+        }
+
+        if (staminaLevel <= 0)
+        {
+            StartCoroutine(RunningCooldown());
         }
 
         UpdateStaminaBar();
@@ -138,6 +140,13 @@ public class PlayerMovement : MonoBehaviour
             speed = 0.0f;
             lastMovement = 0;
         }
+    }
+
+    private IEnumerator RunningCooldown()
+    {
+        playerCanRun = false;
+        yield return new WaitForSeconds(1);
+        playerCanRun = true;
     }
 
     // updates the stamina bar to match the player's stamina level

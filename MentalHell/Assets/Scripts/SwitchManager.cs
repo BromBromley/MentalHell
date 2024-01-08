@@ -59,11 +59,12 @@ public class SwitchManager : MonoBehaviour
             sanityLevel -= Time.deltaTime;
             switchBarImage.color = Color.Lerp(Color.red, Color.green, switchSlider.value);
         }
-        else
+        if (sanityLevel <= 5 && !isSwitching)
         {
-            if (sanityLevel <= 5 && !isSwitching)
+            sanityLevel += Time.deltaTime;
+            if (canSwitch)
             {
-                sanityLevel += Time.deltaTime;
+                switchBarImage.color = Color.Lerp(Color.red, Color.green, switchSlider.value);
             }
         }
 
