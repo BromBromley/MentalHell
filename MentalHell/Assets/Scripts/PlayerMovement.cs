@@ -145,6 +145,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // stops the movement when player goes through a door
+    public IEnumerator StopMovement()
+    {
+        movementEnabled = false;
+        yield return new WaitForSeconds(0.1f);
+        movement = 0;
+        yield return new WaitForSeconds(0.6f);
+        movementEnabled = true;
+    }
+
     // short cooldown when stamina runs out
     private IEnumerator RunningCooldown()
     {

@@ -63,25 +63,27 @@ public class PlayerInteraction : MonoBehaviour
 
         if (other.tag == "Door")
         {
-            if (Input.GetKey(KeyCode.E) && canEnterDoor && !_playerMovement.playerIsRunning)
+            if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
                 _gameManager.ControlMonsterSpawns();
                 playOpenDoor = true;
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());
+                StartCoroutine(_playerMovement.StopMovement());
                 other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
             }
         }
 
         if (other.tag == "Stairs")
         {
-            if (Input.GetKey(KeyCode.E) && canEnterDoor && !_playerMovement.playerIsRunning)
+            if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
                 _gameManager.SpawnMonster();
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());
+                StartCoroutine(_playerMovement.StopMovement());
                 other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
             }
         }

@@ -324,7 +324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4525649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -113513,6 +113513,7 @@ MonoBehaviour:
   movementEnabled: 1
   playerCanRun: 1
   playerIsRunning: 0
+  movement: 0
   animator: {fileID: 513755160}
   staminaSlider: {fileID: 1350834075}
 --- !u!1 &1862120169
