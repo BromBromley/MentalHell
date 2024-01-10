@@ -18,8 +18,10 @@ public class AudioManager : MonoBehaviour
 
     // chance system for Soundtrack to play
     [HideInInspector]
-    public Sound[] soundArrayChance;
+    public Sound[] soundArrayChanceSoundtrack, soundArrayChanceMonster, soundArrayChanceGhosts;
     public int invokeChance;
+
+    private bool Paused = false;
     
 
     // creating Arrays for the two Sound types to be accessable for other scripts
@@ -30,16 +32,14 @@ public class AudioManager : MonoBehaviour
                     sfxCloseDoor,
                     sfxHerzNehmen,
                     sfxHerzAbgeben,
+                    sfxNPCGhostsIdle,
                     sfxNPCGeisterBefreit,
+                    sfxStepsWalk,
+                    sfxStepsRun,
                     sfxMonster,
                     sfxMonsterPatrol,
+                    sfxHerzAmbience,
                     sfxMisc;
-
-
-
-
-    // create AudioSources for the two busses
-    //public AudioSource musicSource, sfxSource;
 
     // additional transfer Audio Source Variable
     private AudioSource source;
@@ -49,7 +49,8 @@ public class AudioManager : MonoBehaviour
     private GameObject SFXEmpty;
     private GameObject ghostEmpty;
     private GameObject monsterEmpty;
-    private GameObject emptySoundGameObject;
+    private GameObject[] hearts;
+    private GameObject[] emptySoundGameObjects = new GameObject[1];
 
     // create singleton of object so it doesnt get destroyed
     private void Awake (){
@@ -65,18 +66,64 @@ public class AudioManager : MonoBehaviour
     // initiate basis Sounds and get GameObjects
     public void InitializeAudio(){
 
-        Debug.Log("sdfghjk");
+        // get the GameObject determining where the sound is played
+        soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
+        SFXEmpty = GameObject.FindWithTag("SFXEmpty");
+        ghostEmpty = GameObject.FindWithTag("GhostEmpty");
+        monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
+        hearts = GameObject.FindGameObjectsWithTag("Heart");
 
-        // Start playing Ambience on game start
-        PlayRandomConstantly(sfxAmbience);
+        // delete all audio sources of objects that wont get destroyed on scene reload
+        GameObject[] gameobjects = {soundtrackEmpty, SFXEmpty};
+        AudioSource[] audioSources;
+        int gameObjectCounter = 0;
+        for(int i = 0; i < gameobjects.Length; i++)
+        {
 
-        // Invoke Chance to Play Soundtrack in given time
-        InvokeChanceToPlay(30f, 10f, musicSoundtrack, 3);
+            // get all audiosources of the object
+            audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
+            gameObjectCounter++;
+            
+            // destroy all audiosources and reset the audioSources Array
+            for (int x = 0; x < audioSources.Length; x++){
+                Destroy(audioSources[x], 0);
+                audioSources[x] = null;
+            }
+            audioSources = null;
 
-        // Invoke Chance to Play Monster Sound
-        //InvokeChanceToPlay(3f, 3f, sfxMonster, 3);
-        // start Monster Walk sound
-        PlayRandomConstantly(sfxMonsterPatrol);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 0){
+
+            // Play Main in a loop Theme when in the main menu
+            musicSoundtrack[0].loop = true;
+            PlayConstantly("MH_Musik_1", musicSoundtrack);
+
+        }
+        else if (SceneManager.GetActiveScene().buildIndex > 0)
+        {
+            // turn off loop characteristic of main theme
+            musicSoundtrack[0].loop = false;
+
+            // Start playing Ambience on game start
+            PlayRandomConstantly(sfxAmbience);
+
+            // Invoke Chance to Play Soundtrack in given time
+            InvokeChanceToPlaySoundtrack(30f, 60f, musicSoundtrack, 3);
+
+            // Invoke Chance to Play Monster Sound
+            InvokeChanceToPlayMonster(3f, 3f, sfxMonster, 3);
+
+            // start Monster Walk sound
+            PlayRandomConstantly(sfxMonsterPatrol);
+
+            // start heartbeats on all hearts
+            PlayRandomConstantly(sfxHerzAmbience);
+
+            // start chance of Ghosts Screamin
+            InvokeChanceToPlayGhosts(5f, 5f, sfxNPCGhostsIdle, 3);
+
+        }
   
     }
 
@@ -87,32 +134,37 @@ public class AudioManager : MonoBehaviour
 
     */
 
-    public void CopyAudioDataToEmptyPlayConstantly (Sound sound, GameObject emptySoundGameObject)
+    public void CopyAudioDataToEmptyPlayConstantly (Sound sound, GameObject[] emptySoundGameObjects)
     {
 
-        // copy all the information previously set, over to the AudioSource that will play it
-        source = emptySoundGameObject.AddComponent<AudioSource>();
-        source.clip = sound.clip;
-        source.volume = sound.volume;
-        source.pitch = sound.pitch;
-        source.loop = sound.loop;
-        source.outputAudioMixerGroup = sound.output;
+        for(int i = 0; i < emptySoundGameObjects.Length; i++)
+        {
 
-        source.spatialBlend = sound.spatialBlend;
-        source.maxDistance = sound.maxDistance;
-        source.minDistance = sound.minDistance;
-        source.rolloffMode = sound.rolloffMode;
+            // copy all the information previously set, over to the AudioSource that will play it
+            source = emptySoundGameObjects[i].AddComponent<AudioSource>();
+            source.clip = sound.clip;
+            source.volume = sound.volume;
+            source.pitch = sound.pitch;
+            source.loop = sound.loop;
+            source.outputAudioMixerGroup = sound.output;
 
-        // play the sound constantly
-        source.Play();
+            source.spatialBlend = sound.spatialBlend;
+            source.maxDistance = sound.maxDistance;
+            source.minDistance = sound.minDistance;
+            source.rolloffMode = sound.rolloffMode;
+
+            // play the sound constantly
+            source.Play();
+
+        }
     
     }
 
-    public void CopyAudioDataToEmptyPlayOnce (Sound sound, GameObject emptySoundGameObject)
+    public void CopyAudioDataToEmptyPlayOnce (Sound sound, GameObject[] emptySoundGameObjects)
     {
 
         // copy all the information previously set, over to the AudioSource that will play it
-        source = emptySoundGameObject.AddComponent<AudioSource>();
+        source = emptySoundGameObjects[0].AddComponent<AudioSource>();
         source.clip = sound.clip;
         source.volume = sound.volume;
         source.pitch = sound.pitch;
@@ -132,7 +184,7 @@ public class AudioManager : MonoBehaviour
 
         // Destroy the Audio Source Element after it has been played
         Destroy(source, clipLength);
-    
+   
     }
 
 
@@ -149,62 +201,75 @@ public class AudioManager : MonoBehaviour
         Sound sound = Array.Find(soundArray, x => x.name == name);
 
         // if no audio file with the name can be found return here
-        if (sound == null) return;
+        if (sound == null || Paused == true) return;
 
         //  find out how the sound has to get routed (music or sfx)
-        emptySoundGameObject = GetSoundType(soundArray);
+        emptySoundGameObjects = GetSoundType(soundArray);
 
 
         // Create a new audio component on the dedicated empty, Copy the Data over and play the sound
-        CopyAudioDataToEmptyPlayConstantly(sound, emptySoundGameObject);
+        CopyAudioDataToEmptyPlayConstantly(sound, emptySoundGameObjects);
 
     }
 
     public void PlayOnce (string name, Sound[] soundArray){
         Sound sound = Array.Find(soundArray, x => x.name == name); // ?
 
-        if (sound == null) return;
+        if (sound == null || Paused == true) return;
 
         //  find out how the sound has to get routed (music or sfx)
-        emptySoundGameObject = GetSoundType(soundArray);
+        emptySoundGameObjects = GetSoundType(soundArray);
 
         // Create a new audio component on the dedicated empty, Copy the Data over and play the sound
-        CopyAudioDataToEmptyPlayOnce(sound, emptySoundGameObject);
+        CopyAudioDataToEmptyPlayOnce(sound, emptySoundGameObjects);
 
     }
 
     //  get the type of the sound and return the gameobject it has to get attached to
-    public GameObject GetSoundType (Sound[] soundArray){
+    public GameObject[] GetSoundType (Sound[] soundArray){
 
         // get the GameObject determining where the sound is played
         soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
         SFXEmpty = GameObject.FindWithTag("SFXEmpty");
         ghostEmpty = GameObject.FindWithTag("GhostEmpty");
         monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
+        hearts = GameObject.FindGameObjectsWithTag("Heart");
 
         // get type of first element in array
         string soundtype = soundArray[0].type;
 
+        // Delete Array (length is important and not all sounds need to be played on multiple objects)
+        Array.Clear(emptySoundGameObjects, 0, emptySoundGameObjects.Length);
+
+        // set Array length to 1
+        // if it needs to be longer it will be set to the array of gameobjects itself
+        // which will increase the array length automatically
+        emptySoundGameObjects = new GameObject[1];
+
         // determine the GameObject that is supposed to play the sound
         if (soundtype == "sfx") 
         {
-            emptySoundGameObject = SFXEmpty;
+            emptySoundGameObjects[0] = SFXEmpty;
         }
         else if (soundtype == "music")
         {
-            emptySoundGameObject = soundtrackEmpty;
+            emptySoundGameObjects[0] = soundtrackEmpty;
         }
         else if (soundtype == "ghost")
         {
-            emptySoundGameObject = ghostEmpty;
+            emptySoundGameObjects[0] = ghostEmpty;
         }
         else if (soundtype == "monster")
         {
-            emptySoundGameObject = monsterEmpty;
+            emptySoundGameObjects[0] = monsterEmpty;
+        }
+        else if (soundtype == "heart")
+        {
+            emptySoundGameObjects = hearts;
         }
 
         // return GameObject that will play the Sound
-        return emptySoundGameObject;
+        return emptySoundGameObjects;
 
     }
 
@@ -216,10 +281,11 @@ public class AudioManager : MonoBehaviour
     */
 
     public void PlayRandomOnce (Sound[] soundArray){
+
+        if (soundArray == null) return;
+
         string soundName;
         int length = soundArray.Length;
-
-        if (length == 0) return;
 
         soundName = soundArray[UnityEngine.Random.Range(0, length)].name;
 
@@ -227,10 +293,11 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayRandomConstantly (Sound[] soundArray){
+        
+        if (soundArray == null) return;
+
         string soundName;
         int length = soundArray.Length;
-
-        if (length == 0) return;
 
         soundName = soundArray[UnityEngine.Random.Range(0, length)].name;
 
@@ -245,20 +312,18 @@ public class AudioManager : MonoBehaviour
 
     */
 
-    // Invoke the Playing of a Sound on a Fixed Chance
-    public void InvokeChanceToPlay(float invokeTime, float repeatTime, Sound[] soundArray, int chance){
+    // Soundtrack Chance
+    public void InvokeChanceToPlaySoundtrack(float invokeTime, float repeatTime, Sound[] soundArray, int chance){
         
         // copy values to Variables
-        soundArrayChance = soundArray;
+        soundArrayChanceSoundtrack = soundArray;
         invokeChance = chance;
 
         // Start the Invoke of the Chance to play a soundtrack
-        InvokeRepeating("ChanceToPlay", invokeTime, repeatTime);
+        InvokeRepeating("ChanceToPlaySoundtrack", invokeTime, repeatTime);
 
     }
-
-    // Play a Sound Determined by a Fixed Chance
-    public void ChanceToPlay(){
+    public void ChanceToPlaySoundtrack(){
         
         // check if A Soundtrack is already playing
         if (soundtrackEmpty.GetComponent<AudioSource>() == null){
@@ -269,9 +334,57 @@ public class AudioManager : MonoBehaviour
 
             // Play the Soundtrack if you are lucky
             if (randomValue == invokeChance - 1){
-                PlayRandomOnce(soundArrayChance);
+                PlayRandomOnce(soundArrayChanceSoundtrack);
             }
 
+        }
+
+    }
+
+    // Monster Chance
+    public void InvokeChanceToPlayMonster(float invokeTime, float repeatTime, Sound[] soundArray, int chance){
+        
+        // copy values to Variables
+        soundArrayChanceMonster = soundArray;
+        invokeChance = chance;
+
+        // Start the Invoke of the Chance to play
+        InvokeRepeating("ChanceToPlayMonster", invokeTime, repeatTime);
+
+    }
+    public void ChanceToPlayMonster(){
+        
+        // get a random Number
+        System.Random randomRandom = new System.Random();
+        int randomValue = randomRandom.Next(1, invokeChance);
+
+        // Play if you are lucky
+        if (randomValue == invokeChance - 1){
+            PlayRandomOnce(soundArrayChanceMonster);
+        }
+
+    }
+
+    // Ghosts Chance
+    public void InvokeChanceToPlayGhosts(float invokeTime, float repeatTime, Sound[] soundArray, int chance){
+        
+        // copy values to Variables
+        soundArrayChanceGhosts = soundArray;
+        invokeChance = chance;
+
+        // Start the Invoke of the Chance to play
+        InvokeRepeating("ChanceToPlayGhosts", invokeTime, repeatTime);
+
+    }
+    public void ChanceToPlayGhosts(){
+        
+        // get a random Number
+        System.Random randomRandom = new System.Random();
+        int randomValue = randomRandom.Next(1, invokeChance);
+
+        // Play if you are lucky
+        if (randomValue == invokeChance - 1){
+            PlayRandomOnce(soundArrayChanceGhosts);
         }
 
     }
@@ -296,16 +409,67 @@ public class AudioManager : MonoBehaviour
     // Pause the sound from the audio sources getting fed to the two mixer's
     public void PauseAllSound(){
 
-        // sfxSource.Pause();
-        // musicSource.Pause();
+        // stop new sounds from getting created (eg swap runs out in the background etc)
+        Paused = true;
+
+        // Pause all audio sources
+        GameObject[] singlegameobjects = {soundtrackEmpty, SFXEmpty, ghostEmpty, monsterEmpty};
+
+        // create new array including all objects that have audiosources
+        GameObject[] gameobjects = new GameObject[singlegameobjects.Length + hearts.Length];
+        singlegameobjects.CopyTo(gameobjects, 0);
+        hearts.CopyTo(gameobjects, singlegameobjects.Length);
+
+        AudioSource[] audioSources;
+        int gameObjectCounter = 0;
+
+        for(int i = 0; i < gameobjects.Length; i++)
+        {
+
+            // get all audiosources of the object
+            audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
+            gameObjectCounter++;
+           
+            // Pause all audiosources and reset the audioSources Array
+            for (int x = 0; x < audioSources.Length; x++){
+                audioSources[x].Pause();
+                audioSources[x] = null;
+            }
+
+        }
 
     }
 
     // UnPause the sound from the audio sources getting fed to the two mixer's
-    public void UnpauseAllSound(){
+    public void UnPauseAllSound(){
 
-        // sfxSource.UnPause();
-        // musicSource.UnPause();
+        // stop new sounds from getting created (eg swap runs out in the background etc)
+        Paused = false;
+
+        // Pause all audio sources
+        GameObject[] singlegameobjects = {soundtrackEmpty, SFXEmpty, ghostEmpty, monsterEmpty};
+
+        // create new array including all objects that have audiosources
+        GameObject[] gameobjects = new GameObject[singlegameobjects.Length + hearts.Length];
+        singlegameobjects.CopyTo(gameobjects, 0);
+        hearts.CopyTo(gameobjects, singlegameobjects.Length);
+
+        AudioSource[] audioSources;
+        int gameObjectCounter = 0;
+        for(int i = 0; i < gameobjects.Length; i++)
+        {
+
+            // get all audiosources of the object
+            audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
+            gameObjectCounter++;
+            
+            // Pause all audiosources and reset the audioSources Array
+            for (int x = 0; x < audioSources.Length; x++){
+                audioSources[x].UnPause();
+                audioSources[x] = null;
+            }
+
+        }
 
     }
 

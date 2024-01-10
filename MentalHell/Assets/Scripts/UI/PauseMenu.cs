@@ -18,7 +18,11 @@ public bool hide;
             {
                 pauseScreen.SetActive(false);
             }
-            else pauseScreen.SetActive(true);
+            else
+            {
+                pauseScreen.SetActive(true);
+            } 
+
         }
 
     }

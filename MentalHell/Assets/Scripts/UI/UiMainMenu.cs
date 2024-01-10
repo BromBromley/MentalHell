@@ -74,6 +74,11 @@ public class Ui_MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     // Start the Main Menu Scene
     public void ExitToMainMenu()
     {

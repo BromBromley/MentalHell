@@ -52,6 +52,7 @@ public class SwitchManager : MonoBehaviour
             // Play Switching Sound
             Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMisc;
             FindObjectOfType<AudioManager>().PlayOnce("Swap_Sound_01", Soundarray);
+            
         }
     }
 
@@ -75,6 +76,10 @@ public class SwitchManager : MonoBehaviour
         // this function checks if the sanity level reaches 0 and puts the player back in the present
         if (sanityLevel <= 0)
         {
+            // Play Switching Sound
+            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMisc;
+            FindObjectOfType<AudioManager>().PlayOnce("Swap_Sound_01", Soundarray);
+
             if (isSwitching)
             {
                 isSwitching = false;
