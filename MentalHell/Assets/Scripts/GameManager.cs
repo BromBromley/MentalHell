@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
     // freezes the game and all update functions
     public void PauseGame()
     {
+        FindObjectOfType<AudioManager>().PauseAllSound();
         isRunning = false;
         _playerMovement.movementEnabled = false;
         _spawnManager.checkingForSpawns = false;
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
     // unfreezes the game and all update functions
     public void ResumeGame()
     {
+        FindObjectOfType<AudioManager>().UnPauseAllSound();
         isRunning = true;
         _playerMovement.movementEnabled = true;
         _spawnManager.checkingForSpawns = true;
