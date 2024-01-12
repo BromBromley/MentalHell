@@ -1,6 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+
+
 
 public class LoadSettings : MonoBehaviour
 {   
@@ -22,9 +25,25 @@ public class LoadSettings : MonoBehaviour
     // get playerprefs script to access load funcs
     private PlayerPrefsX playerPrefsScript;
 
+    private int resolution, quality, fullscreenNumber;
+    private float master, music, sfx;
+    private bool fullscreenBool;
+
    
-    //Some problem with instancs in combination with the UiMainMenu script no clue why, stuff gets reset when back in main menu for now
-    void Start() {
+    // //Some problem with instancs in combination with the UiMainMenu script no clue why, stuff gets reset when back in main menu for now
+    // void Start() {
+
+    //     // load the settings saved in the playerprefs to the actual game
+    //     //loadPlayerPrefs();
+
+    // }
+
+
+
+    // get all player prefs and write them or defaults if there are none
+
+    // the comma number thing is the default if there is no entry for the setting
+    public void loadPlayerPrefs(){
 
         // get the Script UiMainMenu which includes all the settings
         mainMenuObject = GameObject.FindWithTag("MainMenu");
@@ -32,50 +51,54 @@ public class LoadSettings : MonoBehaviour
 
         // get the playerpref script to get the settings
         playerPrefsScript = this.GetComponent<PlayerPrefsX>();
-
-        // load the settings saved in the playerprefs to the actual game
-        loadPlayerPrefs();
-
-    }
-
-
-
-    // get all player prefs and write them or defaults if there are none
-
-    // the comma number thing is the default if there is no entry for the setting
-    void loadPlayerPrefs(){
         
         // Resolution
-        int resolution = playerPrefsScript.GetPlayerPrefsInt(RESOLUTION_KEY);
+        resolution = playerPrefsScript.GetPlayerPrefsInt(RESOLUTION_KEY);
         mainMenu.GetResolutions();
         mainMenu.SetResolution(resolution);
         
         // Quality
-        int quality = playerPrefsScript.GetPlayerPrefsInt(QUALITY_KEY);
+        quality = playerPrefsScript.GetPlayerPrefsInt(QUALITY_KEY);
         mainMenu.SetQuality(quality);
 
         // Fullscreen
         int fullscreenNumber = playerPrefsScript.GetPlayerPrefsInt(FULLSCREEN_KEY);
-        bool fullscreenBool = false;
+        fullscreenBool = false;
         // convert int to bool
         if (fullscreenNumber == 1) {fullscreenBool = true;}
         mainMenu.SetFullscreen(fullscreenBool);
 
         // Master Volume
-        float master = playerPrefsScript.GetPlayerPrefsFloat(MASTER_KEY);
+        master = playerPrefsScript.GetPlayerPrefsFloat(MASTER_KEY);
         mainMenu.SetVolumeMaster(master);
 
         // Music Volume
-        float music = playerPrefsScript.GetPlayerPrefsFloat(MUSIC_KEY);
+        music = playerPrefsScript.GetPlayerPrefsFloat(MUSIC_KEY);
         mainMenu.SetVolumeMusic(music);
 
         // SFX volume
-        float sfx = playerPrefsScript.GetPlayerPrefsFloat(SFX_KEY);
+        sfx = playerPrefsScript.GetPlayerPrefsFloat(SFX_KEY);
         mainMenu.SetVolumeSFX(sfx);
 
-        
+                
     }
 
 
+    public void displayPlayerPrefs(){
+
+        GameObject.FindGameObjectWithTag("MasterVolumeSlider").GetComponent<Slider>().value = master;
+        GameObject.FindGameObjectWithTag("SoundtrackVolumeSlider").GetComponent<Slider>().value = music;
+        GameObject.FindGameObjectWithTag("SFXVolumeSlider").GetComponent<Slider>().value = sfx;
+
+        GameObject.FindGameObjectWithTag("Resolution").GetComponent<TMP_Dropdown>().value = resolution;
+        GameObject.FindGameObjectWithTag("Quality").GetComponent<TMP_Dropdown>().value = quality;
+        bool test = GameObject.FindGameObjectWithTag("Fullscreen").GetComponent<Toggle>().isOn;
+        if (fullscreenBool != test)
+        {
+            GameObject.FindGameObjectWithTag("Fullscreen").GetComponent<Toggle>().isOn = fullscreenBool;
+        }
+        
+
+    }
 
 }

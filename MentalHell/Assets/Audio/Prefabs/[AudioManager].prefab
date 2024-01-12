@@ -31,6 +31,134 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4535648857906879556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2425005987515270663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3861024955135569766}
+  - component: {fileID: 7794266526902244512}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: SFXEmpty
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3861024955135569766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2425005987515270663}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4535648857906879556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &7794266526902244512
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2425005987515270663}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6402474236939632030
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,6 +191,8 @@ Transform:
   m_Children:
   - {fileID: 8683183673759594113}
   - {fileID: 1913995809787960322}
+  - {fileID: 7668075433888400798}
+  - {fileID: 3861024955135569766}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8134233267877283072
@@ -77,7 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8acd486055a60479df7b195b79685e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundArrayChance: []
+  soundArrayChanceSoundtrack: []
+  soundArrayChanceMonster: []
+  soundArrayChanceGhosts: []
   invokeChance: 2
   musicSoundtrack:
   - name: MH_Musik_1
@@ -151,7 +283,7 @@ MonoBehaviour:
     type: sfx
     clip: {fileID: 8300000, guid: ccfbaafb43fc80b44adbe5e7f099c4cf, type: 3}
     output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     spatialBlend: 0
@@ -514,6 +646,40 @@ MonoBehaviour:
     maxDistance: 25
     minDistance: 0
     rolloffMode: 0
+  sfxNPCGhostsIdle:
+  - name: Geister_Angst_01
+    type: ghost
+    clip: {fileID: 8300000, guid: 8f5c4eae00e7cf14ebd6dcd80107c23b, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    maxDistance: 10
+    minDistance: 0
+    rolloffMode: 2
+  - name: Geister_Angst_02
+    type: ghost
+    clip: {fileID: 8300000, guid: 1c5224bf263e662408aa9815d874d55b, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    maxDistance: 10
+    minDistance: 0
+    rolloffMode: 2
+  - name: Geister_Angst_03
+    type: ghost
+    clip: {fileID: 8300000, guid: 1ecdcff8337050446bc7ab83c7505376, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    maxDistance: 10
+    minDistance: 0
+    rolloffMode: 2
   sfxNPCGeisterBefreit:
   - name: Geister_Befreit_01
     type: ghost
@@ -548,6 +714,151 @@ MonoBehaviour:
     maxDistance: 25
     minDistance: 0
     rolloffMode: 2
+  sfxStepsWalk:
+  - name: Laufen_Stein_01
+    type: sfx
+    clip: {fileID: 8300000, guid: 43926454e3b184049a6ab2b6988156f5, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Laufen_Stein_02
+    type: sfx
+    clip: {fileID: 8300000, guid: 11270c3b9ddc33d409a463fd18626976, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Laufen_Stein_03
+    type: sfx
+    clip: {fileID: 8300000, guid: 30d1817929c8fa44282ffc78625d6c6f, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Laufen_Stein_04
+    type: sfx
+    clip: {fileID: 8300000, guid: ddf4bdcb92b07d540b913631d406d3ca, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Laufen_Stein_05
+    type: sfx
+    clip: {fileID: 8300000, guid: 12314d544fbda21468b92029403797eb, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Laufen_Stein_06
+    type: sfx
+    clip: {fileID: 8300000, guid: b4c24f8cc81797045b35fca78253fc34, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Laufen_Stein_07
+    type: sfx
+    clip: {fileID: 8300000, guid: fe6bf03c4e5a2084dac5a00ad85eb14b, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  sfxStepsRun:
+  - name: Rennen_Stein_01
+    type: sfx
+    clip: {fileID: 8300000, guid: 5c6f9e5d8cd94d445a1b7942895b0f3b, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Rennen_Stein_02
+    type: sfx
+    clip: {fileID: 8300000, guid: b90e01891c8957c449b557b76d1e16b8, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Rennen_Stein_03
+    type: sfx
+    clip: {fileID: 8300000, guid: 377856b77a24f3840a52a8d808b41550, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Rennen_Stein_04
+    type: sfx
+    clip: {fileID: 8300000, guid: 49d3e9c887e629542a305bc9ca7d1433, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Rennen_Stein_05
+    type: sfx
+    clip: {fileID: 8300000, guid: 08c3b0a7846df8b4fbf5838babb24274, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Rennen_Stein_06
+    type: sfx
+    clip: {fileID: 8300000, guid: 6a14418c3a927ba43aa2a70b40b349cf, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
   sfxMonster:
   - name: Monster_Sound_01
     type: monster
@@ -626,7 +937,7 @@ MonoBehaviour:
     spatialBlend: 1
     maxDistance: 15
     minDistance: 0
-    rolloffMode: 1
+    rolloffMode: 2
   sfxHerzAmbience:
   - name: Herzklopfen_01
     type: heart
@@ -636,9 +947,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     spatialBlend: 1
-    maxDistance: 5
+    maxDistance: 10
     minDistance: 0
-    rolloffMode: 1
+    rolloffMode: 2
   - name: Herzklopfen_02
     type: heart
     clip: {fileID: 8300000, guid: 3b0353a9919c76d4ab66d598e4490d88, type: 3}
@@ -647,9 +958,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     spatialBlend: 1
-    maxDistance: 5
+    maxDistance: 10
     minDistance: 0
-    rolloffMode: 1
+    rolloffMode: 2
   - name: Herzklopfen_03
     type: heart
     clip: {fileID: 8300000, guid: 4d4535d3ab3142a4f903dde6d637c3cb, type: 3}
@@ -658,9 +969,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     spatialBlend: 1
-    maxDistance: 5
+    maxDistance: 10
     minDistance: 0
-    rolloffMode: 1
+    rolloffMode: 2
   - name: Herzklopfen_04
     type: heart
     clip: {fileID: 8300000, guid: e6aa723be19508548ac8345cdf3919a6, type: 3}
@@ -669,9 +980,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     spatialBlend: 1
-    maxDistance: 5
+    maxDistance: 10
     minDistance: 0
-    rolloffMode: 1
+    rolloffMode: 2
   - name: Herzklopfen_05
     type: heart
     clip: {fileID: 8300000, guid: 3abd7349f59e3a247a7297952f07b1b5, type: 3}
@@ -680,9 +991,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     spatialBlend: 1
-    maxDistance: 5
+    maxDistance: 10
     minDistance: 0
-    rolloffMode: 1
+    rolloffMode: 2
   sfxMisc:
   - name: Swap_Sound_01
     type: sfx
@@ -726,3 +1037,131 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4535648857906879556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7224653866302447290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7668075433888400798}
+  - component: {fileID: 2804747396418585932}
+  m_Layer: 0
+  m_Name: Soundtrack
+  m_TagString: SoundtrackEmpty
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7668075433888400798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224653866302447290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4535648857906879556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2804747396418585932
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224653866302447290}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -7663884845733579297, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

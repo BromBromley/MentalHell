@@ -19,6 +19,10 @@ TagManager:
   - GhostEmpty
   - MonsterEmpty
   - Document
+  - SFXVolumeSlider
+  - Resolution
+  - Quality
+  - Fullscreen
   layers:
   - Default
   - TransparentFX

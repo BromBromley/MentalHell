@@ -73,6 +73,9 @@ public class AudioManager : MonoBehaviour
         monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
         hearts = GameObject.FindGameObjectsWithTag("Heart");
 
+        // stop all Invokes
+        CancelInvoke();
+
         // delete all audio sources of objects that wont get destroyed on scene reload
         GameObject[] gameobjects = {soundtrackEmpty, SFXEmpty};
         AudioSource[] audioSources;
@@ -109,7 +112,7 @@ public class AudioManager : MonoBehaviour
             PlayRandomConstantly(sfxAmbience);
 
             // Invoke Chance to Play Soundtrack in given time
-            InvokeChanceToPlaySoundtrack(30f, 60f, musicSoundtrack, 3);
+            InvokeChanceToPlaySoundtrack(15f, 60f, musicSoundtrack, 3);
 
             // Invoke Chance to Play Monster Sound
             InvokeChanceToPlayMonster(3f, 3f, sfxMonster, 3);
@@ -286,7 +289,7 @@ public class AudioManager : MonoBehaviour
 
         string soundName;
         int length = soundArray.Length;
-
+      
         soundName = soundArray[UnityEngine.Random.Range(0, length)].name;
 
         PlayOnce(soundName, soundArray);
@@ -409,6 +412,13 @@ public class AudioManager : MonoBehaviour
     // Pause the sound from the audio sources getting fed to the two mixer's
     public void PauseAllSound(){
 
+        // get the GameObject determining where the sound is played
+        soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
+        SFXEmpty = GameObject.FindWithTag("SFXEmpty");
+        ghostEmpty = GameObject.FindWithTag("GhostEmpty");
+        monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
+        hearts = GameObject.FindGameObjectsWithTag("Heart");
+
         // stop new sounds from getting created (eg swap runs out in the background etc)
         Paused = true;
 
@@ -442,6 +452,8 @@ public class AudioManager : MonoBehaviour
 
     // UnPause the sound from the audio sources getting fed to the two mixer's
     public void UnPauseAllSound(){
+
+        if (Paused == false) return;
 
         // stop new sounds from getting created (eg swap runs out in the background etc)
         Paused = false;

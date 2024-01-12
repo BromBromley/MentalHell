@@ -12,8 +12,13 @@ public class StartAudioOnSceneSwitch : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+
+        // Load Player Settings
+        FindObjectOfType<LoadSettings>().loadPlayerPrefs();
+
         audioManagerScript = FindObjectOfType<AudioManager>();
         audioManagerScript.GetComponent<AudioManager>().InitializeAudio();
+
     }
 
 }

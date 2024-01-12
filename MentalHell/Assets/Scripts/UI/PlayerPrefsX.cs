@@ -12,7 +12,19 @@ using UnityEngine.UI;
 public class PlayerPrefsX : MonoBehaviour
 {
 
-    public int test = 0;
+    public static PlayerPrefsX PlayerPrefsInstance;
+
+    // create singleton of object so it doesnt get destroyed
+    private void Awake (){
+        if (PlayerPrefsInstance == null){
+            PlayerPrefsInstance = this; // set the Audiomanager Instance to this object
+            DontDestroyOnLoad(gameObject); // maintain AudioManager Empty through new scene loading
+        }
+        else {
+            Destroy(gameObject);
+        }
+    }
+
 
     // int values
 

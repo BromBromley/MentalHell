@@ -239,5 +239,10 @@ public class Ui_MainMenu : MonoBehaviour
         PlayerPrefs.Save();        
 
     }
+
+    // This Method has to get called when the options button is pressed, otherwise the player settings wont get displayed
+    public void displayPlayerPrefsUi(){
+        GameObject.FindObjectOfType<LoadSettings>().displayPlayerPrefs();
+    }
     
 }
