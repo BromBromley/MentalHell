@@ -21,4 +21,9 @@ public class StartAudioOnSceneSwitch : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        FindObjectOfType<LoadSettings>().loadPlayerPrefs();
+    }
+
 }

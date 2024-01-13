@@ -29,16 +29,6 @@ public class LoadSettings : MonoBehaviour
     private float master, music, sfx;
     private bool fullscreenBool;
 
-   
-    // //Some problem with instancs in combination with the UiMainMenu script no clue why, stuff gets reset when back in main menu for now
-    // void Start() {
-
-    //     // load the settings saved in the playerprefs to the actual game
-    //     //loadPlayerPrefs();
-
-    // }
-
-
 
     // get all player prefs and write them or defaults if there are none
 
@@ -54,18 +44,23 @@ public class LoadSettings : MonoBehaviour
         
         // Resolution
         resolution = playerPrefsScript.GetPlayerPrefsInt(RESOLUTION_KEY);
-        mainMenu.GetResolutions();
+        //Debug.Log("Reading: " + resolution.ToString());
+        if (mainMenu.resolutions == null)
+        {
+            mainMenu.GetResolutions();
+        }
         mainMenu.SetResolution(resolution);
+        //Debug.Log("Displaying: " + resolution.ToString());
         
         // Quality
         quality = playerPrefsScript.GetPlayerPrefsInt(QUALITY_KEY);
         mainMenu.SetQuality(quality);
 
         // Fullscreen
-        int fullscreenNumber = playerPrefsScript.GetPlayerPrefsInt(FULLSCREEN_KEY);
+        int fullscreenNumberj = playerPrefsScript.GetPlayerPrefsInt(FULLSCREEN_KEY);
         fullscreenBool = false;
         // convert int to bool
-        if (fullscreenNumber == 1) {fullscreenBool = true;}
+        if (fullscreenNumberj == 1) {fullscreenBool = true;}
         mainMenu.SetFullscreen(fullscreenBool);
 
         // Master Volume
@@ -86,18 +81,22 @@ public class LoadSettings : MonoBehaviour
 
     public void displayPlayerPrefs(){
 
+        loadPlayerPrefs();
+
         GameObject.FindGameObjectWithTag("MasterVolumeSlider").GetComponent<Slider>().value = master;
         GameObject.FindGameObjectWithTag("SoundtrackVolumeSlider").GetComponent<Slider>().value = music;
         GameObject.FindGameObjectWithTag("SFXVolumeSlider").GetComponent<Slider>().value = sfx;
 
         GameObject.FindGameObjectWithTag("Resolution").GetComponent<TMP_Dropdown>().value = resolution;
         GameObject.FindGameObjectWithTag("Quality").GetComponent<TMP_Dropdown>().value = quality;
+        
         bool test = GameObject.FindGameObjectWithTag("Fullscreen").GetComponent<Toggle>().isOn;
         if (fullscreenBool != test)
         {
             GameObject.FindGameObjectWithTag("Fullscreen").GetComponent<Toggle>().isOn = fullscreenBool;
         }
-        
+
+        //GameObject.FindGameObjectWithTag("Fullscreen").GetComponent<Toggle>().isOn = true;   
 
     }
 

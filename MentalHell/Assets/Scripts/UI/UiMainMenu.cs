@@ -40,7 +40,7 @@ public class Ui_MainMenu : MonoBehaviour
 
     // declare resolution variables to get and adjust the resolution for the player
     public TMP_Dropdown resolutionDropdown;
-    Resolution[] resolutions;
+    public Resolution[] resolutions;
 
     public void Start()
     {
@@ -141,11 +141,15 @@ public class Ui_MainMenu : MonoBehaviour
     public void SetResolution (int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
+
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
 
         // save newly set resolution
         // prob not directly save it but rather have a prompt to save it when confirmed again but meh
         //playerPrefsScript.SetSavePrefsInt(RESOLUTION_KEY, resolutionIndex);
+
+        //Debug.Log("Writing: " + resolutionIndex.ToString());
+
         PlayerPrefs.SetFloat(RESOLUTION_KEY, resolutionIndex);
         PlayerPrefs.Save();
         
