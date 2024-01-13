@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MonsterAI : MonoBehaviour
 {
+    // this script manages all the monster behavior except for spawning
+
     public bool monsterIsChasing;
     private int randomStairs;
     private bool canUseStairs = true;
@@ -34,28 +36,16 @@ public class MonsterAI : MonoBehaviour
     private void FixedUpdate()
     {
         // checks the distance between monster and player
-        // puts it into three different ranges 
         distance = Vector3.Distance(this.transform.position, player.transform.position);
 
+        // sets the range at which the monster starts chasing the player depending on if they're running or not
         if (distance < 5 && !_playerMovement.playerIsRunning)
         {
-            // stage three
-            //Debug.Log("the monster is chasing you");
             monsterIsChasing = true;
         }
-        else if (distance < 8)
+        else if (distance < 10 && _playerMovement.playerIsRunning)
         {
-            // stage two
-            //Debug.Log("you're getting closer to the monster");
-        }
-        else if (distance < 10)
-        {
-            // stage one
-            //Debug.Log("you see the monster in the distance");
-            if (_playerMovement.playerIsRunning)
-            {
-                monsterIsChasing = true;
-            }
+            monsterIsChasing = true;
         }
         else
         {
@@ -72,6 +62,7 @@ public class MonsterAI : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, transform.position.z), runningSpeed * Time.deltaTime);
         }
 
+        // flips the sprite according to the monster's movement
         if (movement < 0 && !facingLeft)
         {
             FlipSprite();
@@ -85,7 +76,6 @@ public class MonsterAI : MonoBehaviour
     // this randomly decides if the monster walks left or right
     public void ChooseDirection()
     {
-        //Debug.Log("monster starts walking");
         movementDirection = Random.Range(1, 3);
         if (movementDirection == 1)
         {
@@ -113,7 +103,7 @@ public class MonsterAI : MonoBehaviour
         {
             movement = -movement;
         }
-
+        /*
         // this checks if the monster passes by a staircases and randomly chooses if it uses them
         if (other.tag == "Stairs")
         {
@@ -123,7 +113,7 @@ public class MonsterAI : MonoBehaviour
                 StartCoroutine(StairsCoolDown());
                 other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
             }
-        }
+        }*/
     }
 
     private IEnumerator StairsCoolDown()

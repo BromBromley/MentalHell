@@ -53,10 +53,9 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        // checks if the monster is too close to the player
+        // checks if the monster is close enough to attack the player
         if (_monsterAI.distance < 2 && !_switchManager.isSwitching && isRunning && !_playerInteraction.playerIsBusy)
         {
-            //Debug.Log(_monsterAI.distance);
             _uiManager.ShowGameOverScreen();
             PauseGame();
         }
@@ -88,8 +87,10 @@ public class GameManager : MonoBehaviour
         PauseGame();
     }
 
-    public void SpawnMonster()
+    public IEnumerator SpawnMonster()
     {
+        Debug.Log("checking if close enough");
+        yield return new WaitForSeconds(0.7f);
         _spawnManager.FindClosestSpawnPoint();
     }
 

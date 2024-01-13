@@ -13,22 +13,20 @@ public class DoorManager : MonoBehaviour
     // called by PlayerInteraction script
     public void EnterRoom(GameObject character)
     {
-        if (character.transform.position.z <= 0)
-        {
-            StartCoroutine(TeleportDelayForward(character));
+        StartCoroutine(TeleportDelayForward(character));
 
-            // play Door sound effect of opening the door when entering the room
-            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxOpenDoor;
-            FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
-        }
-        else
-        {
-            StartCoroutine(TeleportDelayBackward(character));
+        // play Door sound effect of opening the door when entering the room
+        Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxOpenDoor;
+        FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+    }
 
-            // play Door sound effect of closing the door when leaving the room
-            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxCloseDoor;
-            FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
-        }
+    public void ExitRoom(GameObject character)
+    {
+        StartCoroutine(TeleportDelayBackward(character));
+
+        // play Door sound effect of closing the door when leaving the room
+        Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxCloseDoor;
+        FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
     }
 
     // delays the transport of the character in order to match with the fade to black

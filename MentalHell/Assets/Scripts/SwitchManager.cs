@@ -34,25 +34,22 @@ public class SwitchManager : MonoBehaviour
             {
                 fadeEffect.SetActive(true);
                 isSwitching = true;
-                _gameManager.ControlMonsterSpawns();
                 StartCoroutine(TeleportDelay(34.0f));
-                //Debug.Log("you're now in the past");
                 StartCoroutine(SwitchingCooldown());
             }
             else
             {
                 fadeEffect.SetActive(true);
                 isSwitching = false;
-                _gameManager.ControlMonsterSpawns();
+                StartCoroutine(_gameManager.SpawnMonster());
                 StartCoroutine(TeleportDelay(-34.0f));
-                //Debug.Log("you're back in the present");
                 StartCoroutine(SwitchingCooldown());
             }
 
             // Play Switching Sound
             Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMisc;
             FindObjectOfType<AudioManager>().PlayOnce("Swap_Sound_01", Soundarray);
-            
+
         }
     }
 
@@ -83,10 +80,9 @@ public class SwitchManager : MonoBehaviour
             if (isSwitching)
             {
                 isSwitching = false;
-                _gameManager.ControlMonsterSpawns();
+                _gameManager.SpawnMonster();
                 StartCoroutine(TeleportDelay(-34.0f));
             }
-            //Debug.Log("you're back in the present");
             StartCoroutine(RefillSanity());
         }
 
@@ -99,7 +95,6 @@ public class SwitchManager : MonoBehaviour
         fadeEffect.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         this.gameObject.transform.position = transform.position + new Vector3(0.0f, yValue, 0.0f);
-        //_gameManager.SpawnMonster();
     }
 
     // this stops the player from switching back and forth too fast

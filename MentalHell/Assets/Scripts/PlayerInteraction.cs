@@ -26,6 +26,7 @@ public class PlayerInteraction : MonoBehaviour
     private bool canEnterDoor = true;
     public bool playerIsBusy = false;
     public bool showingDocument;
+    public bool isEnteringRoom = true;
     private GameObject storage;
     public bool openStorage = false;
     public bool playOpenDoor;
@@ -65,13 +66,21 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
-                _gameManager.ControlMonsterSpawns();
                 playOpenDoor = true;
+                if (isEnteringRoom)
+                {
+                    other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
+                }
+                else
+                {
+                    other.GetComponent<DoorManager>().ExitRoom(this.gameObject);
+                    StartCoroutine(_gameManager.SpawnMonster());
+                }
+                isEnteringRoom = !isEnteringRoom;
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());
                 StartCoroutine(_playerMovement.StopMovement());
-                other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
             }
         }
 
@@ -79,7 +88,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
-                _gameManager.SpawnMonster();
+                StartCoroutine(_gameManager.SpawnMonster());
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());
@@ -156,7 +165,7 @@ public class PlayerInteraction : MonoBehaviour
     private IEnumerator PlayerIsInvincible()
     {
         playerIsBusy = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         playerIsBusy = false;
     }
 
