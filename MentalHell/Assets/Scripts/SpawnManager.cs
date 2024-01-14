@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class SpawnManager : MonoBehaviour
     private List<GameObject> spawnPoints;
     private Vector3 closestPoint;
     private Vector3 secondClosestPoint;
+    private Vector3 timeOut;
 
     private float distancePlayerPoint;
     private float distancePlayerClosest;
@@ -21,6 +23,10 @@ public class SpawnManager : MonoBehaviour
     void Awake()
     {
         spawnPoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Spawn"));
+    }
+    void Start()
+    {
+        timeOut = new Vector3(-60, transform.position.y, transform.position.z);
     }
 
     /*
@@ -54,6 +60,7 @@ public class SpawnManager : MonoBehaviour
                     secondClosestPoint = closestPoint;
                 }
                 closestPoint = point.transform.position;
+                distancePlayerClosest = distancePlayerPoint;
             }
             else if (distancePlayerPoint < distancePlayerSecondClosest && distancePlayerSecondClosest > distancePlayerClosest)
             {
@@ -62,15 +69,17 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-        //Debug.Log(distancePlayerClosest);
-        //Debug.Log(distancePlayerSecondClosest);
-        //Debug.Log(closestPoint);
-        //Debug.Log(secondClosestPoint);
+        /*
+        Debug.Log(distancePlayerClosest);
+        Debug.Log(distancePlayerSecondClosest);
+        Debug.Log(closestPoint);
+        Debug.Log(secondClosestPoint);
+        */
 
         // and transports the monster to said point if the player is far enough away
         if (distancePlayerClosest > 15)
         {
-            Debug.Log("chose closest");
+            //Debug.Log("chose closest");
             transform.position = new Vector3(closestPoint.x, transform.position.y, transform.position.z);
             this.gameObject.GetComponent<MonsterAI>().ChooseDirection();
         }
@@ -79,5 +88,11 @@ public class SpawnManager : MonoBehaviour
             transform.position = new Vector3(secondClosestPoint.x, transform.position.y, transform.position.z);
             this.gameObject.GetComponent<MonsterAI>().ChooseDirection();
         }
+    }
+
+    // sends the monster back to the point it starts at when the player switches or enters a room
+    public void SendBackToStart()
+    {
+        transform.position = timeOut;
     }
 }

@@ -36,12 +36,13 @@ public class SwitchManager : MonoBehaviour
                 isSwitching = true;
                 StartCoroutine(TeleportDelay(34.0f));
                 StartCoroutine(SwitchingCooldown());
+                StartCoroutine(_gameManager.SendMonsterToStart());
             }
             else
             {
                 fadeEffect.SetActive(true);
                 isSwitching = false;
-                StartCoroutine(_gameManager.SpawnMonster());
+                StartCoroutine(_gameManager.SpawnMonster(0.3f));
                 StartCoroutine(TeleportDelay(-34.0f));
                 StartCoroutine(SwitchingCooldown());
             }
@@ -80,7 +81,7 @@ public class SwitchManager : MonoBehaviour
             if (isSwitching)
             {
                 isSwitching = false;
-                _gameManager.SpawnMonster();
+                _gameManager.SpawnMonster(0.3f);
                 StartCoroutine(TeleportDelay(-34.0f));
             }
             StartCoroutine(RefillSanity());

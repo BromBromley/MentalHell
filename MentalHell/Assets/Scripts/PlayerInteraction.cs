@@ -70,11 +70,12 @@ public class PlayerInteraction : MonoBehaviour
                 if (isEnteringRoom)
                 {
                     other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
+                    StartCoroutine(_gameManager.SendMonsterToStart());
                 }
                 else
                 {
                     other.GetComponent<DoorManager>().ExitRoom(this.gameObject);
-                    StartCoroutine(_gameManager.SpawnMonster());
+                    StartCoroutine(_gameManager.SpawnMonster(0.7f));
                 }
                 isEnteringRoom = !isEnteringRoom;
                 fadeEffect.SetActive(true);
@@ -88,7 +89,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
-                StartCoroutine(_gameManager.SpawnMonster());
+                StartCoroutine(_gameManager.SpawnMonster(0.7f));
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());

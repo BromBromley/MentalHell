@@ -87,20 +87,17 @@ public class GameManager : MonoBehaviour
         PauseGame();
     }
 
-    public IEnumerator SpawnMonster()
+    public IEnumerator SpawnMonster(float time)
     {
-        Debug.Log("checking if close enough");
-        yield return new WaitForSeconds(0.7f);
+        //Debug.Log("checking if close enough");
+        yield return new WaitForSeconds(time);
         _spawnManager.FindClosestSpawnPoint();
     }
 
-    public void ControlMonsterSpawns()
+    public IEnumerator SendMonsterToStart()
     {
-        _spawnManager.checkingForSpawns = !_spawnManager.checkingForSpawns;
-        if (_spawnManager.checkingForSpawns)
-        {
-            _spawnManager.FindClosestSpawnPoint();
-        }
+        yield return new WaitForSeconds(0.5f);
+        _spawnManager.SendBackToStart();
     }
 
     public void ExitGame()

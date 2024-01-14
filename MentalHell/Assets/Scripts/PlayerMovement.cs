@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    private float movement;
+    public float movement;
     private float lastMovement;
     private float speed = 0;
     private float maxSpeed;

@@ -12,7 +12,7 @@ public class MonsterAI : MonoBehaviour
     private bool canUseStairs = true;
 
     private int movementDirection;
-    private float movement;
+    private float monsterMovement;
     private float walkingSpeed = 2.5f;
     private float runningSpeed = 4f;
 
@@ -55,19 +55,27 @@ public class MonsterAI : MonoBehaviour
         // moves the monster depending on whether it's chasing the player
         if (!monsterIsChasing)
         {
-            transform.position = transform.position + new Vector3(movement * walkingSpeed * Time.deltaTime, 0.0f, 0.0f);
+            transform.position = transform.position + new Vector3(monsterMovement * walkingSpeed * Time.deltaTime, 0.0f, 0.0f);
         }
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, transform.position.z), runningSpeed * Time.deltaTime);
+            if (Vector3.Distance(player.transform.position, transform.position) < 0)
+            {
+                monsterMovement = 1f;
+            }
+            else
+            {
+                monsterMovement = -1f;
+            }
         }
 
         // flips the sprite according to the monster's movement
-        if (movement < 0 && !facingLeft)
+        if (monsterMovement < 0 && !facingLeft)
         {
             FlipSprite();
         }
-        else if (movement > 0 && facingLeft)
+        else if (monsterMovement > 0 && facingLeft)
         {
             FlipSprite();
         }
@@ -79,11 +87,11 @@ public class MonsterAI : MonoBehaviour
         movementDirection = Random.Range(1, 3);
         if (movementDirection == 1)
         {
-            movement = -1f;
+            monsterMovement = -1f;
         }
         else
         {
-            movement = 1f;
+            monsterMovement = 1f;
         }
     }
 
@@ -101,7 +109,7 @@ public class MonsterAI : MonoBehaviour
     {
         if (other.tag == "Wall")
         {
-            movement = -movement;
+            monsterMovement = -monsterMovement;
         }
         /*
         // this checks if the monster passes by a staircases and randomly chooses if it uses them
