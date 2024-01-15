@@ -28,12 +28,14 @@ public class PlayerInteraction : MonoBehaviour
     public bool playerIsBusy = false;
     public bool showingDocument;
     public bool isEnteringRoom = true;
+    public bool playAnimation;
     private GameObject storage;
     public bool playOpenDoor;
     private Vector3 boxSize = new Vector3(1f, 1f, 0f);
     public GameObject entrance_door;
     private MeshRenderer door_renderer;
-    public Animation door_open;
+    private SpriteRenderer door_sprite_renderer;
+    public Animator door_animator;
 
     private Sound[] Soundarray;
 
@@ -150,10 +152,15 @@ public class PlayerInteraction : MonoBehaviour
                     ghosts.SetActive(false);
                     Counter3.SetActive(false);
                     Counter4.SetActive(true);
-                    _gameManager.GameWon();
                     door_renderer = entrance_door.GetComponent<MeshRenderer>();
+                    door_sprite_renderer = entrance_door.GetComponentInChildren<SpriteRenderer>();
+                    door_sprite_renderer.enabled = true;
                     door_renderer.enabled = false;
-                    
+                    door_animator = entrance_door.GetComponentInChildren<Animator>();
+                    door_animator.SetBool("gameWon", true);
+                    StartCoroutine(AnimationDelay(20f));
+                    _gameManager.GameWon();
+
 
                 }
 
@@ -168,6 +175,12 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    private IEnumerator AnimationDelay(float waitTime)
+    {
+        playAnimation = true;
+        yield return new WaitForSeconds(waitTime);
+        playAnimation = false;
+    }
     // this prevents accidentally going through doors
     private IEnumerator DoorCooldown()
     {

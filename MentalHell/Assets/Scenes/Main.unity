@@ -50989,7 +50989,7 @@ GameObject:
   - component: {fileID: 849306968}
   m_Layer: 0
   m_Name: Storage
-  m_TagString: Untagged
+  m_TagString: Storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108429,9 +108429,10 @@ MonoBehaviour:
   playerIsBusy: 0
   showingDocument: 0
   isEnteringRoom: 1
+  playAnimation: 0
   playOpenDoor: 0
   entrance_door: {fileID: 1693301826}
-  door_open: {fileID: 0}
+  door_animator: {fileID: 0}
 --- !u!54 &1861142222
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116742,7 +116743,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.6, y: -2.63, z: 6.86}
+  m_Size: {x: 4.6, y: 2.5, z: 6.86}
   m_Center: {x: 0.18, y: 0, z: 1.16}
 --- !u!1 &1979717493
 GameObject:
