@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject fadeEffect;
 
     private bool hidePauseScreen;
 
@@ -36,12 +37,19 @@ public class UIManager : MonoBehaviour
     {
         if (hidePauseScreen)
         {
-            pauseScreen.SetActive(true);
+            fadeEffect.SetActive(true);
+            StartCoroutine(WaitForFade());
         }
         else
         {
             pauseScreen.SetActive(false);
         }
         hidePauseScreen = !hidePauseScreen;
+    }
+
+    private IEnumerator WaitForFade()
+    {
+        yield return new WaitForSecondsRealtime(0.3f);
+        pauseScreen.SetActive(true);
     }
 }

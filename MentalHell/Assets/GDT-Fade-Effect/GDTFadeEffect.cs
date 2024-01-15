@@ -8,15 +8,15 @@ public class GDTFadeEffect : MonoBehaviour
     public Color lastColor;
     public float timeEffect;
     public float initialDelay;
-    public bool firstToLast=true;
+    public bool firstToLast = true;
     public bool pingPong;
     public float pingPongDelay;
-    public bool disableWhenFinish=true;
+    public bool disableWhenFinish = true;
     public float disableDelay;
     private float speed;
     private Image blackImage;
     private float currentValue;
-    private bool performEffect=false;
+    private bool performEffect = false;
     private bool finished = false;
     private bool halfCycle;
     private bool goingToLast;
@@ -46,10 +46,10 @@ public class GDTFadeEffect : MonoBehaviour
                 Invoke("StartEffect", initialDelay);
             }
         }
-        
+
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (performEffect)
         {
@@ -127,7 +127,7 @@ public class GDTFadeEffect : MonoBehaviour
     {
         if (currentValue != 1f)
         {
-            currentValue += speed * Time.deltaTime;
+            currentValue += speed * Time.unscaledDeltaTime;
             if (currentValue > 1f)
             {
                 currentValue = 1f;
@@ -141,7 +141,7 @@ public class GDTFadeEffect : MonoBehaviour
     {
         if (currentValue != 0f)
         {
-            currentValue -= speed * Time.deltaTime;
+            currentValue -= speed * Time.unscaledDeltaTime;
             if (currentValue < 0f)
             {
                 currentValue = 0f;
