@@ -12,7 +12,7 @@ public class PlayerInteraction : MonoBehaviour
     private DocumentManager _documentManager;
     public GameObject interactIcon;
 
-    [SerializeField] private bool pickedUpHeart = false;
+    public bool pickedUpHeart = false;
     public int heartCounter;
     [SerializeField] private GameObject heartSprite;
     [SerializeField] private GameObject ghosts;

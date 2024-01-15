@@ -13,19 +13,21 @@ public class MonsterAI : MonoBehaviour
 
     private int movementDirection;
     private float monsterMovement;
-    private float walkingSpeed = 2.5f;
-    private float runningSpeed = 4f;
+    private float walkingSpeed = 3f;
+    private float runningSpeed = 7f;
 
     [SerializeField] public GameObject player;
     public float distance;
 
     private PlayerMovement _playerMovement;
+    private PlayerInteraction _playerInteraction;
     [SerializeField] private GameObject monsterSprite;
     private bool facingLeft = true;
 
     private void Awake()
     {
         _playerMovement = FindObjectOfType<PlayerMovement>();
+        _playerInteraction = FindObjectOfType<PlayerInteraction>();
     }
 
     private void Start()
@@ -38,12 +40,16 @@ public class MonsterAI : MonoBehaviour
         // checks the distance between monster and player
         distance = Vector3.Distance(this.transform.position, player.transform.position);
 
-        // sets the range at which the monster starts chasing the player depending on if they're running or not
-        if (distance < 5 && !_playerMovement.playerIsRunning)
+        // sets the range at which the monster starts chasing the player depending on if they're running or carrying a heart
+        if (distance < 8 && !_playerMovement.playerIsRunning)
         {
             monsterIsChasing = true;
         }
-        else if (distance < 10 && _playerMovement.playerIsRunning)
+        else if (distance < 15 && _playerMovement.playerIsRunning)
+        {
+            monsterIsChasing = true;
+        }
+        else if (distance < 20 && _playerInteraction.pickedUpHeart)
         {
             monsterIsChasing = true;
         }
