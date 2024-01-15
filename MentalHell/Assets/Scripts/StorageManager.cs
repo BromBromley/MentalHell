@@ -2,35 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StorageManager : MonoBehaviour
+[RequireComponent(typeof(MeshRenderer))]
+public class StorageManager : Interactable
 {
-    public GameObject player;
-    public Material openStorageMaterial;
-    public Material my_material;
-    public MeshRenderer my_renderer;
-    public bool openStorage;
-    // Start is called before the first frame update
-    void Start()
+    public Material open;
+    public Material closed;
+
+    private MeshRenderer mr;
+
+    public override void Interact()
     {
-        MeshRenderer my_renderer = GetComponent<MeshRenderer>();
-        if (my_renderer != null)
-        {
-            Material my_material = my_renderer.material;
-        }
+        mr.material = open;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        openStorage = player.GetComponent<PlayerInteraction>().openStorage;
-        if (openStorage == true)
-        {
-            OpenSesame();
-        }
-    }
-
-    void OpenSesame()
-    {
-        my_renderer.material = openStorageMaterial;
+        mr = GetComponent<MeshRenderer>();
+        mr.material = closed;
     }
 }

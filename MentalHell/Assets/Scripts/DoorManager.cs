@@ -43,4 +43,19 @@ public class DoorManager : MonoBehaviour
 
         character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, -59.37f);
     }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerInteraction>().OpenInteractableIcon();
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerInteraction>().CloseInteractableIcon();
+        }
+    }
 }

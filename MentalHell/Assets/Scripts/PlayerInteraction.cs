@@ -10,6 +10,7 @@ public class PlayerInteraction : MonoBehaviour
     private GameManager _gameManager;
     private PlayerMovement _playerMovement;
     private DocumentManager _documentManager;
+    public GameObject interactIcon;
 
     [SerializeField] private bool pickedUpHeart = false;
     public int heartCounter;
@@ -28,8 +29,11 @@ public class PlayerInteraction : MonoBehaviour
     public bool showingDocument;
     public bool isEnteringRoom = true;
     private GameObject storage;
-    public bool openStorage = false;
     public bool playOpenDoor;
+    private Vector3 boxSize = new Vector3(1f, 1f, 0f);
+    public GameObject entrance_door;
+    private MeshRenderer door_renderer;
+    public Animation door_open;
 
     private Sound[] Soundarray;
 
@@ -40,6 +44,7 @@ public class PlayerInteraction : MonoBehaviour
         _documentManager = FindObjectOfType<DocumentManager>();
 
         heartSprite.SetActive(false);
+        interactIcon.SetActive(false);
     }
 
     // this function checks what the player is interacting with
@@ -49,7 +54,11 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                openStorage = true;
+                // gets class Interactable and Method Interact from StorageManager.cs
+                if (other.GetComponent<Interactable>())
+                {
+                    other.GetComponent<Interactable>().Interact();
+                }
                 StartCoroutine(PlayerIsInvincible());
                 if (other.GetComponentInChildren<DocumentInteraction>() != null)
                 {
@@ -57,6 +66,7 @@ public class PlayerInteraction : MonoBehaviour
                     storage = other.gameObject;
                     _documentManager.ShowRandomDocument();
                     _gameManager.PauseGame();
+                    interactIcon.SetActive(false);
                 }
                 // show document in menu
             }
@@ -141,6 +151,10 @@ public class PlayerInteraction : MonoBehaviour
                     Counter3.SetActive(false);
                     Counter4.SetActive(true);
                     _gameManager.GameWon();
+                    door_renderer = entrance_door.GetComponent<MeshRenderer>();
+                    door_renderer.enabled = false;
+                    
+
                 }
 
                 // Play Herz Drop Sound
@@ -201,5 +215,16 @@ public class PlayerInteraction : MonoBehaviour
         showingDocument = false;
         storage.GetComponentInChildren<DocumentInteraction>().DestroyDocument();
         _documentManager.CloseDocument();
+        interactIcon.SetActive(true);
+    }
+
+    public void OpenInteractableIcon()
+    {
+        interactIcon.SetActive(true);
+    }
+
+    public void CloseInteractableIcon() 
+    {
+        interactIcon.SetActive(false);
     }
 }
