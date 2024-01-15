@@ -27,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
     private bool canEnterDoor = true;
     public bool playerIsBusy = false;
     public bool showingDocument;
-    public bool isEnteringRoom = true;
+    public bool isInHallway = true;
     public bool playAnimation;
     private GameObject storage;
     public bool playOpenDoor;
@@ -79,17 +79,16 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
                 playOpenDoor = true;
-                if (isEnteringRoom)
+                isInHallway = !isInHallway;
+                if (!isInHallway)
                 {
                     other.GetComponent<DoorManager>().EnterRoom(this.gameObject);
-                    StartCoroutine(_gameManager.SendMonsterToStart());
                 }
                 else
                 {
                     other.GetComponent<DoorManager>().ExitRoom(this.gameObject);
-                    StartCoroutine(_gameManager.SpawnMonster(0.7f));
                 }
-                isEnteringRoom = !isEnteringRoom;
+                StartCoroutine(_gameManager.SpawnMonster(1f));
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());
@@ -101,7 +100,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && canEnterDoor)
             {
-                StartCoroutine(_gameManager.SpawnMonster(0.7f));
+                StartCoroutine(_gameManager.SpawnMonster(1f));
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());
@@ -236,7 +235,7 @@ public class PlayerInteraction : MonoBehaviour
         interactIcon.SetActive(true);
     }
 
-    public void CloseInteractableIcon() 
+    public void CloseInteractableIcon()
     {
         interactIcon.SetActive(false);
     }

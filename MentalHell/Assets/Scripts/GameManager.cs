@@ -87,17 +87,19 @@ public class GameManager : MonoBehaviour
         PauseGame();
     }
 
+    // checks if the player is switching or using the door and tells the monster what to do
     public IEnumerator SpawnMonster(float time)
     {
-        //Debug.Log("checking if close enough");
-        yield return new WaitForSeconds(time);
-        _spawnManager.FindClosestSpawnPoint();
-    }
-
-    public IEnumerator SendMonsterToStart()
-    {
-        yield return new WaitForSeconds(0.5f);
-        _spawnManager.SendBackToStart();
+        if (!_switchManager.isSwitching && _playerInteraction.isInHallway)
+        {
+            yield return new WaitForSeconds(time);
+            _spawnManager.FindClosestSpawnPoint();
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.3f);
+            _spawnManager.SendBackToStart();
+        }
     }
 
     public void ExitGame()

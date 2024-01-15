@@ -77,7 +77,7 @@ public class SpawnManager : MonoBehaviour
         */
 
         // and transports the monster to said point if the player is far enough away
-        if (distancePlayerClosest > 15)
+        if (distancePlayerClosest > 20)
         {
             //Debug.Log("chose closest");
             transform.position = new Vector3(closestPoint.x, transform.position.y, transform.position.z);

@@ -9,7 +9,6 @@ public class SwitchManager : MonoBehaviour
 {
     // this script manages the ability to switch between past and present
 
-    private PlayerMovement _playerMovement;
     private GameManager _gameManager;
     public float sanityLevel = 5f;
     public bool isSwitching = false;
@@ -36,13 +35,13 @@ public class SwitchManager : MonoBehaviour
                 isSwitching = true;
                 StartCoroutine(TeleportDelay(34.0f));
                 StartCoroutine(SwitchingCooldown());
-                StartCoroutine(_gameManager.SendMonsterToStart());
+                StartCoroutine(_gameManager.SpawnMonster(0.5f));
             }
             else
             {
                 fadeEffect.SetActive(true);
                 isSwitching = false;
-                StartCoroutine(_gameManager.SpawnMonster(0.3f));
+                StartCoroutine(_gameManager.SpawnMonster(0.5f));
                 StartCoroutine(TeleportDelay(-34.0f));
                 StartCoroutine(SwitchingCooldown());
             }
@@ -81,7 +80,7 @@ public class SwitchManager : MonoBehaviour
             if (isSwitching)
             {
                 isSwitching = false;
-                _gameManager.SpawnMonster(0.3f);
+                _gameManager.SpawnMonster(0.5f);
                 StartCoroutine(TeleportDelay(-34.0f));
             }
             StartCoroutine(RefillSanity());
