@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        ResumeGame();
+        PauseGame();
+        StartCoroutine(PauseSound(0));
     }
 
     void Update()
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
             {
                 _uiManager.ActivatePauseScreen();
                 PauseGame();
+                StartCoroutine(PauseSound(0f));
             }
             else
             {
@@ -62,9 +64,8 @@ public class GameManager : MonoBehaviour
             Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxHerzAbgeben;
             FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
 
-            // maybe 1 oder 2 sekunden warten hier oder so? 
-
             PauseGame();
+            StartCoroutine(PauseSound(1f));
         }
     }
 
@@ -72,11 +73,16 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Cursor.visible = true;
-        FindObjectOfType<AudioManager>().PauseAllSound();
         isRunning = false;
         _playerMovement.movementEnabled = false;
         _spawnManager.checkingForSpawns = false;
         Time.timeScale = 0;
+    }
+
+    private IEnumerator PauseSound(float time)
+    {
+        yield return new WaitForSeconds(time);
+        FindObjectOfType<AudioManager>().PauseAllSound();
     }
 
     // unfreezes the game and all update functions

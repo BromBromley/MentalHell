@@ -25,6 +25,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private GameObject Counter4;
 
     private bool canEnterDoor = true;
+    private bool canOpenStorage = true;
     public bool playerIsBusy = false;
     public bool showingDocument;
     public bool isInHallway = true;
@@ -54,14 +55,18 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.tag == "Storage")
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && canOpenStorage)
             {
+                // Play Metall Schrank Öffnene Sound
+                Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMetallSchrankOffnen;
+                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+                StartCoroutine(StorageCooldown());
+                StartCoroutine(PlayerIsInvincible());
                 // gets class Interactable and Method Interact from StorageManager.cs
                 if (other.GetComponent<Interactable>())
                 {
                     other.GetComponent<Interactable>().Interact();
                 }
-                StartCoroutine(PlayerIsInvincible());
                 if (other.GetComponentInChildren<DocumentInteraction>() != null)
                 {
                     showingDocument = true;
@@ -180,12 +185,21 @@ public class PlayerInteraction : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         playAnimation = false;
     }
+
     // this prevents accidentally going through doors
     private IEnumerator DoorCooldown()
     {
         canEnterDoor = false;
         yield return new WaitForSeconds(1);
         canEnterDoor = true;
+    }
+
+    // this prevents the storage sounds from playing too often
+    private IEnumerator StorageCooldown()
+    {
+        canOpenStorage = false;
+        yield return new WaitForSeconds(1);
+        canOpenStorage = true;
     }
 
     // gives the player a second where they can't get attacked by the monster
