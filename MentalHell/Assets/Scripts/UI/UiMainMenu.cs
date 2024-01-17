@@ -248,5 +248,11 @@ public class Ui_MainMenu : MonoBehaviour
     public void displayPlayerPrefsUi(){
         GameObject.FindObjectOfType<LoadSettings>().displayPlayerPrefs();
     }
+
+    // Play Click Sound
+    public void PlayButtonClick(){
+        Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMisc;
+        GameObject.FindObjectOfType<AudioManager>().PlayOnce("Metal_Click_01", Soundarray);
+    }
     
 }

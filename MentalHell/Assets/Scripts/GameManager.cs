@@ -60,9 +60,12 @@ public class GameManager : MonoBehaviour
         {
             _uiManager.ShowGameOverScreen();
 
+            // Destroy All Sound Sources so that it is quiet in the Game Over Screen
+            FindObjectOfType<AudioManager>().DestroyAllSound();
+
             // Play Death Splatter Sound
             Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxHerzAbgeben;
-            FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+            FindObjectOfType<AudioManager>().PlayOnce("Herz_02", Soundarray);
 
             PauseGame();
             StartCoroutine(PauseSound(1f));

@@ -488,6 +488,37 @@ public class AudioManager : MonoBehaviour
 
     }
 
+
+    // Destroy the sound from the audio sources getting fed to the two mixer's
+    public void DestroyAllSound(){
+
+        // Pause all audio sources
+        GameObject[] singlegameobjects = {soundtrackEmpty, SFXEmpty, ghostEmpty, monsterEmpty};
+
+        // create new array including all objects that have audiosources
+        GameObject[] gameobjects = new GameObject[singlegameobjects.Length + hearts.Length];
+        singlegameobjects.CopyTo(gameobjects, 0);
+        hearts.CopyTo(gameobjects, singlegameobjects.Length);
+
+        AudioSource[] audioSources;
+        int gameObjectCounter = 0;
+        for(int i = 0; i < gameobjects.Length; i++)
+        {
+
+            // get all audiosources of the object
+            audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
+            gameObjectCounter++;
+            
+            // Pause all audiosources and reset the audioSources Array
+            for (int x = 0; x < audioSources.Length; x++){
+                Destroy(audioSources[x]);
+                audioSources[x] = null;
+            }
+
+        }
+
+    }
+
 }
 
 

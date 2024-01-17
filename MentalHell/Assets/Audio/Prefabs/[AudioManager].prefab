@@ -214,7 +214,7 @@ MonoBehaviour:
   musicSoundtrack:
   - name: MH_Musik_1
     type: music
-    clip: {fileID: 8300000, guid: 50541c948f24ac7488c566e1a62ae52a, type: 3}
+    clip: {fileID: 8300000, guid: 507e22cc354d4a344b97d5a9602ed186, type: 3}
     output: {fileID: -7663884845733579297, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
     volume: 0.1
     pitch: 1
@@ -225,7 +225,7 @@ MonoBehaviour:
     rolloffMode: 0
   - name: MH_Musik_2
     type: music
-    clip: {fileID: 8300000, guid: ff782a6b1e8b6d9449fe6dc89b5e7fad, type: 3}
+    clip: {fileID: 8300000, guid: ba54597e07d86db489715a57d4129402, type: 3}
     output: {fileID: -7663884845733579297, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
     volume: 0.1
     pitch: 1
@@ -236,7 +236,7 @@ MonoBehaviour:
     rolloffMode: 0
   - name: MH_Musik_3
     type: music
-    clip: {fileID: 8300000, guid: 61ac691774da89544887606aa6bbb9c0, type: 3}
+    clip: {fileID: 8300000, guid: 77e55c88a4d7a5b43a0ab4382c4f1604, type: 3}
     output: {fileID: -7663884845733579297, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
     volume: 0.1
     pitch: 1
@@ -247,7 +247,7 @@ MonoBehaviour:
     rolloffMode: 0
   - name: MH_Musik_4
     type: music
-    clip: {fileID: 8300000, guid: 9ac3f39f71c1fcf46805d5c2e55b403c, type: 3}
+    clip: {fileID: 8300000, guid: 38fa270b38b9ece428e0071227fec894, type: 3}
     output: {fileID: -7663884845733579297, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
     volume: 0.1
     pitch: 1
@@ -258,7 +258,18 @@ MonoBehaviour:
     rolloffMode: 0
   - name: MH_Musik_5
     type: music
-    clip: {fileID: 8300000, guid: a9396f0c84ea13d4583ef4f4cc34ded2, type: 3}
+    clip: {fileID: 8300000, guid: 1706f7f98a86cf44089cdde411b160fd, type: 3}
+    output: {fileID: -7663884845733579297, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 25
+    minDistance: 0
+    rolloffMode: 0
+  - name: MH_Musik_6
+    type: music
+    clip: {fileID: 8300000, guid: 23a7b592893b4524a9d4e867de78359e, type: 3}
     output: {fileID: -7663884845733579297, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
     volume: 0.1
     pitch: 1
@@ -268,99 +279,22 @@ MonoBehaviour:
     minDistance: 0
     rolloffMode: 0
   sfxAmbience:
-  - name: Kaputte_Lampe_Loop_01
-    type: sfx
-    clip: {fileID: 8300000, guid: f6ba42ac135ce394980de3aebfd3d935, type: 3}
-    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    spatialBlend: 0
-    maxDistance: 25
-    minDistance: 0
-    rolloffMode: 0
-  - name: Maschiene_Surren_Loop_01
-    type: sfx
-    clip: {fileID: 8300000, guid: ccfbaafb43fc80b44adbe5e7f099c4cf, type: 3}
-    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 0.5
-    pitch: 1
-    loop: 1
-    spatialBlend: 0
-    maxDistance: 25
-    minDistance: 0
-    rolloffMode: 0
-  - name: Maschienen_Surren_Loop_02
-    type: sfx
-    clip: {fileID: 8300000, guid: 22950afc7d393b74abfa45814e006c78, type: 3}
-    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    spatialBlend: 0
-    maxDistance: 25
-    minDistance: 0
-    rolloffMode: 0
   - name: Regen_Loop_01
     type: sfx
     clip: {fileID: 8300000, guid: f173ed796f3fc2240ac8296d18df3cd2, type: 3}
     output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 1
     spatialBlend: 0
     maxDistance: 25
     minDistance: 0
     rolloffMode: 0
-  - name: Wasser_Tropfen_Loop_01
+  - name: Regen_Loop_02
     type: sfx
-    clip: {fileID: 8300000, guid: 1ddaa64fe88f8124d8356325f6a8b00d, type: 3}
+    clip: {fileID: 8300000, guid: 18b3396e5dcf56840a2cfb8d3bf86271, type: 3}
     output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    spatialBlend: 0
-    maxDistance: 25
-    minDistance: 0
-    rolloffMode: 0
-  - name: Wasser_Tropfen_Loop_02
-    type: sfx
-    clip: {fileID: 8300000, guid: d609ad11a9b764c4e96fa45d9bdfae0e, type: 3}
-    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    spatialBlend: 0
-    maxDistance: 25
-    minDistance: 0
-    rolloffMode: 0
-  - name: Wasser_Tropfen_Loop_03
-    type: sfx
-    clip: {fileID: 8300000, guid: 34600f83e4e608c42afb57672467b3a9, type: 3}
-    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    spatialBlend: 0
-    maxDistance: 25
-    minDistance: 0
-    rolloffMode: 0
-  - name: Wasser_Tropfen_Loop_04
-    type: sfx
-    clip: {fileID: 8300000, guid: 65164eb4e5ddfdb4d811fe803cdd696f, type: 3}
-    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    spatialBlend: 0
-    maxDistance: 25
-    minDistance: 0
-    rolloffMode: 0
-  - name: Wasser_Tropfen_Loop_05
-    type: sfx
-    clip: {fileID: 8300000, guid: bdb03dbaba427714694bc46cd288b4b3, type: 3}
-    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 1
     spatialBlend: 0
@@ -587,6 +521,130 @@ MonoBehaviour:
     loop: 0
     spatialBlend: 0
     maxDistance: 25
+    minDistance: 0
+    rolloffMode: 0
+  sfxStairsUp:
+  - name: Treppe_Hoch_01
+    type: sfx
+    clip: {fileID: 8300000, guid: 5dc5f2c615ca3d3438f9c0de9f386b52, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Treppe_Hoch_02
+    type: sfx
+    clip: {fileID: 8300000, guid: 9fab79ef1e7065444b0da8c51f6595d3, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Treppe_Hoch_03
+    type: sfx
+    clip: {fileID: 8300000, guid: 3a5560a4b4aeef44abc079fc6dc1a22e, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Treppe_Hoch_04
+    type: sfx
+    clip: {fileID: 8300000, guid: 366384999a0f07646ae6236d4c764188, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  sfxStairsDown:
+  - name: Treppe_Runter_01
+    type: sfx
+    clip: {fileID: 8300000, guid: 52bc4d41bac4f0948ba047c5bef48dca, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: Treppe_Runter_02
+    type: sfx
+    clip: {fileID: 8300000, guid: a38e457c5f64eae4ea7b96a0d1e74d33, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 0
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  sfxMetallSchrankOffnen:
+  - name: "Metall_Schrank_\xD6ffnen_01"
+    type: sfx
+    clip: {fileID: 8300000, guid: 05cd970af2159cf44b8d3498abf470f9, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: "Metall_Schrank_\xD6ffnen_02"
+    type: sfx
+    clip: {fileID: 8300000, guid: a0c3126c625d15a499b1500ebe267d6c, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: "Metall_Schrank_\xD6ffnen_03"
+    type: sfx
+    clip: {fileID: 8300000, guid: 6d587a129704598459b09abcc6034c17, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: "Metall_Schrank_\xD6ffnen_04"
+    type: sfx
+    clip: {fileID: 8300000, guid: 2d64ca81b0076134daf0b37c3a7c4040, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 0
+  - name: "Metall_Schrank_\xD6ffnen_05"
+    type: sfx
+    clip: {fileID: 8300000, guid: 8dbec4d6ecbb0a043a03760e2d573fb5, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
     minDistance: 0
     rolloffMode: 0
   sfxHerzNehmen:
