@@ -57,6 +57,13 @@ public class GameManager : MonoBehaviour
         if (_monsterAI.distance < 2 && !_switchManager.isSwitching && isRunning && !_playerInteraction.playerIsBusy)
         {
             _uiManager.ShowGameOverScreen();
+
+            // Play Death Splatter Sound
+            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxHerzAbgeben;
+            FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+
+            // maybe 1 oder 2 sekunden warten hier oder so? 
+
             PauseGame();
         }
     }

@@ -106,6 +106,10 @@ public class PlayerInteraction : MonoBehaviour
                 StartCoroutine(PlayerIsInvincible());
                 StartCoroutine(_playerMovement.StopMovement());
                 other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
+
+                // Play Stairs Up Sound
+                Soundarray = FindObjectOfType<AudioManager>().sfxStairsUp;
+                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
             }
         }
 
@@ -162,10 +166,6 @@ public class PlayerInteraction : MonoBehaviour
 
 
                 }
-
-                // Play Herz Drop Sound
-                Soundarray = FindObjectOfType<AudioManager>().sfxHerzAbgeben;
-                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
 
                 // Play Geister Befreit Sound
                 Soundarray = FindObjectOfType<AudioManager>().sfxNPCGeisterBefreit;

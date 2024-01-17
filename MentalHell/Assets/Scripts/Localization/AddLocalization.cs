@@ -37,6 +37,7 @@ public class AddLocalization : MonoBehaviour
         toWriteTextTo.font = localizationValues.font_asset;
         toWriteTextTo.fontSize = localizationValues.font_size;
         toWriteTextTo.fontStyle = localizationValues.font_style;
+        toWriteTextTo.color = localizationValues.font_color;
 
         // write allignment values
         toWriteTextTo.verticalAlignment = localizationValues.vertical_alignment;

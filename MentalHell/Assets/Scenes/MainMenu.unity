@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: v0.111
+  m_text: v0.112
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
   m_sharedMaterial: {fileID: -6411322258198522261, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
@@ -1173,243 +1173,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797663214}
   m_CullTransparentMesh: 1
---- !u!1 &831584880
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 831584882}
-  - component: {fileID: 831584883}
-  m_Layer: 0
-  m_Name: '[LocalizationManager]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &831584882
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831584880}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -122.913795, y: 34.465584, z: 2.7592657}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &831584883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831584880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280e74d50f0793a4ea7d0af9a9a410eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoreTexts:
-  - name: letter_johann_01
-    text: 12.05.1955
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 10
-    vertical_alignment: 0
-    horizontal_alignment: 4
-  - name: letter_johann_02
-    text: "Sehr geehrter Herr Siegmund, <br> <br> Ich schreibe bez\xFCglich unseren
-      neuen Lehrlings Luise Sch\xF6n.<br> In den letzten zwei Monaten hat sie viel
-      gelernt und ist eine gro\xDFe Erleichterung und Hilfe f\xFCr die Anstalt und
-      alle Angestellten. <br> Allerdings ist ihr Verhalten Besorgnis erregend. Ihre
-      Art zu sprechen und mir anderen Menschen umzugehen ist sehr kalt und verst\xE4ndnislos.
-      Sie ist sehr Direkt allerdings auf eine uneinf\xFChlsame und gar disrespektvolle
-      Art. <br> Solch ein Auftreten kann ich leider in einer Heilanstalt mit Mental
-      labilen Patienten nicht dulden. <br> Ich hoffe ihr Verhalten in der n\xE4chsten
-      Zeit noch anpassen zu k\xF6nnen, allerdings schlie\xDFe ich eine Entlassung
-      nicht aus. <br> <br> Mit freundlichen Gr\xFC\xDFen<br> "
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 12
-    vertical_alignment: 0
-    horizontal_alignment: 1
-  - name: letter_johann_03
-    text: Johann von Scheuer
-    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
-    font_style: 0
-    font_size: 15
-    vertical_alignment: 512
-    horizontal_alignment: 2
-  - name: tagebuch_luise_01
-    text: Dienstag, den 22. Oktober 1957
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 2
-  - name: tagebuch_luise_02
-    text: "Der Morgen war kalt, meine Morgenrunde ging schnell. Gottesdienst gut.
-      Emma. Essen war schlecht. Johann fragt mich st\xE4ndig nach Emma. Sie ist wichtig
-      warum auch immer. Emma st\xF6rt und Emma ist komisch. Nach Schlafenszeit bin
-      ich zu Emma und habe sie bet\xE4ubt. Herz Operation verlief gut. Implantion
-      wurde gestr\xF6rt. Johann kam rein, wollte wichtige Sachen besprechen. Alles
-      immer wichtig. Emma immer wichtig. Jetzt nicht mehr. Johann ruft und schreit
-      und sch\xFCttelt mich. Ich sto\xDF ihn gegen die T\xFCr wieder und wieder.
-      Sein Kopf blutet. Er wirft mich gegen den Operationstisch. Desinfektionsmittel
-      brennt. Explosion. Johann ist schwarz. Dampft. Johann kann man nicht mehr reparieren.
-      Bringe ihn zu mir. Herz Operation verlief gut. Implantion auch. Ich sp\xFCre
-      zweite Seele.<br> Ich habe recht und ich habe Johann. "
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: forschung_Johann_01
-    text: 01.01.1956
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 4
-  - name: forschung_Johann_02
-    text: 'Untersuchung: Freier Wille'
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 4
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 2
-  - name: forschung_Johann_03
-    text: "Name: Dietmar, Daniel <br> Alter: 38 <br> Seelische Gesundheit: Manisch
-      Depressiv <br> Behandlungen: - <br> Notizen: Nicht mehr zu retten. <br> <br>
-      Forschung: <br> 01.01.56 \u2013 Kein Essen <br> 02.01.56 \u2013 Kein Essen
-      <br> 03.01.56 \u2013 Keine Ausgehzeit <br> 04.01.56 \u2013 Kein Essen (Erste
-      Anzeichen von Beschwerde) <br> 05.01.56 \u2013 Kein Essen (Daniel bettelt um
-      Essen, Schwach) <br> 06.01.56 \u2013 Kein Essen (Daniel stiehlt Essen in K\xFCche)
-      <br> 07.01.56 \u2013 Kein Essen, Keine Ausgehzeit, Keine B\xFCcher, Keine Decke
-      <br> 08.01.56 \u2013 Kein Essen, Keine Ausgehzeit, Keine B\xFCcher, Keine Decke
-      <br> 09.01.56 \u2013 Kein Essen, Keine Ausgehzeit, Keine B\xFCcher, Keine Decke
-      <br> (Daniel greift Luise an, sie beruhigt Ihn) <br> 10.01.56 \u2013 Kein Essen
-      <br> 11.01.56 \u2013 Normale Umst\xE4nde (David begeht Suizid) "
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: forschung_Johann_04
-    text: Warum?
-    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 4
-  - name: forschung_Luise_01
-    text: "Seele \u2013 Test"
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 2
-  - name: forschung_Luise_02
-    text: Juli 1957
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 2
-  - name: forschung_Luise_03
-    text: Brigitte
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 4
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: forschung_Luise_03
-    text: "Eine Woche kein Essen oder rausgehen. Hab ihr ein Messer gegeben. Sie
-      hat geblutet. Essen und kein Messer. Wieder eine Woche kein Essen. Sie war
-      leise. Pr\xFCgeltherapie. Kein Essen. 22.07. Operation verlief gut."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: kirche_vertrag_01
-    text: "Seine Hochw\xFCrdigste Exzellenz Franz Johannes Willhelm Weskam und Seine
-      Exzellenz Johann von Scheuern, von dem gemeinsamen Wunsch geleitet die zwischen
-      dem Heiligen Stuhl und der Heilanstalt Salzberg bestehenden freundschaftlichen
-      Beziehungen zu festigen und zu f\xF6rdern, gewillt, das Verh\xE4ltnis zwischen
-      der Katholischen Kirche und dem Sanatorium f\xFCr den Gesamtbereich der Heilanstalt
-      in einer beiden Teile befriedigenden Weise dauernd zu regeln, haben beschlossen
-      eine feierliche \xDCbereinkunft zu treffen, die eine in den Grunds\xE4tzen
-      einheitliche Behandlung der Einschl\xE4gigen Fragen sichern soll."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: kirche_vertrag_02
-    text: Artikel 1
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 4
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: kirche_vertrag_03
-    text: "Die Heilanstalt Salzberg gew\xE4hrleistet die Freiheit des Bekenntnisses
-      und der \xF6ffentlichen Aus\xFCbung der katholischen Religion. Es anerkennt
-      das Recht der katholischen Kirche, innerhalb der Heilanstalt, des f\xFCr alle
-      geltenden Gesetzes, ihre Angelegenheiten selbstst\xE4ndig und zu ordnen und
-      zu verwalten und im Rahmen ihrer Zust\xE4ndigkeit f\xFCr ihre Mitglieder bindende
-      Gesetze und Anordnungen zu erlassen."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: kirche_vertrag_04
-    text: Artikel 2
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 4
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: kirche_vertrag_05
-    text: "Das Sanatorium Salzberg verpflichtet sich einer Bebauung nachzugehen,
-      die nach den Vorschriften des kanonischen Rechts und mit dem geistlichen Stande
-      bzw. den Ordensstande vereinbar ist. Einvernehmen besteht \xFCber folgende
-      Punkte:"
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: kirche_vertrag_06
-    text: "1. F\xFCr die Gesamtheit der Heilanstalt wird Sorge getragen werden, da\xDF
-      deren Patienten eine heilig seelische Unterkunft mit einem Kreuze Christi beschm\xFCckt
-      und gesegnet von Seiner hochw\xFCrdigsten Exzellenz, erm\xF6glicht wird.<br>2.
-      In dringenden F\xE4llen ist der Zutritt den Geistlichen jederzeit zu gew\xE4hrleisten."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
-  - name: kirche_vertrag_06
-    text: "1. F\xFCr die Gesamtheit der Heilanstalt wird Sorge getragen werden, da\xDF
-      deren Patienten eine heilig seelische Unterkunft mit einem Kreuze Christi beschm\xFCckt
-      und gesegnet von Seiner hochw\xFCrdigsten Exzellenz, erm\xF6glicht wird.<br>2.
-      In dringenden F\xE4llen ist der Zutritt den Geistlichen jederzeit zu gew\xE4hrleisten."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
-    vertical_alignment: 512
-    horizontal_alignment: 1
 --- !u!1001 &898346300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1490,34 +1253,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 403322062701030178, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 694310743410080751, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2043786774}
-    - target: {fileID: 694310743410080751, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVolumeSFX
-      objectReference: {fileID: 0}
     - target: {fileID: 737495139903682035, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 792668483653968370, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_TagString
-      value: Quality
-      objectReference: {fileID: 0}
     - target: {fileID: 1417193101225834329, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2043786774}
-    - target: {fileID: 1417193101225834329, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetResolution
-      objectReference: {fileID: 0}
     - target: {fileID: 2010859881757454449, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1526,46 +1273,22 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2043786774}
-    - target: {fileID: 2581915924444755668, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetQuality
-      objectReference: {fileID: 0}
     - target: {fileID: 3014063323143362478, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2043786774}
-    - target: {fileID: 3014063323143362478, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetFullscreen
-      objectReference: {fileID: 0}
     - target: {fileID: 3798689466195771428, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4509670426643492653, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_TagString
-      value: SFXVolumeSlider
-      objectReference: {fileID: 0}
     - target: {fileID: 4733241222160004136, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2043786774}
-    - target: {fileID: 4733241222160004136, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVolumeMusic
-      objectReference: {fileID: 0}
     - target: {fileID: 5064554427162484346, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2043786774}
-    - target: {fileID: 5064554427162484346, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVolumeMaster
-      objectReference: {fileID: 0}
-    - target: {fileID: 5338291151143375178, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_TagString
-      value: Fullscreen
-      objectReference: {fileID: 0}
     - target: {fileID: 5850598223671304827, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1650,22 +1373,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6357156195314774174, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6440281142273148744, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6440281142273148744, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1893340674}
-    - target: {fileID: 6440281142273148744, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7503850808935744805, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_Name
       value: OptionsMenu
@@ -1674,36 +1381,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7503850808935744805, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 8064636478787177856, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_TagString
-      value: SoundtrackVolumeSlider
-      objectReference: {fileID: 0}
     - target: {fileID: 8134882799646072877, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8476486744709493466, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8476486744709493466, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2075703749}
-    - target: {fileID: 8476486744709493466, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8843474023843192145, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_TagString
-      value: Resolution
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863103679054652097, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2191,11 +1870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d08e3ecc18e8974caf5ea69e51bc7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1893340674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8557751768715568160, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-  m_PrefabInstance: {fileID: 939308730}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1895609527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,14 +1920,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7924528, g: 0.63545746, b: 0.45229617, a: 1}
+  m_Color: {r: 0.42352942, g: 0.34901962, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f8f6b154d8e5d04ba5c11a94a3e5a72, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b68658f26b4e8c41b0ab5b35164eac2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2388,11 +2062,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
   resolutionDropdown: {fileID: 1017152788}
---- !u!1 &2075703749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1690329430550732673, guid: 78a4a6b3e5cd991429bda0aab702d821, type: 3}
-  m_PrefabInstance: {fileID: 939308730}
-  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2152491797993637014
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -122.913795
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.465584
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.7592657
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688351881258868528, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324107301656266263, guid: d87a133256934b241bfed53b580b480e, type: 3}
+      propertyPath: m_Name
+      value: '[LocalizationManager]'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d87a133256934b241bfed53b580b480e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2403,4 +2129,4 @@ SceneRoots:
   - {fileID: 270784416}
   - {fileID: 670135587}
   - {fileID: 898346300}
-  - {fileID: 831584882}
+  - {fileID: 2152491797993637014}

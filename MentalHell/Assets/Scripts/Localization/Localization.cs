@@ -18,6 +18,7 @@ public class Localization
     public TMP_FontAsset font_asset;
     public FontStyles font_style;
     public float font_size = 11f;
+    public Color font_color;
 
     public VerticalAlignmentOptions vertical_alignment;
     public HorizontalAlignmentOptions horizontal_alignment;

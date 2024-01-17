@@ -30,6 +30,9 @@ public class AudioManager : MonoBehaviour
                     sfxAmbience,
                     sfxOpenDoor,
                     sfxCloseDoor,
+                    sfxStairsUp,
+                    sfxStairsDown,
+                    sfxMetallSchrankOffnen,
                     sfxHerzNehmen,
                     sfxHerzAbgeben,
                     sfxNPCGhostsIdle,
@@ -112,7 +115,7 @@ public class AudioManager : MonoBehaviour
             PlayRandomConstantly(sfxAmbience);
 
             // Invoke Chance to Play Soundtrack in given time
-            InvokeChanceToPlaySoundtrack(15f, 60f, musicSoundtrack, 3);
+            InvokeChanceToPlaySoundtrack(15f, 40f, musicSoundtrack, 3);
 
             // Invoke Chance to Play Monster Sound
             InvokeChanceToPlayMonster(3f, 3f, sfxMonster, 3);
@@ -124,7 +127,7 @@ public class AudioManager : MonoBehaviour
             PlayRandomConstantly(sfxHerzAmbience);
 
             // start chance of Ghosts Screamin
-            InvokeChanceToPlayGhosts(5f, 5f, sfxNPCGhostsIdle, 3);
+            InvokeChanceToPlayGhosts(5f, 10f, sfxNPCGhostsIdle, 3);
 
         }
   
