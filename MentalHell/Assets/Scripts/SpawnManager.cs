@@ -33,12 +33,14 @@ public class SpawnManager : MonoBehaviour
     // this checks for the distance between player and monster getting too big
     void Update()
     {
+        // Debug.Log(timeOut);
         if (this.gameObject.GetComponent<MonsterAI>().distance > 50 && checkingForSpawns)
         {
             FindClosestSpawnPoint();
         }
     }
     */
+
 
     // this goes through the list of spawn points to find the one closest to the player
     public void FindClosestSpawnPoint()
@@ -69,17 +71,9 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-        /*
-        Debug.Log(distancePlayerClosest);
-        Debug.Log(distancePlayerSecondClosest);
-        Debug.Log(closestPoint);
-        Debug.Log(secondClosestPoint);
-        */
-
         // and transports the monster to said point if the player is far enough away
         if (distancePlayerClosest > 20)
         {
-            //Debug.Log("chose closest");
             transform.position = new Vector3(closestPoint.x, transform.position.y, transform.position.z);
             this.gameObject.GetComponent<MonsterAI>().ChooseDirection();
         }
@@ -90,7 +84,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    // sends the monster back to the point it starts at when the player switches or enters a room
+    // sends the monster outside of the hallway when the player is switching or in a room
     public void SendBackToStart()
     {
         transform.position = timeOut;

@@ -65,8 +65,9 @@ public class MonsterAI : MonoBehaviour
         }
         else
         {
+            // checks in what direction the monster is running and flips the sprite accordingly
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, transform.position.z), runningSpeed * Time.deltaTime);
-            if (Vector3.Distance(player.transform.position, transform.position) < 0)
+            if ((transform.position.x - player.transform.position.x) < 0)
             {
                 monsterMovement = 1f;
             }
