@@ -299,7 +299,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayRandomConstantly (Sound[] soundArray){
-        
+
         if (soundArray == null) return;
 
         string soundName;

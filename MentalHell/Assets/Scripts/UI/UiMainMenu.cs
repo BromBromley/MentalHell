@@ -248,6 +248,9 @@ public class Ui_MainMenu : MonoBehaviour
     public void displayPlayerPrefsUi(){
         GameObject.FindObjectOfType<LoadSettings>().displayPlayerPrefs();
     }
+    public void displayPlayerPrefsNoResolution(){
+        GameObject.FindObjectOfType<LoadSettings>().displayPlayerPrefsNoResolution();
+    }
 
     // Play Click Sound
     public void PlayButtonClick(){

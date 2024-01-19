@@ -47,125 +47,137 @@ MonoBehaviour:
   LoreTexts:
   - name: letter_johann_01
     text: 12.05.1955
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
-    font_size: 10
-    vertical_alignment: 0
+    font_size: 25
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
     horizontal_alignment: 4
   - name: letter_johann_02
-    text: "Sehr geehrter Herr Siegmund, <br> <br> Ich schreibe bez\xFCglich unseren
-      neuen Lehrlings Luise Sch\xF6n.<br> In den letzten zwei Monaten hat sie viel
-      gelernt und ist eine gro\xDFe Erleichterung und Hilfe f\xFCr die Anstalt und
-      alle Angestellten. <br> Allerdings ist ihr Verhalten Besorgnis erregend. Ihre
-      Art zu sprechen und mir anderen Menschen umzugehen ist sehr kalt und verst\xE4ndnislos.
-      Sie ist sehr Direkt allerdings auf eine uneinf\xFChlsame und gar disrespektvolle
-      Art. <br> Solch ein Auftreten kann ich leider in einer Heilanstalt mit Mental
-      labilen Patienten nicht dulden. <br> Ich hoffe ihr Verhalten in der n\xE4chsten
-      Zeit noch anpassen zu k\xF6nnen, allerdings schlie\xDFe ich eine Entlassung
-      nicht aus. <br> <br> Mit freundlichen Gr\xFC\xDFen<br> "
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    text: "Sehr geehrter Herr Siegmund,<br><br>Ich schreibe bez\xFCglich unseres
+      neuen Lehrlings Luise Sch\xF6n.<br>In den letzten zwei Monaten hat sie viel
+      gelernt und ist eine grosse Hilfe f\xFCr die Anstalt und alle Angestellten.<br>Allerdings
+      ist ihr Verhalten Besorgnis erregend. Ihre Art zu sprechen und mir anderen
+      Menschen umzugehen ist sehr kalt und verst\xE4ndnislos. Sie ist sehr direkt
+      allerdings auf eine uneinf\xFChlsame und gar disrespektvolle Art.<br>Solch
+      ein Auftreten kann ich leider in einer Heilanstalt mit mental labilen Patienten
+      nicht dulden.<br>Ich hoffe ihr Verhalten in der n\xE4chsten Zeit noch unter
+      Kontrolle zu bekommen, allerdings schliesse ich eine Entlassung nicht aus.<br><br>Mit
+      freundlichen Gr\xFCssen<br>"
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
-    font_size: 12
-    vertical_alignment: 0
+    font_size: 28
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: letter_johann_03
     text: Johann von Scheuer
-    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
+    font_asset: {fileID: 11400000, guid: 8f571f9d7e44e2d409cfcb541f2115d1, type: 2}
     font_style: 0
-    font_size: 15
+    font_size: 60
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
-    horizontal_alignment: 2
+    horizontal_alignment: 1
   - name: tagebuch_luise_01
     text: Dienstag, den 22. Oktober 1957
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    font_style: 0
-    font_size: 11
+    font_asset: {fileID: 11400000, guid: 517cfb7b05ec9434c9f9ca85c7c91d2a, type: 2}
+    font_style: 4
+    font_size: 50
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 2
   - name: tagebuch_luise_02
-    text: "Der Morgen war kalt, meine Morgenrunde ging schnell. Gottesdienst gut.
+    text: "Der Morgen war kalt. Meine Morgenrunde ging schnell. Gottesdienst gut.
       Emma. Essen war schlecht. Johann fragt mich st\xE4ndig nach Emma. Sie ist wichtig
       warum auch immer. Emma st\xF6rt und Emma ist komisch. Nach Schlafenszeit bin
-      ich zu Emma und habe sie bet\xE4ubt. Herz Operation verlief gut. Implantion
-      wurde gestr\xF6rt. Johann kam rein, wollte wichtige Sachen besprechen. Alles
+      ich zu Emma und habe sie bet\xE4ubt. Herz Operation verlief gut. Implantation
+      wurde gest\xF6rt. Johann kam rein, wollte wichtige Sachen besprechen. Alles
       immer wichtig. Emma immer wichtig. Jetzt nicht mehr. Johann ruft und schreit
-      und sch\xFCttelt mich. Ich sto\xDF ihn gegen die T\xFCr wieder und wieder.
-      Sein Kopf blutet. Er wirft mich gegen den Operationstisch. Desinfektionsmittel
-      brennt. Explosion. Johann ist schwarz. Dampft. Johann kann man nicht mehr reparieren.
-      Bringe ihn zu mir. Herz Operation verlief gut. Implantion auch. Ich sp\xFCre
-      zweite Seele.<br> Ich habe recht und ich habe Johann. "
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      und sch\xFCttelt mich. Ich stosse ihn gegen die T\xFCr wieder und wieder. Sein
+      Kopf blutet. Er wirft mich gegen den Operationstisch. Desinfektionsmittel brennt.
+      Explosion. Johann ist schwarz. Dampft. Johann kann man nicht mehr reparieren.
+      Bringe ihn zu mir. Herz Operation verlief gut. Implantation auch. Ich sp\xFCre
+      zweite Seele.<br> Ich habe recht und ich habe Johann."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 25
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
   - name: forschung_Johann_01
     text: 01.01.1956
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 20
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 4
   - name: forschung_Johann_02
     text: 'Untersuchung: Freier Wille'
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
     font_style: 4
-    font_size: 11
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 2
   - name: forschung_Johann_03
-    text: "Name: Dietmar, Daniel <br> Alter: 38 <br> Seelische Gesundheit: Manisch
-      Depressiv <br> Behandlungen: - <br> Notizen: Nicht mehr zu retten. <br> <br>
-      Forschung: <br> 01.01.56 \u2013 Kein Essen <br> 02.01.56 \u2013 Kein Essen
-      <br> 03.01.56 \u2013 Keine Ausgehzeit <br> 04.01.56 \u2013 Kein Essen (Erste
-      Anzeichen von Beschwerde) <br> 05.01.56 \u2013 Kein Essen (Daniel bettelt um
-      Essen, Schwach) <br> 06.01.56 \u2013 Kein Essen (Daniel stiehlt Essen in K\xFCche)
-      <br> 07.01.56 \u2013 Kein Essen, Keine Ausgehzeit, Keine B\xFCcher, Keine Decke
-      <br> 08.01.56 \u2013 Kein Essen, Keine Ausgehzeit, Keine B\xFCcher, Keine Decke
-      <br> 09.01.56 \u2013 Kein Essen, Keine Ausgehzeit, Keine B\xFCcher, Keine Decke
-      <br> (Daniel greift Luise an, sie beruhigt Ihn) <br> 10.01.56 \u2013 Kein Essen
-      <br> 11.01.56 \u2013 Normale Umst\xE4nde (David begeht Suizid) "
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    text: "Name: Dietmar, Daniel<br>Alter: 38<br>Seelische Gesundheit: Manisch Depressiv<br>Behandlungen:
+      -<br>Notizen: Nicht mehr zu retten.<br><br>Forschung:<br>01.01.56 \u2013 Kein
+      Essen<br>02.01.56 \u2013 Kein Essen<br>03.01.56 \u2013 Keine Ausgehzeit<br>04.01.56
+      \u2013 Kein Essen (Erste Anzeichen von Beschwerde)<br>05.01.56 \u2013 Kein
+      Essen (Daniel bettelt um Essen, Schwach)<br>06.01.56 \u2013 Kein Essen (Daniel
+      stiehlt Essen in K\xFCche)<br>07.01.56 \u2013 Kein Essen, Keine Ausgehzeit,
+      Keine B\xFCcher, Keine Decke<br>08.01.56 \u2013 Kein Essen, Keine Ausgehzeit,
+      Keine B\xFCcher, Keine Decke<br>09.01.56 \u2013 Kein Essen, Keine Ausgehzeit,
+      Keine B\xFCcher, Keine Decke<br>(Daniel greift Luise an, sie beruhigt Ihn)<br>10.01.56
+      \u2013 Kein Essen<br>11.01.56 \u2013 Normale Umst\xE4nde (David begeht Suizid)"
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 23
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
   - name: forschung_Johann_04
     text: Warum?
     font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
-    font_style: 0
-    font_size: 11
+    font_style: 1
+    font_size: 70
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
-    horizontal_alignment: 4
+    horizontal_alignment: 2
   - name: forschung_Luise_01
     text: "Seele \u2013 Test"
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 2
   - name: forschung_Luise_02
     text: Juli 1957
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 30
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 2
   - name: forschung_Luise_03
     text: Brigitte
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
     font_style: 4
-    font_size: 11
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
-  - name: forschung_Luise_03
+  - name: forschung_Luise_04
     text: "Eine Woche kein Essen oder rausgehen. Hab ihr ein Messer gegeben. Sie
       hat geblutet. Essen und kein Messer. Wieder eine Woche kein Essen. Sie war
       leise. Pr\xFCgeltherapie. Kein Essen. 22.07. Operation verlief gut."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
-    font_size: 11
-    vertical_alignment: 512
+    font_size: 25
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
     horizontal_alignment: 1
   - name: kirche_vertrag_01
     text: "Seine Hochw\xFCrdigste Exzellenz Franz Johannes Willhelm Weskam und Seine
@@ -176,35 +188,39 @@ MonoBehaviour:
       in einer beiden Teile befriedigenden Weise dauernd zu regeln, haben beschlossen
       eine feierliche \xDCbereinkunft zu treffen, die eine in den Grunds\xE4tzen
       einheitliche Behandlung der Einschl\xE4gigen Fragen sichern soll."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 20
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
   - name: kirche_vertrag_02
     text: Artikel 1
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 95925af1149b81d44bfb1008c8a475b7, type: 2}
     font_style: 4
-    font_size: 11
+    font_size: 30
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
   - name: kirche_vertrag_03
     text: "Die Heilanstalt Salzberg gew\xE4hrleistet die Freiheit des Bekenntnisses
       und der \xF6ffentlichen Aus\xFCbung der katholischen Religion. Es anerkennt
       das Recht der katholischen Kirche, innerhalb der Heilanstalt, des f\xFCr alle
-      geltenden Gesetzes, ihre Angelegenheiten selbstst\xE4ndig und zu ordnen und
-      zu verwalten und im Rahmen ihrer Zust\xE4ndigkeit f\xFCr ihre Mitglieder bindende
-      Gesetze und Anordnungen zu erlassen."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      geltenden Gesetzes, ihre Angelegenheiten selbstst\xE4ndig zu ordnen, zu verwalten
+      und im Rahmen ihrer Zust\xE4ndigkeit f\xFCr ihre Mitglieder bindende Gesetze
+      und Anordnungen zu erlassen."
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 20
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
   - name: kirche_vertrag_04
     text: Artikel 2
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 95925af1149b81d44bfb1008c8a475b7, type: 2}
     font_style: 4
-    font_size: 11
+    font_size: 30
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
   - name: kirche_vertrag_05
@@ -212,28 +228,97 @@ MonoBehaviour:
       die nach den Vorschriften des kanonischen Rechts und mit dem geistlichen Stande
       bzw. den Ordensstande vereinbar ist. Einvernehmen besteht \xFCber folgende
       Punkte:"
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 20
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
   - name: kirche_vertrag_06
-    text: "1. F\xFCr die Gesamtheit der Heilanstalt wird Sorge getragen werden, da\xDF
+    text: "1.F\xFCr die Gesamtheit der Heilanstalt wird Sorge getragen werden, dass
       deren Patienten eine heilig seelische Unterkunft mit einem Kreuze Christi beschm\xFCckt
-      und gesegnet von Seiner hochw\xFCrdigsten Exzellenz, erm\xF6glicht wird.<br>2.
-      In dringenden F\xE4llen ist der Zutritt den Geistlichen jederzeit zu gew\xE4hrleisten."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      und gesegnet von Seiner hochw\xFCrdigsten Exzellenz, erm\xF6glicht wird.<br>2.In
+      dringenden F\xE4llen ist der Zutritt den Geistlichen jederzeit zu gew\xE4hrleisten."
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 20
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 1
-  - name: kirche_vertrag_06
-    text: "1. F\xFCr die Gesamtheit der Heilanstalt wird Sorge getragen werden, da\xDF
-      deren Patienten eine heilig seelische Unterkunft mit einem Kreuze Christi beschm\xFCckt
-      und gesegnet von Seiner hochw\xFCrdigsten Exzellenz, erm\xF6glicht wird.<br>2.
-      In dringenden F\xE4llen ist der Zutritt den Geistlichen jederzeit zu gew\xE4hrleisten."
-    font_asset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - name: bibeltext_01
+    text: 29. Wenn du aber daselbst den herrn, deinen Gott, suchen wirst, so wirst
+      du ihn finden, wenn du ihn wirrst von ganzen herzen und von ganzer Seele suchen.
+    font_asset: {fileID: 11400000, guid: 59219e42f42bbc6449b3f687af9abd60, type: 2}
     font_style: 0
-    font_size: 11
+    font_size: 50
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 512
+    horizontal_alignment: 1
+  - name: tutorial_01
+    text: "Auf der Suche nach dem perfekten Abenteuer f\xE4hrt Daniel alleine zu
+      einer geheimen verlassenen Heilanstalt nach Salzberg. Um nicht entdeckt zu
+      werden, verschafft er sich Nachts still und heimlich Zutritt.<br>Als er den
+      ersten Korridor betritt, erscheinen drei seltsame Gestalten die sich ihm in
+      den Weg stellen und den Eingang versperren. Diese Gestalten offenbaren sich
+      Daniel als verlorene Seelen, die nur befreit werden k\xF6nnen, wenn ihre Herzen
+      sicher zu ihnen zur\xFCckgebracht werden.<br>Um ihn bei der Suche zu unterst\xFCtzen,
+      verleihen die Seelen ihm die F\xE4higkeit in die Vergangenheit des Geb\xE4udes
+      zu reisen\u2026 naja, so lange es Daniel aushalten kann diese mentalen Kunstst\xFCcke
+      auszu\xFCben.<br>Verwirrt nimmt er sich der Aufgabe an.<br><br>"
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 28
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: tutorial_02
+    text: "Die Herzanzeige oben rechts zeigt dir an, wie viele Herzen du bereits
+      erfolgreich zur\xFCckgebracht hast.<br>Deine Verstand- und Ausdaueranzeige
+      findest du links oben.<br>Dein Inventar Slot unten links bewahrt dein gefundenes
+      Herz auf, bis du es zur\xFCckgebracht hast.<br> <br> "
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 28
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: tutorial_03
+    text: 'Laufen:<br>Rennen:<br>Interagieren:<br>Vergangenheit:'
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 1
+    font_size: 28
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: tutorial_04
+    text: A und D<br>Shift-Taste<br>E<br>Leertaste
+    font_asset: {fileID: 11400000, guid: 95925af1149b81d44bfb1008c8a475b7, type: 2}
+    font_style: 0
+    font_size: 28
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: tutorial_05
+    text: "Viel Gl\xFCck!"
+    font_asset: {fileID: 11400000, guid: 51149e671c78eb54bb4bd4f19bc093e8, type: 2}
+    font_style: 0
+    font_size: 70
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: tutorial_06
+    text: Start
+    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
+    font_style: 0
+    font_size: 70
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: tutorial_07
+    text: 'Wichtig Informationen:'
+    font_asset: {fileID: 11400000, guid: 95925af1149b81d44bfb1008c8a475b7, type: 2}
+    font_style: 0
+    font_size: 28
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 1024
     horizontal_alignment: 1

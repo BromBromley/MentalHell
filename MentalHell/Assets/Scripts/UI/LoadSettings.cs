@@ -100,4 +100,72 @@ public class LoadSettings : MonoBehaviour
 
     }
 
+
+    // the comma number thing is the default if there is no entry for the setting
+    public void loadPlayerPrefsNoResolution(){
+
+        // get the Script UiMainMenu which includes all the settings
+        mainMenuObject = GameObject.FindWithTag("MainMenu");
+        mainMenu = mainMenuObject.GetComponent<Ui_MainMenu>();
+
+        // get the playerpref script to get the settings
+        playerPrefsScript = this.GetComponent<PlayerPrefsX>();
+        
+        // Resolution
+        //resolution = playerPrefsScript.GetPlayerPrefsInt(RESOLUTION_KEY);
+        //Debug.Log("Reading: " + resolution.ToString());
+        //if (mainMenu.resolutions == null)
+        //{
+        //    mainMenu.GetResolutions();
+        //}
+        //mainMenu.SetResolution(resolution);
+        //Debug.Log("Displaying: " + resolution.ToString());
+        
+        // Quality
+        quality = playerPrefsScript.GetPlayerPrefsInt(QUALITY_KEY);
+        mainMenu.SetQuality(quality);
+
+        // Fullscreen
+        int fullscreenNumberj = playerPrefsScript.GetPlayerPrefsInt(FULLSCREEN_KEY);
+        fullscreenBool = false;
+        // convert int to bool
+        if (fullscreenNumberj == 1) {fullscreenBool = true;}
+        mainMenu.SetFullscreen(fullscreenBool);
+
+        // Master Volume
+        master = playerPrefsScript.GetPlayerPrefsFloat(MASTER_KEY);
+        mainMenu.SetVolumeMaster(master);
+
+        // Music Volume
+        music = playerPrefsScript.GetPlayerPrefsFloat(MUSIC_KEY);
+        mainMenu.SetVolumeMusic(music);
+
+        // SFX volume
+        sfx = playerPrefsScript.GetPlayerPrefsFloat(SFX_KEY);
+        mainMenu.SetVolumeSFX(sfx);
+
+                
+    }
+
+    public void displayPlayerPrefsNoResolution(){
+
+        loadPlayerPrefsNoResolution();
+
+        GameObject.FindGameObjectWithTag("MasterVolumeSlider").GetComponent<Slider>().value = master;
+        GameObject.FindGameObjectWithTag("SoundtrackVolumeSlider").GetComponent<Slider>().value = music;
+        GameObject.FindGameObjectWithTag("SFXVolumeSlider").GetComponent<Slider>().value = sfx;
+
+        //GameObject.FindGameObjectWithTag("Resolution").GetComponent<TMP_Dropdown>().value = resolution;
+        GameObject.FindGameObjectWithTag("Quality").GetComponent<TMP_Dropdown>().value = quality;
+        
+        bool test = GameObject.FindGameObjectWithTag("Fullscreen").GetComponent<Toggle>().isOn;
+        if (fullscreenBool != test)
+        {
+            GameObject.FindGameObjectWithTag("Fullscreen").GetComponent<Toggle>().isOn = fullscreenBool;
+        }
+
+        //GameObject.FindGameObjectWithTag("Fullscreen").GetComponent<Toggle>().isOn = true;   
+
+    }
+
 }
