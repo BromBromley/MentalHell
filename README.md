@@ -36,8 +36,8 @@ Unity Version 2022.3.12f1
 
 **Anton Hentzler** - Art, Animation and Game-Design
 
-**Jan Tillmans** - Sound, Story, Code, UX- and Game Design
+**Jan Tillmans** - Sound, Story, Code, UX- and Game-Design
 
-**Frederik Schneider** - Code, Level-, UX- and GameDesign
+**Frederik Schneider** - Code, Level-, UX- and Game-Design
 
 **René Becker** - Soundtrack
