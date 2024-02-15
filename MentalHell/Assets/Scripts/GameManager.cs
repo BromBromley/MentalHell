@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private SpawnManager _spawnManager;
     private PlayerInteraction _playerInteraction;
     private SwitchManager _switchManager;
+    private DocumentManager _documentManager;
 
     private bool isRunning;
 
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         _playerMovement = FindObjectOfType<PlayerMovement>();
         _spawnManager = FindObjectOfType<SpawnManager>();
         _switchManager = FindObjectOfType<SwitchManager>();
+        _documentManager = FindObjectOfType<DocumentManager>();
     }
 
     void Start()
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // checks if the player pressed 'escape' and reacts accordingly
-        if (Input.GetKeyDown(KeyCode.Escape) && !_playerInteraction.showingDocument)
+        if (Input.GetKeyDown(KeyCode.Escape) && !_playerInteraction.showingDocument && !_documentManager.showingInventory)
         {
             if (isRunning)
             {
@@ -46,10 +48,31 @@ public class GameManager : MonoBehaviour
                 ResumeGame();
             }
         }
-        if (Input.GetKey(KeyCode.Escape) && _playerInteraction.showingDocument)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (_playerInteraction.showingDocument)
+            {
+                ResumeGame();
+                _playerInteraction.ClosingDocument();
+            }
+            else if (_documentManager.showingInventory)
+            {
+                ResumeGame();
+                _documentManager.CloseAllDocuments();
+                _documentManager.CloseInventory();
+            }
+        }
+
+        // this checks if the player presses the I key to open the document overview
+        if (Input.GetKeyDown(KeyCode.I) && !_documentManager.showingInventory)
+        {
+            _documentManager.OpenInventory();
+            PauseGame();
+        }
+        else if (Input.GetKeyDown(KeyCode.I) && _documentManager.showingInventory)
+        {
+            _documentManager.CloseInventory();
             ResumeGame();
-            _playerInteraction.ClosingDocument();
         }
     }
 

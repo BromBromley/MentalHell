@@ -74,8 +74,8 @@ public class PlayerInteraction : MonoBehaviour
                     _documentManager.ShowRandomDocument();
                     _gameManager.PauseGame();
                     interactIcon.SetActive(false);
+                    storage.GetComponentInChildren<DocumentInteraction>().DestroyDocument();
                 }
-                // show document in menu
             }
         }
 
@@ -239,7 +239,6 @@ public class PlayerInteraction : MonoBehaviour
     {
         StartCoroutine(PlayerIsInvincible());
         showingDocument = false;
-        storage.GetComponentInChildren<DocumentInteraction>().DestroyDocument();
         _documentManager.CloseDocument();
         interactIcon.SetActive(true);
     }

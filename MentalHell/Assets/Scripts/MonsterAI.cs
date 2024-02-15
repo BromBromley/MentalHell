@@ -9,7 +9,7 @@ public class MonsterAI : MonoBehaviour
 
     public bool monsterIsChasing;
     private int randomStairs;
-    private bool canUseStairs = true;
+    //private bool canUseStairs = true;
 
     private int movementDirection;
     private float monsterMovement;
@@ -131,6 +131,7 @@ public class MonsterAI : MonoBehaviour
         }*/
     }
 
+    /*
     private IEnumerator StairsCoolDown()
     {
         canUseStairs = false;
@@ -139,4 +140,5 @@ public class MonsterAI : MonoBehaviour
 
         canUseStairs = true;
     }
+    */
 }
