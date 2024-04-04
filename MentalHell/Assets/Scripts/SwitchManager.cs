@@ -10,9 +10,11 @@ public class SwitchManager : MonoBehaviour
     // this script manages the ability to switch between past and present
 
     private GameManager _gameManager;
+    private IntroCheckPoint _introCheckPoint;
     public float sanityLevel = 5f;
     public bool isSwitching = false;
     private bool canSwitch = true;
+    private bool isIntro;
 
     [SerializeField] private GameObject fadeEffect;
     [SerializeField] private Slider switchSlider;
@@ -22,35 +24,36 @@ public class SwitchManager : MonoBehaviour
     {
         switchBarImage = switchSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>();
         _gameManager = FindObjectOfType<GameManager>();
+        _introCheckPoint = FindObjectOfType<IntroCheckPoint>();
     }
 
     private void Update()
     {
-        // this function checks when the player switches to the past and changes the player's position accordingly
-        if (Input.GetKeyDown(KeyCode.Space) && canSwitch)
-        {
-            if (isSwitching == false)
+            // this function checks when the player switches to the past and changes the player's position accordingly
+            if (Input.GetKeyDown(KeyCode.Space) && canSwitch)
             {
-                fadeEffect.SetActive(true);
-                isSwitching = true;
-                StartCoroutine(TeleportDelay(34.0f));
-                StartCoroutine(SwitchingCooldown());
-                StartCoroutine(_gameManager.SpawnMonster(0.5f));
-            }
-            else
-            {
-                fadeEffect.SetActive(true);
-                isSwitching = false;
-                StartCoroutine(_gameManager.SpawnMonster(0.5f));
-                StartCoroutine(TeleportDelay(-34.0f));
-                StartCoroutine(SwitchingCooldown());
-            }
+                if (isSwitching == false && isIntro == false)
+                {
+                    fadeEffect.SetActive(true);
+                    isSwitching = true;
+                    StartCoroutine(TeleportDelay(34.0f));
+                    StartCoroutine(SwitchingCooldown());
+                    StartCoroutine(_gameManager.SpawnMonster(0.5f));
+                }
+                else
+                {
+                    fadeEffect.SetActive(true);
+                    isSwitching = false;
+                    StartCoroutine(_gameManager.SpawnMonster(0.5f));
+                    StartCoroutine(TeleportDelay(-34.0f));
+                    StartCoroutine(SwitchingCooldown());
+                }
 
-            // Play Switching Sound
-            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMisc;
-            FindObjectOfType<AudioManager>().PlayOnce("Swap_Sound_01", Soundarray);
+                // Play Switching Sound
+                Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMisc;
+                FindObjectOfType<AudioManager>().PlayOnce("Swap_Sound_01", Soundarray);
 
-        }
+            }
     }
 
     private void FixedUpdate()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -93,6 +94,20 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     other.GetComponent<DoorManager>().ExitRoom(this.gameObject);
                 }
+                StartCoroutine(_gameManager.SpawnMonster(1f));
+                fadeEffect.SetActive(true);
+                StartCoroutine(DoorCooldown());
+                StartCoroutine(PlayerIsInvincible());
+                StartCoroutine(_playerMovement.StopMovement());
+            }
+        }
+
+        if (other.tag == "MainEntrance")
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                playOpenDoor = true;
+                SceneManager.LoadScene("Main");
                 StartCoroutine(_gameManager.SpawnMonster(1f));
                 fadeEffect.SetActive(true);
                 StartCoroutine(DoorCooldown());

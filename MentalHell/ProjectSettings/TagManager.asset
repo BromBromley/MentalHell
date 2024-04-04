@@ -23,6 +23,9 @@ TagManager:
   - Resolution
   - Quality
   - Fullscreen
+  - SoundtrackVolumeSlider
+  - MainEntrance
+  - DialogueTrigger
   layers:
   - Default
   - TransparentFX
