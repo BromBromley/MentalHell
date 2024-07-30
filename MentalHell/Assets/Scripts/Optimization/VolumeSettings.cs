@@ -6,8 +6,12 @@ public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider MasterSlider;
-    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider MusicSlider;
     [SerializeField] private Slider SFXSlider;
+
+    public const string MASTER_KEY = "masterVolume";
+    public const string MUSIC_KEY = "musicVolume";
+    public const string SFX_KEY = "sfxVolume";
 
     private void Start()
     {
@@ -26,29 +30,29 @@ public class VolumeSettings : MonoBehaviour
     public void SetMasterVolume()
     {
         float volume = MasterSlider.value;
-        myMixer.SetFloat("MasterVolume", Mathf.Log10(volume)*20);
-        PlayerPrefs.SetFloat("MasterVolume", volume);
+        myMixer.SetFloat(MASTER_KEY, Mathf.Log10(volume)*20);
+        PlayerPrefs.SetFloat(MASTER_KEY, volume);
     }
 
     public void SetMusicVolume()
     {
-        float volume = musicSlider.value;
-        myMixer.SetFloat("MusicVolume", Mathf.Log10(volume)*20);
-        PlayerPrefs.SetFloat("MusicVolume", volume);
+        float volume = MusicSlider.value;
+        myMixer.SetFloat(MUSIC_KEY, Mathf.Log10(volume)*20);
+        PlayerPrefs.SetFloat(MUSIC_KEY, volume);
     }
 
     public void SetSFXVolume()
     {
         float volume = SFXSlider.value;
-        myMixer.SetFloat("SFXVolume", Mathf.Log10(volume)*20);
-        PlayerPrefs.SetFloat("SFXVolume", volume);
+        myMixer.SetFloat(SFX_KEY, Mathf.Log10(volume)*20);
+        PlayerPrefs.SetFloat(SFX_KEY, volume);
     }
 
     private void LoadVolume()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-        MasterSlider.value = PlayerPrefs.GetFloat("MasterVolume");
+        MusicSlider.value = PlayerPrefs.GetFloat(MUSIC_KEY);
+        SFXSlider.value = PlayerPrefs.GetFloat(SFX_KEY);
+        MasterSlider.value = PlayerPrefs.GetFloat(MASTER_KEY);
 
         SetMusicVolume();
         SetSFXVolume();

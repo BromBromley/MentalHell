@@ -545,7 +545,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7752615706210124977, guid: 6bc0ff376a25828499d52a3af70b28ae, type: 3}
+    - {fileID: 4034551563192286491, guid: 6bc0ff376a25828499d52a3af70b28ae, type: 3}
+    - {fileID: 3019304361373684877, guid: 6bc0ff376a25828499d52a3af70b28ae, type: 3}
+    - {fileID: 1531006621214440870, guid: 6bc0ff376a25828499d52a3af70b28ae, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -868,7 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMixer: {fileID: 24100000, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
   MasterSlider: {fileID: 4745630800366626650}
-  musicSlider: {fileID: 1022766315759616719}
+  MusicSlider: {fileID: 5061182497328631048}
   SFXSlider: {fileID: 1022766315759616719}
 --- !u!114 &2043786776
 MonoBehaviour:
@@ -1247,7 +1251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Build 143
+  m_text: v144
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 95925af1149b81d44bfb1008c8a475b7, type: 2}
   m_sharedMaterial: {fileID: 5216211866848520873, guid: 95925af1149b81d44bfb1008c8a475b7, type: 2}
@@ -1951,10 +1955,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ui_MainMenu, Assembly-CSharp
-        m_MethodName: SetVolumeSFX
-        m_Mode: 0
+      - m_Target: {fileID: 2043786775}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetSFXVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2274,19 +2278,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ui_MainMenu, Assembly-CSharp
-        m_MethodName: SetResolution
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_AlphaFadeSpeed: 0.15
 --- !u!222 &1524200031780178022
 CanvasRenderer:
@@ -3449,19 +3441,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ui_MainMenu, Assembly-CSharp
-        m_MethodName: SetQuality
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &2653283577531387250
 GameObject:
@@ -4089,10 +4069,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ui_MainMenu, Assembly-CSharp
-        m_MethodName: displayPlayerPrefsUi
-        m_Mode: 1
+      - m_Target: {fileID: 2043786774}
+        m_TargetAssemblyTypeName: GraphicSettings, Assembly-CSharp
+        m_MethodName: SetFullscreen
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5043,10 +5023,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ui_MainMenu, Assembly-CSharp
-        m_MethodName: SetVolumeMaster
-        m_Mode: 0
+      - m_Target: {fileID: 2043786775}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetMasterVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5283,10 +5263,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ui_MainMenu, Assembly-CSharp
-        m_MethodName: SetVolumeMusic
-        m_Mode: 0
+      - m_Target: {fileID: 2043786775}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetMusicVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

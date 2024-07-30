@@ -14,7 +14,7 @@ public class StartAudioOnSceneSwitch : MonoBehaviour
     {
 
         // Load Player Settings
-        FindObjectOfType<LoadSettings>().loadPlayerPrefs();
+        //FindObjectOfType<LoadSettings>().loadPlayerPrefs();
 
         audioManagerScript = FindObjectOfType<AudioManager>();
         audioManagerScript.GetComponent<AudioManager>().InitializeAudio();
@@ -23,7 +23,7 @@ public class StartAudioOnSceneSwitch : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<LoadSettings>().loadPlayerPrefs();
+        //FindObjectOfType<LoadSettings>().loadPlayerPrefs();
     }
 
 }

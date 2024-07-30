@@ -9,7 +9,7 @@ public class SceneSwitch : MonoBehaviour
 {
     public void ChangeScene()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 

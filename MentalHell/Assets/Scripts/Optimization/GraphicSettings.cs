@@ -12,6 +12,10 @@ public class GraphicSettings : MonoBehaviour
 
     private Resolution[] resolutions;
 
+    public const string QUALITY_KEY = "qualityIndex";
+    public const string FULLSCREEN_KEY = "fullscreenBool";
+    public const string RESOLUTION_KEY = "resolutionIndex";
+
     void Start()
     {
         // Quality Settings Dropdown
@@ -29,12 +33,17 @@ public class GraphicSettings : MonoBehaviour
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
-            resolutionOptions.Add(option);
+            int resolutionCheck = 0;
 
-            if (resolutions[i].width == Screen.currentResolution.width &&
-                resolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionIndex = i;
+            if (resolutions[i].width != resolutionCheck){
+                resolutionCheck = resolutions[i].height;
+                resolutionOptions.Add(option);
+
+                if (resolutions[i].width == Screen.currentResolution.width &&
+                    resolutions[i].height == Screen.currentResolution.height)
+                {
+                    currentResolutionIndex = i;
+                }
             }
         }
         resolutionDropdown.AddOptions(resolutionOptions);
@@ -48,7 +57,7 @@ public class GraphicSettings : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-        PlayerPrefs.SetInt("QualitySettingPreference", qualityIndex);
+        PlayerPrefs.SetInt(QUALITY_KEY, qualityIndex);
         PlayerPrefs.Save();
     }
 
@@ -56,29 +65,36 @@ public class GraphicSettings : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-        PlayerPrefs.SetInt("ResolutionPreference", resolutionIndex);
+        PlayerPrefs.SetInt(RESOLUTION_KEY, resolutionIndex);
         PlayerPrefs.Save();
     }
 
-        public void SetFullscreen(int fullscreenIndex)
+    public void SetFullscreen(bool isFullscreen)
     {
-        Resolution resolution = resolutions[fullscreenIndex];
-        PlayerPrefs.SetInt("FullscreenPreference", fullscreenIndex);
+        // set fullscreen Setting
+        Screen.fullScreen = isFullscreen;
+
+        // convert bool to int
+        int fullscreenNumber;
+        if (isFullscreen){fullscreenNumber = 1;}
+        else {fullscreenNumber = 0;}
+        
+        PlayerPrefs.SetInt(FULLSCREEN_KEY, fullscreenNumber);
         PlayerPrefs.Save();
     }
 
     void LoadSettings()
     {
-        if (PlayerPrefs.HasKey("QualitySettingPreference"))
+        if (PlayerPrefs.HasKey(QUALITY_KEY))
         {
-            int qualityIndex = PlayerPrefs.GetInt("QualitySettingPreference");
+            int qualityIndex = PlayerPrefs.GetInt(QUALITY_KEY);
             qualityDropdown.value = qualityIndex;
             QualitySettings.SetQualityLevel(qualityIndex);
         }
 
-        if (PlayerPrefs.HasKey("ResolutionPreference"))
+        if (PlayerPrefs.HasKey(RESOLUTION_KEY))
         {
-            int resolutionIndex = PlayerPrefs.GetInt("ResolutionPreference");
+            int resolutionIndex = PlayerPrefs.GetInt(RESOLUTION_KEY);
             resolutionDropdown.value = resolutionIndex;
             Resolution resolution = resolutions[resolutionIndex];
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
