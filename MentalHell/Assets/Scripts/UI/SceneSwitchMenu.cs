@@ -12,5 +12,10 @@ public class SceneSwitchMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+        public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
 }

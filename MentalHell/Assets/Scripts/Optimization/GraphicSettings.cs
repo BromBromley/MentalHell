@@ -16,43 +16,55 @@ public class GraphicSettings : MonoBehaviour
     public const string FULLSCREEN_KEY = "fullscreenBool";
     public const string RESOLUTION_KEY = "resolutionIndex";
 
-    void Start()
+void Start()
+{
+    // Quality Settings Dropdown
+    qualityDropdown.ClearOptions();
+    List<string> qualityOptions = new List<string>(QualitySettings.names);
+    qualityDropdown.AddOptions(qualityOptions);
+    qualityDropdown.value = QualitySettings.GetQualityLevel();
+    qualityDropdown.onValueChanged.AddListener(SetQuality);
+
+    // Resolution Settings Dropdown
+    resolutions = Screen.resolutions;
+    resolutionDropdown.ClearOptions();
+    List<string> resolutionOptions = new List<string>();
+    HashSet<string> addedOptions = new HashSet<string>();
+    int currentResolutionIndex = 0;
+    for (int i = 0; i < resolutions.Length; i++)
     {
-        // Quality Settings Dropdown
-        qualityDropdown.ClearOptions();
-        List<string> qualityOptions = new List<string>(QualitySettings.names);
-        qualityDropdown.AddOptions(qualityOptions);
-        qualityDropdown.value = QualitySettings.GetQualityLevel();
-        qualityDropdown.onValueChanged.AddListener(SetQuality);
+        float refreshRate = (float)resolutions[i].refreshRateRatio.numerator / resolutions[i].refreshRateRatio.denominator;
+        int roundedRefreshRate = Mathf.RoundToInt(refreshRate);
 
-        // Resolution Settings Dropdown
-        resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
-        List<string> resolutionOptions = new List<string>();
-        int currentResolutionIndex = 0;
-        for (int i = 0; i < resolutions.Length; i++)
+        // Only add resolutions with 60Hz or 120Hz refresh rates
+        if (roundedRefreshRate == 60 || roundedRefreshRate == 120)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-            int resolutionCheck = 0;
+            string option = resolutions[i].width + " x " + resolutions[i].height + " @ " + roundedRefreshRate + "Hz";
 
-            if (resolutions[i].width != resolutionCheck){
-                resolutionCheck = resolutions[i].height;
+            if (!addedOptions.Contains(option))
+            {
+                addedOptions.Add(option);
                 resolutionOptions.Add(option);
 
+                // Check if this resolution matches the current screen resolution
                 if (resolutions[i].width == Screen.currentResolution.width &&
-                    resolutions[i].height == Screen.currentResolution.height)
+                    resolutions[i].height == Screen.currentResolution.height &&
+                    resolutions[i].refreshRateRatio.numerator == Screen.currentResolution.refreshRateRatio.numerator &&
+                    resolutions[i].refreshRateRatio.denominator == Screen.currentResolution.refreshRateRatio.denominator)
                 {
-                    currentResolutionIndex = i;
+                    currentResolutionIndex = resolutionOptions.Count - 1; // Update index of the currently selected resolution
                 }
             }
         }
-        resolutionDropdown.AddOptions(resolutionOptions);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.onValueChanged.AddListener(SetResolution);
-
-        // Load saved settings
-        LoadSettings();
     }
+    resolutionDropdown.AddOptions(resolutionOptions);
+    resolutionDropdown.value = currentResolutionIndex;
+    resolutionDropdown.onValueChanged.AddListener(SetResolution);
+
+    // Load saved settings
+    LoadSettings();
+}
+
 
     public void SetQuality(int qualityIndex)
     {
