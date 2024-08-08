@@ -12,7 +12,7 @@ public class ButtonAnimation : MonoBehaviour
 
     void Start()
     {
-        // Holen Sie sich die TMP_Text-Komponente des Buttons
+        // Holt sich die TMP_Text-Komponente des Buttons
         buttonText = GetComponentInChildren<TMP_Text>();
         if (buttonText == null)
         {

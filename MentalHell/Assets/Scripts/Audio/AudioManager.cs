@@ -104,6 +104,8 @@ public class AudioManager : MonoBehaviour
             // Play Main in a loop Theme when in the main menu
             musicSoundtrack[0].loop = true;
             PlayConstantly("MH_Musik_1", musicSoundtrack);
+            sfxAmbience[0].loop = true;
+            PlayConstantly("Regen_Loop_01", sfxAmbience);
 
         }
         else if (SceneManager.GetActiveScene().buildIndex > 0)

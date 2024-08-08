@@ -3588,7 +3588,6 @@ GameObject:
   - component: {fileID: 1093181395}
   - component: {fileID: 1093181394}
   - component: {fileID: 1093181393}
-  - component: {fileID: 1093181392}
   m_Layer: 5
   m_Name: Language
   m_TagString: Quality
@@ -3620,21 +3619,6 @@ RectTransform:
   m_AnchoredPosition: {x: 437.6006, y: -336.24072}
   m_SizeDelta: {x: 190, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1093181392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093181390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163c476f8929aea48913597a52233089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftArrow: {fileID: 217326490}
-  rightArrow: {fileID: 836661722}
-  dropdown: {fileID: 1093181393}
 --- !u!114 &1093181393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4714,6 +4698,9 @@ GameObject:
   - component: {fileID: 2043786774}
   - component: {fileID: 2043786776}
   - component: {fileID: 2043786777}
+  - component: {fileID: 2043786780}
+  - component: {fileID: 2043786779}
+  - component: {fileID: 2043786778}
   m_Layer: 5
   m_Name: '[UserInterface]'
   m_TagString: MainMenu
@@ -4865,6 +4852,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ec37e9b9c1fd04ebee8d1fe6a13b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2043786778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043786769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c476f8929aea48913597a52233089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftArrow: {fileID: 217326490}
+  rightArrow: {fileID: 836661722}
+  dropdown: {fileID: 1093181393}
+--- !u!114 &2043786779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043786769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c476f8929aea48913597a52233089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftArrow: {fileID: 232030308}
+  rightArrow: {fileID: 328996854}
+  dropdown: {fileID: 520867459135552830}
+--- !u!114 &2043786780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043786769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c476f8929aea48913597a52233089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftArrow: {fileID: 985231731}
+  rightArrow: {fileID: 1370889312}
+  dropdown: {fileID: 6825975515096614397}
 --- !u!1 &2046531948
 GameObject:
   m_ObjectHideFlags: 0
@@ -6949,21 +6981,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1457432242645405309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7249540529413846671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163c476f8929aea48913597a52233089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftArrow: {fileID: 985231731}
-  rightArrow: {fileID: 1370889312}
-  dropdown: {fileID: 6825975515096614397}
 --- !u!114 &1469321905649912612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7945,21 +7962,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2614332575909646328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6394076671231741070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163c476f8929aea48913597a52233089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftArrow: {fileID: 232030308}
-  rightArrow: {fileID: 328996854}
-  dropdown: {fileID: 520867459135552830}
 --- !u!1 &2691967200717230768
 GameObject:
   m_ObjectHideFlags: 0
@@ -11395,7 +11397,6 @@ GameObject:
   - component: {fileID: 6103579216258681166}
   - component: {fileID: 6446676588286535302}
   - component: {fileID: 520867459135552830}
-  - component: {fileID: 2614332575909646328}
   m_Layer: 5
   m_Name: Quality
   m_TagString: Quality
@@ -12447,7 +12448,6 @@ GameObject:
   - component: {fileID: 6090814879912027986}
   - component: {fileID: 3532312324993646946}
   - component: {fileID: 6825975515096614397}
-  - component: {fileID: 1457432242645405309}
   m_Layer: 5
   m_Name: Resolution
   m_TagString: Resolution
