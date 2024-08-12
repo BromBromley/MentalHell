@@ -5442,6 +5442,11 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120928363}
   m_Enabled: 1
+--- !u!1 &184817132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7259337975366869043, guid: 0f392c8a64004bb4e86d0df6d5176835, type: 3}
+  m_PrefabInstance: {fileID: 82909333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &199616921
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,6 +5735,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250542476}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &264155526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3844257239441744908, guid: 354a9959f2702534c83cf65d1e20e872, type: 3}
+  m_PrefabInstance: {fileID: 667702461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &272734931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,7 +5749,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272734932}
-  - component: {fileID: 272734933}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -5763,22 +5772,6 @@ Transform:
   - {fileID: 1861142215}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &272734933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272734931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63154ded1ecae4c5d9db10172a081a27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sanityLevel: 5
-  isSwitching: 0
-  fadeEffect: {fileID: 0}
-  switchSlider: {fileID: 0}
 --- !u!1001 &281208301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6045,7 +6038,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8307fd12cdfc44e2beda10fa26dfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkingForSpawns: 1
 --- !u!1001 &399089596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12970,7 +12962,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1107887202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0d1b9c7d49a4c4cb8e7ee212e8d632, type: 3}
+  m_Script: {fileID: 11500000, guid: c38c105e2b0674f458c22730c8d5c144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1107887206
@@ -12986,7 +12978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   documentList: {fileID: 0}
-  documentScreen: {fileID: 0}
+  documentScreen: {fileID: 184817132}
   showingInventory: 0
 --- !u!1 &1241476932
 GameObject:
@@ -13848,6 +13840,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1758404481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8200489100018473780, guid: 354a9959f2702534c83cf65d1e20e872, type: 3}
+  m_PrefabInstance: {fileID: 667702461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1841988671
 GameObject:
   m_ObjectHideFlags: 0
@@ -13944,8 +13947,7 @@ GameObject:
   - component: {fileID: 1861142217}
   - component: {fileID: 1861142216}
   - component: {fileID: 1861142222}
-  - component: {fileID: 1861142220}
-  - component: {fileID: 1861142223}
+  - component: {fileID: 1861142224}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -14042,37 +14044,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861142214}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1861142220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861142214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271e52c307ff24234ad540dc88d84d31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactIcon: {fileID: 0}
-  pickedUpHeart: 0
-  heartCounter: 0
-  heartSprite: {fileID: 0}
-  ghosts: {fileID: 445045863}
-  twoGhosts: {fileID: 2100000, guid: 164ab4feb13c94ffe809b5c6ce4ecf29, type: 2}
-  oneGhost: {fileID: 2100000, guid: be72a70e37010406687048aa92e5af0c, type: 2}
-  fadeEffect: {fileID: 0}
-  Counter1: {fileID: 0}
-  Counter2: {fileID: 0}
-  Counter3: {fileID: 0}
-  Counter4: {fileID: 0}
-  playerIsBusy: 0
-  showingDocument: 0
-  isInHallway: 1
-  playAnimation: 0
-  playOpenDoor: 0
-  entrance_door: {fileID: 0}
-  door_animator: {fileID: 0}
 --- !u!54 &1861142222
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14100,7 +14071,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1861142223
+--- !u!114 &1861142224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14109,16 +14080,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1861142214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 282484f192ca44d33ab88be225a47586, type: 3}
+  m_Script: {fileID: 11500000, guid: f854c5b06212648eea05363742784dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerSprite: {fileID: 199616921}
-  movementEnabled: 1
-  playerCanRun: 1
   playerIsRunning: 0
-  movement: 0
   animator: {fileID: 513755160}
-  staminaSlider: {fileID: 0}
+  staminaSlider: {fileID: 1758404481}
+  interactIcon: {fileID: 264155526}
+  fadeEffect: {fileID: 1957381844}
+  entrance_door: {fileID: 2138366099}
+  playOpenDoor: 0
 --- !u!1 &1905167193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4112988442068707609, guid: 5cd1f6b0ea6034a4d86ffdf746063952, type: 3}

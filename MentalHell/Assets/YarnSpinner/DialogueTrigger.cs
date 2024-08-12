@@ -19,20 +19,24 @@ public class DialogueTrigger : MonoBehaviour
         dialogueRunner.onDialogueComplete.AddListener(EndConversation);
     }
 
-    private void StartConversation() {
+    private void StartConversation()
+    {
         Debug.Log($"Started conversation with {name}.");
         isCurrentConversation = true;
         dialogueRunner.StartDialogue(dialogueTrigger);
     }
 
-    private void EndConversation() {
-        if (isCurrentConversation) {
+    private void EndConversation()
+    {
+        if (isCurrentConversation)
+        {
             isCurrentConversation = false;
             Debug.Log($"Ended conversation with {name}.");
         }
     }
 
-    public void DisableConversation() {
+    public void DisableConversation()
+    {
         interactable = false;
     }
 
@@ -41,7 +45,8 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("COLLIDES");
-            collision.GetComponent<PlayerInteraction>().OpenInteractableIcon();
+            collision.GetComponent<PlayerInteraction>()?.OpenInteractableIcon();
+            collision.GetComponent<Intro_PlayerControls>()?.OpenInteractableIcon();
         }
     }
 
@@ -58,7 +63,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerInteraction>().CloseInteractableIcon();
+            collision.GetComponent<PlayerInteraction>()?.CloseInteractableIcon();
+            collision.GetComponent<Intro_PlayerControls>()?.CloseInteractableIcon();
         }
     }
 }

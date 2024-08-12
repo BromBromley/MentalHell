@@ -10,9 +10,4 @@ public class ExitIntro : Interactable
         SceneManager.LoadScene("Main");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
