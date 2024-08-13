@@ -990,6 +990,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193420445}
   m_CullTransparentMesh: 1
+--- !u!1 &208165090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208165092}
+  - component: {fileID: 208165091}
+  m_Layer: 0
+  m_Name: '[DiscordStatus]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &208165091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208165090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48a7f8cf79b0424e8b4425229af0613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &208165092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208165090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -221.05519, y: 132.14699, z: -227.1406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213397878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2076,7 @@ MonoBehaviour:
 
 
 
+
     Main Code
 
 
@@ -2806,63 +2851,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605120321}
   m_CullTransparentMesh: 1
---- !u!1001 &666996533
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5970862754630348935, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_Name
-      value: '[DiscordStatus]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -221.05519
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 132.14699
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -227.1406
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020365216793618449, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
 --- !u!1001 &670135587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4311,17 +4299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languageDropdown: {fileID: 1093181393}
---- !u!114 &1109624580 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4706699406350106761, guid: 79ed1f85a74410641919fec4259771a9, type: 3}
-  m_PrefabInstance: {fileID: 666996533}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b48a7f8cf79b0424e8b4425229af0613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1195572673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6402474236939632030, guid: e3d69f4317e222d449515ddb1bc1020a, type: 3}
@@ -4574,7 +4551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -550, y: -868}
+  m_AnchoredPosition: {x: -549.99994, y: -868}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370481107
@@ -5070,6 +5047,8 @@ MonoBehaviour:
 
 
     Frederik Schneider
+
+    Esther Hentzler
 
 
 
@@ -5976,6 +5955,8 @@ MonoBehaviour:
   rightArrowQuality: {fileID: 328996854}
   leftArrowResolution: {fileID: 985231731}
   rightArrowResolution: {fileID: 1370889312}
+  rightArrowLanguage: {fileID: 0}
+  leftArrowLanguage: {fileID: 0}
 --- !u!114 &2043786775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11690,18 +11671,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1109624580}
-        m_TargetAssemblyTypeName: DiscordManager, Assembly-CSharp
-        m_MethodName: ChangeActivityOutside
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &5861915993746746623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14298,10 +14267,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 556627133}
-  - {fileID: 270784416}
-  - {fileID: 666996533}
   - {fileID: 670135587}
-  - {fileID: 898346300}
   - {fileID: 2152491797993637014}
+  - {fileID: 208165092}
+  - {fileID: 898346300}
+  - {fileID: 270784416}
   - {fileID: 2043786773}
   - {fileID: 890634198}

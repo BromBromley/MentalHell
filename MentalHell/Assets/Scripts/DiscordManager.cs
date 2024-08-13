@@ -5,30 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class DiscordManager : MonoBehaviour
 {
-    // Statische Instanz der Klasse
     public static DiscordManager Instance { get; private set; }
 
     private Discord.Discord discord;
 
-    // Mapping von Szenen-IDs oder Namen zu Aktivitätsdetails
+    // Mapping of Scene-IDs or Namens for Activitys
     private Dictionary<string, Discord.Activity> sceneActivities;
 
-    // Start ist aufgerufen, bevor das erste Frame aktualisiert wird
     void Start()
     {
         // Singleton-Check
         if (Instance == null)
         {
-            // Setze die Singleton-Instanz auf dieses Objekt
+            // Set Singleton-Instance of Object
             Instance = this;
-
-            // Stelle sicher, dass dieses Objekt beim Szenenwechsel nicht zerstoert wird
             DontDestroyOnLoad(gameObject);
 
-            // Initialisiere Discord
+            // Initialize Discord
             discord = new Discord.Discord(1270427024535847083, (ulong)Discord.CreateFlags.NoRequireDiscord);
 
-            // Definiere Aktivitäten für verschiedene Szenen
+            // Definition of Actitvitys
             sceneActivities = new Dictionary<string, Discord.Activity>
             {
                 { "MainMenu", new Discord.Activity
@@ -72,15 +68,14 @@ public class DiscordManager : MonoBehaviour
                 }
             };
 
-            // Registriere den Szenenwechsel-Listener
+            // Register Sceneswitch-Listener
             SceneManager.sceneLoaded += OnSceneLoaded;
 
-            // Ändere die Aktivität, wenn das Skript startet
+            // Change Activity after Start
             ChangeActivity(SceneManager.GetActiveScene().name);
         }
         else
         {
-            // Wenn bereits eine Instanz existiert, dann loesche dieses Objekt
             Destroy(gameObject);
         }
     }
@@ -109,6 +104,10 @@ public class DiscordManager : MonoBehaviour
                 Debug.Log("Activity updated for scene: " + sceneName);
             });
         }
+        else
+        {
+            Debug.LogWarning("No activity defined for scene: " + sceneName);
+        }
     }
 
     private long GetCurrentUnixTimestamp()
@@ -116,7 +115,6 @@ public class DiscordManager : MonoBehaviour
         return new System.DateTimeOffset(System.DateTime.UtcNow).ToUnixTimeSeconds();
     }
 
-    // Update wird einmal pro Frame aufgerufen
     void Update()
     {
         if (discord != null)
