@@ -14,10 +14,23 @@ public class AddLocalization : MonoBehaviour
     
     void Start()
     {
+        loadLocalization("English");
+    }
+    public void loadLocalization(string language)
+    {
 
-        // get the array with all the Localization
-        LoreTexts = FindObjectOfType<LocalizationManager>().LoreTexts;
-
+        // get the array with all the Localization depending on language
+        if (language == "English")
+        {
+            LoreTexts = FindObjectOfType<LocalizationManager>().TextsEnglish;
+            Debug.Log("English");
+        }
+        if (language == "Deutsch")
+        {
+            LoreTexts = FindObjectOfType<LocalizationManager>().TextsDeutsch;
+            Debug.Log("Deutsch");
+        }
+        
         // get the text component on this element 
         toWriteTextTo = this.GetComponent<TextMeshProUGUI>();
 
@@ -42,7 +55,6 @@ public class AddLocalization : MonoBehaviour
         // write allignment values
         toWriteTextTo.verticalAlignment = localizationValues.vertical_alignment;
         toWriteTextTo.horizontalAlignment = localizationValues.horizontal_alignment;
-
     }
 
 }
