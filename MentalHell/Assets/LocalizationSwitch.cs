@@ -14,8 +14,20 @@ public class LocalizationSwitch : MonoBehaviour
         "English",
         "Deutsch",
     };
-    public TMP_Dropdown languageDropdown;
 
+    public void localizationSwitch(int languageIndex)
+    {
+        // get correct string and call loadLocalization
+        string language = languages[languageIndex];
+        AddLocalization[] addLocalizationScripts = FindObjectsOfType<AddLocalization>();
+        for (int i = 0; i < addLocalizationScripts.Length; i++)
+        {
+            addLocalizationScripts[i].loadLocalization(language);
+        }
+    }
+
+    // TODO: This can go into the dedicated options script currently called "GraphicsSettings"
+    public TMP_Dropdown languageDropdown;
     void Start()
     {
         // Language Settings Dropdown
@@ -26,10 +38,4 @@ public class LocalizationSwitch : MonoBehaviour
         languageDropdown.AddOptions(languageOptions);
     }
 
-    public void localizationSwitch(int languageIndex)
-    {
-        // get correct string and call loadLocalization
-        string language = languages[languageIndex];
-        FindObjectOfType<AddLocalization>().loadLocalization(language);
-    }
 }

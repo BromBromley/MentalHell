@@ -322,3 +322,450 @@ MonoBehaviour:
     font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 1024
     horizontal_alignment: 1
+  TextsEnglish:
+  - name: menu_play
+    text: PLAY
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 65
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: menu_options
+    text: Options
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 50
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: menu_credits
+    text: Credits
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 50
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: menu_quit
+    text: Quit
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 50
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: menu_follow
+    text: Follow Us
+    font_asset: {fileID: 11400000, guid: c8c939466c154df428ed7f75e07beedc, type: 2}
+    font_style: 0
+    font_size: 25
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_title
+    text: OPTIONS
+    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
+    font_style: 0
+    font_size: 60
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_fullscreen
+    text: Fullscreen
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 36.2
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 1
+  - name: option_master
+    text: Master
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 30
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_music
+    text: Music
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 30
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_sfx
+    text: Sounds
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 30
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_back
+    text: < Go Back
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 25
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 1024
+    horizontal_alignment: 2
+  - name: credits_category
+    text: Game Design       Level Design     Main Code    Additional Code      Art
+      & Animation    Sound Design    Writer    Soundtrack    Special Thanks To
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 50
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: quitcheck_yes
+    text: Yes
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 85
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: quitcheck_no
+    text: No
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 85
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: quitcheck_text
+    text: Are you sure you want to quit?
+    font_asset: {fileID: 11400000, guid: c8c939466c154df428ed7f75e07beedc, type: 2}
+    font_style: 0
+    font_size: 55
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: Document_letter_emma_johann_01_text_01
+    text: Dear Emma,<br>Last year, we were able to complete the renovation of the
+      old chapel to create a religious, peaceful place for all patients.<br>For the
+      year 1957, I plan to expand the research department to better assist patients
+      with mental illnesses.<br>Best regards,<br>Johann
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_letter_emma_johann_02_text_01
+    text: Dearest Johann,<br>I see more and more happy people managing to recover.
+      I believe that God especially blessed us through the construction of the chapel.
+      Nevertheless, I support you in your research, just as I did before.<br>Best
+      regards,<br>Emma
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_letter_emma_johann_03_text_01
+    text: Dear Emma,<br>That makes me very happy. Last year, we were able to take
+      in more patients and discharge even more. I believe that with further research,
+      we can help even more people in need.<br>Best regards,<br>Johann
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_luise_01
+    text: "12.09.57<br>Johann wrote to Emma again. That old witch can go to hell.
+      Little Brigitte doesn\u2019t care about anything. Won\u2019t even eat. I\u2019ll
+      start with that dalcop."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_luise_02
+    text: "14.10.57<br>I think Johann loves me!<br>He showed me his research. His
+      work is extremely important. \u201CFree will,\u201D he says. We\u2019ll test
+      Markus first."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_luise_03
+    text: "28.11.57<br>So Brigitte fell off the roof. Clumsy thing, that one. Nosebleed,
+      but otherwise, everything went smoothly. I don\u2019t feel a second soul. It
+      works!! Johann will love this."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_luise_04
+    text: 13.12.57<br>FIREFIREFIREFIREFIREFIREFIREFIREFIREFIREFIREFIREFIREFIRE
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_Johann_01
+    text: "08.02.57<br>A new apprentice. She seems a bit feeble-minded, but the church
+      trusts her. I am to teach her now. \u201CMy doctrine shall drop as the rain.
+      My speech shall condense as the dew, as the small rain on the tender grass,
+      as the showers on the herb.\u201D Deuteronomy 32.2"
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_Johann_02
+    text: 30.08.57<br>Luise is getting very close to me, but she seems ambitious.
+      I could use a helping hand in studying the will of the patients. She is young,
+      I think she trusts me.
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_Johann_03
+    text: "28.11.57<br>Brigitte fell from the roof, and Markus also died. My research
+      shouldn\u2019t be fatal - what is happening in this house? God help me, but
+      I believe Luise has lost her mind."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  TextsDeutsch:
+  - name: menu_play
+    text: SPIELEN
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 65
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: menu_options
+    text: Optionen
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 50
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: menu_credits
+    text: Credits
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 50
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: menu_quit
+    text: Beenden
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 50
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: menu_follow
+    text: Folge Uns
+    font_asset: {fileID: 11400000, guid: c8c939466c154df428ed7f75e07beedc, type: 2}
+    font_style: 0
+    font_size: 25
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_title
+    text: Optionen
+    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
+    font_style: 0
+    font_size: 60
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_fullscreen
+    text: Vollbild
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 36.2
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 1
+  - name: option_master
+    text: Master
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 30
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_music
+    text: Musik
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 30
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_sfx
+    text: Soundeffekte
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 30
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: option_back
+    text: "< Zur\xFCck"
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 25
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 1024
+    horizontal_alignment: 2
+  - name: credits_category
+    text: Game Design       Level Design     Main Code    Additional Code      Art
+      & Animation    Sound Design    Writer    Soundtrack    Special Thanks To
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 50
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: quitcheck_yes
+    text: Ja
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 85
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: quitcheck_no
+    text: Nein
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 85
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: quitcheck_text
+    text: "Bist du sicher, dass du das Spiel beenden m\xF6chtest?"
+    font_asset: {fileID: 11400000, guid: c8c939466c154df428ed7f75e07beedc, type: 2}
+    font_style: 0
+    font_size: 55
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: Document_letter_emma_johann_01_text_01
+    text: "Liebe Emma,<br>Im letzten Jahr haben wir den Ausbau der alten Kapelle
+      beenden k\xF6nnen, um einen religi\xF6sen, ruhigen Ort f\xFCr alle Patienten
+      zu schaffen.<br>F\xFCr das Jahr 1957 plane ich den Ausbau der Forschungsabteilung,
+      um speziell Psychisch kranken Patienten besser helfen zu k\xF6nnen.<br>Liebe
+      Gr\xFC\xDFe<br>Johann"
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_letter_emma_johann_02_text_01
+    text: "Liebster Johann,<br>Ich sehe immer mehr gl\xFCckliche Menschen, die es
+      schaffen, wieder gesund zu werden. Ich denke, vor allem Gott hat uns gesegnet
+      durch dem Bau der Kapelle. Ich unterst\xFCtze Sie dennoch in ihren Forschungen,
+      so wie ich es schon fr\xFCher tat.<br>Liebe Gr\xFC\xDFe<br>Emma"
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_letter_emma_johann_03_text_01
+    text: "Liebe Emma,<br>Das freut mich sehr. Im vergangenen Jahr konnten wir mehr
+      Patienten aufnehmen und noch mehr entlassen. Ich denke, durch weitere Forschungsarbeiten
+      k\xF6nnen wir noch mehr Bed\xFCrftigen helfen.<br>Liebe Gr\xFC\xDFe<br>Johann"
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_luise_01
+    text: 12.09.57<br>Johann hat wieder Emma geschrieben. Die alte Gewitterziege
+      soll mir gestohlen bleiben. Der kleinen Brigitte ist echt ales egal. Tut nicht
+      mal was essen. Mit dem Holzkopf fange ich an.
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_luise_02
+    text: "14.10.57<br>Ich glaube, Johann liebt mich!<br>Er hat mir seine Forschungen
+      gezeigt. Seine Arbeit ist extrem wichtig. \u201CFreier Wille\u201D, sagt er.
+      Wir werden als erstes Markus testen."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_luise_03
+    text: "28.11.57<br>Brigitte ist also vom Dach gefallen. Ungeschicktes Ding aber
+      auch. Nasenbluten, aber sonst hat alles geklappt. Ich sp\xFCre keine zweite
+      Seele. Es funktioniert!! Johann wird es lieben."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_luise_04
+    text: 13.12.57<br>FEUERFEUERFEUERFEUERFEUERFEUERFEUERFEUERFEUERFEUERFEUER
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_Johann_01
+    text: "08.02.57<br>Ein neuer Lehrling. Sie wirkt etwas d\xFCmmlich, aber die
+      Kirche vertraut ihr. Sie soll ich nun lehren. Meine Lehre rinne wie der Regen,
+      und meine Rede riesele wie Tau, wie der Regen auf das Gras und wie die Tropfen
+      auf das Kraut. Moses 32, 2"
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_Johann_02
+    text: "30.08.57<br>Luise kommt mir sehr nahe, aber sie scheint ambitioniert.
+      Eine helfende hand f\xFCr die Untersuchung der Willen der Patienten kann ich
+      gut gebrauchen. Sie ist jung, ich denke sie vertraut mir."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: Document_diary_Johann_03
+    text: "28.11.57<br>Brigitte ist vom Dach gest\xFCrzt und Markus ist auch gestorben.
+      Meine Forschungen sollten nicht t\xF6dlich sein, was passiert in diesem Haus?
+      Gott steh mir bei, aber ich glaube, Luise ist nicht mehr bei Sinnen."
+    font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
+    font_style: 0
+    font_size: 35
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1

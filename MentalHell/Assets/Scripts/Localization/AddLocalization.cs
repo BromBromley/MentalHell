@@ -23,12 +23,12 @@ public class AddLocalization : MonoBehaviour
         if (language == "English")
         {
             LoreTexts = FindObjectOfType<LocalizationManager>().TextsEnglish;
-            Debug.Log("English");
+            //Debug.Log("English");
         }
         if (language == "Deutsch")
         {
             LoreTexts = FindObjectOfType<LocalizationManager>().TextsDeutsch;
-            Debug.Log("Deutsch");
+            //Debug.Log("Deutsch");
         }
         
         // get the text component on this element 
@@ -39,7 +39,7 @@ public class AddLocalization : MonoBehaviour
 
         if (localizationValues == null)
         {
-            toWriteTextTo.text = "The Localization " + LocalizationName + " could not be found.";
+            toWriteTextTo.text = LocalizationName;
             return;
         }
 
