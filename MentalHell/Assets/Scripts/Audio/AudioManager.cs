@@ -73,7 +73,7 @@ public class AudioManager : MonoBehaviour
     */
 
     // create singleton of object so it doesnt get destroyed
-    /*
+    // maybe remove this if possible
     private void Awake (){
         if (AudioManagerInstance == null){
             AudioManagerInstance = this; // set the Audiomanager Instance to this object
@@ -83,7 +83,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    */
 
     // initialize audio on enabled gameObject (on start does not work)
     void OnEnable()
@@ -150,6 +149,10 @@ public class AudioManager : MonoBehaviour
 
         if (gameSound)
         {
+            // stop the loop setting from the menu
+            musicSoundtrack[0].loop = false;
+            sfxAmbience[0].loop = false;
+
             // Start playing Ambience on game start
             PlayRandomConstantly(sfxAmbience);
 
