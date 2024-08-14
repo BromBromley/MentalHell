@@ -8,19 +8,26 @@ public class GraphicSettings : MonoBehaviour
 {
     public TMP_Dropdown qualityDropdown;
     public TMP_Dropdown resolutionDropdown;
+    public TMP_Dropdown languageDropdown;
     public Toggle fullScreen;
     public Button leftArrowQuality;
     public Button rightArrowQuality;
     public Button leftArrowResolution;
     public Button rightArrowResolution;
+    public Button leftArrowLanguage;
+    public Button rightArrowLanguage;
 
     private Resolution[] resolutions;
     private int currentQualityIndex;
     private int currentResolutionIndex;
+    private int currentLanguageIndex;
 
     public const string QUALITY_KEY = "qualityIndex";
     public const string FULLSCREEN_KEY = "fullscreenBool";
     public const string RESOLUTION_KEY = "resolutionIndex";
+    public const string LANGUAGE_KEY = "languageIndex";
+
+    private List<string> languages = new List<string> { "English", "German" };
 
     void Start()
     {
@@ -52,6 +59,17 @@ public class GraphicSettings : MonoBehaviour
 
         leftArrowResolution.onClick.AddListener(PreviousResolutionOption);
         rightArrowResolution.onClick.AddListener(NextResolutionOption);
+
+        // Language Settings Dropdown
+        languageDropdown.ClearOptions();
+        languageDropdown.AddOptions(languages);
+
+        currentLanguageIndex = PlayerPrefs.GetInt(LANGUAGE_KEY, 0);
+        languageDropdown.value = currentLanguageIndex;
+        languageDropdown.onValueChanged.AddListener(SetLanguage);
+
+        leftArrowLanguage.onClick.AddListener(PreviousLanguageOption);
+        rightArrowLanguage.onClick.AddListener(NextLanguageOption);
 
         // Fullscreen Toggle
         fullScreen.isOn = PlayerPrefs.GetInt(FULLSCREEN_KEY, Screen.fullScreen ? 1 : 0) == 1;
@@ -107,6 +125,30 @@ public class GraphicSettings : MonoBehaviour
     {
         resolutionDropdown.value = currentResolutionIndex;
         SetResolution(currentResolutionIndex);
+    }
+
+    // Language Settings Management
+    void SetLanguage(int languageIndex)
+    {
+        PlayerPrefs.SetInt(LANGUAGE_KEY, languageIndex);
+    }
+
+    void PreviousLanguageOption()
+    {
+        currentLanguageIndex = (currentLanguageIndex - 1 + languageDropdown.options.Count) % languageDropdown.options.Count;
+        UpdateLanguageDropdown();
+    }
+
+    void NextLanguageOption()
+    {
+        currentLanguageIndex = (currentLanguageIndex + 1) % languageDropdown.options.Count;
+        UpdateLanguageDropdown();
+    }
+
+    void UpdateLanguageDropdown()
+    {
+        languageDropdown.value = currentLanguageIndex;
+        SetLanguage(currentLanguageIndex);
     }
 
     // Fullscreen Toggle Management

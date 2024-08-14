@@ -3531,7 +3531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 432.0996, y: 284.40002}
+  m_AnchoredPosition: {x: 432.0996, y: 260}
   m_SizeDelta: {x: 1018.83, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980394229
@@ -3581,8 +3581,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 130
-  m_fontSizeBase: 130
+  m_fontSize: 110
+  m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4226,7 +4226,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1093181394}
   m_Template: {fileID: 379306932}
   m_CaptionText: {fileID: 468216112}
@@ -4556,7 +4556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -550, y: -868}
+  m_AnchoredPosition: {x: -549.99994, y: -868}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370481107
@@ -5955,11 +5955,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   qualityDropdown: {fileID: 520867459135552830}
   resolutionDropdown: {fileID: 6825975515096614397}
+  languageDropdown: {fileID: 1093181393}
   fullScreen: {fileID: 7151057922723886844}
   leftArrowQuality: {fileID: 232030308}
   rightArrowQuality: {fileID: 328996854}
   leftArrowResolution: {fileID: 985231731}
   rightArrowResolution: {fileID: 1370889312}
+  leftArrowLanguage: {fileID: 217326490}
+  rightArrowLanguage: {fileID: 836661722}
 --- !u!114 &2043786775
 MonoBehaviour:
   m_ObjectHideFlags: 0
