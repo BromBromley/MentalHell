@@ -171,6 +171,50 @@ MonoBehaviour:
     maxDistance: 25
     minDistance: 0
     rolloffMode: 0
+  - name: Regen_Loop_03
+    type: sfx
+    clip: {fileID: 8300000, guid: bb500c1e2b31d4843b6a8dfd84aefa75, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    spatialBlend: 0
+    maxDistance: 25
+    minDistance: 0
+    rolloffMode: 0
+  - name: Regen_Loop_04
+    type: sfx
+    clip: {fileID: 8300000, guid: 071d22dbb1c719c4885ca88fcb0b1afd, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    spatialBlend: 0
+    maxDistance: 25
+    minDistance: 0
+    rolloffMode: 0
+  - name: Regen_Loop_05
+    type: sfx
+    clip: {fileID: 8300000, guid: 00f461fd2fc443a4aa2c526fe49e1ad7, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    spatialBlend: 0
+    maxDistance: 25
+    minDistance: 0
+    rolloffMode: 0
+  - name: Regen_Loop_06
+    type: sfx
+    clip: {fileID: 8300000, guid: cc4432989c549c742b8d17812206fc14, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    spatialBlend: 0
+    maxDistance: 25
+    minDistance: 0
+    rolloffMode: 0
   sfxOpenDoor:
   - name: "T\xFCr_Open_01"
     type: sfx
@@ -934,9 +978,31 @@ MonoBehaviour:
     maxDistance: 25
     minDistance: 0
     rolloffMode: 0
+  - name: UI_Click_01
+    type: sfx
+    clip: {fileID: 8300000, guid: 708d831142bddd84294c0652e1589be0, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 25
+    minDistance: 0
+    rolloffMode: 0
+  - name: UI_Hover_01
+    type: sfx
+    clip: {fileID: 8300000, guid: 0abdcc7d848ab834c8aca7b7281193d9, type: 3}
+    output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 25
+    minDistance: 0
+    rolloffMode: 0
   soundOnGameObjects: 0
-  menuSound: 1
-  gameSound: 0
+  menuSound: 0
+  gameSound: 1
 --- !u!1 &7539438476161608823
 GameObject:
   m_ObjectHideFlags: 0

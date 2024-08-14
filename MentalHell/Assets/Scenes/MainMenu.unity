@@ -2945,6 +2945,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[AudioManager]'
       objectReference: {fileID: 0}
+    - target: {fileID: 8134233267877283072, guid: e3d69f4317e222d449515ddb1bc1020a, type: 3}
+      propertyPath: gameSound
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134233267877283072, guid: e3d69f4317e222d449515ddb1bc1020a, type: 3}
+      propertyPath: menuSound
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4303,7 +4311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06e7bb8352bacb448e60489d636a510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  languageDropdown: {fileID: 1093181393}
 --- !u!1 &1195572673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6402474236939632030, guid: e3d69f4317e222d449515ddb1bc1020a, type: 3}
@@ -4556,7 +4563,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -549.99994, y: -868}
+  m_AnchoredPosition: {x: -550, y: -868}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370481107
