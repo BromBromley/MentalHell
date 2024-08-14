@@ -27,7 +27,7 @@ public class GraphicSettings : MonoBehaviour
     public const string RESOLUTION_KEY = "resolutionIndex";
     public const string LANGUAGE_KEY = "languageIndex";
 
-    private List<string> languages = new List<string> { "English", "German" };
+    private List<string> languages = new List<string> { "English", "Deutsch" };
 
     void Start()
     {

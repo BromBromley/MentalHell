@@ -28,16 +28,4 @@ public class LocalizationSwitch : MonoBehaviour
         // write language in variable to Localization Manager
         FindObjectOfType<LocalizationManager>().ActiveLanguage = language;
     }
-
-    // TODO: This can go into the dedicated options script currently called "GraphicsSettings"
-    public TMP_Dropdown languageDropdown;
-    void Start()
-    {
-        // Language Settings Dropdown
-        languageDropdown.ClearOptions();
-        List<string> languageOptions = new List<string>();
-        languageOptions.Add(languages[0]);
-        languageOptions.Add(languages[1]);
-        languageDropdown.AddOptions(languageOptions);
-    }
 }
