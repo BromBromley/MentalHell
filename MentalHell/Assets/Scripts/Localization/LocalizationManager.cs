@@ -16,6 +16,8 @@ public class LocalizationManager : MonoBehaviour
     public Localization[] LoreTexts;
     public Localization[] TextsEnglish;
     public Localization[] TextsDeutsch;
+
+    public string ActiveLanguage = "English";
  
     // make LocalizationManager Accessable from everywhere
     public static LocalizationManager LocalizationManagerInstance;

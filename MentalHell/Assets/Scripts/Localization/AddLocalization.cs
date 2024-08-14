@@ -12,9 +12,10 @@ public class AddLocalization : MonoBehaviour
     private string localization;
     private Localization[] LoreTexts;
     
-    void Start()
+    void OnEnable()
     {
-        loadLocalization("English");
+        string language = FindObjectOfType<LocalizationManager>().ActiveLanguage;
+        loadLocalization(language);
     }
     public void loadLocalization(string language)
     {

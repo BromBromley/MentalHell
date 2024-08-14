@@ -587,7 +587,7 @@ MonoBehaviour:
     vertical_alignment: 512
     horizontal_alignment: 2
   - name: option_title
-    text: Optionen
+    text: OPTIONEN
     font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
     font_style: 0
     font_size: 60
@@ -769,3 +769,4 @@ MonoBehaviour:
     font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 1
+  ActiveLanguage: English

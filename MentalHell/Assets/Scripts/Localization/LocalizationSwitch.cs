@@ -24,6 +24,9 @@ public class LocalizationSwitch : MonoBehaviour
         {
             addLocalizationScripts[i].loadLocalization(language);
         }
+
+        // write language in variable to Localization Manager
+        FindObjectOfType<LocalizationManager>().ActiveLanguage = language;
     }
 
     // TODO: This can go into the dedicated options script currently called "GraphicsSettings"
@@ -37,5 +40,4 @@ public class LocalizationSwitch : MonoBehaviour
         languageOptions.Add(languages[1]);
         languageDropdown.AddOptions(languageOptions);
     }
-
 }
