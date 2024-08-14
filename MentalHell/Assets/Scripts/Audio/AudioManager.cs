@@ -13,17 +13,21 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    
+    [Header("Audio Tracks")]
+    
     // make Audiomanager Accessable from everywhere
     public static AudioManager AudioManagerInstance;
 
     // chance system for Soundtrack to play
     [HideInInspector]
     public Sound[] soundArrayChanceSoundtrack, soundArrayChanceMonster, soundArrayChanceGhosts;
+    [Range(1, 100)]
     public int invokeChance;
 
+    [Space(10)] //add space in inspector
     private bool Paused = false;
     
-
     // creating Arrays for the two Sound types to be accessable for other scripts
     // this is the class created ub the "Sound.cs" file 
     public Sound[]  musicSoundtrack,
@@ -55,7 +59,21 @@ public class AudioManager : MonoBehaviour
     private GameObject[] hearts;
     private GameObject[] emptySoundGameObjects = new GameObject[1];
 
+    [Space(10)] //add space in inspector
+    [Header("Active Audio")]
+    public bool soundOnGameObjects;
+    public bool menuSound;
+    public bool gameSound;
+
+    /*
+    In order to have the system fully dynamic, I would have to figure out a way to index the Sound Class Arrays inside of an array
+    in order to have the enumeration be tostringed and checked in the array. There is most likely a nicer solution but they all seem rather extensive
+    enum DataType { Integer, Float, String }
+    [SerializeField] DataType dataType;
+    */
+
     // create singleton of object so it doesnt get destroyed
+    /*
     private void Awake (){
         if (AudioManagerInstance == null){
             AudioManagerInstance = this; // set the Audiomanager Instance to this object
@@ -65,59 +83,47 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    */
+
+    // initialize audio on enabled gameObject (on start does not work)
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        InitializeAudio();
+    }
 
     // initiate basis Sounds and get GameObjects
     public void InitializeAudio(){
 
-        // get the GameObject determining where the sound is played
-        soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
-        SFXEmpty = GameObject.FindWithTag("SFXEmpty");
-        ghostEmpty = GameObject.FindWithTag("GhostEmpty");
-        monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
-        hearts = GameObject.FindGameObjectsWithTag("Heart");
-
+        // Stop and delete anything that might still be there
         // stop all Invokes
         CancelInvoke();
 
-        // delete all audio sources of objects that wont get destroyed on scene reload
-        GameObject[] gameobjects = {soundtrackEmpty, SFXEmpty};
-        AudioSource[] audioSources;
-        int gameObjectCounter = 0;
-        for(int i = 0; i < gameobjects.Length; i++)
+        // get game objects for their sounds in case it is wanted
+        if (soundOnGameObjects) 
         {
+            InitializeGameObjects();
 
-            // get all audiosources of the object
-            audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
-            gameObjectCounter++;
-            
-            // destroy all audiosources and reset the audioSources Array
-            for (int x = 0; x < audioSources.Length; x++){
-                Destroy(audioSources[x], 0);
-                audioSources[x] = null;
+            // delete all audio sources of objects that wont get destroyed on scene reload
+            GameObject[] gameobjects = {soundtrackEmpty, SFXEmpty};
+            AudioSource[] audioSources;
+            int gameObjectCounter = 0;
+            for(int i = 0; i < gameobjects.Length; i++)
+            {
+                // get all audiosources of the object
+                audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
+                gameObjectCounter++;
+                
+                // destroy all audiosources and reset the audioSources Array
+                for (int x = 0; x < audioSources.Length; x++){
+                    Destroy(audioSources[x], 0);
+                    audioSources[x] = null;
+                }
+                audioSources = null;
             }
-            audioSources = null;
-
-        }
-
-        if (SceneManager.GetActiveScene().buildIndex == 0){
-
-            // Play Main in a loop Theme when in the main menu
-            musicSoundtrack[0].loop = true;
-            PlayConstantly("MH_Musik_1", musicSoundtrack);
-            sfxAmbience[0].loop = true;
-            PlayConstantly("Regen_Loop_01", sfxAmbience);
-
-        }
-        else if (SceneManager.GetActiveScene().buildIndex > 0)
-        {
-            // turn off loop characteristic of main theme
-            musicSoundtrack[0].loop = false;
-
-            // Start playing Ambience on game start
-            PlayRandomConstantly(sfxAmbience);
-
-            // Invoke Chance to Play Soundtrack in given time
-            InvokeChanceToPlaySoundtrack(15f, 40f, musicSoundtrack, 3);
 
             // Invoke Chance to Play Monster Sound
             InvokeChanceToPlayMonster(3f, 3f, sfxMonster, 3);
@@ -128,11 +134,39 @@ public class AudioManager : MonoBehaviour
             // start heartbeats on all hearts
             PlayRandomConstantly(sfxHerzAmbience);
 
-            // start chance of Ghosts Screamin
+            // start chance of Ghosts Screaming
             InvokeChanceToPlayGhosts(5f, 10f, sfxNPCGhostsIdle, 3);
+        }
+        
+        if (menuSound){
+
+            // Play Main in a loop Theme when in the main menu
+            musicSoundtrack[0].loop = true;
+            PlayConstantly("MH_Musik_1", musicSoundtrack);
+            sfxAmbience[0].loop = true;
+            PlayConstantly("Regen_Loop_01", sfxAmbience);
 
         }
+
+        if (gameSound)
+        {
+            // Start playing Ambience on game start
+            PlayRandomConstantly(sfxAmbience);
+
+            // Invoke Chance to Play Soundtrack in given time
+            InvokeChanceToPlaySoundtrack(15f, 40f, musicSoundtrack, 3);
+        }
   
+    }
+
+    public void InitializeGameObjects()
+    {
+        // get the GameObject determining where the sound is played
+        soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
+        SFXEmpty = GameObject.FindWithTag("SFXEmpty");
+        ghostEmpty = GameObject.FindWithTag("GhostEmpty");
+        monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
+        hearts = GameObject.FindGameObjectsWithTag("Heart");
     }
 
 

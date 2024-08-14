@@ -934,6 +934,9 @@ MonoBehaviour:
     maxDistance: 25
     minDistance: 0
     rolloffMode: 0
+  soundOnGameObjects: 0
+  menuSound: 1
+  gameSound: 0
 --- !u!1 &7539438476161608823
 GameObject:
   m_ObjectHideFlags: 0
