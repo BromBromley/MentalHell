@@ -468,6 +468,46 @@ MonoBehaviour:
     font_color: {r: 1, g: 1, b: 1, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 2
+  - name: gameover_tryagain
+    text: Try Again
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 90
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: gameover_backtomenu
+    text: Back To Menu
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 90
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: win_escaped
+    text: Escaped
+    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
+    font_style: 0
+    font_size: 180
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: win_tryagain
+    text: Escaped
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 90
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: win_backtomenu
+    text: Escaped
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 70
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
   - name: Document_letter_emma_johann_01_text_01
     text: Dear Emma,<br>Last year, we were able to complete the renovation of the
       old chapel to create a religious, peaceful place for all patients.<br>For the
@@ -714,6 +754,46 @@ MonoBehaviour:
     font_size: 55
     font_color: {r: 1, g: 1, b: 1, a: 1}
     vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: gameover_tryagain
+    text: Erneut Versuchen
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 90
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: gameover_backtomenu
+    text: "Zum Hauptmen\xFC"
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 90
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: win_escaped
+    text: Entkommen
+    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
+    font_style: 0
+    font_size: 160
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: win_tryagain
+    text: Erneut Versuchen
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 90
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
+  - name: win_backtomenu
+    text: "Zum Hauptmen\xFC"
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 70
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
     horizontal_alignment: 2
   - name: Document_letter_emma_johann_01_text_01
     text: "Liebe Emma,<br>Im letzten Jahr haben wir den Ausbau der alten Kapelle
