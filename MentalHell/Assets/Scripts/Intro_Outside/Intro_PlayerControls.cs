@@ -204,6 +204,7 @@ public class Intro_PlayerControls : MonoBehaviour
     // this manages the interact icon while the player stands in a collider
     public void OpenInteractableIcon()
     {
+        Debug.Log("open");
         interactIcon.SetActive(true);
     }
 

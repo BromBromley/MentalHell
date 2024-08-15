@@ -1,16 +1,20 @@
-﻿title: Intro
+﻿title: Car
 ---
-    Du: "Drei Stunden fahrt durch diese Drecksgegend, fuckssake"
-    Du: "Hoffentlich ist diese Anstalt den Aufwand wert."
-===
-
-title: Car
----
-    Du: "Das älteste noch fahrende Auto Deutschlands, hoffentlich überleb ich den Weg nach Hause"
+    "Das älteste noch fahrende Auto Deutschlands, hoffentlich überleb ich den Weg nach Hause"
 ===
 
 title: SignPost
 ---
-    Du: Das Schild ist kaum leserlich, die Farbe abgebröckelt und mit Jahren von schlechtem Wetter bedeckt. Doch eines lässt sich noch gut erkennen: SANATORIUM SALZBERG -> 200m
-    Du: "Gut, ich bin sogar auf dem richtigen Weg!"
+    Das Schild ist kaum leserlich, die Farbe abgebröckelt und mit Jahren von schlechtem Wetter bedeckt. Doch eines lässt sich noch gut erkennen = SANATORIUM SALZBERG -> 200m
+    "Gut, ich bin sogar auf dem richtigen Weg!"
+===
+
+title: WalkOffForest
+---
+    "Das ist definitiv die falsche Richtung"
+===
+
+title: WalkOffBuilding
+---
+    "Kein Grund da lang zu gehen"
 ===

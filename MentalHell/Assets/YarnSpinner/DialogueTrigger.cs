@@ -10,7 +10,8 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private string dialogueTrigger;
     private DialogueRunner dialogueRunner;
     private bool isCurrentConversation = false;
-    private bool interactable = true;
+    private bool interactable;
+    public bool isEvent;
 
     public void Start()
     {
@@ -31,6 +32,7 @@ public class DialogueTrigger : MonoBehaviour
         if (isCurrentConversation)
         {
             isCurrentConversation = false;
+            dialogueRunner.Stop();
             Debug.Log($"Ended conversation with {name}.");
         }
     }
@@ -42,17 +44,21 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && isEvent == false)
         {
             Debug.Log("COLLIDES");
-            collision.GetComponent<PlayerInteraction>()?.OpenInteractableIcon();
-            collision.GetComponent<Intro_PlayerControls>()?.OpenInteractableIcon();
+            collision.GetComponent<Intro_PlayerControls>().OpenInteractableIcon();
+            collision.GetComponent<PlayerInteraction>().OpenInteractableIcon();
+        }
+        else if (collision.CompareTag("Player") && isEvent == true)
+        {
+            StartConversation();
         }
     }
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.CompareTag("Player") && Input.GetKeyDown("e"))
+        if (collision.CompareTag("Player") && Input.GetKey("e"))
         {
             Debug.Log("ITS GETTING TRIGGERED");
             StartConversation();
@@ -65,6 +71,12 @@ public class DialogueTrigger : MonoBehaviour
         {
             collision.GetComponent<PlayerInteraction>()?.CloseInteractableIcon();
             collision.GetComponent<Intro_PlayerControls>()?.CloseInteractableIcon();
+            PlayerWalksOff();
         }
+    }
+
+    public void PlayerWalksOff()
+    {
+        EndConversation();
     }
 }
