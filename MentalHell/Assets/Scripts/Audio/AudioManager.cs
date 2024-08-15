@@ -97,8 +97,7 @@ public class AudioManager : MonoBehaviour
     // initiate basis Sounds and get GameObjects
     public void InitializeAudio(){
 
-        // Stop and delete anything that might still be there
-        // stop all Invokes
+        // stop all Invokes (unity internal)
         CancelInvoke();
 
         // get game objects for their sounds in case it is wanted
@@ -106,23 +105,7 @@ public class AudioManager : MonoBehaviour
         {
             InitializeGameObjects();
 
-            // delete all audio sources of objects that wont get destroyed on scene reload
-            GameObject[] gameobjects = {soundtrackEmpty, SFXEmpty};
-            AudioSource[] audioSources;
-            int gameObjectCounter = 0;
-            for(int i = 0; i < gameobjects.Length; i++)
-            {
-                // get all audiosources of the object
-                audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
-                gameObjectCounter++;
-                
-                // destroy all audiosources and reset the audioSources Array
-                for (int x = 0; x < audioSources.Length; x++){
-                    Destroy(audioSources[x], 0);
-                    audioSources[x] = null;
-                }
-                audioSources = null;
-            }
+            DestroyAllSound();
 
             // Invoke Chance to Play Monster Sound
             InvokeChanceToPlayMonster(3f, 3f, sfxMonster, 3);
@@ -149,6 +132,9 @@ public class AudioManager : MonoBehaviour
 
         if (gameSound)
         {
+
+            DestroyMainSound();
+
             // stop the loop setting from the menu
             musicSoundtrack[0].loop = false;
             sfxAmbience[0].loop = false;
@@ -526,6 +512,27 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    // Destroy the sound from the audio sources of the music and sfx empty
+    public void DestroyMainSound(){
+        // Stop and delete anything that might still be there
+        GameObject[] gameobjects = {soundtrackEmpty, SFXEmpty};
+        AudioSource[] audioSources;
+        int gameObjectCounter = 0;
+        for(int i = 0; i < gameobjects.Length; i++)
+        {                    
+                // get all audiosources of the object
+                audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
+                gameObjectCounter++;
+                
+                // destroy all audiosources and reset the audioSources Array
+                for (int x = 0; x < audioSources.Length; x++){
+                    Destroy(audioSources[x], 0);
+                    audioSources[x] = null;
+                }
+                audioSources = null;
+                
+        }
+    }
 
     // Destroy the sound from the audio sources getting fed to the two mixer's
     public void DestroyAllSound(){
@@ -556,6 +563,7 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
 
 }
 
