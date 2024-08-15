@@ -1193,7 +1193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978552051581500712}
   m_Layer: 5
-  m_Name: 05_DocumentScreen
+  m_Name: DocumentScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

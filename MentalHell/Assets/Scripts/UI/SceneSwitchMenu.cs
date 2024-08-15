@@ -10,6 +10,7 @@ public class SceneSwitchMenu : MonoBehaviour
     public void ChangeScene()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
 
         public void RestartGame()

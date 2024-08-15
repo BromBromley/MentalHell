@@ -155,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 566097322519387109}
   m_Layer: 5
-  m_Name: 04_TutorialScreen
+  m_Name: TutorialScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
