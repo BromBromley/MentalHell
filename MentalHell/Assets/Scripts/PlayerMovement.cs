@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-
-//using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,29 +12,34 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject playerSprite;
     private bool facingLeft = true;
 
-    public bool movementEnabled = true;
-    public bool playerCanRun = true;
+    private bool movementEnabled = true;
+    private bool playerCanRun = true;
     public bool playerIsRunning = false;
 
     private Rigidbody rb;
 
-    public float movement;
+    private float movement;
     private float lastMovement;
     private float speed = 0;
     private float maxSpeed;
-    private float acceleration;
     private float stoppingForce = 7;
     public Animator animator;
 
     private float staminaLevel = 5f;
     [SerializeField] private Slider staminaSlider;
 
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        GameManager.onPausingGame += DisableMovement;
+        GameManager.onResumingGame += EnableMovement;
     }
 
-    // update checks the input 
+
+    // Update checks for input from the player
     private void Update()
     {
         if (movementEnabled)
@@ -45,13 +48,11 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) && playerCanRun && Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.D))
             {
                 maxSpeed = 10;
-                acceleration = 5;
                 playerIsRunning = true;
             }
             else
             {
                 maxSpeed = 6;
-                acceleration = 3;
                 playerIsRunning = false;
             }
 
@@ -65,12 +66,12 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("running", playerIsRunning);
     }
 
-    // fixedUpdate moves the player
+
+    // FixedUpdate moves the player
     private void FixedUpdate()
     {
         if (movement > 0.0f || movement < 0.0f)
         {
-            //Accelerate();
             MovePlayer();
         }
         else if (movement == 0.0f)
@@ -82,18 +83,18 @@ public class PlayerMovement : MonoBehaviour
         if (playerIsRunning)
         {
             staminaLevel -= Time.deltaTime;
+            UpdateStaminaBar();
         }
         if (staminaLevel <= 5 && !playerIsRunning)
         {
             staminaLevel += Time.deltaTime;
+            UpdateStaminaBar();
         }
 
         if (staminaLevel <= 0)
         {
             StartCoroutine(RunningCooldown());
         }
-
-        UpdateStaminaBar();
 
         // this checks the player's direction and flips the sprite accordingly
         if (movement < 0 && !facingLeft)
@@ -106,30 +107,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // moves player without acceleration
+
+
+    private void EnableMovement()
+    {
+        movementEnabled = true;
+    }
+
+    private void DisableMovement()
+    {
+        movementEnabled = false;
+    }
+
+
+
     private void MovePlayer()
     {
         rb.velocity = new Vector3(movement * maxSpeed, 0, 0);
     }
 
-    // this gives the movement a fade in
-    private void Accelerate()
-    {
-        if (speed < maxSpeed)
-        {
-            speed += acceleration * Time.deltaTime;
-        }
-        else if (speed > maxSpeed)
-        {
-            speed -= stoppingForce * Time.deltaTime;
-        }
-
-        speed = Mathf.Clamp(speed, 0, maxSpeed);
-
-        rb.velocity = new Vector3(movement * speed, 0, 0);
-
-        lastMovement = movement;
-    }
 
     // this gives the movement a fade out
     private void Decelerate()
@@ -145,6 +141,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    // flips the player sprite depending on the movement direction
+    private void FlipSprite()
+    {
+        Vector3 currentScale = playerSprite.transform.localScale;
+        currentScale.x *= -1;
+        playerSprite.transform.localScale = currentScale;
+
+        facingLeft = !facingLeft;
+    }
+
+
+
     // stops the movement when player goes through a door
     public IEnumerator StopMovement()
     {
@@ -155,7 +164,9 @@ public class PlayerMovement : MonoBehaviour
         movementEnabled = true;
     }
 
-    // short cooldown when stamina runs out
+
+
+    // short cooldown when the stamina runs out
     private IEnumerator RunningCooldown()
     {
         playerCanRun = false;
@@ -163,19 +174,20 @@ public class PlayerMovement : MonoBehaviour
         playerCanRun = true;
     }
 
+
+
     // updates the stamina bar to match the player's stamina level
     private void UpdateStaminaBar()
     {
         staminaSlider.value = staminaLevel / 5;
     }
 
-    // flips the player sprite depending on the movement direction
-    private void FlipSprite()
-    {
-        Vector3 currentScale = playerSprite.transform.localScale;
-        currentScale.x *= -1;
-        playerSprite.transform.localScale = currentScale;
 
-        facingLeft = !facingLeft;
+
+    // unsubrices from the events so they don't get called when the scene gets reloaded
+    void OnDestroy()
+    {
+        GameManager.onPausingGame -= DisableMovement;
+        GameManager.onResumingGame -= EnableMovement;
     }
 }

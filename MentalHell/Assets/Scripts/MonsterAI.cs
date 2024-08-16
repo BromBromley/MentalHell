@@ -7,7 +7,14 @@ public class MonsterAI : MonoBehaviour
 {
     // this script manages all the monster behavior except for spawning
 
+    // TODO implement state machine for monster?
+    // TODO function that 'activates' the monster so it's not there in the intro -> object reference for monster and attaching the script somewhere else?
+    // TODO remove script reference to playerInteraction -> event when the player picks up a heart?
+    // TODO object refere
+
+
     public bool monsterIsChasing;
+    private bool monsterIsAlert;
     private int randomStairs;
     //private bool canUseStairs = true;
 
@@ -24,16 +31,22 @@ public class MonsterAI : MonoBehaviour
     [SerializeField] private GameObject monsterSprite;
     private bool facingLeft = true;
 
+
+
     private void Awake()
     {
         _playerMovement = FindObjectOfType<PlayerMovement>();
         _playerInteraction = FindObjectOfType<PlayerInteraction>();
     }
 
+
     private void Start()
     {
         ChooseDirection();
+
+        //GameManager.onPickingUpHeart += change state;
     }
+
 
     private void FixedUpdate()
     {
@@ -65,8 +78,8 @@ public class MonsterAI : MonoBehaviour
         }
         else
         {
-            // checks in what direction the monster is running and flips the sprite accordingly
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, transform.position.z), runningSpeed * Time.deltaTime);
+            // checks in which direction the monster is running
             if ((transform.position.x - player.transform.position.x) < 0)
             {
                 monsterMovement = 1f;
@@ -88,6 +101,8 @@ public class MonsterAI : MonoBehaviour
         }
     }
 
+
+
     // this randomly decides if the monster walks left or right
     public void ChooseDirection()
     {
@@ -102,6 +117,8 @@ public class MonsterAI : MonoBehaviour
         }
     }
 
+
+
     // flips the monster sprite depending on the movement direction
     private void FlipSprite()
     {
@@ -112,12 +129,15 @@ public class MonsterAI : MonoBehaviour
         facingLeft = !facingLeft;
     }
 
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Wall")
         {
             monsterMovement = -monsterMovement;
         }
+
         /*
         // this checks if the monster passes by a staircases and randomly chooses if it uses them
         if (other.tag == "Stairs")
@@ -131,6 +151,8 @@ public class MonsterAI : MonoBehaviour
         }*/
     }
 
+
+
     /*
     private IEnumerator StairsCoolDown()
     {
@@ -141,4 +163,10 @@ public class MonsterAI : MonoBehaviour
         canUseStairs = true;
     }
     */
+
+
+    private void OnDisable()
+    {
+        // GameManager.onPickingUpHeart -= change state
+    }
 }

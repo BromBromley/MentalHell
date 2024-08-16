@@ -11,7 +11,7 @@ public class Intro_PlayerControls : MonoBehaviour
     [SerializeField] private GameObject playerSprite;
     private bool facingLeft = true;
 
-    private bool movementEnabled = true;
+    public bool movementEnabled = true;
     private bool playerCanRun = true;
     public bool playerIsRunning = false;
 
@@ -108,18 +108,6 @@ public class Intro_PlayerControls : MonoBehaviour
         {
             FlipSprite();
         }
-    }
-
-
-
-    private void EnableMovement()
-    {
-        movementEnabled = true;
-    }
-
-    private void DisableMovement()
-    {
-        movementEnabled = false;
     }
 
 

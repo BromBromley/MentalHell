@@ -47,8 +47,8 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player") && isEvent == false)
         {
             Debug.Log("COLLIDES");
-            collision.GetComponent<Intro_PlayerControls>().OpenInteractableIcon();
-            collision.GetComponent<PlayerInteraction>().OpenInteractableIcon();
+            collision.GetComponent<Intro_PlayerControls>()?.OpenInteractableIcon();
+            collision.GetComponent<PlayerInteraction>()?.OpenInteractableIcon();
         }
         else if (collision.CompareTag("Player") && isEvent == true)
         {

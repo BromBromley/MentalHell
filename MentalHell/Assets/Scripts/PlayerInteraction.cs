@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +7,10 @@ public class PlayerInteraction : MonoBehaviour
 {
     // this scripts manages the player's ability to interact with items and doors
 
+    // TODO event for using stairs and doors
+
     private GameManager _gameManager;
+    private AudioManager _audioManager;
     private PlayerMovement _playerMovement;
     private DocumentManager _documentManager;
     public GameObject interactIcon;
@@ -41,15 +43,20 @@ public class PlayerInteraction : MonoBehaviour
 
     private Sound[] Soundarray;
 
+
+
     void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
+        _audioManager = FindObjectOfType<AudioManager>();
         _playerMovement = FindObjectOfType<PlayerMovement>();
         _documentManager = FindObjectOfType<DocumentManager>();
 
         heartSprite.SetActive(false);
         interactIcon.SetActive(false);
     }
+
+
 
     // this function checks what the player is interacting with
     private void OnTriggerStay(Collider other)
@@ -59,8 +66,9 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && canOpenStorage)
             {
                 // Play Metall Schrank Öffnene Sound
-                Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxMetallSchrankOffnen;
-                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+                Sound[] Soundarray = _audioManager.sfxMetallSchrankOffnen;
+                _audioManager.PlayRandomOnce(Soundarray);
+
                 StartCoroutine(StorageCooldown());
                 StartCoroutine(PlayerIsInvincible());
                 // gets class Interactable and Method Interact from StorageManager.cs
@@ -99,6 +107,8 @@ public class PlayerInteraction : MonoBehaviour
                 StartCoroutine(DoorCooldown());
                 StartCoroutine(PlayerIsInvincible());
                 StartCoroutine(_playerMovement.StopMovement());
+
+                // GameManager.onUsingDoor?.Invoke(this.gameObject);
             }
         }
 
@@ -128,8 +138,10 @@ public class PlayerInteraction : MonoBehaviour
                 other.GetComponent<StairsManager>().EnterRoom(this.gameObject);
 
                 // Play Stairs Up Sound
-                Soundarray = FindObjectOfType<AudioManager>().sfxStairsUp;
-                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+                Soundarray = _audioManager.sfxStairsUp;
+                _audioManager.PlayRandomOnce(Soundarray);
+
+                // GameManager.onUsingStairs?.Invoke(this.gameObject);
             }
         }
 
@@ -137,13 +149,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && pickedUpHeart == false)
             {
-                pickedUpHeart = true;
-                heartSprite.SetActive(true);
-                other.gameObject.SetActive(false);
-
-                // Play Herz Pickup Sound
-                Soundarray = FindObjectOfType<AudioManager>().sfxHerzNehmen;
-                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
+                GameManager.onPickingUpHeart?.Invoke();
+                PickedUpHeart(other.gameObject);
             }
         }
 
@@ -152,17 +159,20 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && pickedUpHeart)
             {
-                //ghosts.GetComponent<Renderer>().material.color = Color.Lerp(Color.white, Color.black, 0.5f );
                 StartCoroutine(PlayerIsInvincible());
                 pickedUpHeart = false;
                 heartSprite.SetActive(false);
                 heartCounter++;
+
+                // Play Geister Befreit Sound
+                Soundarray = _audioManager.sfxNPCGeisterBefreit;
+                _audioManager.PlayRandomOnce(Soundarray);
+
                 if (heartCounter == 1)
                 {
                     StartCoroutine(FadeGhostMaterial(twoGhosts));
                     Counter1.SetActive(false);
                     Counter2.SetActive(true);
-
                 }
                 if (heartCounter == 2)
                 {
@@ -182,17 +192,30 @@ public class PlayerInteraction : MonoBehaviour
                     door_animator = entrance_door.GetComponentInChildren<Animator>();
                     door_animator.SetBool("gameWon", true);
                     StartCoroutine(AnimationDelay(20f));
-                    _gameManager.GameWon();
-
-
+                    GameManager.onWinningGame?.Invoke();
                 }
-
-                // Play Geister Befreit Sound
-                Soundarray = FindObjectOfType<AudioManager>().sfxNPCGeisterBefreit;
-                FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
             }
         }
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Heart")
+        {
+            OpenInteractableIcon();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Heart")
+        {
+            CloseInteractableIcon();
+        }
+    }
+
+
 
     private IEnumerator AnimationDelay(float waitTime)
     {
@@ -200,6 +223,8 @@ public class PlayerInteraction : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         playAnimation = false;
     }
+
+
 
     // this prevents accidentally going through doors
     private IEnumerator DoorCooldown()
@@ -209,6 +234,7 @@ public class PlayerInteraction : MonoBehaviour
         canEnterDoor = true;
     }
 
+
     // this prevents the storage sounds from playing too often
     private IEnumerator StorageCooldown()
     {
@@ -217,6 +243,8 @@ public class PlayerInteraction : MonoBehaviour
         canOpenStorage = true;
     }
 
+
+
     // gives the player a second where they can't get attacked by the monster
     private IEnumerator PlayerIsInvincible()
     {
@@ -224,6 +252,8 @@ public class PlayerInteraction : MonoBehaviour
         yield return new WaitForSeconds(2);
         playerIsBusy = false;
     }
+
+
 
     // gives the ghosts a fade when swapping their material
     private IEnumerator FadeGhostMaterial(Material ghostMaterial)
@@ -250,6 +280,8 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+
+
     public void ClosingDocument()
     {
         StartCoroutine(PlayerIsInvincible());
@@ -258,6 +290,20 @@ public class PlayerInteraction : MonoBehaviour
         interactIcon.SetActive(true);
     }
 
+
+    private void PickedUpHeart(GameObject heart)
+    {
+        pickedUpHeart = true;
+        heartSprite.SetActive(true);
+        heart.SetActive(false);
+
+        // Play Herz Pickup Sound
+        Soundarray = _audioManager.sfxHerzNehmen;
+        _audioManager.PlayRandomOnce(Soundarray);
+    }
+
+
+    // this manages the interact icon while the player stands in a collider
     public void OpenInteractableIcon()
     {
         interactIcon.SetActive(true);

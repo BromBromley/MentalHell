@@ -4,32 +4,65 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // this is the game manager of the main scene
+
+    // TODO remove script references if possible
+
     private UIManager _uiManager;
+    private AudioManager _audioManager;
     private MonsterAI _monsterAI;
-    private PlayerMovement _playerMovement;
-    private SpawnManager _spawnManager;
+    private MonsterSpawnManager _monsterSpawnManager;
     private PlayerInteraction _playerInteraction;
     private SwitchManager _switchManager;
     private DocumentManager _documentManager;
 
     private bool isRunning;
 
+    public delegate void OnPausingGame();
+    public static OnPausingGame onPausingGame;
+
+    public delegate void OnResumingGame();
+    public static OnResumingGame onResumingGame;
+
+    public delegate void OnWinningGame();
+    public static OnWinningGame onWinningGame;
+
+
+    public delegate void OnUsingDoor(GameObject character);
+    public static OnUsingDoor onUsingDoor;
+    public static OnUsingDoor onUsingStairs;
+
+
+    public delegate void OnSwitching(bool isSwitchtingUp);
+    public static OnSwitching onSwitching;
+
+    public delegate void OnPickingUpHeart();
+    public static OnPickingUpHeart onPickingUpHeart;
+
+
     void Awake()
     {
         _uiManager = FindObjectOfType<UIManager>();
+        _audioManager = FindObjectOfType<AudioManager>();
         _monsterAI = FindObjectOfType<MonsterAI>();
         _playerInteraction = FindObjectOfType<PlayerInteraction>();
-        _playerMovement = FindObjectOfType<PlayerMovement>();
-        _spawnManager = FindObjectOfType<SpawnManager>();
+        _monsterSpawnManager = FindObjectOfType<MonsterSpawnManager>();
         _switchManager = FindObjectOfType<SwitchManager>();
         _documentManager = FindObjectOfType<DocumentManager>();
     }
 
+
     void Start()
     {
-        PauseGame();
+        ResumeGame();
         StartCoroutine(PauseSound(0));
+
+        _uiManager.continueButton.onClick.AddListener(ResumeGame);
+
+        onWinningGame += PauseGame;
+        onSwitching += SpawnMonsterAfterSwitching;
     }
+
 
     void Update()
     {
@@ -38,9 +71,9 @@ public class GameManager : MonoBehaviour
         {
             if (isRunning)
             {
+                StartCoroutine(PauseSound(0f));
                 _uiManager.ActivatePauseScreen();
                 PauseGame();
-                StartCoroutine(PauseSound(0f));
             }
             else
             {
@@ -54,27 +87,29 @@ public class GameManager : MonoBehaviour
             {
                 ResumeGame();
                 _playerInteraction.ClosingDocument();
+                _documentManager.CloseAllDocuments();
             }
             else if (_documentManager.showingInventory)
             {
                 ResumeGame();
-                _documentManager.CloseAllDocuments();
                 _documentManager.CloseInventory();
             }
         }
 
         // this checks if the player presses the I key to open the document overview
-        if (Input.GetKeyDown(KeyCode.I) && !_documentManager.showingInventory)
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            _documentManager.OpenInventory();
-            PauseGame();
-        }
-        else if (Input.GetKeyDown(KeyCode.I) && _documentManager.showingInventory)
-        {
-            _documentManager.CloseInventory();
-            ResumeGame();
+            if (_documentManager.ActivatingInventory() == true)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGame();
+            }
         }
     }
+
 
     void FixedUpdate()
     {
@@ -84,67 +119,77 @@ public class GameManager : MonoBehaviour
             _uiManager.ShowGameOverScreen();
 
             // Destroy All Sound Sources so that it is quiet in the Game Over Screen
-            FindObjectOfType<AudioManager>().DestroyAllSound();
+            _audioManager.DestroyAllSound();
 
             // Play Death Splatter Sound
-            Sound[] Soundarray = FindObjectOfType<AudioManager>().sfxHerzAbgeben;
-            FindObjectOfType<AudioManager>().PlayOnce("Herz_02", Soundarray);
+            Sound[] Soundarray = _audioManager.sfxHerzAbgeben;
+            _audioManager.PlayOnce("Herz_02", Soundarray);
 
             PauseGame();
             StartCoroutine(PauseSound(1f));
         }
     }
 
+
+
     // freezes the game and all update functions
     public void PauseGame()
     {
+        onPausingGame?.Invoke();
         Cursor.visible = true;
         isRunning = false;
-        _playerMovement.movementEnabled = false;
-        _spawnManager.checkingForSpawns = false;
         Time.timeScale = 0;
     }
+
 
     private IEnumerator PauseSound(float time)
     {
         yield return new WaitForSeconds(time);
-        FindObjectOfType<AudioManager>().PauseAllSound();
+        _audioManager.PauseAllSound();
     }
+
+
 
     // unfreezes the game and all update functions
     public void ResumeGame()
     {
+        onResumingGame?.Invoke();
         Cursor.visible = false;
-        FindObjectOfType<AudioManager>().UnPauseAllSound();
+        _audioManager.UnPauseAllSound();
         isRunning = true;
-        _playerMovement.movementEnabled = true;
-        _spawnManager.checkingForSpawns = true;
         Time.timeScale = 1;
     }
 
-    public void GameWon()
+
+
+    private void SpawnMonsterAfterSwitching(bool switchUp)
     {
-        _uiManager.ShowWinScreen();
-        PauseGame();
+        StartCoroutine(SpawnMonster(1f));
     }
 
+
     // checks if the player is switching or using the door and tells the monster what to do
+    // replace check for 'isSwitching' with event?
     public IEnumerator SpawnMonster(float time)
     {
         if (!_switchManager.isSwitching && _playerInteraction.isInHallway)
         {
-            yield return new WaitForSeconds(time);
-            _spawnManager.FindClosestSpawnPoint();
+            yield return new WaitForSeconds(1f);
+            _monsterSpawnManager.FindClosestSpawnPoint();
         }
         else
         {
             yield return new WaitForSeconds(0.3f);
-            _spawnManager.SendBackToStart();
+            _monsterSpawnManager.SendBackToStart();
         }
     }
 
-    public void ExitGame()
+
+
+    // unsubcribes from events so they don't get called when the scene gets reloaded
+    void OnDestroy()
     {
-        Application.Quit();
+        onWinningGame -= PauseGame;
+        onSwitching -= SpawnMonsterAfterSwitching;
     }
 }

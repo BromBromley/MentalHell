@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class HeartSpawnManager : MonoBehaviour
 {
-    // this script randomly selects three of the hearts placed in the game
+    // this script manages the spawning of the hearts the player has to collect
 
     private List<GameObject> spawnPoints;
+
+
 
     private void Start()
     {
@@ -14,7 +16,10 @@ public class HeartSpawnManager : MonoBehaviour
         SpawnHearts();
     }
 
-    public void SpawnHearts()
+
+
+    // picks three of the hearts and deactivates all the other ones
+    private void SpawnHearts()
     {
         for (int i = 0; i < 3; i++)
         {

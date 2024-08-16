@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class MonsterSpawnManager : MonoBehaviour
 {
     // this script sets the monster to a spawn point closer to the player
 
@@ -18,26 +18,34 @@ public class SpawnManager : MonoBehaviour
     private float distancePlayerClosest;
     private float distancePlayerSecondClosest;
 
-    public bool checkingForSpawns = true;
+    //private bool checkingForSpawns = true;
+
+
 
     void Awake()
     {
         spawnPoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Spawn"));
     }
+
+
     void Start()
     {
         timeOut = new Vector3(-60, transform.position.y, transform.position.z);
+
+        //GameManager.onPausingGame += DisableSpawning;
+        //GameManager.onResumingGame += EnableSpawning;
     }
 
+
     /*
-    // this checks for the distance between player and monster getting too big
-    void Update()
+    private void EnableSpawning()
     {
-        // Debug.Log(timeOut);
-        if (this.gameObject.GetComponent<MonsterAI>().distance > 50 && checkingForSpawns)
-        {
-            FindClosestSpawnPoint();
-        }
+        checkingForSpawns = true;
+    }
+
+    private void DisableSpawning()
+    {
+        checkingForSpawns = false;
     }
     */
 
@@ -84,9 +92,21 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+
+
     // sends the monster outside of the hallway when the player is switching or in a room
     public void SendBackToStart()
     {
         transform.position = timeOut;
     }
+
+
+    /*
+    // unsubrices from the events so they don't get called when the scene gets reloaded
+    void OnDestroy()
+    {
+        GameManager.onPausingGame -= DisableSpawning;
+        GameManager.onResumingGame -= EnableSpawning;
+    }
+    */
 }

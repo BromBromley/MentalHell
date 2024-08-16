@@ -15,7 +15,8 @@ public abstract class Interactable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerInteraction>().OpenInteractableIcon();
+            collision.GetComponent<PlayerInteraction>()?.OpenInteractableIcon();
+            collision.GetComponent<Intro_PlayerControls>()?.OpenInteractableIcon();
         }
     }
 
@@ -23,7 +24,8 @@ public abstract class Interactable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerInteraction>().CloseInteractableIcon();
+            collision.GetComponent<PlayerInteraction>()?.CloseInteractableIcon();
+            collision.GetComponent<Intro_PlayerControls>()?.CloseInteractableIcon();
         }
     }
 }

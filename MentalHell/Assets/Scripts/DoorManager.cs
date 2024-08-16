@@ -10,6 +10,8 @@ public class DoorManager : MonoBehaviour
 
     [SerializeField] private float positionX;
 
+
+
     // called by PlayerInteraction script
     public void EnterRoom(GameObject character)
     {
@@ -20,6 +22,7 @@ public class DoorManager : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
     }
 
+
     public void ExitRoom(GameObject character)
     {
         StartCoroutine(TeleportDelayBackward(character));
@@ -29,6 +32,8 @@ public class DoorManager : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayRandomOnce(Soundarray);
     }
 
+
+
     // delays the transport of the character in order to match with the fade to black
     private IEnumerator TeleportDelayForward(GameObject character)
     {
@@ -37,12 +42,16 @@ public class DoorManager : MonoBehaviour
         character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, 59.37f);
     }
 
+
     private IEnumerator TeleportDelayBackward(GameObject character)
     {
         yield return new WaitForSeconds(0.3f);
 
         character.transform.position = character.transform.position + new Vector3(positionX, 0.0f, -59.37f);
     }
+
+
+    // checks if the player is standing in the door colliders and shows the interaction icon
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
@@ -50,6 +59,7 @@ public class DoorManager : MonoBehaviour
             collision.GetComponent<PlayerInteraction>().OpenInteractableIcon();
         }
     }
+
 
     private void OnTriggerExit(Collider collision)
     {
