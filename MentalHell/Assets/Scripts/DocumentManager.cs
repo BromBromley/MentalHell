@@ -19,6 +19,13 @@ public class DocumentManager : MonoBehaviour
 
     private PlayerInteraction _playerInteraction;
 
+    //public GameObject switchBar;
+    //public GameObject staminaBar;
+    //public GameObject heartSlot;
+    //public GameObject heartCounter;
+    public GameObject docBackground;
+    public GameObject closeButton;
+
 
 
     void Awake()
@@ -38,6 +45,8 @@ public class DocumentManager : MonoBehaviour
             documentList.transform.GetChild(i).gameObject.SetActive(false);
         }
         documentScreen.SetActive(false);
+        docBackground.SetActive(false);
+        closeButton.SetActive(false);
     }
 
 
@@ -48,6 +57,9 @@ public class DocumentManager : MonoBehaviour
         index = Random.Range(0, documents.Count);
         documents[index].SetActive(true);
         documentList.transform.Find(documents[index].name).gameObject.SetActive(true);
+        //switchBar.SetActive(false); staminaBar.SetActive(false); heartSlot.SetActive(false); heartCounter.SetActive(false);
+        docBackground.SetActive(true);
+        closeButton.SetActive(true);
     }
 
 
@@ -99,6 +111,9 @@ public class DocumentManager : MonoBehaviour
     {
         documents[index].SetActive(false);
         documents.RemoveAt(index);
+        //switchBar.SetActive(true); staminaBar.SetActive(true); heartSlot.SetActive(true); heartCounter.SetActive(true);
+        docBackground.SetActive(false);
+        closeButton.SetActive(false);
     }
 
 

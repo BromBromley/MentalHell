@@ -508,6 +508,14 @@ MonoBehaviour:
     font_color: {r: 1, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 2
+  - name: document_close
+    text: Close
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 65
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
   - name: Document_letter_emma_johann_01_text_01
     text: Dear Emma,<br>Last year, we were able to complete the renovation of the
       old chapel to create a religious, peaceful place for all patients.<br>For the
@@ -609,6 +617,14 @@ MonoBehaviour:
     font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 1
+  - name: sign_exit
+    text: Exit
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 7
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
   TextsDeutsch:
   - name: menu_play
     text: SPIELEN
@@ -795,6 +811,14 @@ MonoBehaviour:
     font_color: {r: 1, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 2
+  - name: document_close
+    text: "Schlie\xDFen"
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 65
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
   - name: Document_letter_emma_johann_01_text_01
     text: "Liebe Emma,<br>Im letzten Jahr haben wir den Ausbau der alten Kapelle
       beenden k\xF6nnen, um einen religi\xF6sen, ruhigen Ort f\xFCr alle Patienten
@@ -897,4 +921,12 @@ MonoBehaviour:
     font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 1
+  - name: sign_exit
+    text: Ausgang
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 7
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
   ActiveLanguage: English
