@@ -64,6 +64,7 @@ public class AudioManager : MonoBehaviour
     public bool soundOnGameObjects;
     public bool menuSound;
     public bool gameSound;
+    public bool gameSoundInside;
 
     /*
     In order to have the system fully dynamic, I would have to figure out a way to index the Sound Class Arrays inside of an array
@@ -99,6 +100,16 @@ public class AudioManager : MonoBehaviour
 
         // stop all Invokes (unity internal)
         CancelInvoke();
+
+        // get gameobjects for soundtrack and sfx
+        soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
+        SFXEmpty = GameObject.FindWithTag("SFXEmpty");
+
+        // chanege pitch inside so the rain is a bit more dampened
+        if (gameSoundInside)
+        {
+            ChangePitchAmbienceSound(0.4f);
+        }
 
         // get game objects for their sounds in case it is wanted
         if (soundOnGameObjects) 
@@ -137,13 +148,12 @@ public class AudioManager : MonoBehaviour
 
             // stop the loop setting from the menu
             musicSoundtrack[0].loop = false;
-            sfxAmbience[0].loop = false;
 
             // Start playing Ambience on game start
             PlayRandomConstantly(sfxAmbience);
 
             // Invoke Chance to Play Soundtrack in given time
-            InvokeChanceToPlaySoundtrack(15f, 40f, musicSoundtrack, 3);
+            InvokeChanceToPlaySoundtrack(15f, 40f, musicSoundtrack, 3); //15, 40, 3
         }
   
     }
@@ -158,6 +168,14 @@ public class AudioManager : MonoBehaviour
         hearts = GameObject.FindGameObjectsWithTag("Heart");
     }
 
+    public void ChangePitchAmbienceSound(float pitch)
+    {
+        Debug.Log("Adjusting Pitch");
+        for (int i = 1; i < sfxAmbience.Length; i++)
+        {
+            sfxAmbience[i].pitch = pitch;
+        }
+    }
 
     /*
 
@@ -349,14 +367,20 @@ public class AudioManager : MonoBehaviour
         soundArrayChanceSoundtrack = soundArray;
         invokeChance = chance;
 
+        Debug.Log("Invoked Chance of Soundtrack.");
+
         // Start the Invoke of the Chance to play a soundtrack
         InvokeRepeating("ChanceToPlaySoundtrack", invokeTime, repeatTime);
 
     }
     public void ChanceToPlaySoundtrack(){
+
+        Debug.Log("Getting Invoked1");
         
         // check if A Soundtrack is already playing
         if (soundtrackEmpty.GetComponent<AudioSource>() == null){
+
+            Debug.Log("Getting Invoked");
 
             // get a random Number
             System.Random randomRandom = new System.Random();
