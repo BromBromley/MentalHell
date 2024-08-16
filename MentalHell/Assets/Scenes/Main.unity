@@ -129301,7 +129301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6350915387638618590, guid: cf9042fd0bfd0e14a85b4a739b231bd5, type: 3}
       propertyPath: m_Name
-      value: PostProcessing
+      value: '[PostProcessing]'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -132373,10 +132373,10 @@ SceneRoots:
   - {fileID: 1107887204}
   - {fileID: 8312427220238375811}
   - {fileID: 1477007051}
-  - {fileID: 1624268466}
-  - {fileID: 1073271381}
-  - {fileID: 565240249}
   - {fileID: 651881051054537132}
+  - {fileID: 1073271381}
+  - {fileID: 1624268466}
+  - {fileID: 565240249}
   - {fileID: 272734932}
   - {fileID: 330794314}
   - {fileID: 1241476933}
