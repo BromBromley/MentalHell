@@ -9,6 +9,7 @@ public class AddLocalization : MonoBehaviour
     public string LocalizationName = "default_localization_name";
 
     private TextMeshProUGUI toWriteTextTo;
+    private TextMeshPro toWriteTextToNonUI;
     private string localization;
     private Localization[] LoreTexts;
     
@@ -34,6 +35,11 @@ public class AddLocalization : MonoBehaviour
         
         // get the text component on this element 
         toWriteTextTo = this.GetComponent<TextMeshProUGUI>();
+        if (toWriteTextTo == null)
+        {
+            writeTextNonUI();
+            return;
+        }
 
         // find Localization by name
         Localization localizationValues = Array.Find(LoreTexts, x => x.name == LocalizationName);
@@ -56,6 +62,33 @@ public class AddLocalization : MonoBehaviour
         // write allignment values
         toWriteTextTo.verticalAlignment = localizationValues.vertical_alignment;
         toWriteTextTo.horizontalAlignment = localizationValues.horizontal_alignment;
+    }
+    private void writeTextNonUI()
+    {
+        // get the standard text component of the element
+        toWriteTextToNonUI = this.GetComponent<TextMeshPro>();
+
+        // find Localization by name
+        Localization localizationValues = Array.Find(LoreTexts, x => x.name == LocalizationName);
+
+        if (localizationValues == null)
+        {
+            toWriteTextToNonUI.text = LocalizationName;
+            return;
+        }
+
+        // write the text 
+        toWriteTextToNonUI.text = localizationValues.text;
+
+        // write the font values
+        toWriteTextToNonUI.font = localizationValues.font_asset;
+        toWriteTextToNonUI.fontSize = localizationValues.font_size;
+        toWriteTextToNonUI.fontStyle = localizationValues.font_style;
+        toWriteTextToNonUI.color = localizationValues.font_color;
+
+        // write allignment values
+        toWriteTextToNonUI.verticalAlignment = localizationValues.vertical_alignment;
+        toWriteTextToNonUI.horizontalAlignment = localizationValues.horizontal_alignment;
     }
 
 }

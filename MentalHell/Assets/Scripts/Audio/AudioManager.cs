@@ -463,18 +463,32 @@ public class AudioManager : MonoBehaviour
     // Pause the sound from the audio sources getting fed to the two mixer's
     public void PauseAllSound(){
 
+        GameObject[] singlegameobjects = new GameObject[4];
+
         // get the GameObject determining where the sound is played
         soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
         SFXEmpty = GameObject.FindWithTag("SFXEmpty");
-        ghostEmpty = GameObject.FindWithTag("GhostEmpty");
-        monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
-        hearts = GameObject.FindGameObjectsWithTag("Heart");
+
+        // check if there are objects with sound effects
+        if (GameObject.FindWithTag("GhostEmpty") != null)
+        {
+            ghostEmpty = GameObject.FindWithTag("GhostEmpty");
+            monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
+            hearts = GameObject.FindGameObjectsWithTag("Heart");
+
+            singlegameobjects[0] = soundtrackEmpty;
+            singlegameobjects[1] = SFXEmpty;
+            singlegameobjects[2] = ghostEmpty;
+            singlegameobjects[3] = monsterEmpty;
+        }
+        else
+        {
+            singlegameobjects[0] = soundtrackEmpty;
+            singlegameobjects[1] = SFXEmpty;
+        }
 
         // stop new sounds from getting created (eg swap runs out in the background etc)
         Paused = true;
-
-        // Pause all audio sources
-        GameObject[] singlegameobjects = {soundtrackEmpty, SFXEmpty, ghostEmpty, monsterEmpty};
 
         // create new array including all objects that have audiosources
         GameObject[] gameobjects = new GameObject[singlegameobjects.Length + hearts.Length];
@@ -486,6 +500,8 @@ public class AudioManager : MonoBehaviour
 
         for(int i = 0; i < gameobjects.Length; i++)
         {
+
+            if (gameobjects[gameObjectCounter] == null) return;
 
             // get all audiosources of the object
             audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
@@ -509,8 +525,29 @@ public class AudioManager : MonoBehaviour
         // stop new sounds from getting created (eg swap runs out in the background etc)
         Paused = false;
 
-        // Pause all audio sources
-        GameObject[] singlegameobjects = {soundtrackEmpty, SFXEmpty, ghostEmpty, monsterEmpty};
+        GameObject[] singlegameobjects = new GameObject[4];
+
+        // get the GameObject determining where the sound is played
+        soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
+        SFXEmpty = GameObject.FindWithTag("SFXEmpty");
+
+        // check if there are objects with sound effects
+        if (GameObject.FindWithTag("GhostEmpty") != null)
+        {
+            ghostEmpty = GameObject.FindWithTag("GhostEmpty");
+            monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
+            hearts = GameObject.FindGameObjectsWithTag("Heart");
+
+            singlegameobjects[0] = soundtrackEmpty;
+            singlegameobjects[1] = SFXEmpty;
+            singlegameobjects[2] = ghostEmpty;
+            singlegameobjects[3] = monsterEmpty;
+        }
+        else
+        {
+            singlegameobjects[0] = soundtrackEmpty;
+            singlegameobjects[1] = SFXEmpty;
+        }
 
         // create new array including all objects that have audiosources
         GameObject[] gameobjects = new GameObject[singlegameobjects.Length + hearts.Length];
@@ -521,6 +558,8 @@ public class AudioManager : MonoBehaviour
         int gameObjectCounter = 0;
         for(int i = 0; i < gameobjects.Length; i++)
         {
+
+            if (gameobjects[gameObjectCounter] == null) return;
 
             // get all audiosources of the object
             audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
@@ -587,6 +626,23 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
+    /*
+    
+        Play Hover and Click SFX
+    
+    */
+
+    public void PlayHoverSFX()
+    {
+        PlayOnce("UI_Hover_01", sfxMisc);
+    }
+    
+    public void PlayClickSFX()
+    {
+        PlayOnce("UI_Click_01", sfxMisc);
+    }
+
 
 
 }
