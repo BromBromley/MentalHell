@@ -501,7 +501,7 @@ MonoBehaviour:
     vertical_alignment: 512
     horizontal_alignment: 2
   - name: win_tryagain
-    text: Escaped
+    text: Try Again
     font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
     font_style: 0
     font_size: 90
@@ -509,7 +509,7 @@ MonoBehaviour:
     vertical_alignment: 512
     horizontal_alignment: 2
   - name: win_backtomenu
-    text: Escaped
+    text: Back To Menu
     font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
     font_style: 0
     font_size: 70
