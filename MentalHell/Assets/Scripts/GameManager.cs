@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private DocumentManager _documentManager;
 
     private bool isRunning;
+    private bool isGameOver;
 
     public delegate void OnPausingGame();
     public static OnPausingGame onPausingGame;
@@ -55,11 +56,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ResumeGame();
-        StartCoroutine(PauseSound(0));
 
         _uiManager.continueButton.onClick.AddListener(ResumeGame);
 
-        onWinningGame += PauseGame;
+        onWinningGame += WonGame;
         onSwitching += SpawnMonsterAfterSwitching;
     }
 
@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
             Sound[] Soundarray = _audioManager.sfxHerzAbgeben;
             _audioManager.PlayOnce("Herz_02", Soundarray);
 
+            isGameOver = true;
             PauseGame();
             StartCoroutine(PauseSound(1f));
         }
@@ -138,7 +139,10 @@ public class GameManager : MonoBehaviour
         onPausingGame?.Invoke();
         Cursor.visible = true;
         isRunning = false;
-        Time.timeScale = 0;
+        if (!isGameOver)
+        {
+            Time.timeScale = 0;
+        }
     }
 
 
@@ -186,10 +190,18 @@ public class GameManager : MonoBehaviour
 
 
 
+    private void WonGame()
+    {
+        StartCoroutine(PauseSound(1f));
+        PauseGame();
+    }
+
+
+
     // unsubcribes from events so they don't get called when the scene gets reloaded
     void OnDestroy()
     {
-        onWinningGame -= PauseGame;
+        onWinningGame -= WonGame;
         onSwitching -= SpawnMonsterAfterSwitching;
     }
 }

@@ -8,6 +8,7 @@ public class Intro_GameManager : MonoBehaviour
     // this script is the game manager of the intro scene
 
     private Intro_PlayerControls _introPlayerControls;
+    private AudioManager _audioManager;
     private UIManager _uiManager;
 
     private bool isRunning;
@@ -17,6 +18,7 @@ public class Intro_GameManager : MonoBehaviour
     void Start()
     {
         _introPlayerControls = FindObjectOfType<Intro_PlayerControls>();
+        _audioManager = FindObjectOfType<AudioManager>();
         _uiManager = FindObjectOfType<UIManager>();
         _uiManager.continueButton.onClick.AddListener(ResumeGame);
 
@@ -31,6 +33,7 @@ public class Intro_GameManager : MonoBehaviour
         {
             if (isRunning)
             {
+                StartCoroutine(PauseSound(0f));
                 PauseGame();
             }
             else
@@ -52,6 +55,13 @@ public class Intro_GameManager : MonoBehaviour
     }
 
 
+    private IEnumerator PauseSound(float time)
+    {
+        yield return new WaitForSeconds(time);
+        _audioManager.PauseAllSound();
+    }
+
+
     private void ResumeGame()
     {
         if (!isStart)
@@ -64,6 +74,7 @@ public class Intro_GameManager : MonoBehaviour
         }
         isRunning = true;
         _introPlayerControls.movementEnabled = true;
+        _audioManager.UnPauseAllSound();
         Cursor.visible = false;
         Time.timeScale = 1;
     }
