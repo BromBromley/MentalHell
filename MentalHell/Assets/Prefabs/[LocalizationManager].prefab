@@ -371,6 +371,14 @@ MonoBehaviour:
     font_color: {r: 1, g: 1, b: 1, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 2
+  - name: pause_title
+    text: PAUSE
+    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
+    font_style: 0
+    font_size: 60
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 512
+    horizontal_alignment: 2
   - name: option_fullscreen
     text: Fullscreen
     font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
@@ -713,6 +721,14 @@ MonoBehaviour:
     font_size: 25
     font_color: {r: 1, g: 0, b: 0, a: 1}
     vertical_alignment: 1024
+    horizontal_alignment: 2
+  - name: pause_title
+    text: PAUSE
+    font_asset: {fileID: 11400000, guid: ccd72585fda3b7e45a8162613194fc11, type: 2}
+    font_style: 0
+    font_size: 60
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 512
     horizontal_alignment: 2
   - name: pause_continue
     text: Weiter
