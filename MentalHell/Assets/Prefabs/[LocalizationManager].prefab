@@ -533,7 +533,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_letter_emma_johann_02_text_01
     text: Dearest Johann,<br>I see more and more happy people managing to recover.
@@ -544,7 +544,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_letter_emma_johann_03_text_01
     text: Dear Emma,<br>That makes me very happy. Last year, we were able to take
@@ -554,37 +554,37 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_luise_01
-    text: "12.09.57<br>Johann wrote to Emma again. That old witch can go to hell.
-      Little Brigitte doesn\u2019t care about anything. Won\u2019t even eat. I\u2019ll
-      start with that dalcop."
+    text: 12.09.57<br>Johann wrote to Emma again. That old witch can go to hell.
+      Little Brigitte doesnt care about anything. Wont even eat. I will start with
+      that dalcop.
     font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_luise_02
     text: "14.10.57<br>I think Johann loves me!<br>He showed me his research. His
-      work is extremely important. \u201CFree will,\u201D he says. We\u2019ll test
-      Markus first."
+      work is extremely important. \u201CFree will,\u201D he says. We will test Markus
+      first."
     font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_luise_03
-    text: "28.11.57<br>So Brigitte fell off the roof. Clumsy thing, that one. Nosebleed,
-      but otherwise, everything went smoothly. I don\u2019t feel a second soul. It
-      works!! Johann will love this."
+    text: 28.11.57<br>So Brigitte fell off the roof. Clumsy thing, that one. Nosebleed,
+      but otherwise, everything went smoothly. I dont feel a second soul. It works!!
+      Johann will love this.
     font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_luise_04
     text: 13.12.57<br>FIREFIREFIREFIREFIREFIREFIREFIREFIREFIREFIREFIREFIREFIRE
@@ -592,7 +592,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_Johann_01
     text: "08.02.57<br>A new apprentice. She seems a bit feeble-minded, but the church
@@ -603,7 +603,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_Johann_02
     text: 30.08.57<br>Luise is getting very close to me, but she seems ambitious.
@@ -613,17 +613,17 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_Johann_03
-    text: "28.11.57<br>Brigitte fell from the roof, and Markus also died. My research
-      shouldn\u2019t be fatal - what is happening in this house? God help me, but
-      I believe Luise has lost her mind."
+    text: 28.11.57<br>Brigitte fell from the roof, and Markus also died. My research
+      should not be fatal - what is happening in this house? God help me, but I believe
+      Luise has lost her mind.
     font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: sign_exit
     text: Exit
@@ -976,43 +976,43 @@ MonoBehaviour:
       beenden k\xF6nnen, um einen religi\xF6sen, ruhigen Ort f\xFCr alle Patienten
       zu schaffen.<br>F\xFCr das Jahr 1957 plane ich den Ausbau der Forschungsabteilung,
       um speziell Psychisch kranken Patienten besser helfen zu k\xF6nnen.<br>Liebe
-      Gr\xFC\xDFe<br>Johann"
+      Gr\xFCsse<br>Johann"
     font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_letter_emma_johann_02_text_01
     text: "Liebster Johann,<br>Ich sehe immer mehr gl\xFCckliche Menschen, die es
       schaffen, wieder gesund zu werden. Ich denke, vor allem Gott hat uns gesegnet
       durch dem Bau der Kapelle. Ich unterst\xFCtze Sie dennoch in ihren Forschungen,
-      so wie ich es schon fr\xFCher tat.<br>Liebe Gr\xFC\xDFe<br>Emma"
+      so wie ich es schon fr\xFCher tat.<br>Liebe Gr\xFCsse<br>Emma"
     font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_letter_emma_johann_03_text_01
     text: "Liebe Emma,<br>Das freut mich sehr. Im vergangenen Jahr konnten wir mehr
       Patienten aufnehmen und noch mehr entlassen. Ich denke, durch weitere Forschungsarbeiten
-      k\xF6nnen wir noch mehr Bed\xFCrftigen helfen.<br>Liebe Gr\xFC\xDFe<br>Johann"
+      k\xF6nnen wir noch mehr Bed\xFCrftigen helfen.<br>Liebe Gr\xFCsse<br>Johann"
     font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_luise_01
     text: 12.09.57<br>Johann hat wieder Emma geschrieben. Die alte Gewitterziege
-      soll mir gestohlen bleiben. Der kleinen Brigitte ist echt ales egal. Tut nicht
+      soll mir gestohlen bleiben. Der kleinen Brigitte ist echt alles egal. Tut nicht
       mal was essen. Mit dem Holzkopf fange ich an.
     font_asset: {fileID: 11400000, guid: 58cc31a4a0aea694c9129a5a216fef25, type: 2}
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_luise_02
     text: "14.10.57<br>Ich glaube, Johann liebt mich!<br>Er hat mir seine Forschungen
@@ -1022,7 +1022,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_luise_03
     text: "28.11.57<br>Brigitte ist also vom Dach gefallen. Ungeschicktes Ding aber
@@ -1032,7 +1032,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_luise_04
     text: 13.12.57<br>FEUERFEUERFEUERFEUERFEUERFEUERFEUERFEUERFEUERFEUERFEUER
@@ -1040,7 +1040,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_Johann_01
     text: "08.02.57<br>Ein neuer Lehrling. Sie wirkt etwas d\xFCmmlich, aber die
@@ -1051,7 +1051,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_Johann_02
     text: "30.08.57<br>Luise kommt mir sehr nahe, aber sie scheint ambitioniert.
@@ -1061,7 +1061,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: Document_diary_Johann_03
     text: "28.11.57<br>Brigitte ist vom Dach gest\xFCrzt und Markus ist auch gestorben.
@@ -1071,7 +1071,7 @@ MonoBehaviour:
     font_style: 0
     font_size: 35
     font_color: {r: 0, g: 0, b: 0, a: 1}
-    vertical_alignment: 256
+    vertical_alignment: 512
     horizontal_alignment: 1
   - name: sign_exit
     text: Ausgang
