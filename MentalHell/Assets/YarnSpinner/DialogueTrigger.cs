@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     private bool isCurrentConversation = false;
     private bool interactable;
     public bool isEvent;
+    private bool isInteracting = false;
 
     public void Start()
     {
@@ -22,7 +23,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void StartConversation()
     {
-        Debug.Log($"Started conversation with {name}.");
+        //Debug.Log($"Started conversation with {name}.");
         isCurrentConversation = true;
         dialogueRunner.StartDialogue(dialogueTrigger);
     }
@@ -33,7 +34,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             isCurrentConversation = false;
             dialogueRunner.Stop();
-            Debug.Log($"Ended conversation with {name}.");
+            //Debug.Log($"Ended conversation with {name}.");
         }
     }
 
@@ -46,7 +47,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player") && isEvent == false)
         {
-            Debug.Log("COLLIDES");
+            //Debug.Log("COLLIDES");
             collision.GetComponent<Intro_PlayerControls>()?.OpenInteractableIcon();
             collision.GetComponent<PlayerInteraction>()?.OpenInteractableIcon();
         }
@@ -60,8 +61,10 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player") && Input.GetKey("e"))
         {
-            Debug.Log("ITS GETTING TRIGGERED");
+            if (isInteracting == true) return;
+            //Debug.Log("ITS GETTING TRIGGERED");
             StartConversation();
+            isInteracting = true;
         }
     }
 
@@ -78,5 +81,6 @@ public class DialogueTrigger : MonoBehaviour
     public void PlayerWalksOff()
     {
         EndConversation();
+        isInteracting = false;
     }
 }

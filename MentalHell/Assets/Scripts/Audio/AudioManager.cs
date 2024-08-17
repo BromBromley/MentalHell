@@ -92,7 +92,32 @@ public class AudioManager : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        SetBoolToScene();
         InitializeAudio();
+    }
+    void SetBoolToScene()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            menuSound = true;
+            gameSoundInside = false;
+            soundOnGameObjects = false;
+            gameSound = false;
+        }
+        if (SceneManager.GetActiveScene().name == "Outside")
+        {
+            menuSound = false;
+            gameSoundInside = false;
+            soundOnGameObjects = false;
+            gameSound = true;
+        }
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            menuSound = false;
+            gameSoundInside = true;
+            soundOnGameObjects = true;
+            gameSound = true;
+        }
     }
 
     // initiate basis Sounds and get GameObjects
@@ -130,22 +155,19 @@ public class AudioManager : MonoBehaviour
             // start chance of Ghosts Screaming
             InvokeChanceToPlayGhosts(5f, 10f, sfxNPCGhostsIdle, 3);
         }
-        
-        if (menuSound){
-
+        if (menuSound)
+        {
             // Play Main in a loop Theme when in the main menu
             musicSoundtrack[0].loop = true;
             PlayConstantly("MH_Musik_1", musicSoundtrack);
-            sfxAmbience[0].loop = true;
-            PlayConstantly("Regen_Loop_01", sfxAmbience);
+            //sfxAmbience[3].loop = true;
+            PlayConstantly("Regen_Loop_03", sfxAmbience);
 
         }
-
         if (gameSound)
         {
-
-            DestroyMainSound();
-
+            DestroyAllSound();
+            
             // stop the loop setting from the menu
             musicSoundtrack[0].loop = false;
 
@@ -170,7 +192,6 @@ public class AudioManager : MonoBehaviour
 
     public void ChangePitchAmbienceSound(float pitch)
     {
-        Debug.Log("Adjusting Pitch");
         for (int i = 1; i < sfxAmbience.Length; i++)
         {
             sfxAmbience[i].pitch = pitch;
@@ -367,20 +388,14 @@ public class AudioManager : MonoBehaviour
         soundArrayChanceSoundtrack = soundArray;
         invokeChance = chance;
 
-        Debug.Log("Invoked Chance of Soundtrack.");
-
         // Start the Invoke of the Chance to play a soundtrack
         InvokeRepeating("ChanceToPlaySoundtrack", invokeTime, repeatTime);
 
     }
     public void ChanceToPlaySoundtrack(){
-
-        Debug.Log("Getting Invoked1");
         
         // check if A Soundtrack is already playing
         if (soundtrackEmpty.GetComponent<AudioSource>() == null){
-
-            Debug.Log("Getting Invoked");
 
             // get a random Number
             System.Random randomRandom = new System.Random();
@@ -501,6 +516,7 @@ public class AudioManager : MonoBehaviour
         for(int i = 0; i < gameobjects.Length; i++)
         {
 
+            // check if the entry of the array is null (in case there are no objects in the scene)
             if (gameobjects[gameObjectCounter] == null) return;
 
             // get all audiosources of the object
@@ -600,8 +616,29 @@ public class AudioManager : MonoBehaviour
     // Destroy the sound from the audio sources getting fed to the two mixer's
     public void DestroyAllSound(){
 
-        // Pause all audio sources
-        GameObject[] singlegameobjects = {soundtrackEmpty, SFXEmpty, ghostEmpty, monsterEmpty};
+        GameObject[] singlegameobjects = new GameObject[4];
+
+        // get the GameObject determining where the sound is played
+        soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
+        SFXEmpty = GameObject.FindWithTag("SFXEmpty");
+
+        // check if there are objects with sound effects
+        if (GameObject.FindWithTag("GhostEmpty") != null)
+        {
+            ghostEmpty = GameObject.FindWithTag("GhostEmpty");
+            monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
+            hearts = GameObject.FindGameObjectsWithTag("Heart");
+
+            singlegameobjects[0] = soundtrackEmpty;
+            singlegameobjects[1] = SFXEmpty;
+            singlegameobjects[2] = ghostEmpty;
+            singlegameobjects[3] = monsterEmpty;
+        }
+        else
+        {
+            singlegameobjects[0] = soundtrackEmpty;
+            singlegameobjects[1] = SFXEmpty;
+        }
 
         // create new array including all objects that have audiosources
         GameObject[] gameobjects = new GameObject[singlegameobjects.Length + hearts.Length];
@@ -612,6 +649,9 @@ public class AudioManager : MonoBehaviour
         int gameObjectCounter = 0;
         for(int i = 0; i < gameobjects.Length; i++)
         {
+
+            // check if the entry of the array is null (in case there are no objects in the scene)
+            if (gameobjects[gameObjectCounter] == null) return;
 
             // get all audiosources of the object
             audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
