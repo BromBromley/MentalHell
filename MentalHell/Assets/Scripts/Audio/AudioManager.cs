@@ -126,15 +126,12 @@ public class AudioManager : MonoBehaviour
         // stop all Invokes (unity internal)
         CancelInvoke();
 
+        // Setting Pause bool to false in case it is not unpaused before initializing
+        Paused = false;
+
         // get gameobjects for soundtrack and sfx
         soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
         SFXEmpty = GameObject.FindWithTag("SFXEmpty");
-
-        // chanege pitch inside so the rain is a bit more dampened
-        if (gameSoundInside)
-        {
-            ChangePitchAmbienceSound(0.4f);
-        }
 
         // get game objects for their sounds in case it is wanted
         if (soundOnGameObjects) 
@@ -157,17 +154,26 @@ public class AudioManager : MonoBehaviour
         }
         if (menuSound)
         {
+            DestroyAllSound();
+            ChangePitchAmbienceSound(1f);
+
             // Play Main in a loop Theme when in the main menu
             musicSoundtrack[0].loop = true;
             PlayConstantly("MH_Musik_1", musicSoundtrack);
             //sfxAmbience[3].loop = true;
             PlayConstantly("Regen_Loop_03", sfxAmbience);
 
+            Debug.Log(SceneManager.GetActiveScene().name);
+
         }
         if (gameSound)
         {
 
             if (!soundOnGameObjects) DestroyAllSound();
+
+            // chanege pitch inside so the rain is a bit more dampened
+            if (gameSoundInside) ChangePitchAmbienceSound(0.4f);
+            else ChangePitchAmbienceSound(1f);
 
             // stop the loop setting from the menu
             musicSoundtrack[0].loop = false;
@@ -176,7 +182,7 @@ public class AudioManager : MonoBehaviour
             PlayRandomConstantly(sfxAmbience);
 
             // Invoke Chance to Play Soundtrack in given time
-            InvokeChanceToPlaySoundtrack(15f, 40f, musicSoundtrack, 3); //15, 40, 3
+            InvokeChanceToPlaySoundtrack(15f, 40f, musicSoundtrack, 3);
         }
   
     }
@@ -197,6 +203,24 @@ public class AudioManager : MonoBehaviour
         for (int i = 1; i < sfxAmbience.Length; i++)
         {
             sfxAmbience[i].pitch = pitch;
+        }
+    }
+
+    //TODO find a solution to play the pause music despite time being scaled to 0
+    public void PlayStopMenuMusic()
+    {
+        if (!Paused)
+        {
+            Debug.Log("yada yada elevator music.");
+            musicSoundtrack[0].loop = true;
+            PlayConstantly("MH_Musik_1", musicSoundtrack);
+            //sfxAmbience[3].loop = true;
+            PlayConstantly("Regen_Loop_03", sfxAmbience);
+        }
+        else
+        {
+            //AudioSource[] soundtrackDestroy = soundtrackEmpty.GetComponents<AudioSource>();
+            //Destroy(soundtrackDestroy[soundtrackDestroy.Length]);
         }
     }
 
@@ -273,6 +297,8 @@ public class AudioManager : MonoBehaviour
 
         // if no audio file with the name can be found return here
         if (sound == null || Paused == true) return;
+
+        Debug.Log("game paused fuck you");
 
         //  find out how the sound has to get routed (music or sfx)
         emptySoundGameObjects = GetSoundType(soundArray);
@@ -529,12 +555,16 @@ public class AudioManager : MonoBehaviour
 
         }
 
+        //PlayStopMenuMusic();
+
     }
 
     // UnPause the sound from the audio sources getting fed to the two mixer's
     public void UnPauseAllSound(){
 
         if (Paused == false) return;
+
+        //PlayStopMenuMusic();
 
         // stop new sounds from getting created (eg swap runs out in the background etc)
         Paused = false;
@@ -605,6 +635,8 @@ public class AudioManager : MonoBehaviour
             monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
             hearts = GameObject.FindGameObjectsWithTag("Heart");
 
+            Debug.Log("bin da");
+
             singlegameobjects[0] = soundtrackEmpty;
             singlegameobjects[1] = SFXEmpty;
             singlegameobjects[2] = ghostEmpty;
@@ -617,9 +649,19 @@ public class AudioManager : MonoBehaviour
         }
 
         // create new array including all objects that have audiosources
-        GameObject[] gameobjects = new GameObject[singlegameobjects.Length + hearts.Length];
+        int heartLength;
+        if (GameObject.FindWithTag("GhostEmpty") != null)
+        {
+            heartLength = hearts.Length;
+        }
+        else
+        {
+            heartLength = 0;
+        }
+
+        GameObject[] gameobjects = new GameObject[singlegameobjects.Length + heartLength];
         singlegameobjects.CopyTo(gameobjects, 0);
-        hearts.CopyTo(gameobjects, singlegameobjects.Length);
+        if (GameObject.FindWithTag("GhostEmpty") != null) hearts.CopyTo(gameobjects, singlegameobjects.Length);
 
         AudioSource[] audioSources;
         int gameObjectCounter = 0;
