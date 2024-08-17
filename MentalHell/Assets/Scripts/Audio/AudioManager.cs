@@ -59,12 +59,12 @@ public class AudioManager : MonoBehaviour
     private GameObject[] hearts;
     private GameObject[] emptySoundGameObjects = new GameObject[1];
 
-    [Space(10)] //add space in inspector
-    [Header("Active Audio")]
-    public bool soundOnGameObjects;
-    public bool menuSound;
-    public bool gameSound;
-    public bool gameSoundInside;
+    //[Space(10)] //add space in inspector
+    //[Header("Active Audio")]
+    private bool soundOnGameObjects;
+    private bool menuSound;
+    private bool gameSound;
+    private bool gameSoundInside;
 
     /*
     In order to have the system fully dynamic, I would have to figure out a way to index the Sound Class Arrays inside of an array
@@ -166,8 +166,9 @@ public class AudioManager : MonoBehaviour
         }
         if (gameSound)
         {
-            DestroyAllSound();
-            
+
+            if (!soundOnGameObjects) DestroyAllSound();
+
             // stop the loop setting from the menu
             musicSoundtrack[0].loop = false;
 
@@ -183,6 +184,7 @@ public class AudioManager : MonoBehaviour
     public void InitializeGameObjects()
     {
         // get the GameObject determining where the sound is played
+        
         soundtrackEmpty = GameObject.FindWithTag("SoundtrackEmpty");
         SFXEmpty = GameObject.FindWithTag("SFXEmpty");
         ghostEmpty = GameObject.FindWithTag("GhostEmpty");
@@ -198,6 +200,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
     /*
 
         Create Audio Source with Copied Data
@@ -209,7 +212,6 @@ public class AudioManager : MonoBehaviour
 
         for(int i = 0; i < emptySoundGameObjects.Length; i++)
         {
-
             // copy all the information previously set, over to the AudioSource that will play it
             source = emptySoundGameObjects[i].AddComponent<AudioSource>();
             source.clip = sound.clip;
@@ -275,14 +277,13 @@ public class AudioManager : MonoBehaviour
         //  find out how the sound has to get routed (music or sfx)
         emptySoundGameObjects = GetSoundType(soundArray);
 
-
         // Create a new audio component on the dedicated empty, Copy the Data over and play the sound
         CopyAudioDataToEmptyPlayConstantly(sound, emptySoundGameObjects);
 
     }
 
     public void PlayOnce (string name, Sound[] soundArray){
-        Sound sound = Array.Find(soundArray, x => x.name == name); // ?
+        Sound sound = Array.Find(soundArray, x => x.name == name);
 
         if (sound == null || Paused == true) return;
 
@@ -374,7 +375,6 @@ public class AudioManager : MonoBehaviour
     }
 
 
-
     /*
 
         Chance of Playing a Sound
@@ -457,8 +457,6 @@ public class AudioManager : MonoBehaviour
         }
 
     }
-
-
 
 
     /*
@@ -591,28 +589,6 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    // Destroy the sound from the audio sources of the music and sfx empty
-    public void DestroyMainSound(){
-        // Stop and delete anything that might still be there
-        GameObject[] gameobjects = {soundtrackEmpty, SFXEmpty};
-        AudioSource[] audioSources;
-        int gameObjectCounter = 0;
-        for(int i = 0; i < gameobjects.Length; i++)
-        {                    
-                // get all audiosources of the object
-                audioSources = gameobjects[gameObjectCounter].GetComponents<AudioSource>();
-                gameObjectCounter++;
-                
-                // destroy all audiosources and reset the audioSources Array
-                for (int x = 0; x < audioSources.Length; x++){
-                    Destroy(audioSources[x], 0);
-                    audioSources[x] = null;
-                }
-                audioSources = null;
-                
-        }
-    }
-
     // Destroy the sound from the audio sources getting fed to the two mixer's
     public void DestroyAllSound(){
 
@@ -666,6 +642,7 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
 
     /*
     
