@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 7050696840164355714}
   - component: {fileID: 5224648387891284962}
   - component: {fileID: 3258506443455865411}
+  - component: {fileID: 334173342512213402}
   m_Layer: 5
   m_Name: PauseFont
   m_TagString: Untagged
@@ -545,6 +546,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &334173342512213402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480425014670396103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: pause_title
 --- !u!1 &3489422778308468821
 GameObject:
   m_ObjectHideFlags: 0
