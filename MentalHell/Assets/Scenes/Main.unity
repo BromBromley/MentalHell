@@ -691,6 +691,7 @@ GameObject:
   - component: {fileID: 12694904}
   - component: {fileID: 12694906}
   - component: {fileID: 12694905}
+  - component: {fileID: 12694907}
   m_Layer: 0
   m_Name: Number_05
   m_TagString: Untagged
@@ -851,6 +852,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &12694907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12694903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_2_3
 --- !u!1 &13896439 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1246855364648172533, guid: 89bc1123613f4a14888a6256eddcc687, type: 3}
@@ -1972,6 +1986,7 @@ GameObject:
   - component: {fileID: 39861457}
   - component: {fileID: 39861459}
   - component: {fileID: 39861458}
+  - component: {fileID: 39861460}
   m_Layer: 0
   m_Name: Number_02
   m_TagString: Untagged
@@ -2132,6 +2147,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &39861460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39861456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_1_2
 --- !u!1 &44205047
 GameObject:
   m_ObjectHideFlags: 0
@@ -7837,6 +7865,7 @@ GameObject:
   - component: {fileID: 131049597}
   - component: {fileID: 131049599}
   - component: {fileID: 131049598}
+  - component: {fileID: 131049600}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -7997,6 +8026,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &131049600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131049596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_2_1
 --- !u!1 &132698124
 GameObject:
   m_ObjectHideFlags: 0
@@ -9930,6 +9972,7 @@ GameObject:
   - component: {fileID: 158739434}
   - component: {fileID: 158739436}
   - component: {fileID: 158739435}
+  - component: {fileID: 158739437}
   m_Layer: 0
   m_Name: Number_06
   m_TagString: Untagged
@@ -10090,6 +10133,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &158739437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158739433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_5
 --- !u!1 &158807160
 GameObject:
   m_ObjectHideFlags: 0
@@ -13005,6 +13061,7 @@ GameObject:
   - component: {fileID: 218084967}
   - component: {fileID: 218084969}
   - component: {fileID: 218084968}
+  - component: {fileID: 218084970}
   m_Layer: 0
   m_Name: Number_06
   m_TagString: Untagged
@@ -13165,6 +13222,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &218084970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218084966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_5
 --- !u!1001 &222848127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15192,6 +15262,7 @@ GameObject:
   - component: {fileID: 269913921}
   - component: {fileID: 269913923}
   - component: {fileID: 269913922}
+  - component: {fileID: 269913924}
   m_Layer: 0
   m_Name: 'Text: Bathroom'
   m_TagString: Untagged
@@ -15352,6 +15423,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &269913924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269913920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_bathroom
 --- !u!1 &270750498
 GameObject:
   m_ObjectHideFlags: 0
@@ -17792,6 +17876,7 @@ GameObject:
   - component: {fileID: 309054883}
   - component: {fileID: 309054885}
   - component: {fileID: 309054884}
+  - component: {fileID: 309054886}
   m_Layer: 0
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -17952,6 +18037,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &309054886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309054882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_floor_2
 --- !u!1 &309411581
 GameObject:
   m_ObjectHideFlags: 0
@@ -21928,6 +22026,7 @@ GameObject:
   - component: {fileID: 382958770}
   - component: {fileID: 382958772}
   - component: {fileID: 382958771}
+  - component: {fileID: 382958773}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -22088,6 +22187,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &382958773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382958769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_boss
 --- !u!1 &383982702
 GameObject:
   m_ObjectHideFlags: 0
@@ -27222,6 +27334,7 @@ GameObject:
   - component: {fileID: 465065278}
   - component: {fileID: 465065280}
   - component: {fileID: 465065279}
+  - component: {fileID: 465065281}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -27382,6 +27495,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &465065281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465065277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_office
 --- !u!1 &465383573
 GameObject:
   m_ObjectHideFlags: 0
@@ -31170,6 +31296,7 @@ GameObject:
   - component: {fileID: 532234195}
   - component: {fileID: 532234197}
   - component: {fileID: 532234196}
+  - component: {fileID: 532234198}
   m_Layer: 0
   m_Name: Number_05
   m_TagString: Untagged
@@ -31330,6 +31457,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &532234198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532234194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_2_3
 --- !u!1001 &532792182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35902,6 +36042,7 @@ GameObject:
   - component: {fileID: 602597893}
   - component: {fileID: 602597895}
   - component: {fileID: 602597894}
+  - component: {fileID: 602597896}
   m_Layer: 0
   m_Name: 'Text: Bathroom'
   m_TagString: Untagged
@@ -36062,6 +36203,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &602597896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602597892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_bathroom
 --- !u!1 &604210474
 GameObject:
   m_ObjectHideFlags: 0
@@ -36498,6 +36652,7 @@ GameObject:
   - component: {fileID: 607621007}
   - component: {fileID: 607621009}
   - component: {fileID: 607621008}
+  - component: {fileID: 607621010}
   m_Layer: 0
   m_Name: Name_Mia
   m_TagString: Untagged
@@ -36658,6 +36813,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &607621010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607621006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_office
 --- !u!1 &610085142
 GameObject:
   m_ObjectHideFlags: 0
@@ -40437,6 +40605,7 @@ GameObject:
   - component: {fileID: 672181065}
   - component: {fileID: 672181067}
   - component: {fileID: 672181066}
+  - component: {fileID: 672181068}
   m_Layer: 0
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -40597,6 +40766,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &672181068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672181064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_floor_2
 --- !u!1 &673037282
 GameObject:
   m_ObjectHideFlags: 0
@@ -42108,6 +42290,7 @@ GameObject:
   - component: {fileID: 694520685}
   - component: {fileID: 694520687}
   - component: {fileID: 694520686}
+  - component: {fileID: 694520688}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -42268,6 +42451,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &694520688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694520684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_4
 --- !u!1 &694624466
 GameObject:
   m_ObjectHideFlags: 0
@@ -42279,6 +42475,7 @@ GameObject:
   - component: {fileID: 694624467}
   - component: {fileID: 694624469}
   - component: {fileID: 694624468}
+  - component: {fileID: 694624470}
   m_Layer: 0
   m_Name: Number_02
   m_TagString: Untagged
@@ -42439,6 +42636,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &694624470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694624466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_1_2
 --- !u!1 &696207257
 GameObject:
   m_ObjectHideFlags: 0
@@ -43079,6 +43289,7 @@ GameObject:
   - component: {fileID: 710483968}
   - component: {fileID: 710483970}
   - component: {fileID: 710483969}
+  - component: {fileID: 710483971}
   m_Layer: 0
   m_Name: Name_Mia
   m_TagString: Untagged
@@ -43239,6 +43450,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &710483971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710483967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_office
 --- !u!1 &711254425
 GameObject:
   m_ObjectHideFlags: 0
@@ -47443,6 +47667,7 @@ GameObject:
   - component: {fileID: 780879902}
   - component: {fileID: 780879904}
   - component: {fileID: 780879903}
+  - component: {fileID: 780879905}
   m_Layer: 0
   m_Name: Number_05
   m_TagString: Untagged
@@ -47603,6 +47828,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &780879905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780879901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_2_3
 --- !u!1 &783149630
 GameObject:
   m_ObjectHideFlags: 0
@@ -47872,6 +48110,7 @@ GameObject:
   - component: {fileID: 788102381}
   - component: {fileID: 788102383}
   - component: {fileID: 788102382}
+  - component: {fileID: 788102384}
   m_Layer: 0
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -48032,6 +48271,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &788102384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788102380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_floor_1
 --- !u!1 &790098735
 GameObject:
   m_ObjectHideFlags: 0
@@ -49868,6 +50120,7 @@ GameObject:
   - component: {fileID: 826834418}
   - component: {fileID: 826834420}
   - component: {fileID: 826834419}
+  - component: {fileID: 826834421}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -50028,6 +50281,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &826834421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826834417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_2_2
 --- !u!1 &827093542
 GameObject:
   m_ObjectHideFlags: 0
@@ -52183,6 +52449,7 @@ GameObject:
   - component: {fileID: 859880452}
   - component: {fileID: 859880454}
   - component: {fileID: 859880453}
+  - component: {fileID: 859880455}
   m_Layer: 0
   m_Name: 'Text: Badezimmer'
   m_TagString: Untagged
@@ -52343,6 +52610,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &859880455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859880451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_bathroom
 --- !u!1 &860285430
 GameObject:
   m_ObjectHideFlags: 0
@@ -53015,6 +53295,7 @@ GameObject:
   - component: {fileID: 879606620}
   - component: {fileID: 879606622}
   - component: {fileID: 879606621}
+  - component: {fileID: 879606623}
   m_Layer: 0
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -53175,6 +53456,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &879606623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879606619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_floor_1
 --- !u!1 &881020794
 GameObject:
   m_ObjectHideFlags: 0
@@ -54364,6 +54658,7 @@ GameObject:
   - component: {fileID: 907290149}
   - component: {fileID: 907290151}
   - component: {fileID: 907290150}
+  - component: {fileID: 907290152}
   m_Layer: 0
   m_Name: Number_05
   m_TagString: Untagged
@@ -54524,6 +54819,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &907290152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907290148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_2_3
 --- !u!1 &907481682
 GameObject:
   m_ObjectHideFlags: 0
@@ -55824,6 +56132,7 @@ GameObject:
   - component: {fileID: 935392056}
   - component: {fileID: 935392058}
   - component: {fileID: 935392057}
+  - component: {fileID: 935392059}
   m_Layer: 0
   m_Name: 'Text: Badezimmer'
   m_TagString: Untagged
@@ -55984,6 +56293,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &935392059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935392055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_bathroom
 --- !u!1 &936324448
 GameObject:
   m_ObjectHideFlags: 0
@@ -64783,6 +65105,7 @@ GameObject:
   - component: {fileID: 1084619204}
   - component: {fileID: 1084619206}
   - component: {fileID: 1084619205}
+  - component: {fileID: 1084619207}
   m_Layer: 0
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -64943,6 +65266,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1084619207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084619203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_floor_2
 --- !u!1 &1084695947
 GameObject:
   m_ObjectHideFlags: 0
@@ -69575,6 +69911,7 @@ GameObject:
   - component: {fileID: 1167699540}
   - component: {fileID: 1167699542}
   - component: {fileID: 1167699541}
+  - component: {fileID: 1167699543}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -69735,6 +70072,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1167699543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167699539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_1_1
 --- !u!1 &1172132223
 GameObject:
   m_ObjectHideFlags: 0
@@ -73751,6 +74101,7 @@ GameObject:
   - component: {fileID: 1246716100}
   - component: {fileID: 1246716102}
   - component: {fileID: 1246716101}
+  - component: {fileID: 1246716103}
   m_Layer: 0
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -73911,6 +74262,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1246716103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246716099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_floor_2
 --- !u!1 &1246896295
 GameObject:
   m_ObjectHideFlags: 0
@@ -74192,6 +74556,7 @@ GameObject:
   - component: {fileID: 1249760483}
   - component: {fileID: 1249760485}
   - component: {fileID: 1249760484}
+  - component: {fileID: 1249760486}
   m_Layer: 0
   m_Name: Text_Eingang
   m_TagString: Untagged
@@ -74352,6 +74717,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1249760486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249760482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_exit
 --- !u!1 &1253458962
 GameObject:
   m_ObjectHideFlags: 0
@@ -76889,6 +77267,7 @@ GameObject:
   - component: {fileID: 1296891521}
   - component: {fileID: 1296891523}
   - component: {fileID: 1296891522}
+  - component: {fileID: 1296891524}
   m_Layer: 0
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -77049,6 +77428,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1296891524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296891520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_floor_3
 --- !u!1 &1297004882
 GameObject:
   m_ObjectHideFlags: 0
@@ -77859,6 +78251,7 @@ GameObject:
   - component: {fileID: 1305975105}
   - component: {fileID: 1305975107}
   - component: {fileID: 1305975106}
+  - component: {fileID: 1305975108}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -78019,6 +78412,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1305975108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305975104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_2
 --- !u!1 &1306308336
 GameObject:
   m_ObjectHideFlags: 0
@@ -78920,6 +79326,7 @@ GameObject:
   - component: {fileID: 1329332153}
   - component: {fileID: 1329332155}
   - component: {fileID: 1329332154}
+  - component: {fileID: 1329332156}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -79080,6 +79487,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1329332156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329332152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_2_1
 --- !u!1 &1336965220
 GameObject:
   m_ObjectHideFlags: 0
@@ -80185,6 +80605,7 @@ GameObject:
   - component: {fileID: 1357157743}
   - component: {fileID: 1357157745}
   - component: {fileID: 1357157744}
+  - component: {fileID: 1357157746}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -80345,6 +80766,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1357157746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357157742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_1
 --- !u!1 &1357224151
 GameObject:
   m_ObjectHideFlags: 0
@@ -80582,6 +81016,7 @@ GameObject:
   - component: {fileID: 1362930676}
   - component: {fileID: 1362930678}
   - component: {fileID: 1362930677}
+  - component: {fileID: 1362930679}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -80742,6 +81177,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1362930679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362930675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_3
 --- !u!1 &1366955301
 GameObject:
   m_ObjectHideFlags: 0
@@ -83069,6 +83517,7 @@ GameObject:
   - component: {fileID: 1410033253}
   - component: {fileID: 1410033255}
   - component: {fileID: 1410033254}
+  - component: {fileID: 1410033256}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -83229,6 +83678,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1410033256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410033252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_boss
 --- !u!1 &1410631869
 GameObject:
   m_ObjectHideFlags: 0
@@ -84358,6 +84820,7 @@ GameObject:
   - component: {fileID: 1429390851}
   - component: {fileID: 1429390853}
   - component: {fileID: 1429390852}
+  - component: {fileID: 1429390854}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -84518,6 +84981,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1429390854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429390850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_boss
 --- !u!1 &1432940786
 GameObject:
   m_ObjectHideFlags: 0
@@ -88040,6 +88516,7 @@ GameObject:
   - component: {fileID: 1494466355}
   - component: {fileID: 1494466357}
   - component: {fileID: 1494466356}
+  - component: {fileID: 1494466358}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -88200,6 +88677,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1494466358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494466354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_nurses
 --- !u!1 &1498566274
 GameObject:
   m_ObjectHideFlags: 0
@@ -88211,6 +88701,7 @@ GameObject:
   - component: {fileID: 1498566275}
   - component: {fileID: 1498566277}
   - component: {fileID: 1498566276}
+  - component: {fileID: 1498566278}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -88371,6 +88862,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1498566278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498566274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_boss
 --- !u!1 &1498755660
 GameObject:
   m_ObjectHideFlags: 0
@@ -88754,6 +89258,7 @@ GameObject:
   - component: {fileID: 1504337286}
   - component: {fileID: 1504337288}
   - component: {fileID: 1504337287}
+  - component: {fileID: 1504337289}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -88914,6 +89419,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1504337289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504337285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_nurses
 --- !u!1 &1507970647
 GameObject:
   m_ObjectHideFlags: 0
@@ -95148,6 +95666,7 @@ GameObject:
   - component: {fileID: 1599211178}
   - component: {fileID: 1599211180}
   - component: {fileID: 1599211179}
+  - component: {fileID: 1599211181}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -95308,6 +95827,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1599211181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599211177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_nurses
 --- !u!1 &1600682848
 GameObject:
   m_ObjectHideFlags: 0
@@ -98863,6 +99395,7 @@ GameObject:
   - component: {fileID: 1658901900}
   - component: {fileID: 1658901902}
   - component: {fileID: 1658901901}
+  - component: {fileID: 1658901903}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -99023,6 +99556,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1658901903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658901899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_1
 --- !u!1 &1658967988
 GameObject:
   m_ObjectHideFlags: 0
@@ -103350,6 +103896,7 @@ GameObject:
   - component: {fileID: 1734380314}
   - component: {fileID: 1734380316}
   - component: {fileID: 1734380315}
+  - component: {fileID: 1734380317}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -103510,6 +104057,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1734380317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734380313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_4
 --- !u!1 &1736118878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7975952838813801862, guid: be6338d6cf05bd840b50c03842d16570, type: 3}
@@ -104449,6 +105009,7 @@ GameObject:
   - component: {fileID: 1750860689}
   - component: {fileID: 1750860691}
   - component: {fileID: 1750860690}
+  - component: {fileID: 1750860692}
   m_Layer: 0
   m_Name: Number_02
   m_TagString: Untagged
@@ -104609,6 +105170,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1750860692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750860688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_1_2
 --- !u!1 &1751203894
 GameObject:
   m_ObjectHideFlags: 0
@@ -105648,6 +106222,7 @@ GameObject:
   - component: {fileID: 1764621151}
   - component: {fileID: 1764621153}
   - component: {fileID: 1764621152}
+  - component: {fileID: 1764621154}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -105808,6 +106383,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1764621154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764621150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_2
 --- !u!1 &1764759788
 GameObject:
   m_ObjectHideFlags: 0
@@ -110982,6 +111570,7 @@ GameObject:
   - component: {fileID: 1865155427}
   - component: {fileID: 1865155429}
   - component: {fileID: 1865155428}
+  - component: {fileID: 1865155430}
   m_Layer: 0
   m_Name: Text (1)
   m_TagString: Untagged
@@ -111142,6 +111731,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1865155430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865155426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_nurses
 --- !u!1 &1866862443
 GameObject:
   m_ObjectHideFlags: 0
@@ -111262,6 +111864,7 @@ GameObject:
   - component: {fileID: 1866919958}
   - component: {fileID: 1866919960}
   - component: {fileID: 1866919959}
+  - component: {fileID: 1866919961}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -111422,6 +112025,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1866919961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866919957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_3
 --- !u!1 &1868567413
 GameObject:
   m_ObjectHideFlags: 0
@@ -114095,6 +114711,7 @@ GameObject:
   - component: {fileID: 1907934854}
   - component: {fileID: 1907934856}
   - component: {fileID: 1907934855}
+  - component: {fileID: 1907934857}
   m_Layer: 0
   m_Name: Number_06
   m_TagString: Untagged
@@ -114255,6 +114872,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1907934857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907934853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_5
 --- !u!1 &1908912721 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7975952838813801862, guid: be6338d6cf05bd840b50c03842d16570, type: 3}
@@ -116928,6 +117558,7 @@ GameObject:
   - component: {fileID: 1945230669}
   - component: {fileID: 1945230671}
   - component: {fileID: 1945230670}
+  - component: {fileID: 1945230672}
   m_Layer: 0
   m_Name: Name_Mia
   m_TagString: Untagged
@@ -117088,6 +117719,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1945230672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945230668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_office
 --- !u!1 &1946053968
 GameObject:
   m_ObjectHideFlags: 0
@@ -117311,6 +117955,7 @@ GameObject:
   - component: {fileID: 1947855071}
   - component: {fileID: 1947855073}
   - component: {fileID: 1947855072}
+  - component: {fileID: 1947855074}
   m_Layer: 0
   m_Name: Number_06 (1)
   m_TagString: Untagged
@@ -117471,6 +118116,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1947855074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947855070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_3_5
 --- !u!1001 &1948722057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118861,6 +119519,7 @@ GameObject:
   - component: {fileID: 1969898711}
   - component: {fileID: 1969898713}
   - component: {fileID: 1969898712}
+  - component: {fileID: 1969898714}
   m_Layer: 0
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -119021,6 +119680,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1969898714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969898710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: sign_floor_3
 --- !u!1 &1971580331
 GameObject:
   m_ObjectHideFlags: 0
@@ -127537,6 +128209,7 @@ GameObject:
   - component: {fileID: 2100739084}
   - component: {fileID: 2100739086}
   - component: {fileID: 2100739085}
+  - component: {fileID: 2100739087}
   m_Layer: 0
   m_Name: Number_02
   m_TagString: Untagged
@@ -127697,6 +128370,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2100739087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100739083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_1_2
 --- !u!4 &2100741610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2150398722711651567, guid: de49afece30095a4b8545440074416da, type: 3}
@@ -127798,6 +128484,7 @@ GameObject:
   - component: {fileID: 2101965461}
   - component: {fileID: 2101965463}
   - component: {fileID: 2101965462}
+  - component: {fileID: 2101965464}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -127958,6 +128645,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2101965464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101965460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_2_2
 --- !u!1 &2108803714
 GameObject:
   m_ObjectHideFlags: 0
@@ -128257,6 +128957,7 @@ GameObject:
   - component: {fileID: 2114067572}
   - component: {fileID: 2114067574}
   - component: {fileID: 2114067573}
+  - component: {fileID: 2114067575}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -128417,6 +129118,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2114067575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114067571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4a5005fd4c2c241842659771160d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationName: door_1_1
 --- !u!1 &2115110437
 GameObject:
   m_ObjectHideFlags: 0
@@ -131393,11 +132107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640074130387150665, guid: dc2294b120ec11c42896e1d8d24f4b41, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2830845989017974782, guid: dc2294b120ec11c42896e1d8d24f4b41, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5022628112463295915, guid: dc2294b120ec11c42896e1d8d24f4b41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

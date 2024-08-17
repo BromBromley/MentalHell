@@ -633,6 +633,142 @@ MonoBehaviour:
     font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 2
+  - name: sign_office
+    text: Office
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 3
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_bathroom
+    text: Bathroom
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 7
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_boss
+    text: Boss
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 3
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_nurses
+    text: Nurses
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 3
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_floor_1
+    text: 1.Floor
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4.5
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_floor_2
+    text: 2.Floor
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4.5
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_floor_3
+    text: 3.Floor
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4.5
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_1_1
+    text: 1.01
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_1_2
+    text: 1.02
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_2_1
+    text: 2.03
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_2_2
+    text: 2.04
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_2_3
+    text: 2.05
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_1
+    text: 3.10
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_2
+    text: 3.09
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_3
+    text: 3.08
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_4
+    text: 3.07
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_5
+    text: 3.06
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
   TextsDeutsch:
   - name: menu_play
     text: SPIELEN
@@ -942,6 +1078,142 @@ MonoBehaviour:
     font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
     font_style: 16
     font_size: 7
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_office
+    text: Office
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 3
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_bathroom
+    text: Badezimmer
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 7
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_boss
+    text: Chef
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 3
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_nurses
+    text: Schwestern
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 2
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_floor_1
+    text: EG
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 5
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_floor_2
+    text: 1.OG
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 5
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: sign_floor_3
+    text: 2.OG
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 5
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_1_1
+    text: 0.01
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_1_2
+    text: 0.02
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_2_1
+    text: 1.03
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_2_2
+    text: 1.04
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_2_3
+    text: 1.05
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_1
+    text: 3.10
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_2
+    text: 2.09
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_3
+    text: 2.08
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_4
+    text: 2.07
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 6
+    font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: door_3_5
+    text: 2.06
+    font_asset: {fileID: 11400000, guid: 165bc9fe5a585c042824ad16f524b78a, type: 2}
+    font_style: 16
+    font_size: 4
     font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 2
