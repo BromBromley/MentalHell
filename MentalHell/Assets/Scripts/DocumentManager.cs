@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DocumentManager : MonoBehaviour
 {
@@ -19,13 +20,12 @@ public class DocumentManager : MonoBehaviour
 
     private PlayerInteraction _playerInteraction;
 
-    //public GameObject switchBar;
-    //public GameObject staminaBar;
-    //public GameObject heartSlot;
-    //public GameObject heartCounter;
     public GameObject docBackground;
     public GameObject closeButton;
 
+    [SerializeField] private GameObject returnButton;
+
+    private bool openedFromInventory;
 
 
     void Awake()
@@ -42,11 +42,13 @@ public class DocumentManager : MonoBehaviour
 
         for (int i = 0; i < documentList.transform.childCount; i++)
         {
-            documentList.transform.GetChild(i).gameObject.SetActive(false);
+            documentList.transform.GetChild(i).gameObject.GetComponentInChildren<TextMeshProUGUI>().color = Color.gray;
+            documentList.transform.GetChild(i).gameObject.GetComponent<Button>().interactable = false;
         }
         documentScreen.SetActive(false);
         docBackground.SetActive(false);
         closeButton.SetActive(false);
+        returnButton.SetActive(false);
     }
 
 
@@ -56,10 +58,11 @@ public class DocumentManager : MonoBehaviour
     {
         index = Random.Range(0, documents.Count);
         documents[index].SetActive(true);
-        documentList.transform.Find(documents[index].name).gameObject.SetActive(true);
-        //switchBar.SetActive(false); staminaBar.SetActive(false); heartSlot.SetActive(false); heartCounter.SetActive(false);
+        documentList.transform.Find(documents[index].name).gameObject.GetComponent<TextMeshProUGUI>().color = Color.white;
+        documentList.transform.Find(documents[index].name).gameObject.GetComponent<Button>().interactable = true;
         docBackground.SetActive(true);
         closeButton.SetActive(true);
+        openedFromInventory = false;
     }
 
 
@@ -106,16 +109,26 @@ public class DocumentManager : MonoBehaviour
         {
             document.SetActive(false);
         }
+        docBackground.SetActive(false);
+        closeButton.SetActive(false);
+        returnButton.SetActive(false);
+    }
+
+
+    public void ReturnToInventory()
+    {
+        CloseAllDocuments();
+        OpenInventory();
     }
 
 
     public void CloseDocument()
     {
-        documents[index].SetActive(false);
-        documents.RemoveAt(index);
-        //switchBar.SetActive(true); staminaBar.SetActive(true); heartSlot.SetActive(true); heartCounter.SetActive(true);
-        docBackground.SetActive(false);
-        closeButton.SetActive(false);
+        if (!openedFromInventory)
+        {
+            documents.RemoveAt(index);
+        }
+        CloseAllDocuments();
     }
 
 
@@ -126,11 +139,15 @@ public class DocumentManager : MonoBehaviour
         {
             if (document.name == documentButton.name)
             {
+                index = document.transform.GetSiblingIndex();
                 _playerInteraction.showingDocument = true;
                 document.SetActive(true);
                 documentScreen.SetActive(false);
                 interactIcon.SetActive(false);
                 showingInventory = false;
+                openedFromInventory = true;
+                returnButton.SetActive(true);
+                closeButton.SetActive(true);
             }
         }
     }
