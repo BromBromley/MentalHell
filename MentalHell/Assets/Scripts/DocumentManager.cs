@@ -82,6 +82,7 @@ public class DocumentManager : MonoBehaviour
     {
         documentScreen.SetActive(true);
         showingInventory = true;
+        docBackground.SetActive(true);
     }
 
     public void CloseInventory()
@@ -89,6 +90,7 @@ public class DocumentManager : MonoBehaviour
         CloseAllDocuments();
         documentScreen.SetActive(false);
         showingInventory = false;
+        docBackground.SetActive(false);
     }
 
 

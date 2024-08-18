@@ -769,6 +769,94 @@ MonoBehaviour:
     font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 2
+  - name: document_title_emma_johann_1
+    text: Letter Emma Johann 1
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_emma_johann_2
+    text: Letter Emma Johann 2
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_emma_johann_3
+    text: Letter Emma Johann 3
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_luise_1
+    text: Diary Luise 1
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_luise_2
+    text: Diary Luise 2
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_luise_3
+    text: Diary Luise 3
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_luise_4
+    text: Diary Luise 4
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_johann_1
+    text: Diary Johann 1
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_johann_2
+    text: Diary Johann 2
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_johann_3
+    text: Diary Johann 3
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: inventory_title
+    text: Letter<br>Inventory
+    font_asset: {fileID: 11400000, guid: c8c939466c154df428ed7f75e07beedc, type: 2}
+    font_style: 0
+    font_size: 100
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
   TextsDeutsch:
   - name: menu_play
     text: SPIELEN
@@ -1215,6 +1303,94 @@ MonoBehaviour:
     font_style: 16
     font_size: 4
     font_color: {r: 0.14117648, g: 0.1764706, b: 0.18039216, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: document_title_emma_johann_1
+    text: Brief Emma Johann 1
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_emma_johann_2
+    text: Brief Emma Johann 2
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_emma_johann_3
+    text: Brief Emma Johann 3
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_luise_1
+    text: Tagebuch Eintrag Luise 1
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_luise_2
+    text: Tagebuch Eintrag Luise 2
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_luise_3
+    text: Tagebuch Eintrag Luise 3
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_luise_4
+    text: Tagebuch Eintrag Luise 4
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_johann_1
+    text: Tagebuch Eintrag Johann 1
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_johann_2
+    text: Tagebuch Eintrag Johann 2
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: document_title_johann_3
+    text: Tagebuch Eintrag Johann 3
+    font_asset: {fileID: 11400000, guid: 2bcb280b2a23fa74c9dce7216fd2b638, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 1
+  - name: inventory_title
+    text: Dokument<br>Inventar
+    font_asset: {fileID: 11400000, guid: c8c939466c154df428ed7f75e07beedc, type: 2}
+    font_style: 0
+    font_size: 100
+    font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 2
   ActiveLanguage: English
