@@ -530,8 +530,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayHoverSFX
           m_Mode: 1
           m_Arguments:
@@ -546,8 +546,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayClickSFX
           m_Mode: 1
           m_Arguments:
@@ -1174,8 +1174,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayClickSFX
           m_Mode: 1
           m_Arguments:
@@ -2318,6 +2318,7 @@ GameObject:
   - component: {fileID: 1091038017}
   - component: {fileID: 1091038016}
   - component: {fileID: 1091038015}
+  - component: {fileID: 1091038018}
   m_Layer: 5
   m_Name: Main
   m_TagString: Untagged
@@ -2413,6 +2414,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1091038018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091038013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80349bf4ff70cf74eb49c7b31d3e5041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1101964785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1579879536512563285, guid: bd8d4194bb90718499adb38e99866e0a, type: 3}
@@ -2889,8 +2902,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayHoverSFX
           m_Mode: 1
           m_Arguments:
@@ -2921,8 +2934,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayClickSFX
           m_Mode: 1
           m_Arguments:
@@ -4947,8 +4960,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayHoverSFX
           m_Mode: 1
           m_Arguments:
@@ -4979,8 +4992,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayClickSFX
           m_Mode: 1
           m_Arguments:
@@ -5196,8 +5209,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayHoverSFX
           m_Mode: 1
           m_Arguments:
@@ -5228,8 +5241,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayClickSFX
           m_Mode: 1
           m_Arguments:
@@ -5450,8 +5463,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayHoverSFX
           m_Mode: 1
           m_Arguments:
@@ -5482,8 +5495,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1195572674}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        - m_Target: {fileID: 1091038018}
+          m_TargetAssemblyTypeName: MainMenuButtonSFXFix, Assembly-CSharp
           m_MethodName: PlayClickSFX
           m_Mode: 1
           m_Arguments:
