@@ -945,10 +945,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HEART 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1193,10 +1189,6 @@ PrefabInstance:
     - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
       propertyPath: m_Name
       value: HEART 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38999,26 +38991,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 724385022357030413, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 724385022357030413, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1869983832554901791, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6838368792954930792, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6838368792954930792, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.20000008
-      objectReference: {fileID: 0}
     - target: {fileID: 6838368792954930792, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.264
@@ -39063,12 +39035,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: HEART 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 724385022357030413, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -53840,10 +53807,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HEART 4
       objectReference: {fileID: 0}
-    - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -58183,10 +58146,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HEART 3
       objectReference: {fileID: 0}
-    - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -61319,10 +61278,6 @@ PrefabInstance:
     - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
       propertyPath: m_Name
       value: HEART 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84395,10 +84350,6 @@ PrefabInstance:
     - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
       propertyPath: m_Name
       value: HEART 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -115648,10 +115599,6 @@ PrefabInstance:
     - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
       propertyPath: m_Name
       value: HEART 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860671925021098867, guid: b2401415cba2cd84d99e5c37be613009, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
