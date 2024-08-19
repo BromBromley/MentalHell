@@ -298,7 +298,7 @@ public class AudioManager : MonoBehaviour
         // if no audio file with the name can be found return here
         if (sound == null || Paused == true) return;
 
-        Debug.Log("game paused fuck you");
+        //Debug.Log("game paused fuck you");
 
         //  find out how the sound has to get routed (music or sfx)
         emptySoundGameObjects = GetSoundType(soundArray);
@@ -635,7 +635,7 @@ public class AudioManager : MonoBehaviour
             monsterEmpty = GameObject.FindWithTag("MonsterEmpty");
             hearts = GameObject.FindGameObjectsWithTag("Heart");
 
-            Debug.Log("bin da");
+            //Debug.Log("bin da");
 
             singlegameobjects[0] = soundtrackEmpty;
             singlegameobjects[1] = SFXEmpty;

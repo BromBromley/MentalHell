@@ -33,6 +33,7 @@ public class DialogueTrigger : MonoBehaviour
         if (isCurrentConversation)
         {
             isCurrentConversation = false;
+            isInteracting = false;
             dialogueRunner.Stop();
             //Debug.Log($"Ended conversation with {name}.");
         }
@@ -65,6 +66,11 @@ public class DialogueTrigger : MonoBehaviour
             //Debug.Log("ITS GETTING TRIGGERED");
             StartConversation();
             isInteracting = true;
+        }
+        if (collision.CompareTag("Player") && Input.GetKey("space"))
+        {
+            EndConversation();
+            isInteracting = false;
         }
     }
 

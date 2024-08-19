@@ -48,7 +48,7 @@ public class Intro_PlayerControls : MonoBehaviour
         if (movementEnabled)
         {
             // this checks if the player is running and adjusts the speed
-            if (Input.GetKey(KeyCode.LeftShift) && playerCanRun && Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.LeftShift) && playerCanRun && Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.D) | Input.GetKey(KeyCode.LeftArrow) | Input.GetKey(KeyCode.RightArrow))
             {
                 maxSpeed = 10;
                 playerIsRunning = true;
@@ -192,7 +192,7 @@ public class Intro_PlayerControls : MonoBehaviour
     // this manages the interact icon while the player stands in a collider
     public void OpenInteractableIcon()
     {
-        Debug.Log("open");
+        //Debug.Log("open");
         interactIcon.SetActive(true);
     }
 
