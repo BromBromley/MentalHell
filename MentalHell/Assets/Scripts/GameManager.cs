@@ -6,8 +6,6 @@ public class GameManager : MonoBehaviour
 {
     // this is the game manager of the main scene
 
-    // TODO remove script references if possible
-
     private UIManager _uiManager;
     private AudioManager _audioManager;
     private MonsterAI _monsterAI;
@@ -66,8 +64,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // checks if the player pressed 'escape' and reacts accordingly
-        if (Input.GetKeyDown(KeyCode.Escape) && !_playerInteraction.showingDocument && !_documentManager.showingInventory)
+        // checks if the pause menu should be activated/deactivated
+        if (Input.GetKeyDown(KeyCode.Escape) && !_documentManager.showingDocument && !_documentManager.showingInventory)
         {
             if (isRunning)
             {
@@ -81,18 +79,23 @@ public class GameManager : MonoBehaviour
                 ResumeGame();
             }
         }
+        // checks if a document or the inventory is open and reacts accordingly
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_playerInteraction.showingDocument)
+            if (_documentManager.showingInventory && !_documentManager.openedFromInventory)
+            {
+                ResumeGame();
+                _documentManager.CloseInventory();
+            }
+            if (_documentManager.showingDocument && !_documentManager.openedFromInventory)
             {
                 ResumeGame();
                 _playerInteraction.ClosingDocument();
                 _documentManager.CloseAllDocuments();
             }
-            else if (_documentManager.showingInventory)
+            if (_documentManager.showingDocument && _documentManager.openedFromInventory)
             {
-                ResumeGame();
-                _documentManager.CloseInventory();
+                _documentManager.ReturnToInventory();
             }
         }
 

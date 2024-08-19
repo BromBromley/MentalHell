@@ -30,7 +30,6 @@ public class PlayerInteraction : MonoBehaviour
     private bool canEnterDoor = true;
     private bool canOpenStorage = true;
     public bool playerIsBusy = false;
-    public bool showingDocument;
     public bool isInHallway = true;
     public bool playAnimation;
     private GameObject storage;
@@ -78,7 +77,7 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (other.GetComponentInChildren<DocumentInteraction>() != null)
                 {
-                    showingDocument = true;
+                    _documentManager.showingDocument = true;
                     storage = other.gameObject;
                     _documentManager.ShowRandomDocument();
                     _gameManager.PauseGame();
@@ -285,7 +284,7 @@ public class PlayerInteraction : MonoBehaviour
     public void ClosingDocument()
     {
         StartCoroutine(PlayerIsInvincible());
-        showingDocument = false;
+        _documentManager.showingDocument = false;
         _documentManager.CloseDocument();
         interactIcon.SetActive(true);
     }

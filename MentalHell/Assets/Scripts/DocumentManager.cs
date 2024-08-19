@@ -16,21 +16,22 @@ public class DocumentManager : MonoBehaviour
     [SerializeField] private GameObject documentList;
     public GameObject documentScreen;
     [SerializeField] private GameObject interactIcon;
-    public bool showingInventory = false;
 
-    private PlayerInteraction _playerInteraction;
+    public bool showingInventory;
+    public bool openedFromInventory;
+    public bool showingDocument;
+
+    //private PlayerInteraction _playerInteraction;
 
     public GameObject docBackground;
     public GameObject closeButton;
 
     [SerializeField] private GameObject returnButton;
 
-    private bool openedFromInventory;
-
 
     void Awake()
     {
-        _playerInteraction = FindObjectOfType<PlayerInteraction>();
+        //_playerInteraction = FindObjectOfType<PlayerInteraction>();
         documents = new List<GameObject>(GameObject.FindGameObjectsWithTag("Document"));
         allDocuments = new List<GameObject>(GameObject.FindGameObjectsWithTag("Document"));
     }
@@ -62,7 +63,7 @@ public class DocumentManager : MonoBehaviour
         documentList.transform.Find(documents[index].name).gameObject.GetComponent<Button>().interactable = true;
         docBackground.SetActive(true);
         closeButton.SetActive(true);
-        openedFromInventory = false;
+        showingDocument = true;
     }
 
 
@@ -112,6 +113,8 @@ public class DocumentManager : MonoBehaviour
         docBackground.SetActive(false);
         closeButton.SetActive(false);
         returnButton.SetActive(false);
+        showingDocument = false;
+        openedFromInventory = false;
     }
 
 
@@ -140,11 +143,11 @@ public class DocumentManager : MonoBehaviour
             if (document.name == documentButton.name)
             {
                 index = document.transform.GetSiblingIndex();
-                _playerInteraction.showingDocument = true;
                 document.SetActive(true);
                 documentScreen.SetActive(false);
                 interactIcon.SetActive(false);
                 showingInventory = false;
+                showingDocument = true;
                 openedFromInventory = true;
                 returnButton.SetActive(true);
                 closeButton.SetActive(true);
