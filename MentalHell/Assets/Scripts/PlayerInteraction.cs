@@ -150,6 +150,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 GameManager.onPickingUpHeart?.Invoke();
                 PickedUpHeart(other.gameObject);
+                interactIcon.SetActive(false);
             }
         }
 
@@ -158,6 +159,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && pickedUpHeart)
             {
+                CloseInteractableIcon();
                 StartCoroutine(PlayerIsInvincible());
                 pickedUpHeart = false;
                 heartSprite.SetActive(false);
@@ -204,11 +206,15 @@ public class PlayerInteraction : MonoBehaviour
         {
             OpenInteractableIcon();
         }
+        if (other.tag == "Ghost" && pickedUpHeart)
+        {
+            OpenInteractableIcon();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Heart")
+        if (other.tag == "Heart" || other.tag == "Ghost")
         {
             CloseInteractableIcon();
         }
