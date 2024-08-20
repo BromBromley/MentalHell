@@ -13,7 +13,6 @@ public class SwitchManager : MonoBehaviour
     public float sanityLevel = 5f;
     public bool isSwitching = false;
     private bool canSwitch = true;
-    // start as false, true once the player enters the building -> makes isIntro unneccessary
     private bool exhaustedSwitching;
 
     [SerializeField] private GameObject fadeEffect;
@@ -22,6 +21,9 @@ public class SwitchManager : MonoBehaviour
 
     private AudioManager _audioManager;
     private Sound[] Soundarray;
+
+    [SerializeField] private Color darkRed = new Color(0.819f, 0.094f, 0.129f, 1);
+    [SerializeField] private Color darkGreen = new Color(0.246f, 0.66f, 0.261f, 1);
 
 
 
@@ -142,14 +144,14 @@ public class SwitchManager : MonoBehaviour
     private IEnumerator RefillSanity()
     {
         canSwitch = false;
-        switchBarImage.color = Color.red;
+        switchBarImage.color = darkRed;
 
         yield return new WaitForSeconds(5);
 
         sanityLevel = 5f;
         canSwitch = true;
         exhaustedSwitching = false;
-        switchBarImage.color = Color.green;
+        switchBarImage.color = darkGreen;
     }
 
 
@@ -158,7 +160,10 @@ public class SwitchManager : MonoBehaviour
     private void UpdateSwitchBar()
     {
         switchSlider.value = sanityLevel / 5;
-        switchBarImage.color = Color.Lerp(Color.red, Color.green, switchSlider.value);
+        if (!exhaustedSwitching)
+        {
+            switchBarImage.color = Color.Lerp(darkRed, darkGreen, switchSlider.value);
+        }
     }
 
 

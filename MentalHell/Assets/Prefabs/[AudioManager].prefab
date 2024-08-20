@@ -175,7 +175,7 @@ MonoBehaviour:
     type: sfx
     clip: {fileID: 8300000, guid: bb500c1e2b31d4843b6a8dfd84aefa75, type: 3}
     output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 0.8
+    volume: 0.3
     pitch: 1
     loop: 1
     spatialBlend: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
     type: sfx
     clip: {fileID: 8300000, guid: 071d22dbb1c719c4885ca88fcb0b1afd, type: 3}
     output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 0.8
+    volume: 0.3
     pitch: 1
     loop: 1
     spatialBlend: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
     type: sfx
     clip: {fileID: 8300000, guid: 00f461fd2fc443a4aa2c526fe49e1ad7, type: 3}
     output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 0.8
+    volume: 0.3
     pitch: 1
     loop: 1
     spatialBlend: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
     type: sfx
     clip: {fileID: 8300000, guid: cc4432989c549c742b8d17812206fc14, type: 3}
     output: {fileID: -820624839152618364, guid: 86a85135ef85d8d4b88d6ae1d2f64142, type: 2}
-    volume: 0.8
+    volume: 0.3
     pitch: 1
     loop: 1
     spatialBlend: 0
@@ -1000,10 +1000,6 @@ MonoBehaviour:
     maxDistance: 25
     minDistance: 0
     rolloffMode: 0
-  soundOnGameObjects: 0
-  menuSound: 1
-  gameSound: 0
-  gameSoundInside: 0
 --- !u!1 &7539438476161608823
 GameObject:
   m_ObjectHideFlags: 0
