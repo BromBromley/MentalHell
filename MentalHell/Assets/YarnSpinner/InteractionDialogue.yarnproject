@@ -8,7 +8,7 @@
   ],
   "localisation": {
     "en": {
-      "strings": "en\\InteractionDialogueEN.csv"
+      "strings": "en\\DialogueEN.csv"
     }
   },
   "baseLanguage": "de",

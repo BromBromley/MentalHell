@@ -67,7 +67,7 @@ public class DialogueTrigger : MonoBehaviour
             StartConversation();
             isInteracting = true;
         }
-        if (collision.CompareTag("Player") && Input.GetKey("space"))
+        if (collision.CompareTag("Player") && Input.GetKey("space") | Input.GetKey("escape"))
         {
             EndConversation();
             isInteracting = false;

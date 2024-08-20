@@ -14,11 +14,12 @@ public class LocalizationSwitch : MonoBehaviour
         "English",
         "Deutsch",
     };
+    public string language;
 
     public void localizationSwitch(int languageIndex)
     {
         // get correct string and call loadLocalization
-        string language = languages[languageIndex];
+        language = languages[languageIndex];
         AddLocalization[] addLocalizationScripts = FindObjectsOfType<AddLocalization>();
         for (int i = 0; i < addLocalizationScripts.Length; i++)
         {
