@@ -7,19 +7,28 @@ using Yarn.Unity;
 //this sucks and i hate it
 public class SynchLoca : MonoBehaviour
 {
-    [SerializeField] private GameObject LanguageOptions;
     [SerializeField] private GameObject DialogueRunner;
-    [SerializeField] private string ActiveLanguage;
+    [SerializeField] public string ActiveLanguage;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        ActiveLanguage = LanguageOptions.GetComponent<LocalizationSwitch>().language;
+        ActiveLanguage = FindObjectOfType<LocalizationManager>().ActiveLanguage;
         if (ActiveLanguage == "English")
         {
             DialogueRunner.GetComponent<TextLineProvider>().textLanguageCode = "en";
         }
         if (ActiveLanguage == "Deutsch")
+        {
+            DialogueRunner.GetComponent<TextLineProvider>().textLanguageCode = "de";
+        }
+    }
+    public void ChangeLanguage(string language)
+    {
+        if (language == "English")
+        {
+            DialogueRunner.GetComponent<TextLineProvider>().textLanguageCode = "en";
+        }
+        if (language == "Deutsch")
         {
             DialogueRunner.GetComponent<TextLineProvider>().textLanguageCode = "de";
         }

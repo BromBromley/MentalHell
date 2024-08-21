@@ -8,23 +8,22 @@ using System.Collections.Generic;
 
 public class LocalizationSwitch : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject DialogueRunner;
     // string array with a list of languages for the load localization script
     private string[] languages = {
         "English",
         "Deutsch",
     };
-    public string language;
-
     public void localizationSwitch(int languageIndex)
     {
         // get correct string and call loadLocalization
-        language = languages[languageIndex];
+        string language = languages[languageIndex];
         AddLocalization[] addLocalizationScripts = FindObjectsOfType<AddLocalization>();
         for (int i = 0; i < addLocalizationScripts.Length; i++)
         {
             addLocalizationScripts[i].loadLocalization(language);
         }
+        DialogueRunner.SendMessage("ChangeLanguage", language);
 
         // write language in variable to Localization Manager
         FindObjectOfType<LocalizationManager>().ActiveLanguage = language;
