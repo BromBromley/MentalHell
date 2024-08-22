@@ -6108,7 +6108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTrigger: WalkOffBuilding
+  updatedDialogueTrigger: null
   isEvent: 1
+  triggeredOnce: 0
 --- !u!65 &461477494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6651,7 +6653,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTrigger: WalkOffForest
+  updatedDialogueTrigger: null
   isEvent: 1
+  triggeredOnce: 0
 --- !u!65 &795810067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13235,7 +13239,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTrigger: SignPost
+  updatedDialogueTrigger: null
   isEvent: 0
+  triggeredOnce: 0
 --- !u!65 &1630966732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13983,7 +13989,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTrigger: Car
+  updatedDialogueTrigger: null
   isEvent: 0
+  triggeredOnce: 0
 --- !u!65 &1918477248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15676,6 +15684,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100.22
       objectReference: {fileID: 0}
+    - target: {fileID: 5989550556832687115, guid: ff0a4fd3a2263034eacc125aada098f4, type: 3}
+      propertyPath: yarnProject
+      value: 
+      objectReference: {fileID: 7545569452688597077, guid: a29e21e87f192cd43b3df91d89a0c2f5, type: 3}
     - target: {fileID: 7012126493121330017, guid: ff0a4fd3a2263034eacc125aada098f4, type: 3}
       propertyPath: textLanguageCode
       value: de

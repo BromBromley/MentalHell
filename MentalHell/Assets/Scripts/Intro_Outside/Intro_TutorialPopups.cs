@@ -18,7 +18,7 @@ public class Intro_TutorialPopups : MonoBehaviour
         {
             Right.SetActive(false);
         }
-        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) | Input.GetKey(KeyCode.RightArrow) | Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.D) | Input.GetKey(KeyCode.RightArrow) | Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.LeftArrow))
         {
             Shift.SetActive(false);
         }

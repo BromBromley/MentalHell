@@ -7,11 +7,13 @@ using Yarn.Unity;
 public class DialogueTrigger : MonoBehaviour
 {
 
-    [SerializeField] private string dialogueTrigger;
+    [SerializeField] public string dialogueTrigger;
+    [SerializeField] private string updatedDialogueTrigger;
     private DialogueRunner dialogueRunner;
     private bool isCurrentConversation = false;
     private bool interactable;
     public bool isEvent;
+    public bool triggeredOnce;
     private bool isInteracting = false;
 
     public void Start()
@@ -25,7 +27,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         //Debug.Log($"Started conversation with {name}.");
         isCurrentConversation = true;
-        dialogueRunner.StartDialogue(dialogueTrigger);
+        if (updatedDialogueTrigger != "null" && triggeredOnce == true)
+        {
+            dialogueRunner.StartDialogue(updatedDialogueTrigger);
+        }
+        else
+        {
+            dialogueRunner.StartDialogue(dialogueTrigger);
+            triggeredOnce = true;
+        }
     }
 
     private void EndConversation()

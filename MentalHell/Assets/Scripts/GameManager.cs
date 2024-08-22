@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
         // checks if the monster is close enough to attack the player
         if (_monsterAI.distance < 2 && !_switchManager.isSwitching && isRunning && !_playerInteraction.playerIsBusy)
         {
+            //Debug.Log(_monsterAI.distance);
             _uiManager.ShowGameOverScreen();
 
             // Destroy All Sound Sources so that it is quiet in the Game Over Screen

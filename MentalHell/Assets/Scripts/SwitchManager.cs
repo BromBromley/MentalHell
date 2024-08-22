@@ -12,7 +12,7 @@ public class SwitchManager : MonoBehaviour
 
     public float sanityLevel = 5f;
     public bool isSwitching = false;
-    private bool canSwitch = true;
+    private bool canSwitch = false;
     private bool exhaustedSwitching;
 
     [SerializeField] private GameObject fadeEffect;
@@ -82,7 +82,7 @@ public class SwitchManager : MonoBehaviour
 
 
 
-    private void ActivateSwitchingAbility()
+    public void ActivateSwitchingAbility()
     {
         canSwitch = true;
     }
@@ -134,7 +134,7 @@ public class SwitchManager : MonoBehaviour
     {
         canSwitch = false;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         canSwitch = true;
     }

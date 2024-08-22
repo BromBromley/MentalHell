@@ -426,9 +426,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2753718018764665327, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3251497311397178189}
-    - targetCorrespondingSourceObject: {fileID: 2753718018764665327, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6325745545263571156}
   m_SourcePrefab: {fileID: 100100000, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
 --- !u!1 &4937518352328240246 stripped
 GameObject:
@@ -449,20 +446,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLanguageCode: de-DE
 --- !u!114 &3251497311397178189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4937518352328240246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb27658bcb60ca47ae552decba3c49d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DialogueRunner: {fileID: 4937518352328240246}
-  ActiveLanguage: 
---- !u!114 &6325745545263571156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -9,6 +9,7 @@ public class MonsterAI : MonoBehaviour
 
     // TODO implement state machine for monster?
     // TODO function that 'activates' the monster so it's not there in the intro -> object reference for monster and attaching the script somewhere else?
+        // temp fix, moved the monster below the level
     // TODO remove script reference to playerInteraction -> event when the player picks up a heart?
     // TODO object refere
 
@@ -31,12 +32,17 @@ public class MonsterAI : MonoBehaviour
     [SerializeField] private GameObject monsterSprite;
     private bool facingLeft = true;
 
+    [SerializeField] private GameObject DangerSignLeft;
+    [SerializeField] private GameObject DangerSignRight;
+
 
 
     private void Awake()
     {
         _playerMovement = FindObjectOfType<PlayerMovement>();
         _playerInteraction = FindObjectOfType<PlayerInteraction>();
+        DangerSignLeft.SetActive(false);
+        DangerSignRight.SetActive(false);
     }
 
 
@@ -98,6 +104,21 @@ public class MonsterAI : MonoBehaviour
         else if (monsterMovement > 0 && facingLeft)
         {
             FlipSprite();
+        }
+
+        // opens the dangersign depending on the direction of the monster compared to the player
+        if (distance < 12 && this.transform.position.x < player.transform.position.x)
+        {
+            OpenDangerSignLeft();
+        }
+        else if (distance < 12 && this.transform.position.x > player.transform.position.x)
+        {
+            OpenDangerSignRight();
+        }
+        if (distance > 12)
+        {
+            CloseDangerSignLeft();
+            CloseDangerSignRight();
         }
     }
 
@@ -168,5 +189,24 @@ public class MonsterAI : MonoBehaviour
     private void OnDisable()
     {
         // GameManager.onPickingUpHeart -= change state
+    }
+
+    void OpenDangerSignLeft()
+    {
+        DangerSignLeft.SetActive(true);
+    }
+
+    void OpenDangerSignRight()
+    {
+        DangerSignRight.SetActive(true);
+    }
+    void CloseDangerSignLeft()
+    {
+        DangerSignLeft.SetActive(false);
+    }
+
+    void CloseDangerSignRight()
+    {
+        DangerSignRight.SetActive(false);
     }
 }

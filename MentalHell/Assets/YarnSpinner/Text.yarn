@@ -19,11 +19,20 @@ title: WalkOffBuilding
     "Kein Grund da lang zu gehen" #line:0e4b351 
 ===
 
+title: GhostsActive
+---
+    Ein blutgefrierendes Heulen ertönt hinter dir und der Ausgang verriegelt sich. #line:03fbe43 
+===
+
+title: MonsterActive
+---
+    Von irgendwo in diesem Gebäude hörst du einen wütenden Schrei. #line:041dd26 
+===
+
 title: Ghosts
 ---
-    Die drei Gestalten geben ein blutgefrierendes Jammern von sich. #line:08b32dc 
     "UNSERE DREI HERZEN WURDEN IN DIESEM VERFLUCHTEN ORT VERSTECKT, FINDE SIE UND BRINGE SIE ZU UNS ZURÜCK ODER DU WIRST HIER NICHT MEHR RAUSKOMMEN" #line:0e190e2 
-    "WIR GEBEN DIR DIE KRAFT EINEN BLICK ZU WERFEN IN DIE VERGANGENHEIT, SUCHE DORT" #line:0ccbea5 
+    "WIR GEBEN DIR DIE KRAFT DIE VERGANGENHEIT! DORT SIND DIE HERZEN VERSTECK" #line:0ccbea5 
 ===
 
 title: Vent
