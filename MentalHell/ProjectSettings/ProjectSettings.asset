@@ -142,7 +142,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: Alpha Build 169
+  bundleVersion: Alpha Demo Version 2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -164,7 +164,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.Send-Help-Group.Mental-Hell-Alpha
+    Standalone: com.Send-Help-Studio.Mental-Hell-Alpha
   buildNumber:
     Standalone: 0
     VisionOS: 0
