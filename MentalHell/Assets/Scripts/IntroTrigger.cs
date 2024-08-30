@@ -9,11 +9,15 @@ public class IntroTrigger : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject introTrigger;
     [SerializeField] private GameObject Tutorial;
+    [SerializeField] private GameObject GoLeft;
+    [SerializeField] private GameObject QuestMarker;
     [SerializeField] private bool spokeToGhosts;
     void Start()
     {
         Ghosts.SetActive(false);
         Tutorial.SetActive(false);
+        GoLeft.SetActive(false);
+        QuestMarker.SetActive(false);
     }
 
     void OnTriggerEnter(Collider collision)
@@ -21,6 +25,8 @@ public class IntroTrigger : MonoBehaviour
         if (collision.CompareTag("Player") && spokeToGhosts == false)
         {
             Ghosts.SetActive(true);
+            GoLeft.SetActive(true);
+            QuestMarker.SetActive(true);
         }
         else if (collision.CompareTag("Player") && spokeToGhosts == true)
         {
@@ -30,6 +36,11 @@ public class IntroTrigger : MonoBehaviour
         }
     }
 
+    void OnTriggerExit(Collider collision)
+    {
+        GoLeft.SetActive(false);
+    }
+
     void Update()
     {
         spokeToGhosts = Ghosts.GetComponent<DialogueTrigger>().triggeredOnce;
@@ -37,6 +48,7 @@ public class IntroTrigger : MonoBehaviour
         {
             Player.SendMessage("ActivateSwitchingAbility");
             Tutorial.SetActive(true);
+            QuestMarker.SetActive(false);
         }
     }
 }
