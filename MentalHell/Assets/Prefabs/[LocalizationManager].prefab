@@ -857,17 +857,46 @@ MonoBehaviour:
     font_color: {r: 0, g: 0, b: 0, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 2
+  - name: demo_continue
+    text: Continue
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 65
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: demo_infoheader
+    text: Welcome to the Alpha-Demo of Mental Hell
+    font_asset: {fileID: 11400000, guid: c8c939466c154df428ed7f75e07beedc, type: 2}
+    font_style: 0
+    font_size: 60
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: demo_infotext
+    text: Thank you for taking the time to play our demo!<br><br>Please note that
+      the game is still in an early stage of development. This means you may encounter
+      bugs, technical issues, or incomplete content.<br><br>This alpha demo gives
+      you an early glimpse of the game, but it only includes a small portion of the
+      planned content. Some features and game mechanics are still in development
+      and may change in the final version.
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
   TextsDeutsch:
   - name: menu_play
     text: SPIELEN
     font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
     font_style: 0
-    font_size: 65
+    font_size: 60
     font_color: {r: 1, g: 0, b: 0, a: 1}
     vertical_alignment: 512
     horizontal_alignment: 2
   - name: menu_options
-    text: OPTIONEN
+    text: Optionen
     font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
     font_style: 0
     font_size: 50
@@ -1391,6 +1420,36 @@ MonoBehaviour:
     font_style: 0
     font_size: 100
     font_color: {r: 0, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: demo_continue
+    text: Weiter
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 65
+    font_color: {r: 1, g: 0, b: 0, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: demo_infoheader
+    text: Willkommen in der Alpha-Demo von Mental Hell
+    font_asset: {fileID: 11400000, guid: c8c939466c154df428ed7f75e07beedc, type: 2}
+    font_style: 0
+    font_size: 60
+    font_color: {r: 1, g: 1, b: 1, a: 1}
+    vertical_alignment: 256
+    horizontal_alignment: 2
+  - name: demo_infotext
+    text: "Vielen Dank, dass du dir die Zeit nimmst, unsere Demo zu spielen!<br><br>Bitte
+      beachte, dass sich das Spiel noch in der fr\xFChen Entwicklungsphase befindet.
+      Das bedeutet, dass du m\xF6glicherweise auf Bugs, technische Probleme oder
+      unvollst\xE4ndige Inhalte sto\xDFen wirst.<br><br>Diese Alpha-Demo gibt dir
+      einen ersten Einblick in das Spiel, umfasst jedoch nur einen kleinen Teil der
+      geplanten Inhalte. Einige Features und Spielmechaniken sind noch in Entwicklung
+      und k\xF6nnten sich im finalen Spiel noch \xE4ndern."
+    font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
+    font_style: 0
+    font_size: 40
+    font_color: {r: 1, g: 0, b: 0, a: 1}
     vertical_alignment: 256
     horizontal_alignment: 2
   ActiveLanguage: English
