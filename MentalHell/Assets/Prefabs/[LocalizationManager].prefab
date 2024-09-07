@@ -875,11 +875,9 @@ MonoBehaviour:
     horizontal_alignment: 2
   - name: demo_infotext
     text: Thank you for taking the time to play our demo!<br><br>Please note that
-      the game is still in an early stage of development. This means you may encounter
-      bugs, technical issues, or incomplete content.<br><br>This alpha demo gives
-      you an early glimpse of the game, but it only includes a small portion of the
-      planned content. Some features and game mechanics are still in development
-      and may change in the final version.
+      the game is still in an early stage of development giving a first insight.<br>This
+      means you may encounter bugs, technical issues, or incomplete content.<br><br>-
+      The Send Help Studio Team
     font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
     font_style: 0
     font_size: 40
@@ -1440,12 +1438,10 @@ MonoBehaviour:
     horizontal_alignment: 2
   - name: demo_infotext
     text: "Vielen Dank, dass du dir die Zeit nimmst, unsere Demo zu spielen!<br><br>Bitte
-      beachte, dass sich das Spiel noch in der fr\xFChen Entwicklungsphase befindet.
-      Das bedeutet, dass du m\xF6glicherweise auf Bugs, technische Probleme oder
-      unvollst\xE4ndige Inhalte sto\xDFen wirst.<br><br>Diese Alpha-Demo gibt dir
-      einen ersten Einblick in das Spiel, umfasst jedoch nur einen kleinen Teil der
-      geplanten Inhalte. Einige Features und Spielmechaniken sind noch in Entwicklung
-      und k\xF6nnten sich im finalen Spiel noch \xE4ndern."
+      beachte, dass sich das Spiel noch in einem fr\xFChen Entwicklungsstadium befindet
+      und einen ersten Einblick bieten soll. Das bedeutet, dass du m\xF6glicherweise
+      auf Bugs, technische Probleme oder unvollst\xE4ndige Inhalte sto\xDFen wirst.<br><br>-
+      Das Team von Send Help Studio"
     font_asset: {fileID: 11400000, guid: ba1512992d19faa4d94123eb5f3d96e6, type: 2}
     font_style: 0
     font_size: 40
