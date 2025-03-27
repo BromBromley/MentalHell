@@ -18,7 +18,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    private float movement;
+    private float movementX;
+    private float movementY;
+    private Vector3 movementDirection;
     private float lastMovement;
     private float speed = 0;
     private float maxSpeed;
@@ -56,13 +58,16 @@ public class PlayerMovement : MonoBehaviour
                 playerIsRunning = false;
             }
 
-            movement = Input.GetAxis("Horizontal");
+            movementX = Input.GetAxis("Horizontal");
+            movementY = Input.GetAxis("Vertical");
+            movementDirection = new Vector3(movementX, 0.0f, movementY);
+            movementDirection.Normalize();
         }
         else
         {
             playerIsRunning = false;
         }
-        animator.SetFloat("speed", Mathf.Abs(movement));
+        animator.SetFloat("speed", Mathf.Abs(movementX));
         animator.SetBool("running", playerIsRunning);
     }
 
@@ -70,11 +75,21 @@ public class PlayerMovement : MonoBehaviour
     // FixedUpdate moves the player
     private void FixedUpdate()
     {
+        /*
         if (movement > 0.0f || movement < 0.0f)
         {
             MovePlayer();
         }
         else if (movement == 0.0f)
+        {
+            Decelerate();
+        }
+        */
+        if (movementDirection.sqrMagnitude > 0.0f)
+        {
+            MovePlayer();
+        }
+        else if (movementDirection.sqrMagnitude == 0.0f)
         {
             Decelerate();
         }
@@ -97,11 +112,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // this checks the player's direction and flips the sprite accordingly
-        if (movement < 0 && !facingLeft)
+        if (movementX < 0 && !facingLeft)
         {
             FlipSprite();
         }
-        else if (movement > 0 && facingLeft)
+        else if (movementX > 0 && facingLeft)
         {
             FlipSprite();
         }
@@ -123,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        rb.velocity = new Vector3(movement * maxSpeed, 0, 0);
+        rb.velocity = movementDirection * maxSpeed;
     }
 
 
@@ -159,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementEnabled = false;
         yield return new WaitForSeconds(0.1f);
-        movement = 0;
+        movementDirection = Vector3.zero;
         yield return new WaitForSeconds(0.6f);
         movementEnabled = true;
     }
