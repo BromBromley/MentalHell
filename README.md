@@ -32,9 +32,9 @@ Unity Version 2022.3.12f1
 
 ## Authors
 
-**Mia Wittenmeier** - Main Code and Game-Design
+**Brom Wittenmeier** - Main Code and Game-Design
 
-**Anton Hentzler** - Art, Animation and Game-Design
+**Esther Hentzler** - Art, Animation and Game-Design
 
 **Jan Tillmans** - Sound, Story, Code, UX- and Game-Design
 
